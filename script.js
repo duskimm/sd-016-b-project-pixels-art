@@ -152,7 +152,16 @@ function applyNewBoardSize() {
   });
 }
 
+function randomColorGenerator() {
+  const colors = getAll('.color');
+
+  for (let i = 1; i < colors.length; i += 1) {
+    colors[i].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255},${Math.random() * 255})`;
+  }
+}
+
 window.onload = () => {
+  randomColorGenerator();
   generatorPixelRow(5);
   generatorPixelLine(5);
   getColor();
