@@ -42,3 +42,10 @@ const pix = document.querySelectorAll('.pixel');
 for (let index = 0; index < pix.length; index += 1){
 pix[index].addEventListener('click', pintar)
 }
+// Requisito 09
+
+buttonLimpar.addEventListener('click', function(){
+    for (let index = 0; index < pix.length; index += 1){
+        pix[index].style.backgroundColor = 'white'
+    }
+})
