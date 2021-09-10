@@ -66,21 +66,27 @@ window.onload = function () {
       getSelect.classList.remove('selected');
       getGreen.classList.add('selected');
   })
-// pintar os quadrados
+// pintar os quadrados ( pesquisei olhando o  exercicio 10 do dia de javascript eventos 5-3 para fazer colorir os pixels, visto que era parecido o modo de fazer)
 let getDivFather = document.querySelector('#pixel-board');
 
 getDivFather.addEventListener('click', function (event){
   let pegaSelected = document.querySelector('.selected');
   let colorEvent = event.target.backgroundColor;
   let colorSelected = pegaSelected.style.backgroundColor;
-  if (event.target.id !== 'linePixels'){
+  if (event.target.id !== 'linePixels'){// primeiro if não deixa ele pintar as div linhas
     if (colorEvent != colorSelected){
       event.target.style.backgroundColor = colorSelected;
     } 
   }
 })
 
-
-
+// Botão
+let getButton = document.querySelector('#clear-board');
+getButton.addEventListener('click', function (){
+  let getPixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < getPixel.length; i += 1){
+    getPixel[i].style.backgroundColor = 'white';
+  }
+})
 
 }
