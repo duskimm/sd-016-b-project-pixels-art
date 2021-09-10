@@ -1,4 +1,40 @@
 body{ 
-    background-color: bisque;
+  background-color: rgb(12, 145, 101);
 
+}
+
+#black{
+  background-color: black;
+}
+
+#blue{
+  background-color: blue;
+}
+
+
+.color{
+  border: solid black 1px;
+  display: inline-block;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+}
+
+#color-palette{
+  text-align: center;
+}
+
+#green{
+  background-color: green;
+}
+
+#red{
+  background-color: red;
+}
+
+#title{
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  
 }
