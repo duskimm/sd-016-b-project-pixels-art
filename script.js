@@ -54,7 +54,6 @@ function listenerPalette(event) {
 function listenerPixels(event) {
   const divPixelSelected = event.target;
   const classSelectedColor = document.querySelector('.selected').classList[0];
-// divPixelSelected.classList.remove('backGroundSet');
   divPixelSelected.setAttribute('class', 'pixel');
   divPixelSelected.classList.add(classSelectedColor);
   console.log(classSelectedColor);
