@@ -20,3 +20,12 @@ for (let index = 0; index < pixel.length; index++) {
     event.target.id = selected.id;
   })
 }
+
+
+let botao = document.getElementsByTagName('button')[0];
+
+botao.addEventListener('click', function() {
+  for (let index = 0; index < pixel.length; index++) {
+    pixel[index].id = 'null';
+  }
+})
