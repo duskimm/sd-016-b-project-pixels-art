@@ -1,3 +1,25 @@
-ul {
-  inline-block
+#title{
+ text-align: center;
+}
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+} 
+
+#color-palette{
+  display: flex;
+}
+.li{
+  display: inline-block;
+  border:solid black
+  
+}
+.color {
+  border: 1px solid black;
+  cursor: pointer;
+  height: 40px;
+  margin: 0 5px;
+  width: 40px;
 }
