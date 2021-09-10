@@ -31,5 +31,5 @@ section .orange {
   height: 40px;
   border: solid 1px black;
   display: inline-block;
-	background-color: white;
+  background-color: white;
 }
