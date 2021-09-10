@@ -1,9 +1,14 @@
-/* já conhecia a pseudoclasse:nth-child(), e busquei como selecionar todos os elementos https://developer.mozilla.org/pt-BR/docs/Web/CSS/:nth-child */
+main {
+  text-align: center;
+}
+
+/* já conhecia a pseudoclasse:nth-child(), e busquei como selecionar 
+todos os elementos https://developer.mozilla.org/pt-BR/docs/Web/CSS/:nth-child */
 .color {
   display: inline-block;
 }
 
-#color-palette .color:nth-child(n){
+#color-palette .color:nth-child(n) {
   border: solid 1px black;
   width: 50px;
   height: 50px;
@@ -13,14 +18,28 @@
   background-color: black;
 }
 
-#color-palette .color:nth-child(2){
-  background-color: rgb(64, 32, 109);
+#color-palette .color:nth-child(2) {
+  background-color: rgb( 64, 32, 109 );
 }
 
-#color-palette .color:nth-child(3){
-  background-color: rgb(95, 189, 148);
+#color-palette .color:nth-child(3) {
+  background-color: rgb( 95, 189, 148 );
 }
 
-#color-palette .color:nth-child(4){
-  background-color: rgb(238, 41, 51);
+#color-palette .color:nth-child(4) {
+  background-color: rgb( 238, 41, 51 );
+}
+
+.pixel .pixel {
+  display: inline-block;
+  border: solid 1px black;
+  width: 50px;
+  height: 50px;
+  margin-block: -3px;
+  color: white;
+}
+
+#pixel-board {
+  display: inline-block;
+  margin-top: 20px;
 }
