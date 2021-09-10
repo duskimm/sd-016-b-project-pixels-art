@@ -11,24 +11,9 @@ window.onload = function () {
       board.appendChild(pixelDiv);
     }
   }
-
   createDivs(numberOfLines);
-
 };
-  // function createPixels(className) {     //className 'pixels';
-  //   let pixel = document.createElement('div');
-  //   pixel.className = className;
-  //   pixel.style.backgroundColor = 'white';
-  //   pixel.style.color = 'white';
-  //   return pixel;
-  // }
 
-  // function addPixelsToBoard() {
-  //   for (index = 0; index < numberOfLines; index += 1) {
-  //     let pixel = createPixels('pixels');
-  //     let pixelDiv = document.querySelectorAll('.pixels-div');
-  //     pixelDiv[index].appendChild(pixel);
-  //   }
-  // }
-
-  // addPixelsToBoard();
+const colorBlack = document.querySelector('#black');
+colorBlack.classList.add('selected');
+console.log(colorBlack);
