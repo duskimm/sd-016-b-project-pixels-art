@@ -23,6 +23,20 @@ function geraCorAleatoria(){
 //cria paleta de cores com as corres da lista
 coresPaleta(paleta.children,['black',geraCorAleatoria(),geraCorAleatoria(),geraCorAleatoria()]);
 
+// criando botao de reset
+const botaoReset = document.createElement('button');
+botaoReset.setAttribute('id','clear-board');
+botaoReset.innerText = 'Limpar';
+divPrincipal.appendChild(botaoReset);
+
+//adiciona evento de resetar cor dos pixels ao botao reset
+const btn = document.getElementById('clear-board');
+btn.addEventListener('click',function(){
+  for(let i = 0; i < listaPixel.length; i++){
+    listaPixel[i].style.backgroundColor = 'white';
+  }
+})
+
 //cria a tabela
 const tabela = document.createElement('table');
 tabela.setAttribute('id','pixel-board');
@@ -65,17 +79,3 @@ for (let i = 0; i < listaPixel.length; i++) {
         event.target.style.backgroundColor = corAtual;;
     })
 }
-
-// criando botao de reset
-const botaoReset = document.createElement('button');
-botaoReset.setAttribute('id','clear-board');
-botaoReset.innerText = 'Reset';
-divPrincipal.appendChild(botaoReset);
-
-//adiciona evento de resetar cor dos pixels ao botao reset
-const btn = document.getElementById('clear-board');
-btn.addEventListener('click',function(){
-  for(let i = 0; i < listaPixel.length; i++){
-    listaPixel[i].style.backgroundColor = 'white';
-  }
-})
