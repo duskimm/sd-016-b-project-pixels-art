@@ -1,6 +1,7 @@
 const getPixelBoard = document.getElementById('pixel-board');
 const getEachColorPalette = document.getElementsByClassName('color');
 const getPixel = document.getElementsByClassName('pixel');
+const getButton = document.getElementById('clear-board');
 const quantityOfPixels = 25;
 
 function creatingPixels() {
@@ -35,3 +36,11 @@ function printingPixel(event) {
 for (let i = 0; i < getPixel.length; i += 1) {
   getPixel[i].addEventListener('click', printingPixel);
 }
+
+function removePixelsColors() {
+  for (let i = 0; i < getPixel.length; i += 1) {
+    getPixel[i].style.backgroundColor = 'white';
+  }
+}
+
+getButton.addEventListener('click', removePixelsColors);
