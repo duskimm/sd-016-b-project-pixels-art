@@ -1,31 +1,44 @@
 h1 {
-    text-align: center;
-  }
+  text-align: center;
+}
 
 #color-palette {
-    width: 220px;
-    height: 50px;
-  }
+  width: 220px;
+  height: 50px;
+}
 
 .color {
-    display: inline-block;
-    border: 1px solid black;
-    width: 50px;
-    height: 50px;
-  }
+  display: inline-block;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+}
 
 .red {
-    backGround-color: red;
-  }
+  backGround-color: red;
+}
 
 .blue {
-    background-color: blue;
-  }
+  background-color: blue;
+}
 
 .green {
-    background-color: green;
-  }
+  background-color: green;
+}
 
 .black {
-    background-color: black;
-  }
+  background-color: black;
+}
+
+.line {
+    display: block;
+    width: 300px;
+    height: 50px;
+}
+
+.pixel {
+    background-color: white;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
