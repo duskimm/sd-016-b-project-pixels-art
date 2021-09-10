@@ -29,11 +29,28 @@ function generateColorPalette() {
   });
 }
 
-window.onload = () => {
-  generateColorPalette();
-};
+function generatePixelBoard(boardSize) {
+  const board = document.getElementById('pixel-board');
+  for (let line = 0; line < boardSize; line += 1) {
+    const boardLine = document.createElement('div');
+    boardLine.classList.add('boardLine');
+    for (let column = 0; column < boardSize; column += 1) {
+      const pixelCell = document.createElement('div');
+      pixelCell.classList.add('pixel');
+      boardLine.appendChild(pixelCell);
+    }
+    board.appendChild(boardLine);
+  }
+}
 
-const inputColor = document.querySelectorAll('.color:not(.fixed-color)');
-inputColor.forEach((input) => {
-  input.addEventListener('click', (evt) => setColor(evt.target, getRandomColor()));
-});
+window.onload = () => {
+  const boardSize = 5;
+  generateColorPalette();
+
+  generatePixelBoard(boardSize);
+
+  const inputColor = document.querySelectorAll('.color:not(.fixed-color)');
+  inputColor.forEach((input) => {
+    input.addEventListener('click', (evt) => setColor(evt.target, getRandomColor()));
+  });
+};
