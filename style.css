@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  font-family: monospace;
+}
+
+h1 {
+  color: goldenrod;
+  text-align: center;
+  font-size: 50px;
+}
+
+.color {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+}
+
+#color-palette {
+  display: inline-block;
+}
+
+.black {
+  background-color: rgb(0, 0, 0);
+}
+
+.red {
+  background-color: rgb(255, 0, 0);
+}
+
+.green {
+  background-color: rgb(0, 255, 0);
+}
+
+.blue {
+  background-color: rgb(0, 0, 255);
+}
