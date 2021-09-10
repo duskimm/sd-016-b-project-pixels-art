@@ -52,3 +52,25 @@ function createLine(qtdLinhas) {
 }
 
 createLine(5);
+
+// ******************************************************************************************** //
+// 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels.
+const black = document.getElementsByClassName('color')[0];
+const red = document.getElementsByClassName('color')[1];
+const yellow = document.getElementsByClassName('color')[2];
+const pink = document.getElementsByClassName('color')[3];
+
+// Função que remove a class selected do elemento que está com ela no momento e coloca no elemento passado como parâmetro.
+function addRemoveClassSelected(elemento) {
+  const classSelected = document.getElementsByClassName('selected');
+  if (classSelected.length > 0) {
+    classSelected[0].classList.remove('selected');
+  }
+
+  elemento.classList.add('selected');
+}
+
+// Faço com que só adicione a classe selected ao elementto black como padrão somente quando a página terminar de ser carregada.
+window.onload = () => {
+  addRemoveClassSelected(black);
+};
