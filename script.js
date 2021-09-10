@@ -1,8 +1,3 @@
-window.onload = function () {
-  createLines();
-  createPixels();
-}
-
 function newChild(type, text, classs, id) {
   let newChildItem = document.createElement(type);
   newChildItem.innerText = text;
@@ -30,3 +25,8 @@ function createPixels() {
     }
   }
 }
+
+window.onload = function () {
+  createLines();
+  createPixels();
+};
