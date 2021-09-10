@@ -1,0 +1,29 @@
+#color-palette {
+  background-color: black;
+  border: 1px solid black ;
+  float: left;
+}
+
+#paletablack {
+  background-color: black;
+  border: 1px solid black ;
+  float: left;
+}
+
+#paletared {
+  background-color: red;
+  border: 1px solid black ;
+  float: left;
+} 
+
+#paletagreen {
+  background-color: green;
+  border: 1px solid black ;
+  float: left;
+}
+
+#paletablue {
+  background-color: blue;
+  border: 1px solid black ;
+  float: left;
+}
