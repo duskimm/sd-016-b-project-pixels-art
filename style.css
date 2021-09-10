@@ -1,0 +1,15 @@
+#title{
+    color:black;
+    display: block;
+}
+#color-palette{
+    display: block;
+    width: 80%;
+    border: solid 5px black;
+}
+.color{
+    border: solid 1px black;
+    display: inline-block; 
+    width: 50px;
+    height: 50px;
+}
