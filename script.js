@@ -77,12 +77,6 @@ function checkInput() {
   }
 }
 
-// function checkMinValue() {
-//   if (getInput.value <= getInput.getAttribute('min')) {
-//     status = true;
-//   }
-// }
-
 function sizeMaxAndMin() {
   if (getInput.value < 5) {
     getInput.value = 5;
