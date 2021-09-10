@@ -1,5 +1,6 @@
 const divPrincipal = document.getElementById('container');
 const paleta = document.getElementById('color-palette');
+const PIXEL_BOARD = 'pixel-board';
 
 // Cria paleta de cores e seta a cor preta com a classe selected
 function coresPaleta(lista, lista2) {
@@ -32,17 +33,18 @@ let corAtual = 'black';
 
 // reseta a classe da paleta de cores
 function resetClass(lista) {
-  for (let i = 0; i < lista.length; i += 1) {
-    lista[i].className = 'color';
+  const listaBackup = lista;
+  for (let i = 0; i < listaBackup.length; i += 1) {
+    listaBackup[i].className = 'color';
   }
 }
 
 // adiciona evento de mudança da cor atual a todos os elementos com a classe color e adiciona a classe selected a cor selecionada
 for (let i = 0; i < listaCores.length; i += 1) {
-  listaCores[i].addEventListener('click', (event) => {
-    corAtual = event.target.style.backgroundColor;
+  listaCores[i].addEventListener('click', () => {
+    corAtual = listaCores[i].style.backgroundColor;
     resetClass(listaCores);
-    event.target.className += ' selected';
+    listaCores[i].className += ' selected';
   });
 }
 
@@ -67,7 +69,7 @@ divPrincipal.appendChild(botaoReset);
 
 // cria uma tabela inicial com 25 pixels (5x5)
 const tabela = document.createElement('table');
-tabela.setAttribute('id', 'pixel-board');
+tabela.setAttribute('id', PIXEL_BOARD);
 divPrincipal.appendChild(tabela);
 for (let i = 0; i < 5; i += 1) {
   const row = document.createElement('tr');
@@ -85,7 +87,7 @@ for (let i = 0; i < 5; i += 1) {
 // cria a tabela
 function criaTabela(tamanho) {
   const tabela1 = document.createElement('table');
-  tabela.setAttribute('id', 'pixel-board');
+  tabela1.setAttribute('id', PIXEL_BOARD);
   divPrincipal.appendChild(tabela1);
   for (let i = 0; i < tamanho; i += 1) {
     const row = document.createElement('tr');
@@ -93,7 +95,7 @@ function criaTabela(tamanho) {
     for (let y = 0; y < tamanho; y += 1) {
       const celula = document.createElement('td');
       celula.addEventListener('click', () => {
-        celula.style.backgroundColor = this.corAtual;
+        celula.style.backgroundColor = corAtual;
       });
       celula.setAttribute('class', 'pixel');
       row.appendChild(celula);
@@ -101,19 +103,24 @@ function criaTabela(tamanho) {
   }
 }
 
+function verificaIntervalo(inputValue) {
+  let valorGrade = parseInt(inputValue, 10);
+  if (valorGrade < 5) {
+    valorGrade = 5;
+  } else if (valorGrade > 50) {
+    valorGrade = 50;
+  }
+  return valorGrade;
+}
+
 // cria tabela atraves do botão VQV
 btnGrade.addEventListener('click', () => {
-  const listBoard = document.getElementById('pixel-board');
-  let valorGrade = tamanhoInput.value;
+  const listBoard = document.getElementById(PIXEL_BOARD);
+  const valorGrade = tamanhoInput.value;
   if (valorGrade === '') {
     alert('Board inválido!');
   } else {
-    valorGrade = parseInt(tamanhoInput.value);
-    if (valorGrade < 5) {
-      valorGrade = 5;
-    } else if (valorGrade > 50) {
-      valorGrade = 50;
-    }
+    verificaIntervalo(tamanhoInput.valorGrade);
     for (let j = 0; j < listBoard.children.length; j += 1) {
       listBoard.remove(listBoard.children[j]);
     }
