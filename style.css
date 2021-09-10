@@ -1,0 +1,57 @@
+#color-palette {
+  
+}
+
+.color {
+  width: 50px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+
+}
+
+#firstColor {
+  background-color: black;
+}
+
+#secondColor {
+  background-color: rgb(0, 47, 99);
+}
+
+
+#thirdColor {
+  background-color: rgb(32, 178, 170);
+}
+
+#fourthColor {
+  background-color: rgb(116, 52, 138);
+}
+
+#fifthColor {
+  background-color: rgb(255, 0, 126);
+}
+
+#sixthColor {
+  background-color: rgb(252, 105, 115);
+}
+
+#seventhColor {
+  background-color: rgb(247, 13, 27);
+}
+
+#eighthColor {
+  background-color: rgb(255, 255, 0);
+}
+
+#ninthColor {
+  background-color: rgb(46, 197, 6);
+}
+
+#tenthColor {
+  background-color: rgb(89, 38, 11);
+}
+
+
+
+
+
