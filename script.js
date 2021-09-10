@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function createPixelArtBoard() {
   const numberOfLines = 25;
 
   function createDivs(numberOfDivs) {
@@ -16,4 +16,18 @@ window.onload = function () {
 
 const colorBlack = document.querySelector('#black');
 colorBlack.classList.add('selected');
-console.log(colorBlack);
+const colorBlue = document.querySelector('#blue');
+const colorGreen = document.querySelector('#green');
+const colorRed = document.querySelector('#red');
+
+function colorPicker(event) {
+  const color = event.target;
+  const old = document.querySelector('.selected');
+  old.classList.remove('selected');
+  color.classList.add('selected');
+}
+
+colorBlue.addEventListener('click', colorPicker);
+colorGreen.addEventListener('click', colorPicker);
+colorRed.addEventListener('click', colorPicker);
+colorBlack.addEventListener('click', colorPicker);
