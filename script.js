@@ -16,7 +16,7 @@ function qAll(params) {
 
 // Task 2 functions
 
-const usedColors = ['rgb(66,122,161)', 'rgb(235,242,250)', 'rgb(103,148,54)', 'rgb(165,190,0)'];
+const usedColors = ['black', 'rgb(235,242,250)', 'rgb(103,148,54)', 'rgb(165,190,0)'];
 const colors = qAll('.color');
 
 for (let i = 0; i < colors.length; i += 1) {
