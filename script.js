@@ -8,3 +8,20 @@ function resetColor() {
 }
 
 window.onload = resetColor;
+
+function test1() {
+  const classSelected = document.querySelector('.selected');
+  classSelected.classList.remove('selected');
+}
+
+function addClassSelected(event) {
+  const classSelected = document.querySelector('.selected');
+  const eventTarget = event.target;
+  if (eventTarget.classList.contains('selected') === false) {
+    classSelected.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+}
+
+const btnRed = document.querySelector('.color__content');
+btnRed.addEventListener('click', addClassSelected);
