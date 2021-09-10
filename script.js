@@ -24,7 +24,7 @@ function createColorPallete() {
       }
 
       colorDiv.classList.add('selected');
-      
+
       selectedColor = color;
     })
 
@@ -59,7 +59,23 @@ function createPixelBoard() {
   document.body.appendChild(frame);
 }
 
+function createClearButton() {
+  const button = document.createElement('button');
+  button.id = "clear-board";
+  button.innerText = 'Limpar';
+
+  button.addEventListener('click', function (event) {
+    const pixels = document.querySelectorAll('.pixel');
+    for (let pixel of pixels) {
+      pixel.style.backgroundColor = 'white';
+    }
+  })
+
+  document.body.appendChild(button);
+}
+
 window.onload = function () {
   createColorPallete();
+  createClearButton();
   createPixelBoard();
 }
