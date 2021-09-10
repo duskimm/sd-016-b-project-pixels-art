@@ -1,0 +1,38 @@
+.pixel  {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  border: solid black 1px;
+}
+#palette1 {
+ background-color:black;
+}
+
+#palette2 {
+  background-color: blue;
+}
+
+#palette3 {
+background-color: green;
+  
+}
+#palette4 {
+  background-color: orange;
+}
+
+.color {
+  margin-right: 5px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  border: solid black 1px;
+  border-radius: 100%;
+}
+
+.line {
+  width: 300px
+}
+
+#pixel-board{
+  margin-top: 100px;
+}
