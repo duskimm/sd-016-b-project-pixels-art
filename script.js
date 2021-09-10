@@ -69,22 +69,21 @@ for (let index = 0; index < colors.length; index += 1) {
   colors[index].addEventListener('click', selectColor);
 }
 
-let pixels = document.getElementsByClassName('pixel');
+// Função que pinta os pixels
+document.querySelectorAll('.pixel').forEach(item => {
+  item.addEventListener('click', event => {
+    let selectedItem = document.querySelector('.selected');
+    let selectedColor = window.getComputedStyle(selectedItem).getPropertyValue('background-color');
+    event.target.style.backgroundColor = selectedColor;
+  });
+});
 
-function addColor(event) {
-  let selectedItem = document.querySelector('.selected');
-  let selectedColor = window.getComputedStyle(selectedItem).getPropertyValue('background-color');
-  event.target.style.backgroundColor = selectedColor;
-}
-
-for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].addEventListener('click', addColor);
-}
-
+// Função que limpa o quadro
 function clearBoard() {
+  let pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
-    }
+  }
 }
 
 let clearButton = document.getElementById('clear-board');
