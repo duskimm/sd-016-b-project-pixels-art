@@ -1,0 +1,26 @@
+#title {font-family: 'Montserrat', sans-serif;
+font-size: 100px;
+text-align: center;
+text-decoration: black wavy underline;}
+
+#color-palette{position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 526px;
+}
+
+.color {border: solid black 1px;
+height: 100px;
+width: 100px;
+display: inline-block;
+position: relative;
+margin-right: auto;
+margin-left: auto;
+}
+
+#c1 {background-color: black;}
+#c2 {background-color:rgb(222, 109, 32)}
+#c3 {background-color: rgb(255, 212, 177)}
+#c4 {background-color: rgb(208, 202, 176)}
+
+
