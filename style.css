@@ -1,27 +1,39 @@
-
 .color {
   display: inline-block;
   height: 40px;
   width: 40px;
-  border: 1px black solid
+  border: 1px black solid;
 }
 
-#color-palette :nth-child(1) {
+#color-palette :nth-child( 1 ) {
   background-color: black;
   content-visibility: hidden;
 }
 
-#color-palette :nth-child(2) {
+#color-palette :nth-child( 2 ) {
   background-color: red;
   content-visibility: hidden;
 }
 
-#color-palette :nth-child(3) {
+#color-palette :nth-child( 3 ) {
   background-color: blue;
   content-visibility: hidden;
 }
 
-#color-palette :nth-child(4) {
+#color-palette :nth-child( 4 ) {
   background-color: green;
   content-visibility: hidden;
+}
+
+#pixel-board {
+  width: 210px;
+  font-size: 0;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  display: inline-block;
+  border: 1px solid black;
 }
