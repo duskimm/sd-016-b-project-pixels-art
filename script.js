@@ -24,6 +24,12 @@ function plugHtml(fatherElement, sonElement) {
   fatherElement.appendChild(sonElement);
 }
 
+// universal variables
+
+const user = {
+  paintingColor: 'black'
+};
+
 // functions for the project
 
 function generatorPixelLine() {
@@ -48,7 +54,34 @@ function generatorPixelRow() {
   }
 }
 
+function saveColor(color) {
+  user.paintingColor = color;
+}
+
+function getColor() {
+  const palette = getAll('.color');
+
+  palette.forEach((color)  => {
+    color.addEventListener('click', (event) => {
+      let selectColor = getComputedStyle(event.target)['backgroundColor'];
+      saveColor(selectColor);
+    });
+  });
+}
+
+function paintingPixel() {
+  const allPixels = getAll('.pixel');
+
+  allPixels.forEach((pixel) => {
+    pixel.addEventListener('click', (event) => {
+      event.target.style.backgroundColor = user.paintingColor;
+    })
+  })
+}
+
 window.onload = () => {
   generatorPixelRow();
   generatorPixelLine();
+  getColor();
+  paintingPixel();
 }
