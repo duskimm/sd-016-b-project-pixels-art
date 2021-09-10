@@ -2,13 +2,13 @@ const divPrincipal = document.getElementById('container');
 const paleta = document.getElementById('color-palette');
 
 // Cria paleta de cores e seta a cor preta com a classe selected
-function coresPaleta(list,list2) {
-    for (let i = 0; i < list.length; i += 1) {
-        list[i].style.backgroundColor = list2[i];
-        if(list2[i] == 'black'){
-          list[i].className += ' selected';
-        }
+function coresPaleta(list, list2) {
+  for (let i = 0; i < list.length; i += 1) {
+    list[i].style.backgroundColor = list2[i];
+    if(list2[i] == 'black'){
+      list[i].className += ' selected';
     }
+  }
 }
 
 // gera cor aleatoria para a paleta de cores
@@ -30,11 +30,11 @@ let corAtual = 'black';
 
 // adiciona evento de mudança da cor atual a todos os elementos com a classe color e adiciona a classe selected a cor selecionada
 for (let i = 0; i < listaCores.length; i += 1) {
-    listaCores[i].addEventListener('click', function(event) {
-      corAtual = event.target.style.backgroundColor;
-      resetClass(listaCores);
-      event.target.className += ' selected';
-    }) 
+  listaCores[i].addEventListener('click', function(event) {
+    corAtual = event.target.style.backgroundColor;
+    resetClass(listaCores);
+    event.target.className += ' selected';
+  }) 
 }
 
 // reseta a classe da paleta de cores
@@ -68,36 +68,36 @@ const tabela = document.createElement('table');
 tabela.setAttribute('id', 'pixel-board');
 divPrincipal.appendChild(tabela);
 for (let i = 0; i < 5; i += 1) {
-    const row = document.createElement('tr');
-    tabela.appendChild(row);
-    for (let y = 0; y < 5; y += 1) {
-        const celula = document.createElement('td');
-        celula.addEventListener('click', function(event) {
-            celula.style.backgroundColor = corAtual;
-        })
-        celula.setAttribute('class', 'pixel');
-        row.appendChild(celula);
-    }
+  const row = document.createElement('tr');
+  tabela.appendChild(row);
+  for (let y = 0; y < 5; y += 1) {
+    const celula = document.createElement('td');
+    celula.addEventListener('click', function(event) {
+      celula.style.backgroundColor = corAtual;
+    })
+    celula.setAttribute('class', 'pixel');
+    row.appendChild(celula);
+  }
 }
 
 // cria tabela atraves do botão VQV
 btnGrade.addEventListener('click', function() {
-    const listBoard = document.getElementById('pixel-board')
-    let valorGrade = tamanhoInput.value;
-    if( valorGrade == ''){
-        alert('Board inválido!');
-    }else {
-        valorGrade = parseInt(tamanhoInput.value);
-        if(valorGrade < 5){
-            valorGrade = 5
-        }else if(valorGrade > 50){
-            valorGrade = 50
-        }
-        for(let j = 0; j < listBoard.children.length; j += 1){
-            listBoard.remove(listBoard.children[j])
-        }
-        criaTabela(valorGrade);
+  const listBoard = document.getElementById('pixel-board')
+  let valorGrade = tamanhoInput.value;
+  if( valorGrade == ''){
+      alert('Board inválido!');
+  }else {
+    valorGrade = parseInt(tamanhoInput.value);
+    if(valorGrade < 5){
+        valorGrade = 5
+    }else if(valorGrade > 50){
+        valorGrade = 50
     }
+    for(let j = 0; j < listBoard.children.length; j += 1){
+        listBoard.remove(listBoard.children[j])
+    }
+    criaTabela(valorGrade);
+  }
 })
 
 // adiciona evento de resetar cor dos pixels ao botao reset
@@ -111,19 +111,19 @@ btn.addEventListener('click', function(){
 
 // cria a tabela
 function criaTabela(tamanho) {
-    const tabela = document.createElement('table');
-    tabela.setAttribute('id','pixel-board');
-    divPrincipal.appendChild(tabela);
-    for (let i = 0; i < tamanho; i += 1) {
-        const row = document.createElement('tr');
-        tabela.appendChild(row);
-        for (let y = 0; y < tamanho; y += 1) {
-            const celula = document.createElement('td');
-            celula.addEventListener('click', function(event) {
-                celula.style.backgroundColor = corAtual;
-            })
-            celula.setAttribute('class', 'pixel');
-            row.appendChild(celula);
-        }
+  const tabela = document.createElement('table');
+  tabela.setAttribute('id','pixel-board');
+  divPrincipal.appendChild(tabela);
+  for (let i = 0; i < tamanho; i += 1) {
+    const row = document.createElement('tr');
+    tabela.appendChild(row);
+    for (let y = 0; y < tamanho; y += 1) {
+      const celula = document.createElement('td');
+      celula.addEventListener('click', function(event) {
+        celula.style.backgroundColor = corAtual;
+      })
+      celula.setAttribute('class', 'pixel');
+      row.appendChild(celula);
     }
+  }
 }
