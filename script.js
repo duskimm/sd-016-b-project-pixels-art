@@ -33,11 +33,22 @@ const user = {
 
 // functions for the project
 
+function validLimit(limit) {
+  if (limit > 50) {
+    return 50
+  } else if (limit < 5) {
+    return 5
+  } else {
+    return limit;
+  }
+}
+
 function generatorPixelLine(limit) {
   const rows = getAll('.pixel-row');
+  const validatedLimit = validLimit(limit);
 
   rows.forEach((row) => {
-    for (let i = 0; i < limit; i += 1) {
+    for (let i = 0; i < validatedLimit; i += 1) {
       const pixel = createElement('div');
       addClass(pixel, 'pixel');
       plugHtml(row, pixel);
@@ -47,8 +58,9 @@ function generatorPixelLine(limit) {
 
 function generatorPixelRow(limit) {
   const canvas = getOne('#pixel-board');
+  const validatedLimit = validLimit(limit);
 
-  for (let i = 0; i < limit; i += 1) {
+  for (let i = 0; i < validatedLimit; i += 1) {
     const row = createElement('div');
     addClass(row, 'pixel-row');
     plugHtml(canvas, row);
