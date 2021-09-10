@@ -74,3 +74,5 @@ for (let line = 0; line < pixelsBoardSide; line += 1) {
     addElementToDOM(pixelLine, pixelColumn);
   }
 }
+
+setClass(colorList[0], 'selected');
