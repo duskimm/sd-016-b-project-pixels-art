@@ -1,4 +1,5 @@
 let colorSelected = document.querySelectorAll('#color-palette .color');
+let btnClear = document.querySelector('.btn-clear');
 
 // console.log(colorSelected);
 const pixelBoard = document.getElementById('pixel-board');
@@ -34,4 +35,10 @@ for (let index = 0; index < colorSelected.length; index += 1) {
 
 function chosenColor(event) {
   color = event.target.id;
+}
+btnClear.addEventListener('click', clearAll);
+function clearAll(event) {
+  for (let index = 0; index < pixelBox.length; index += 1) {
+    pixelBox[index].style.backgroundColor = 'white';
+  }
 }

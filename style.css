@@ -44,6 +44,7 @@
   margin-left: auto;
   margin-top: 40px;
   margin-right: auto;
+  min-width: 250px;
   text-align: center;
 }
 
@@ -54,4 +55,15 @@
   height: 40px;
   margin: 2px;
   width: 40px;
+}
+
+#btn-div {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.btn-clear {
+  background-color: teal;
+  border-radius: 5px;
+  padding: 10px;
 }
