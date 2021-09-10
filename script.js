@@ -24,11 +24,20 @@ function paintPix(event) {
   eventTarget.style.backgroundColor = bgColor;
 }
 
+function clearBoard() {
+  const pixelBoa = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelBoa.length; i += 1) {
+    pixelBoa[i].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+}
+
 // constantes
 const btnRed = document.querySelector('.color__content');
 const pixelBo = document.querySelector('#pixel-board');
+const btnClear = document.querySelector('#clear-board');
 
 window.onload = resetColor;
 
 btnRed.addEventListener('click', addClassSelected);
 pixelBo.addEventListener('click', paintPix);
+btnClear.addEventListener('click', clearBoard);
