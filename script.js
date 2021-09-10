@@ -1,4 +1,5 @@
 const predefinedColors = ['black', 'red', 'blue', 'orange'];
+let selectedColor = "black";
 const boardWidth = 5;
 const boardHeight = 5;
 
@@ -10,6 +11,9 @@ function createColorPallete() {
     const colorDiv = document.createElement('div');
     colorDiv.style.backgroundColor = color;
     colorDiv.classList.add('color');
+    if (color === selectedColor) {
+      colorDiv.classList.add('selected');
+    }
     container.appendChild(colorDiv);
   }
 

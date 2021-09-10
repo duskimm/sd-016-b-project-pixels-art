@@ -18,6 +18,10 @@ body {
     cursor: pointer;
 }
 
+.selected {
+    border-radius: 10px;
+}
+
 #pixel-board {
     border: 1px solid black;
     width: calc((var(--pixel-size) * 5));
