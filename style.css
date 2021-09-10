@@ -47,8 +47,8 @@
 }
 
 .pixel {
-  width: 87px;
-  height: 87px;
+  width: 40px;
+  height: 40px;
   display: inline-block;  
   border: solid 1px;
   background-color: white;
