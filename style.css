@@ -26,13 +26,13 @@
 }
 
 .linha {
-  height: 50px;
+  height: 40px;
 }
 
 .pixel {
-  height: 50px;
+  background-color: white;
   border: 1px solid black;
   display: inline-block;
-  width: 50px;
-  background-color: white;
+  height: 40px;
+  width: 40px;
 }
