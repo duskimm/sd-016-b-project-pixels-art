@@ -3,4 +3,36 @@
 }
 #title{
     color: brown;
+    text-align:center;
+}
+.square{
+    width: 450px;/*largura*/
+    height: 50px;/*altura*/
+}
+#color-palette{
+    display: inline-flex;
+    background-color: #bab8b5;
+    border: 1px solid black;
+    width: min-content;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+.color{
+    border: 1px solid black;
+    padding: 30px;
+    margin: 10px;
+
+}
+.box-black{
+    background-color: black;
+
+}
+.box-green{
+    background-color: green;
+}
+.box-red{
+    background-color: red;
+}
+.box-yellow{
+    background-color: yellow;
 }
