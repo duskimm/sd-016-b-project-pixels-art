@@ -1,10 +1,36 @@
+function addBlack (){
+  let element1 = document.querySelector('.cblack');
+  element1.style.backgroundColor = 'black';
+}
+addBlack();
+function addRed (){
+  let element1 = document.querySelector('.cred');
+  element1.style.backgroundColor = 'red';
+}
+addRed();
+function addBlue (){
+  let element1 = document.querySelector('.cblue');
+  element1.style.backgroundColor = 'blue';
+}
+addBlue();
+function addGreen (){
+  let element1 = document.querySelector('.cgreen');
+  element1.style.backgroundColor = 'green';
+}
+addGreen();
+function addWhite (){
+  let element1 = document.querySelector('.pixel');
+  element1.style.backgroundColor = 'white';
+}
+addWhite();
+
 window.onload = function () {
   let getBlack = document.querySelector('.cblack');
   let getBlue = document.querySelector('.cblue');
   let getRed = document.querySelector('.cred');
   let getGreen = document.querySelector('.cgreen');
 
-  function getColorBlack() {
+  function getColorBlack() {// está iniciando com o black selected
     getBlack.classList.add('selected');
   }
   getColorBlack();
@@ -40,6 +66,21 @@ window.onload = function () {
       getSelect.classList.remove('selected');
       getGreen.classList.add('selected');
   })
+// pintar os quadrados
+let getDivFather = document.querySelector('#pixel-board');
+
+getDivFather.addEventListener('click', function (event){
+  let pegaSelected = document.querySelector('.selected');
+  let colorEvent = event.target.backgroundColor;
+  let colorSelected = pegaSelected.style.backgroundColor;
+  if (event.target.id !== 'linePixels'){
+    if (colorEvent != colorSelected){
+      event.target.style.backgroundColor = colorSelected;
+    } 
+  }
+})
+
+
 
 
 }
