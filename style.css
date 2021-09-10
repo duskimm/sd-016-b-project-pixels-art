@@ -2,3 +2,42 @@ body {
   margin: 0;
   padding: 0;
 }
+
+#title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/** Source: https://www.w3schools.com/css/css3_flexbox.asp */
+#color-palette {
+  height: 50px;
+  width: 300px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+.color {
+  height: 100%;
+  width: 50px;
+  border: 1px black solid;
+  display: inline-block;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
