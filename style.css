@@ -40,16 +40,13 @@ body {
   height: 80px;
   width: 80px;
 }
-.quadro {
-  margin: 5px;;
+#pixel-board {
+  margin: 5px;
+
 }
 
-.linha1 .linha2 .linha3 .linha4 .linha5{
-  border: 2px solid black;
-  height: 80px;
-  width: 80px;
-  /* display: inline-block; */
-  margin: 0;
+#linha {
+  margin-top: 0px;
 }
 
 .bloco {
@@ -58,4 +55,12 @@ body {
   width: 80px;
   display: inline-block;
   margin: 0;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  display: inline-block;
+  /* background-color: white; */
 }
