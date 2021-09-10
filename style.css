@@ -9,6 +9,10 @@ body {
   border: 1px solid black;
 }
 
+#black {
+  background-color: black;
+}
+
 #magenta {
   background-color: magenta;
 }
