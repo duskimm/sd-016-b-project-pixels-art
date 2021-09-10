@@ -13,28 +13,28 @@ body {
   display: inline-block;
   margin: 5px;
 }
-#color-palette .preto {  
+#color-palette .black {  
   border: 1px solid black;
   background-color: black;
   height: 80px;
   width: 80px;
 }
 
-#color-palette .vermelho  { 
+#color-palette .red  { 
   border: 1px solid black;
   background-color: red;
   height: 80px;
   width: 80px;
 }
 
-#color-palette .azul  {  
+#color-palette .blue  {  
   border: 1px solid black;
   background-color: blue;
   height: 80px;
   width: 80px;
 }
 
-#color-palette .verde  {  
+#color-palette .green  {  
   border: 1px solid black;
   background-color: green;
   height: 80px;
