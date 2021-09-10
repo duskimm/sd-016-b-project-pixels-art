@@ -1,5 +1,5 @@
 const colors = [];
-let boardSize = 0;
+let boardSize = 5;
 
 function isInvalidColor(color) {
   return color.endsWith('100%, 100%)') || color.endsWith('0%, 0%)') || colors.includes(color);
@@ -72,32 +72,54 @@ function regeneratePixelBoard(newBoardSize) {
   generatePixelBoard();
 }
 
-function addEvents(inputColors, clearButton, boardSizeInput, generateBoardButton) {
+function clamp(min, value, max) {
+  let clampedValue = value;
+  if (clampedValue < min) clampedValue = 5;
+  if (clampedValue > max) clampedValue = 50;
+  return clampedValue;
+}
+
+function addInputColorsEvents(inputColors) {
   inputColors.forEach((inputColor) => {
     inputColor.addEventListener('click', (evt) => selectColor(evt, inputColors));
     if (!inputColor.classList.contains('fixed-color')) {
       inputColor.addEventListener('dblclick', (evt) => setColor(evt.target, getRandomColor()));
     }
   });
+}
 
+function addClearButtonEvents(clearButton) {
   clearButton.addEventListener('click', () => {
     regeneratePixelBoard(boardSize);
   });
+}
 
+function addBoardSizeInputEvents(boardSizeInput) {
   boardSizeInput.addEventListener('change', (evt) => {
+    const element = evt.target;
+    element.value = clamp(5, element.value, 50);
     boardSize = evt.target.value;
   });
+}
 
+function addGenerateBoardButtonEvents(generateBoardButton, boardSizeInput) {
   generateBoardButton.addEventListener('click', () => {
     regeneratePixelBoard(boardSizeInput.value);
   });
 }
+
+function addEvents(inputColors, clearButton, boardSizeInput, generateBoardButton) {
+  addInputColorsEvents(inputColors);
+  addClearButtonEvents(clearButton);
+  addBoardSizeInputEvents(boardSizeInput);
+  addGenerateBoardButtonEvents(generateBoardButton, boardSizeInput);
+}
+
 window.onload = () => {
   const inputColors = document.querySelectorAll('.color');
   const clearButton = document.getElementById('clear-board');
   const boardSizeInput = document.getElementById('board-size');
   const generateBoardButton = document.getElementById('generate-board');
-  boardSize = 5;
   generateColorPalette();
   generatePixelBoard();
   addEvents(inputColors, clearButton, boardSizeInput, generateBoardButton);
