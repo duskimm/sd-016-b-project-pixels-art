@@ -30,3 +30,17 @@ main {
 .yellow {
     background-color: rgb(255, 255, 0);
 }
+
+.pixel-line {
+    display: flex;
+    justify-content: center;
+}
+
+.pixel {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    display: inline-block;
+    line-height: initial;
+    height: 40px;
+    width: 40px;
+}
