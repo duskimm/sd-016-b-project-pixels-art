@@ -1,6 +1,8 @@
+
 const palette = document.getElementById('color-palette');
 const board = document.getElementById('pixel-board');
 
+//Cria a paletta que vamos pegar as cores
 function createPaletteAndAddColor() {
   const colors = ['black', 'red', 'blue', 'yellow'];
   for (const c of colors) {
@@ -9,11 +11,12 @@ function createPaletteAndAddColor() {
     palette.appendChild(color);
     color.style.backgroundColor = c;
     if (color.style.backgroundColor === 'black') {
-      color.classList.add('selected')
+      color.classList.add('selected');
     }
   }
 }
 
+// Criando os pixels do tabuleiro
 function createPixels(line, column) {
   for (let l = 0; l < line; l += 1) {
     const lines = document.createElement('div');
@@ -28,6 +31,16 @@ function createPixels(line, column) {
   }
 }
 
+//Definindo div como selecionada
+palette.addEventListener('click', function(event) {
+  if (event.target.id !== 'color-palette') {
+    for (let child of palette.children) {
+      child.classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  } 
+})
 
 createPaletteAndAddColor();
 createPixels(5, 5);
+
