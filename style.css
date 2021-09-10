@@ -5,29 +5,15 @@
   border: 1px black solid;
 }
 
-#color-palette :nth-child( 1 ) {
-  background-color: black;
-  content-visibility: hidden;
-}
-
-#color-palette :nth-child( 2 ) {
-  background-color: red;
-  content-visibility: hidden;
-}
-
-#color-palette :nth-child( 3 ) {
-  background-color: blue;
-  content-visibility: hidden;
-}
-
-#color-palette :nth-child( 4 ) {
-  background-color: green;
-  content-visibility: hidden;
-}
-
+/* ref: Author: Josh Crozies Obj: removing spaces between divs Src: https://stackoverflow.com/questions/19038799/why-is-there-an-unexplainable-gap-between-these-inline-block-div-elements */
 #pixel-board {
   width: 210px;
   font-size: 0;
+}
+
+.color-pallete {
+  height: 40px;
+  vertical-align: top;
 }
 
 .pixel {
@@ -45,5 +31,3 @@
 #board-size {
   width: 53px;
 }
-
-

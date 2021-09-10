@@ -15,6 +15,28 @@ function creatingPixels() {
   }
 }
 
+// ref(1): https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+// ref(2): http://devfuria.com.br/javascript/numeros-aleatorios/
+// ref(3): https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+function randomColor() {
+  return parseInt(Math.random() * 255, 10);
+}
+
+function ParameterColor() {
+  const r = randomColor();
+  const g = randomColor();
+  const b = randomColor();
+  return `rgb(${r},${g},${b})`;
+}
+
+function palletsColors() {
+  getEachColorPalette[0].style.backgroundColor = 'black';
+  for (let i = 1; i < getEachColorPalette.length; i += 1) {
+    getEachColorPalette[i].style.backgroundColor = ParameterColor();
+  }
+}
+palletsColors();
+
 function selectingColor(event) {
   const eventSelected = event;
   for (let i = 0; i < getEachColorPalette.length; i += 1) {
@@ -32,7 +54,7 @@ creatingPixels();
 function printingPixel(event) {
   const getSelected = document.getElementsByClassName('selected');
   const eventSelected = event;
-  const colorSelected = getSelected[0].innerHTML;
+  const colorSelected = getSelected[0].style.backgroundColor;
   eventSelected.target.style.backgroundColor = colorSelected;
 }
 
