@@ -12,7 +12,7 @@ body {
   color: rgb(53, 23, 87);
   font-size: 32px;
   text-align: center;
-  padding: 20px;
+  padding: 40px;
 }
 
 #color-palette {
@@ -25,5 +25,18 @@ body {
   display: inline-block;
   height: 80px;
   margin: 0 4px;
+  width: 80px;
+}
+
+#pixel-board {
+  margin: 40px auto;
+  width: 50%;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  float: left;
+  height: 80px;
   width: 80px;
 }
