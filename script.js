@@ -19,7 +19,7 @@ function createLines() {
 
 function createPixels() {
   const lines = document.querySelectorAll('.line');
-  for (const line of lines) {
+  for (const line in lines) {
     for (let index = 0; index < 5; index += 1) {
       line.append(newChild('div', '', 'pixel white', ''));
     }
@@ -37,7 +37,7 @@ function changeSelectedPosition(event) {
 function paintPixels(event) {
   if (event.target.classList.contains('pixel')) {
     const selectedColor = document.querySelector('.selected');
-    let classColor = selectedColor.classList;
+    const classColor = selectedColor.classList;
     event.target.classList.remove(event.target.classList[1]);
     event.target.classList.add(classColor[1]);
   }
@@ -56,7 +56,7 @@ window.onload = function () {
 
 document.querySelector('#clear-board').addEventListener('click', function () {
   const pixels = document.getElementsByClassName('pixel');
-  for (const pixel of pixels) {
+  for (const pixel in pixels) {
     pixel.classList.remove(pixel.classList[1]);
     pixel.classList.add('white');
   }
