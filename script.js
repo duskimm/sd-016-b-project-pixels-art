@@ -17,7 +17,7 @@ function addClass(element, newClass) {
 }
 
 function removeClass(element, delClass) {
-  element.classList.remove(newClass);
+  element.classList.remove(delClass);
 }
 
 function plugHtml(fatherElement, sonElement) {
@@ -75,8 +75,25 @@ function paintingPixel() {
   allPixels.forEach((pixel) => {
     pixel.addEventListener('click', (event) => {
       event.target.style.backgroundColor = user.paintingColor;
-    })
-  })
+    });
+  });
+}
+
+function resetSelection(arr) {
+  for (let color of arr) {
+    removeClass(color, 'selected');
+  }
+}
+
+function changeSelection() {
+  const palette = getAll('.color');
+
+  palette.forEach((color) => {
+    color.addEventListener('click', (event) => {
+      resetSelection(palette);
+      addClass(event.target, 'selected');
+    });
+  });
 }
 
 window.onload = () => {
@@ -84,4 +101,5 @@ window.onload = () => {
   generatorPixelLine();
   getColor();
   paintingPixel();
+  changeSelection();
 }
