@@ -25,3 +25,12 @@
 .color:nth-child(3) {
   background-color: green;
 }
+
+.pixel {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  margin: 0px;
+  background-color: white;
+}
