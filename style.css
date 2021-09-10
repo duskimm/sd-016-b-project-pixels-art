@@ -9,12 +9,13 @@
 .name-colors {
   display: inline-block;
 }
-#title
 
-#color-palette
+#title {}
+
+#color-palette {}
 
 #color1 {
-  background-color: #E5B083;
+  background-color: #e5b083;
 }
 
 #color2 {
