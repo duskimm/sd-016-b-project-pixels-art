@@ -12,10 +12,9 @@ let pixelBoard = document.getElementById('pixel-board');
 let lines = document.getElementsByClassName('pixel-line');
 
 // função que cria os pixels de acordo com o input recebido
-function generateLines() {
-  let input = parseInt(document.getElementById('board-size').value);
-  for (let index = 1; index <= input; index += 1) {
-    createDiv('pixel-line', pixelBoard);
+function generateLines(input) {
+    for (let index = 1; index <= input; index += 1) {
+        createDiv('pixel-line', pixelBoard);
   }
 
   document.getElementById('board-size').value = '';
@@ -32,12 +31,20 @@ function generatePixels() {
 // Gera os pixels iniciais
 generatePixels();
 
+
+
 // Função que checa se já existe um quadro de pixels
 function checkBoard() {
-  pixelBoard.innerHTML = '';
-  generateLines();
-  generatePixels();
-  console.log(pixelBoard);
+  let input = document.getElementById('board-size').value;
+
+  if (parseInt(input) <= 0 || input === '') {
+    alert('Board inválido!');
+  } else {
+    pixelBoard.innerHTML = '';
+    generateLines(input);
+    generatePixels();
+    console.log(pixelBoard);
+  }
 
 }
 
