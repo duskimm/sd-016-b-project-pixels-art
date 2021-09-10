@@ -16,9 +16,6 @@ window.onload = function createPixelArtBoard() {
 
 const colorBlack = document.querySelector('#black');
 colorBlack.classList.add('selected');
-const colorBlue = document.querySelector('#blue');
-const colorGreen = document.querySelector('#green');
-const colorRed = document.querySelector('#red');
 
 function colorPicker(event) {
   const color = event.target;
@@ -27,7 +24,9 @@ function colorPicker(event) {
   color.classList.add('selected');
 }
 
-colorBlue.addEventListener('click', colorPicker);
-colorGreen.addEventListener('click', colorPicker);
-colorRed.addEventListener('click', colorPicker);
-colorBlack.addEventListener('click', colorPicker);
+const colors = document.getElementsByTagName('li');
+
+for (let index = 0; index < colors.length; index += 1) {
+  const currentColor = colors[index];
+  currentColor.addEventListener('click', colorPicker);
+}
