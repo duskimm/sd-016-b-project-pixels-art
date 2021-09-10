@@ -1,0 +1,27 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+} 
+
+.main {
+  background-color: gainsboro;
+}
+
+.color {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+#pixel-board {
+  margin: 10px;
+}
+.pixel {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  display: inline-block;
+}
