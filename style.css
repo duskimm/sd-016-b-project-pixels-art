@@ -18,9 +18,21 @@
 }
 
 .pink {
-    background-color: pink;
+  background-color: pink;
 }
 
 .black {
   background-color: black;
+}
+
+.linha {
+  height: 50px;
+}
+
+.pixel {
+  height: 50px;
+  border: 1px solid black;
+  display: inline-block;
+  width: 50px;
+  background-color: white;
 }

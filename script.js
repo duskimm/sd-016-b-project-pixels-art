@@ -18,9 +18,37 @@ function addClassColor(cores) {
   });
 }
 
-// Sugestão fazer ao final do exercício colocar a cor via JS assim semppre que eu adicionar uma cor ao array ele já vai ser incluido mesmo sem ter a classe lá no css.
 // Cores que eu vou usar para criar as divs da paleta dinamicamente.
 const colors = ['black', 'red', 'yellow', 'pink'];
 
 // Chama a função que adiciona a classe de cor ao criar um elemento da paleta
 addClassColor(colors);
+
+// ******************************************************************************************** //
+// 4 - Adicione à página um quadro de pixels, com 25 pixels.
+// Função que cria a coluna
+function createColumn(elementoPai, qtdColunas) {
+  let coluna;
+  for (let index = 0; index < qtdColunas; index += 1) {
+    coluna = document.createElement('div');
+    coluna.classList.add('pixel');
+    // coluna.classList.add('coluna');
+    elementoPai.appendChild(coluna);
+  }
+}
+
+// Pegando a div pixel-board
+const pixelBoard = document.getElementById('pixel-board');
+// Função que cria a linha
+function createLine(qtdLinhas) {
+  for (let index = 0; index < qtdLinhas; index += 1) {
+    const linha = document.createElement('div');
+    // linha.classList.add('pixel');
+    linha.classList.add('linha');
+    pixelBoard.appendChild(linha);
+
+    createColumn(linha, 5);
+  }
+}
+
+createLine(5);
