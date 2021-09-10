@@ -19,7 +19,7 @@ body {
 }
 
 .selected {
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 #pixel-board {

@@ -11,9 +11,23 @@ function createColorPallete() {
     const colorDiv = document.createElement('div');
     colorDiv.style.backgroundColor = color;
     colorDiv.classList.add('color');
+
     if (color === selectedColor) {
       colorDiv.classList.add('selected');
     }
+
+    colorDiv.addEventListener('click', function (event) {
+      const previousSelected = document.querySelector('.selected');
+
+      if (previousSelected) {
+        previousSelected.classList.remove('selected');
+      }
+
+      colorDiv.classList.add('selected');
+      
+      selectedColor = color;
+    })
+
     container.appendChild(colorDiv);
   }
 
@@ -28,6 +42,16 @@ function createPixelBoard() {
     for (let y = 1; y <= boardHeight; y++) {
       const pixel = document.createElement('div');
       pixel.classList.add('pixel');
+
+      pixel.addEventListener('click', function (event) {
+        const appliedStyles = window.getComputedStyle(pixel);
+        if (selectedColor != appliedStyles.backgroundColor) {
+          pixel.style.backgroundColor = selectedColor;
+        } else {
+          pixel.style.backgroundColor = white;
+        }
+      })
+
       frame.appendChild(pixel);
     }
   }
