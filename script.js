@@ -12,17 +12,25 @@ function criaDivCores (array){
 }
 criaDivCores();
 
-function criaQuadro (){
-    let numeroDeColunas = 5;
-    let numeroDeLinhas =5;
-    let quadraddo = null;
-    let corpoPai = document.getElementsByTagName('body')[0];
+let n = 5;
+let quadro = document.getElementById('pixel-board')
 
-    for (let i=0; i < numeroDeColunas; i+=1){
+function criaColuna(){
+    for (let i=1; i < n; i+=1){
         let pixel = document.createElement('div');
-        pixel.className="pixel";
-        corpoPai.appendChild(pixel)
+        pixel.className= "pixel";
+        quadro.appendChild(pixel);
     }
 
 }
-criaQuadro()
+criaColuna()
+
+function criaLinha(){
+for (let i=0; i < n; i+=1){
+    let pixel = document.createElement('div');
+    pixel.className= "pixel linha";
+    quadro.appendChild(pixel);
+}
+}
+
+criaLinha()
