@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+}
+
+.color {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+#magenta {
+  background-color: magenta;
+}
+
+#violet {
+  background-color: violet;
+}
+
+#darkorchid {
+  background-color: darkorchid;
+}
+
+#blueviolet {
+  background-color: blueviolet;
+}
