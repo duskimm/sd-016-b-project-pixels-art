@@ -1,15 +1,15 @@
 // Cria os pixels
 function createDiv(className, parent) {
-  let newPixel = document.createElement('div');
+  const newPixel = document.createElement('div');
   newPixel.className = className;
   parent.appendChild(newPixel);
 }
 
-let generateButton = document.getElementById('generate-board');
+const generateButton = document.getElementById('generate-board');
 
-let pixelBoard = document.getElementById('pixel-board');
+const pixelBoard = document.getElementById('pixel-board');
 
-let lines = document.getElementsByClassName('pixel-line');
+const lines = document.getElementsByClassName('pixel-line');
 
 // função que cria os pixels de acordo com o input recebido
 function generateLines(input) {
@@ -33,15 +33,15 @@ generatePixels();
 
 // Função que checa se já existe um quadro de pixels
 function checkBoard() {
-  let input = document.getElementById('board-size').value;
+  const input = document.getElementById('board-size').value;
 
   if (input === '') {
     alert('Board inválido!');
-  } else if (parseInt(input) < 5) {
+  } else if (parseInt(input, 10) < 5) {
     pixelBoard.innerHTML = '';
     generateLines(5);
     generatePixels();
-  } else if (parseInt(input) > 50) {
+  } else if (parseInt(input, 10) > 50) {
     pixelBoard.innerHTML = '';
     generateLines(50);
     generatePixels();
@@ -55,7 +55,7 @@ function checkBoard() {
 
 generateButton.addEventListener('click', checkBoard);
 
-let colors = document.getElementsByClassName('color');
+const colors = document.getElementsByClassName('color');
 
 // Função que remove/adiciona a classe selected as cores
 function selectColor(event) {
@@ -72,28 +72,24 @@ for (let index = 0; index < colors.length; index += 1) {
 // Função que pinta os pixels
 
 function addColor(event) {
-    if (event.target.classList.contains('pixel') ) {
-        let selectedItem = document.querySelector('.selected');
-        let selectedColor = window.getComputedStyle(selectedItem).getPropertyValue('background-color');
-        event.target.style.backgroundColor = selectedColor;
-    }
+  if (event.target.classList.contains('pixel')) {
+    const selectItem = document.querySelector('.selected');
+    const color = window.getComputedStyle(selectItem).getPropertyValue('background-color');
+    const pixel = event.target;
+    pixel.style.backgroundColor = color;
+  }
 }
 
 document.addEventListener('click', addColor, false);
 
-// document.querySelectorAll('.pixel').forEach(item => {
-//   item.addEventListener('click', event => {
-//   });
-// });
-
 // Função que limpa o quadro
 function clearBoard() {
-  let pixels = document.getElementsByClassName('pixel');
+  const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
   }
 }
 
-let clearButton = document.getElementById('clear-board');
+const clearButton = document.getElementById('clear-board');
 
 clearButton.addEventListener('click', clearBoard);
