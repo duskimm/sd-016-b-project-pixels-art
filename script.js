@@ -1,11 +1,18 @@
 window.onload = function (params) {
-    let paletaN = 5;
+    let paletaN = 4;
     let linhas = 5;
+    let unica = [];
 
     // configura a paleta de cores
     for (let i = 0; i < paletaN; i += 1){
         let div = document.createElement('div');
-        div.style.backgroundColor = cor_aleatoria_lista();
+        let cor = cor_aleatoria_lista();
+        while(cor == 'white' || cor == 'black' ||
+            unica.includes(cor)){
+            cor = cor_aleatoria_lista();
+        }
+        unica.push(cor);
+        div.style.backgroundColor = cor;
         div.classList.add('color');
         
         //se for o primeiro é preto e classe += 'selected'
@@ -22,7 +29,7 @@ window.onload = function (params) {
         linha.classList.add('linha');
         for (let i = 0; i < linhas; i += 1) {
             let div = document.createElement('div');
-            div.style.backgroundColor = cor_aleatoria_lista();
+            div.style.backgroundColor = 'white';//cor_aleatoria_lista();
             div.classList.add('pixel');
             linha.appendChild(div);
         }
@@ -81,3 +88,5 @@ function cor_aleatoria_rgb(r,g,b) {
         ba = b || Math.random() * 255;
     return "rgb("+ ra + "," + ga + "," + ba + ")";
 }
+
+// não esqueça a linha em branco no final do arquivo

@@ -31,7 +31,7 @@ header {
 .linha {
     margin: 0;
     padding: 0;
-    height: 42px;
+    height: 40px;
 }
 
 .pixel {
@@ -40,3 +40,5 @@ header {
     border: 1px black solid;
     display: inline-block;
 }
+
+/* não esqueça da linha em branco no final */
