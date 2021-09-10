@@ -326,13 +326,13 @@ Neste projeto, você implementará um editor de arte com pixels.
 
 ### 4 - Adicione à página um quadro de pixels, com 25 pixels.
 
-- O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
+- O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento; OK
 
-- O quadro de "pixels" deve possuir o `id` denominado `pixel-board`, ao passo que cada "pixel" individual dentro do quadro deve possuir a `classe` denominada `pixel`;
+- O quadro de "pixels" deve possuir o `id` denominado `pixel-board`, ao passo que cada "pixel" individual dentro do quadro deve possuir a `classe` denominada `pixel`;OK
 
-- A cor inicial dos "pixels" dentro do quadro, ao abrir a página, deve ser branca;
+- A cor inicial dos "pixels" dentro do quadro, ao abrir a página, deve ser branca;OK
 
--  O quadro de "pixels" deve aparecer abaixo da paleta de cores.
+-  O quadro de "pixels" deve aparecer abaixo da paleta de cores.OK
 
 **O que será verificado:**
 
@@ -348,9 +348,9 @@ Neste projeto, você implementará um editor de arte com pixels.
 
 **O que será verificado:**
 
-- Verifica se o quadro de pixels tem altura e comprimento de 5 elementos
+- Verifica se o quadro de pixels tem altura e comprimento de 5 elementos.OK
 
-- Verifica se 40 pixels é o tamanho total do elemento, incluindo seu conteúdo e excluindo a borda preta, que deve ser criada à parte.
+- Verifica se 40 pixels é o tamanho total do elemento, incluindo seu conteúdo e excluindo a borda preta, que deve ser criada à parte.OK
 
 ### 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
 
