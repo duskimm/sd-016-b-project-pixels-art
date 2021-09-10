@@ -25,6 +25,7 @@ section .orange {
 /* Pixel board */
 #pixel-board {
   width: 250px;
+	margin-top: 10px;
 }
 
 .pixel {
