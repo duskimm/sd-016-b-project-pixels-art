@@ -1,19 +1,20 @@
-window.onload = function() {
-  let numberOfLines = 25;
+window.onload = function () {
+  const numberOfLines = 25;
 
   function createDivs(numberOfDivs) {
     for (let index = 1; index <= numberOfDivs; index += 1) {
-      let pixelDiv = document.createElement('div');
+      const pixelDiv = document.createElement('div');
       pixelDiv.className = 'pixel';
       pixelDiv.style.backgroundColor = 'white';
       pixelDiv.style.border = '1px solid black';
-      let board = document.getElementById('pixel-board');
+      const board = document.getElementById('pixel-board');
       board.appendChild(pixelDiv);
     }
   }
-  
+
   createDivs(numberOfLines);
 
+};
   // function createPixels(className) {     //className 'pixels';
   //   let pixel = document.createElement('div');
   //   pixel.className = className;
@@ -31,4 +32,3 @@ window.onload = function() {
   // }
 
   // addPixelsToBoard();
-}
