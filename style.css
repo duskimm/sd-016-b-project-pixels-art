@@ -20,3 +20,20 @@
 #yellow {
   background-color: yellow;
 }
+/* Procurei no stackoverflow para conseguir reduzir os espaçaos entre os
+inline-blocks
+link: https://stackoverflow.com/questions/5184512/cant-get-rid-of-spaces-between-inline-block-elements*/
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  float: left;
+}
+
+#pixel-board {
+  background-color: white;
+  height: 210px;
+  width: 210px;
+}
