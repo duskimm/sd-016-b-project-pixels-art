@@ -24,15 +24,15 @@
 #pixel-board {
   border: solid black 1px;
   font-size: 0;
-  width: 260px;
-  height: 260px;
+  width: 210px;
+  height: 210px;
 }
 
 .pixel {
   background-color: white;
   border: solid black 1px;
   display: inline-block;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 
