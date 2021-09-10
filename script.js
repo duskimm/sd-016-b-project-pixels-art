@@ -31,21 +31,26 @@ function generatePixels() {
 // Gera os pixels iniciais
 generatePixels();
 
-
-
 // Função que checa se já existe um quadro de pixels
 function checkBoard() {
   let input = document.getElementById('board-size').value;
 
-  if (parseInt(input) <= 0 || input === '') {
+  if (input === '') {
     alert('Board inválido!');
+  } else if (parseInt(input) < 5) {
+    pixelBoard.innerHTML = '';
+    generateLines(5);
+    generatePixels();
+  } else if (parseInt(input) > 50) {
+    pixelBoard.innerHTML = '';
+    generateLines(50);
+    generatePixels();
   } else {
     pixelBoard.innerHTML = '';
     generateLines(input);
     generatePixels();
     console.log(pixelBoard);
   }
-
 }
 
 generateButton.addEventListener('click', checkBoard);
