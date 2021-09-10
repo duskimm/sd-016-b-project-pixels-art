@@ -4,22 +4,6 @@
   width: 50px;
   height: 50px;
 }
-
-#red {
-  background-color: red;
-}
-
-#black {
-  background-color: black;
-}
-
-#grenn {
-  background-color: green;
-}
-
-#yellow {
-  background-color: yellow;
-}
 /* Procurei no stackoverflow para conseguir reduzir os espaçaos entre os
 inline-blocks
 link: https://stackoverflow.com/questions/5184512/cant-get-rid-of-spaces-between-inline-block-elements*/
