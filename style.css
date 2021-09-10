@@ -1,3 +1,6 @@
+body {
+    text-align: center;
+}
 
 #title {
   text-align: center;
@@ -5,6 +8,7 @@
 
 #color-palette {
   text-align: center;
+  height: 40px;
 }
 
 .color{
@@ -31,16 +35,13 @@
 }
 
 #pixel-board {
-  border: 1px solid black;
-  display: inline-block;
+    height: 226px;
 }
 
 .pixel {
-  background-color: white;
-  height: 40px;
-  width: 40px;
-}
-
-.square {
-  text-align: center;
-}
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid black;
+  }
