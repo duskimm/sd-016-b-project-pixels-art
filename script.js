@@ -29,10 +29,16 @@ for (let i = 0; i < colors.length; i += 1) {
 }
 
 // Task 4 functions
+const n = 5;
 const pixerBoard = q('#pixel-board');
-appendStuf(pixerBoard, 'div', 'pixelLine', 5);
+appendStuf(pixerBoard, 'div', 'pixelLine', n);
 
 const pixelLines = qAll('.pixelLine');
 for (let i = 0; i < pixelLines.length; i += 1) {
-  appendStuf(pixelLines[i], 'div', 'pixel', 5);
+  appendStuf(pixelLines[i], 'div', 'pixel', n);
 }
+
+// task 5 functions
+const pixelBoard = q('#pixel-board');
+const boardWidth = 40 * n + (n) * 2;
+pixelBoard.style.width = `${boardWidth}px`;
