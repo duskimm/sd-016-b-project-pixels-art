@@ -37,7 +37,7 @@ setId(colorPalette, 'color-palette');
 
 addElementToDOM(pageBody, colorPalette);
 
-const numberOfColors = 5;
+const numberOfColors = 4;
 
 for (let index = 0; index < numberOfColors; index += 1) {
   const color = creatElementHTML('div');
@@ -49,10 +49,8 @@ const colorList = document.getElementsByClassName('color');
 
 setClass(colorList[0], 'black');
 
-setClass(colorList[1], 'blue');
+setClass(colorList[1], 'pink');
 
-setClass(colorList[2], 'pink');
+setClass(colorList[2], 'yellow');
 
-setClass(colorList[3], 'yellow');
-
-setClass(colorList[4], 'green');
+setClass(colorList[3], 'green');
