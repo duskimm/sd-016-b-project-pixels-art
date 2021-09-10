@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 #color-palette {
   display: flex;
 }
@@ -8,12 +12,13 @@
   width: 25px;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
-.uls{
+.uls {
   display: flex;
+  margin: 0;
 }
 
 .pixel {
@@ -21,4 +26,6 @@ li{
   height: 40px;
   width: 40px;
   background-color: white;
+  margin: 0;
+  padding: 0;
 }
