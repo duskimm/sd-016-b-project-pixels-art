@@ -5,8 +5,8 @@ const paletaDeCores = document.createElement('section');
 const cores = document.getElementsByClassName('color');
 const pixelBoard = document.createElement('div');
 const pixels = document.getElementsByClassName('pixel');
+const clear = document.createElement('button');
 
-document.body.style.backgroundColor = 'coral'
 /* Primeira cor */
 const corPreta = () => {
   const cor1 = document.querySelectorAll('.color');
@@ -64,13 +64,28 @@ const generateRandomColor = () => {
 };
 generateRandomColor();
 
+/* Botão de Limpar */
+document.body.appendChild(clear);
+clear.innerText = 'Limpar';
+clear.id = 'clear-board';
+clear.style.margin = '40px';
+
+const clearBoard = () => {
+  clear.addEventListener('click', function () {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
+};
+clearBoard();
+
 /* Quadro de pixels */
 document.body.appendChild(pixelBoard);
 pixelBoard.id = 'pixel-board';
 pixelBoard.classList.add('container');
 pixelBoard.style.maxWidth = '200px';
 pixelBoard.style.height = '200px';
-pixelBoard.style.margin = '100px auto';
+pixelBoard.style.margin = 'auto';
 pixelBoard.style.justifyContent = 'center';
 pixelBoard.style.flexWrap = 'wrap';
 
