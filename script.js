@@ -103,24 +103,19 @@ function criaTabela(tamanho) {
   }
 }
 
-function verificaIntervalo(inputValue) {
-  let valorGrade = parseInt(inputValue, 10);
-  if (valorGrade < 5) {
-    valorGrade = 5;
-  } else if (valorGrade > 50) {
-    valorGrade = 50;
-  }
-  return valorGrade;
-}
-
 // cria tabela atraves do botão VQV
 btnGrade.addEventListener('click', () => {
   const listBoard = document.getElementById(PIXEL_BOARD);
-  const valorGrade = tamanhoInput.value;
+  let valorGrade = tamanhoInput.value;
   if (valorGrade === '') {
     alert('Board inválido!');
   } else {
-    verificaIntervalo(tamanhoInput.valorGrade);
+    valorGrade = parseInt(tamanhoInput.value);
+    if (valorGrade < 5) {
+      valorGrade = 5;
+    } else if (valorGrade > 50) {
+      valorGrade = 50;
+    }
     for (let j = 0; j < listBoard.children.length; j += 1) {
       listBoard.remove(listBoard.children[j]);
     }
