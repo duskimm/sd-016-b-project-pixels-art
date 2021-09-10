@@ -1,0 +1,33 @@
+#paleta1{
+  background-color: black;
+}
+
+#paleta2{
+  background-color: red;
+}
+
+#paleta3{
+  background-color: blue;
+}
+
+#paleta4{
+  background-color: green;
+}
+
+.squareSize{
+  border: solid black 1px;
+  width: 80px;
+  height: 80px;
+  display: inline-block;;
+}
+
+#pallete-container{
+  border: solid 1px red;
+  height: 80px;
+}
+
+.squareStyle{
+  width: 40px;
+  height: 40px;
+  border: 1px black;
+}
