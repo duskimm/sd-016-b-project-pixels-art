@@ -34,13 +34,13 @@ const user = {
 // functions for the project
 
 function validLimit(limit) {
+  let newLimit = limit;
   if (limit > 50) {
-    return 50
+    newLimit = 50;
   } else if (limit < 5) {
-    return 5
-  } else {
-    return limit;
+    newLimit = 5;
   }
+  return newLimit;
 }
 
 function generatorPixelLine(limit) {
@@ -146,8 +146,8 @@ function applyNewBoardSize() {
       alert('Board inválido!');
     } else {
       resetCanvas();
-      generatorPixelRow(parseInt(user.boardSize));
-      generatorPixelLine(parseInt(user.boardSize));
+      generatorPixelRow(parseInt(user.boardSize, 10));
+      generatorPixelLine(parseInt(user.boardSize, 10));
     }
   });
 }
@@ -156,7 +156,8 @@ function randomColorGenerator() {
   const colors = getAll('.color');
 
   for (let i = 1; i < colors.length; i += 1) {
-    colors[i].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255},${Math.random() * 255})`;
+    colors[i].style.backgroundColor = `rgb(${Math.random() * 255},
+     ${Math.random() * 255},${Math.random() * 255})`;
   }
 }
 
