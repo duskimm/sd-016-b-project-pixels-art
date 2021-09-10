@@ -28,15 +28,16 @@ function plugHtml(fatherElement, sonElement) {
 
 const user = {
   paintingColor: 'black',
+  boardSize: 5,
 };
 
 // functions for the project
 
-function generatorPixelLine() {
+function generatorPixelLine(limit) {
   const rows = getAll('.pixel-row');
 
   rows.forEach((row) => {
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < limit; i += 1) {
       const pixel = createElement('div');
       addClass(pixel, 'pixel');
       plugHtml(row, pixel);
@@ -44,10 +45,10 @@ function generatorPixelLine() {
   });
 }
 
-function generatorPixelRow() {
+function generatorPixelRow(limit) {
   const canvas = getOne('#pixel-board');
 
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < limit; i += 1) {
     const row = createElement('div');
     addClass(row, 'pixel-row');
     plugHtml(canvas, row);
@@ -108,11 +109,44 @@ function clearPainting() {
   });
 }
 
+function customizeBoardSize() {
+  const newBoardSize = getOne('#generate-board');
+
+  newBoardSize.addEventListener('input', (event) => {
+    user.boardSize = event.target.value;
+  });
+}
+
+function resetCanvas() {
+  const board = getOne('#pixel-board');
+  const allPixels = getAll('.pixel-row');
+
+  allPixels.forEach((pixel) => {
+    board.removeChild(pixel);
+  });
+}
+
+function applyNewBoardSize() {
+  const vqvButton = getOne('#vqv');
+
+  vqvButton.addEventListener('click', () => {
+    if (Number.isInteger(user.boardSize)) {
+      alert('Board inválido!');
+    } else {
+      resetCanvas();
+      generatorPixelRow(parseInt(user.boardSize));
+      generatorPixelLine(parseInt(user.boardSize));
+    }
+  });
+}
+
 window.onload = () => {
-  generatorPixelRow();
-  generatorPixelLine();
+  generatorPixelRow(5);
+  generatorPixelLine(5);
   getColor();
   paintingPixel();
   changeSelection();
   clearPainting();
+  customizeBoardSize();
+  applyNewBoardSize();
 };
