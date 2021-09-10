@@ -8,41 +8,37 @@ body {
 .paleta {
   margin: auto;
 }
-
-.bloco-preto {
-  border: 5px solid black;
-  height: 80px;
-  width: 80px;
+#color-palette{
+  /* border: 1px solid black; */  
   display: inline-block;
   margin: 5px;
+}
+#color-palette .preto {  
+  border: 1px solid black;
   background-color: black;
-}
-
-.bloco-vermelho {
-  border: 5px solid black;
   height: 80px;
   width: 80px;
-  display: inline-block;
-  margin: 5px;
+}
+
+#color-palette .vermelho  { 
+  border: 1px solid black;
   background-color: red;
-}
-
-.bloco-azul {
-  border: 5px solid black;
   height: 80px;
   width: 80px;
-  display: inline-block;
-  margin: 5px;
+}
+
+#color-palette .azul  {  
+  border: 1px solid black;
   background-color: blue;
-}
-
-.bloco-verde {
-  border: 5px solid black;
   height: 80px;
   width: 80px;
-  display: inline-block;
-  margin: 5px;
+}
+
+#color-palette .verde  {  
+  border: 1px solid black;
   background-color: green;
+  height: 80px;
+  width: 80px;
 }
 .quadro {
   margin: 5px;;
