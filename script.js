@@ -56,8 +56,8 @@ window.onload = () => {
 
 document.querySelector('#clear-board').addEventListener('click', () => {
   const pixels = document.getElementsByClassName('pixel');
-  for (const pixel of pixels) {
-    pixel.classList.remove(pixel.classList[1]);
-    pixel.classList.add('white');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].classList.remove(pixels[index].classList[1]);
+    pixels[index].classList.add('white');
   }
 });
