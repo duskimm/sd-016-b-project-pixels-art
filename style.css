@@ -2,6 +2,11 @@
   margin: 0%;
 }
 
+ul{
+  display: flex;
+  cursor: pointer;
+}
+
 #color-palette{
   margin-top: 10px;
 }
@@ -17,12 +22,29 @@ h1{
   display: inline-block;;
 }
 
+#palettOne{
+  background-color: black;
+}
+
+#palettTwo{
+  background-color: green;
+}
+
+#palettThree{
+  background-color: red;
+}
+
+#palettFour{
+  background-color: yellow;
+}
+
  .pixel{
   width: 40px;
   height: 40px;
   border: solid black 1px;
   background-color: white;
   display: table-cell;
+  cursor: pointer;
 }
 
 #pixel-board{
