@@ -1,0 +1,42 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+
+header {
+    background-color: darkcyan;
+}
+
+#title {
+    background-color: aqua;
+}
+
+#color-palette {
+    background-color: chartreuse;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    border: 1px black solid;
+    display: inline-block;
+}
+
+#pixel-board {
+    background-color: cornflowerblue;
+}
+
+.linha {
+    margin: 0;
+    padding: 0;
+    height: 42px;
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: 1px black solid;
+    display: inline-block;
+}
