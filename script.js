@@ -1,3 +1,4 @@
+// Adicionar classe selected
 const colors = document.querySelectorAll('.color');
 for (let index = 0; index < colors.length; index += 1) {
   colors[index].addEventListener('click', addClassName);
@@ -8,3 +9,13 @@ for (let index = 0; index < colors.length; index += 1) {
 		}
 		selected.classList.add("selected");
 	}}
+
+// Pintar cores
+const pixels = document.querySelectorAll('.pixel');
+for (let index = 0; index < pixels.length; index += 1) {
+	pixels[index].addEventListener('click', function (event) {
+		let selected = event.target;
+		let checkClass = document.querySelector('.selected');
+		selected.style.backgroundColor = checkClass.classList[0];
+	})
+}
