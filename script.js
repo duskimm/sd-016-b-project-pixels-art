@@ -1,3 +1,5 @@
+// functions for working with elements
+
 function getOne(element) {
   return document.querySelector(element);
 }
@@ -22,6 +24,31 @@ function plugHtml(fatherElement, sonElement) {
   fatherElement.appendChild(sonElement);
 }
 
-window.onload = () => {
+// functions for the project
 
+function generatorPixelLine() {
+  const rows = getAll('.pixel-row');
+
+  rows.forEach((row) => {
+    for (let i = 0; i < 5; i += 1) {
+      let pixel = createElement('div');
+      addClass(pixel, 'pixel');
+      plugHtml(row, pixel);
+    }
+  });
+}
+
+function generatorPixelRow() {
+  const canvas = getOne('#pixel-board');
+
+  for (let i = 0; i < 5; i += 1) {
+    let row = createElement('div');
+    addClass(row, 'pixel-row');
+    plugHtml(canvas, row);
+  }
+}
+
+window.onload = () => {
+  generatorPixelRow();
+  generatorPixelLine();
 }
