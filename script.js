@@ -54,3 +54,22 @@ setClass(colorList[1], 'pink');
 setClass(colorList[2], 'yellow');
 
 setClass(colorList[3], 'green');
+
+const pixelsBoard = creatElementHTML('div');
+
+setId(pixelsBoard, 'pixel-board');
+
+addElementToDOM(pageBody, pixelsBoard);
+
+const pixelsBoardSide = 5;
+
+for (let line = 0; line < pixelsBoardSide; line += 1) {
+  const pixelLine = creatElementHTML('div');
+  addElementToDOM(pixelsBoard, pixelLine);
+
+  for (let column = 0; column < pixelsBoardSide; column += 1) {
+    const pixelColumn = creatElementHTML('div');
+    pixelColumn.classList.add('pixel', 'white');
+    addElementToDOM(pixelLine, pixelColumn);
+  }
+}

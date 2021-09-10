@@ -21,3 +21,13 @@
 .green {
   background-color: rgb(6, 214, 160);
 }
+
+.white {
+  background-color: white;
+}
+
+.pixel {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
