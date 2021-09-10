@@ -1,39 +1,39 @@
-/**
-*Função que seleciona a cor e salva no local storage
-*/
-function selectColorBox(event) {
-  // event.preventDefault();
-  console.log(event.target.id);
-  localStorage.setItem('selectedColor', event.target.id);
-}
+let colorSelected = document.querySelectorAll('#color-palette .color');
 
-const selectedColor = document.querySelectorAll('.color');
-const savedColor = localStorage.getItem('selectedColor');
-// console.log("Cor salva no sistema " + savedColor);
+// console.log(colorSelected);
+const pixelBoard = document.getElementById('pixel-board');
+let color = 'black';
 
-/**
- *Checa se se existe cor selecionada e aplica classe
- */
-if (savedColor != null) {
-  for (let index = 0; index < selectedColor.length; index += 1) {
-    if (selectedColor[index].id === savedColor) {
-      selectedColor[index].className = 'color selected';
-    } else {
-      selectedColor[index].className = 'color';
-    }
+function createPixelBoxes(size) {
+  for (let index = 0; index < size; index += 1) {
+    let box = document.createElement('div');
+    box.className = 'pixel';
+    pixelBoard.append(box);
   }
 }
+createPixelBoxes(25);
+
+const pixelBox = document.querySelectorAll('.pixel');
+// console.log(pixelBox);
 
 /**
- *Seleciona todos as boxes(divs) com a classe .color
+ * Função que pinta os pixels
  */
-for (let index = 0; index < selectedColor.length; index += 1) {
-  selectedColor[index].addEventListener('click', selectColorBox);
+function paintsElement(event) {
+  event.target.style.backgroundColor = color;
 }
-// console.log(selectedColor);
 
-/**
- *Seleciona todos os box com a c lasse .pixel
- */
-const pixelBox = document.querySelectorAll('#pixel-board .pixel');
-console.log(pixelBox);
+for (let index = 0; index < pixelBox.length; index += 1) {
+  pixelBox[index].addEventListener('click', paintsElement);
+}
+
+for (let index = 0; index < colorSelected.length; index += 1) {
+  colorSelected[index].addEventListener('click', chosenColor);
+  console.log(color);
+}
+
+function chosenColor(event) {
+  if (event.target.id !== 'black') {
+    color = event.target.id;
+  }
+}
