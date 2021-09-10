@@ -1,5 +1,5 @@
 :root {
-    --pixel-size: 100px;
+    --pixel-size: 40px;
 }
 
 body {
@@ -20,8 +20,8 @@ body {
 
 #pixel-board {
     border: 1px solid black;
-    width: calc(var(--pixel-size) * 5);
-    height: calc(var(--pixel-size) * 5);
+    width: calc((var(--pixel-size) * 5));
+    height: calc((var(--pixel-size) * 5));
     overflow: hidden;
     font-size: 0;
 }
@@ -31,7 +31,11 @@ body {
     height: var(--pixel-size);
     display: inline-block;
     background-color: white;
-    margin-bottom: 0;
+    margin: 0;
+    border: 1px solid black;
+    font-size: 12px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .pixel:hover {

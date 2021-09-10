@@ -1,7 +1,6 @@
 const predefinedColors = ['black', 'red', 'blue', 'orange'];
 const boardWidth = 5;
 const boardHeight = 5;
-const pixelSize = '5px';
 
 function createColorPallete() {
   const container = document.createElement('div');
