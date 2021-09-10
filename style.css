@@ -20,3 +20,15 @@ section .blue {
 section .orange {
   background-color: orange;
 }
+
+/* Pixel board */
+#pixel-board {
+	width: 250px;
+}
+
+.pixel {
+	width: 40px;
+	height: 40px;
+	border: solid 1px black;
+	display: inline-block;
+}
