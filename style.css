@@ -1,0 +1,19 @@
+#purple {
+    background-color: purple;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#grey {
+    background-color: gray;
+}
+
+#blue {
+    background-color: blue;
+}
+
+.color {
+    border: 1px solid black;
+}
