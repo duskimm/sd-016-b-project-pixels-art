@@ -21,3 +21,11 @@
 .green {
   background-color: green;
 }
+
+.pixel {
+  height: 30px;
+  width: 30px;
+  border: 1px solid;
+  display: inline-block;
+  background-color: white;
+}
