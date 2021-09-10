@@ -5,15 +5,25 @@
 
 body {
   font-family: Comic Neue, cursive;
-}
-
-header {
-  background-color: rgb(70, 28, 118);
+  width: 100%;
 }
 
 #title {
-  color: rgb(250, 244, 216);
+  color: rgb(53, 23, 87);
   font-size: 32px;
   text-align: center;
   padding: 20px;
+}
+
+#color-palette {
+  text-align: center;
+}
+
+.color {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  height: 80px;
+  margin: 0 4px;
+  width: 80px;
 }
