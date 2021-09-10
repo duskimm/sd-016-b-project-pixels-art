@@ -16,47 +16,26 @@
 }
 
 .color {
-  border: 1px solid #000;
+  border: 1px solid black;
   display: inline-block;
   padding: 25px;
   text-align: center;
 }
 
-/* .selected {
-  animation-name: selected;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes selected {
-  0% {
-    border: #000 1px solid;
-    border-radius: 10px;
-  }
-  50% {
-    border: rgb(253, 229, 7) 1px solid;
-    border-radius: 10px;
-  }
-  100% {
-    border: rgb(240, 116, 0) 1px solid;
-    border-radius: 10px;
-  }
-} */
-
 #black {
-  background-color: #000;
+  background-color: black;
 }
 
 #red {
-  background-color: #FF2428;
+  background-color: red;
 }
 
 #green {
-  background-color: #6FFF00;
+  background-color: green;
 }
 
 #blue {
-  background-color: #0007D7;
+  background-color: blue;
 }
 
 #pixel-board {
@@ -69,7 +48,8 @@
 }
 
 .pixel {
-  border: 1px solid #000;
+  background-color: white;
+  border: 1px solid black;
   display: inline-block;
   height: 40px;
   margin: 2px;

@@ -33,7 +33,5 @@ for (let index = 0; index < colorSelected.length; index += 1) {
 }
 
 function chosenColor(event) {
-  if (event.target.id !== 'black') {
-    color = event.target.id;
-  }
+  color = event.target.id;
 }
