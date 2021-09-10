@@ -5,13 +5,44 @@
   padding: 0;
 }
 
+body {
+  background-image: url(/image1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 h1 {
   font-size: 70px;
   text-align: center;
   font-family: 'Homemade Apple', cursive;
+  color: rgb(41, 13, 43);
+  text-shadow: 5px, 5px, rgb(88, 30, 92);
+}
+
+#color-palette {
+  width: 100%;
+  text-align: center;
 }
 
 .color {
-  padding: 10px;
-  border: black, 10px;
+  padding: 25px;
+  border: solid black 1px;
+  display: inline-block;
+  margin: 20px;
+}
+
+.first-color {
+  background-color: black;
+}
+
+.random1 {
+  background-color: blue;
+}
+
+.random2 {
+  background-color: brown;
+}
+
+.random3 {
+  background-color: yellow;
 }
