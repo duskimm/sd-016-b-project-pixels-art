@@ -32,14 +32,9 @@
   background-color: #ced36f;
 }
 
-#pixel-board-container {
-}
-
 #pixel-board {
   margin: 25px;
 }
-
-
 
 .line {
   text-align: center;
@@ -49,7 +44,7 @@
 .pixel {
   width: 40px;
   height: 40px;
-  display: inline-block;  
+  display: inline-block;
   border: solid 1px;
   background-color: white;
 }
