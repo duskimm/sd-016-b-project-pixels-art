@@ -1,3 +1,5 @@
+/*Header*/
+
 header {
     background-color: green;
     position: fixed;
@@ -12,7 +14,9 @@ h1 {
     text-align: center;
 }
 
-section {
+/*Cores*/
+
+#color-palette {
     margin: 100px auto;
     width: 530px;
     height: 140px;
@@ -28,8 +32,8 @@ section {
     display: inline-block;
 }
 
-#red {
-    background-color: red;
+#black {
+    background-color: black;
 }
 
 #yellow {
