@@ -1,0 +1,28 @@
+#color-palette {
+
+}
+
+.color {
+    display: inline-block;
+    margin-right: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border: black solid 1px;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#red {
+    background-color: red;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+#purple {
+    background-color: purple;
+}
