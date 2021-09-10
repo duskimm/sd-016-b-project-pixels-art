@@ -12,11 +12,11 @@ for (let index = 0; index < lines.length; index += 1) {
   }
 }
 
-let color = document.getElementsByClassName('color');
+let colors = document.getElementsByClassName('color');
 
 function removeSelected() {
-  for (let i = 0; i < color.length; i += 1) {
-    color[i].classList.remove('selected');
+  for (let i = 0; i < colors.length; i += 1) {
+    colors[i].classList.remove('selected');
   }
 }
 
@@ -24,7 +24,20 @@ function addSelected(event) {
   event.target.classList.add('selected');
 }
 
-for (let index = 0; index < color.length; index += 1) {
-  color[index].addEventListener('click', removeSelected);
-  color[index].addEventListener('click', addSelected);
+for (let index = 0; index < colors.length; index += 1) {
+  colors[index].addEventListener('click', removeSelected);
+  colors[index].addEventListener('click', addSelected);
+}
+
+
+let pixels = document.getElementsByClassName('pixel');
+
+function addColor(event) {
+  let selectedItem = document.querySelector('.selected');
+  let selectedColor = window.getComputedStyle(selectedItem).getPropertyValue('background-color');
+  event.target.style.backgroundColor = selectedColor;
+}
+
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', addColor)
 }
