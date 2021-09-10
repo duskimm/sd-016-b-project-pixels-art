@@ -30,6 +30,10 @@ h1 {
   background-color: black;
 }
 
+.white {
+  background-color: white;
+}
+
 .line {
   display: block;
   width: 300px;

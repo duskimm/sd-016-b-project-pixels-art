@@ -21,7 +21,7 @@ function createPixels() {
   const lines = document.querySelectorAll('.line');
   for (const line of lines) {
     for (let index = 0; index < 5; index += 1) {
-      line.append(newChild('div', '', 'pixel', ''));
+      line.append(newChild('div', '', 'pixel white', ''));
     }
   }
 }
@@ -38,12 +38,8 @@ function paintPixels(event) {
   if (event.target.classList.contains('pixel')) {
     const selectedColor = document.querySelector('.selected');
     let classColor = selectedColor.classList;
-    if (event.target.classList.length > 1) {
-      event.target.classList.remove(event.target.classList[1]);
-      event.target.classList.add(classColor[1]);
-    } else {
-      event.target.classList.add(classColor[1]);
-    }
+    event.target.classList.remove(event.target.classList[1]);
+    event.target.classList.add(classColor[1]);
   }
 }
 
@@ -57,3 +53,11 @@ window.onload = function () {
   createLines();
   createPixels();
 };
+
+document.querySelector('#clear-board').addEventListener('click', function () {
+  const pixels = document.getElementsByClassName('pixel');
+  for (const pixel of pixels) {
+    pixel.classList.remove(pixel.classList[1]);
+    pixel.classList.add('white');
+  }
+});
