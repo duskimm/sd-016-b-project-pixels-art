@@ -56,3 +56,10 @@ main {
     background-color: rgb(128, 128, 128);
     font-weight: 600;
 }
+
+#board-size {
+    border: 1px solid rgb(0, 0, 0);
+    height: 25px;
+    text-align: center;
+    width: 60px;
+}
