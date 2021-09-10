@@ -88,5 +88,45 @@ getButton.addEventListener('click', function (){
     getPixel[i].style.backgroundColor = 'white';
   }
 })
+//input 
 
+let getInput = document.querySelector('#board-size');
+getInput.setAttribute('min', '1');
+let getVQV = document.querySelector('#generate-board');
+let getFloor = document.querySelector('#pixel-board');
+
+
+getVQV.addEventListener('click', function (){
+  let getLine = document.getElementById('pixel-board');
+  let childLine = getLine.children;
+  deleteDivs(childLine.length);
+  
+   if (getInput.value != ''){
+    
+  for (let i = 0; i < getInput.value; i += 1){ 
+    let criaDiv2 = document.createElement('div');
+    criaDiv2.className = 'linePixels';
+    getFloor.appendChild(criaDiv2);
+    for (i2 = 0; i2 < getInput.value; i2 += 1){
+      let criaDiv = document.createElement('div');
+      criaDiv.className = 'pixel';
+      criaDiv2.appendChild(criaDiv);
+      criaDiv.style.backgroundColor = 'white';
+    }
+  }
+  getInput.value = '';
+} else {
+  alert('Board inválido!');
+}
+
+});
+
+function deleteDivs (n) {
+  let getLine2 = document.getElementById('pixel-board');
+  for (let i = 0; i < n; i += 1){
+    getLine2.removeChild(getLine2.firstElementChild);
+    console.log('1');
+    }
+  }
+  
 }
