@@ -13,7 +13,6 @@ body {
 }
 
 .color {
-  background-color: yellow;
   border: 1px solid black;
   display: inline-block;
   height: 75px;
@@ -22,11 +21,11 @@ body {
 }
 
 .colorBlue {
-  background-color: hsl(240, 100%, 50%);
+  background-color: black;
 }
 
 .colorYellow {
-  background-color: yellow;
+  background-color: blue;
 }
 
 .colorRed {
@@ -35,4 +34,12 @@ body {
 
 .colorGreen {
   background-color: green;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 95px;
+  width: 95px;
 }
