@@ -1,0 +1,27 @@
+* {
+  background-color: rgb(217, 217, 217);
+}
+
+.color {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.color:first-child {
+  background-color: black;
+}
+
+.color:last-child {
+  background-color: blue;
+}
+
+.color:nth-child(2) {
+  background-color: red;
+}
+
+.color:nth-child(3) {
+  background-color: green;
+}
