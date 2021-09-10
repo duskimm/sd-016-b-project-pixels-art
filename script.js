@@ -5,7 +5,7 @@ const red = setColorsToDivs[1];
 red.style.backgroundColor = 'red';
 const blue = setColorsToDivs[2];
 blue.style.backgroundColor = 'blue';
-const green =setColorsToDivs[3];
+const green = setColorsToDivs[3];
 green.style.backgroundColor = 'green';
 
 for (let index = 0; index < 25; index += 1) {
@@ -14,15 +14,24 @@ for (let index = 0; index < 25; index += 1) {
   document.querySelector('#pixel-board').appendChild(pixel);
 }
 
-window.onload = function () {
-  black.classList.add('selected');
-  let selected = black;
+black.classList.add('selected');
+let selected = black;
 
-  for (let index = 0; index < setColorsToDivs.length; index += 1) {
-    setColorsToDivs[index].addEventListener('click', function(event) {
-      selected.classList.remove('selected');
-      event.target.classList.add('selected');
-      selected = event.target;
-    })
-  }
-};
+for (let index = 0; index < setColorsToDivs.length; index += 1) {
+  setColorsToDivs[index].addEventListener('click', function (event) {
+    selected.classList.remove('selected');
+    event.target.classList.add('selected');
+    selected = event.target;
+  });
+}
+
+
+const pixelClass = document.getElementsByClassName('pixel');
+for (let index = 0; index < pixelClass.length; index += 1) {
+  pixelClass[index].addEventListener('click', function (event) {
+    let targetPixel = event.target;
+    targetPixel.style.backgroundColor = selected.style.backgroundColor;
+  });
+}
+
+
