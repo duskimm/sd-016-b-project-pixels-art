@@ -12,6 +12,14 @@
   padding: 20px;
 }
 
+.line {
+  display: inline-block;
+}
+
+.pixel {
+  background-color: white;
+}
+
 #purple {
   background-color: purple;
 }
