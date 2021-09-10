@@ -5,7 +5,9 @@
   border: 1px black solid;
 }
 
-/* ref: Author: Josh Crozies Obj: removing spaces between divs Src: https://stackoverflow.com/questions/19038799/why-is-there-an-unexplainable-gap-between-these-inline-block-div-elements */
+/* ref: Author: Josh Crozies
+ Obj: removing spaces between divs 
+ Src: https://stackoverflow.com/questions/19038799/why-is-there-an-unexplainable-gap-between-these-inline-block-div-elements */
 #pixel-board {
   width: 210px;
   font-size: 0;
