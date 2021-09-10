@@ -1,0 +1,26 @@
+.color {
+    border: 4px solid black;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+}
+
+#laranja {
+    background-color: rgb(247, 136, 14);
+}
+
+#marrom {
+    background-color: rgb(154, 49, 29);
+}
+
+#verde-claro {
+    background-color: rgb(77, 255, 0);
+}
+
+#verde-escuro{
+    background-color: rgb(34, 128, 0);
+}
+
+#preto {
+    background-color: black;
+}
