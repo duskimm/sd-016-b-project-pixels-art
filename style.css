@@ -1,25 +1,41 @@
 #color-palette{
-    display: block;
+  display: block;
 }
+
 .color{
-    display: inline-block;
-    height: 80px;
-    width: 80px;
-    border: 1px solid black;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  border: 1px solid black;
 }
 
 #black{
-    background-color: black;    
+  background-color: black;    
 }
 
 #red{
-    background-color: red;
+  background-color: red;
 }
 
 #blue{
-    background-color: blue;
+  background-color: blue;
 }
 
 #green{
-    background-color: green;
+  background-color: green;
 }
+
+#pixel-board{
+  display: grid;
+  grid-template-columns: repeat(5,0fr);
+  position: relative;
+  top: 10px;
+}
+
+.pixel{
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black
+}
+
