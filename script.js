@@ -29,6 +29,11 @@ function generateColorPalette() {
   });
 }
 
+function paintPixel(evt) {
+  const selectedColor = document.querySelector('.selected').style.backgroundColor;
+  evt.target.setAttribute('style', `background-color: ${selectedColor};`);
+}
+
 function generatePixelBoard(boardSize) {
   const board = document.getElementById('pixel-board');
   for (let line = 0; line < boardSize; line += 1) {
@@ -37,10 +42,18 @@ function generatePixelBoard(boardSize) {
     for (let column = 0; column < boardSize; column += 1) {
       const pixelCell = document.createElement('div');
       pixelCell.classList.add('pixel');
+      pixelCell.addEventListener('click', paintPixel);
       boardLine.appendChild(pixelCell);
     }
     board.appendChild(boardLine);
   }
+}
+
+function selectColor(evt, inputColors) {
+  inputColors.forEach((inputColor) => {
+    inputColor.classList.remove('selected');
+  });
+  evt.target.classList.add('selected');
 }
 
 window.onload = () => {
@@ -49,8 +62,11 @@ window.onload = () => {
 
   generatePixelBoard(boardSize);
 
-  const inputColor = document.querySelectorAll('.color:not(.fixed-color)');
-  inputColor.forEach((input) => {
-    input.addEventListener('click', (evt) => setColor(evt.target, getRandomColor()));
+  const inputColors = document.querySelectorAll('.color');
+  inputColors.forEach((inputColor) => {
+    inputColor.addEventListener('click', (evt) => selectColor(evt, inputColors));
+    if (!inputColor.classList.contains('fixed-color')) {
+      inputColor.addEventListener('dblclick', (evt) => setColor(evt.target, getRandomColor()));
+    }
   });
 };
