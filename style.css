@@ -1,5 +1,5 @@
 body {
-  align-content: center;
+  text-align: center;
 }
 
 #title {
@@ -15,6 +15,6 @@ body {
 .color {
   display: inline-block;
   border: black solid 1px;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
