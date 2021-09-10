@@ -23,42 +23,6 @@ function geraCorAleatoria(){
 //cria paleta de cores com as corres da lista
 coresPaleta(paleta.children,['black',geraCorAleatoria(),geraCorAleatoria(),geraCorAleatoria()]);
 
-// criando botao de reset
-const botaoReset = document.createElement('button');
-botaoReset.setAttribute('id','clear-board');
-botaoReset.innerText = 'Limpar';
-divPrincipal.appendChild(botaoReset);
-
-//adiciona evento de resetar cor dos pixels ao botao reset
-const btn = document.getElementById('clear-board');
-btn.addEventListener('click',function(){
-  for(let i = 0; i < listaPixel.length; i++){
-    listaPixel[i].style.backgroundColor = 'white';
-  }
-})
-
-//cria a tabela
-const tabela = document.createElement('table');
-tabela.setAttribute('id','pixel-board');
-divPrincipal.appendChild(tabela);
-for (let i = 0; i < 5; i++) {
-    const row = document.createElement('tr');
-     tabela.appendChild(row);
-    for (let y = 0; y < 5; y++) {
-        const celula = document.createElement('td');
-         celula.setAttribute('class','pixel');
-        row.appendChild(celula);
-    }
-}
-
-// reseta a classe da paleta de cores
-function resetClass(lista){
-  for(let i = 0; i< lista.length;i++){
-    lista[i].className = 'color';
-  }
-}
-// cria lista de todos os elementos com classe pixel e outra lsita com todos os elementos com classe color
-const listaPixel = document.getElementsByClassName('pixel');
 const listaCores = document.getElementsByClassName('color');
 
 // seta a cor inicial como preto
@@ -73,9 +37,91 @@ for (let i = 0; i < listaCores.length; i++) {
     }) 
 }
 
-// adiciona o evento de colorir com a cor atual a todos os elementos com classe pixel
-for (let i = 0; i < listaPixel.length; i++) {
-    listaPixel[i].addEventListener('click',function(event) {
-        event.target.style.backgroundColor = corAtual;;
-    })
+// reseta a classe da paleta de cores
+function resetClass(lista){
+  for(let i = 0; i< lista.length;i++){
+    lista[i].className = 'color';
+  }
+}
+
+//criando input do tamanho da grade
+const tamanhoInput = document.createElement('input');
+tamanhoInput.setAttribute('id','board-size');
+tamanhoInput.setAttribute('type','number');
+tamanhoInput.setAttribute('min','1');
+divPrincipal.appendChild(tamanhoInput);
+
+//criando botao pra setar tamanho da grade
+const btnGrade = document.createElement('button');
+btnGrade.setAttribute('id','generate-board');
+btnGrade.innerText = 'VQV';
+divPrincipal.appendChild(btnGrade);
+
+// criando botao de limpar
+const botaoReset = document.createElement('button');
+botaoReset.setAttribute('id','clear-board');
+botaoReset.innerText = 'Limpar';
+divPrincipal.appendChild(botaoReset);
+
+const tabela = document.createElement('table');
+tabela.setAttribute('id','pixel-board');
+divPrincipal.appendChild(tabela);
+for (let i = 0; i < 5; i++) {
+    const row = document.createElement('tr');
+    tabela.appendChild(row);
+    for (let y = 0; y < 5; y++) {
+        const celula = document.createElement('td');
+        celula.addEventListener('click',function(event) {
+            celula.style.backgroundColor = corAtual;
+        })
+        celula.setAttribute('class','pixel');
+        row.appendChild(celula);
+    }
+}
+
+btnGrade.addEventListener('click',function() {
+    const listBoard = document.getElementById('pixel-board')
+    let valorGrade = tamanhoInput.value;
+    if( valorGrade == ''){
+        alert('Board inválido!');
+    }else {
+        valorGrade = parseInt(tamanhoInput.value);
+        if(valorGrade < 5){
+            valorGrade = 5
+        }else if(valorGrade > 50){
+            valorGrade = 50
+        }
+        for(let j = 0; j < listBoard.children.length; j ++){
+            listBoard.remove(listBoard.children[j])
+        }
+        criaTabela(valorGrade);
+    }
+})
+
+//adiciona evento de resetar cor dos pixels ao botao reset
+const listaPixel = document.getElementsByClassName('pixel')
+const btn = document.getElementById('clear-board');
+btn.addEventListener('click',function(){
+  for(let i = 0; i < listaPixel.length; i++){
+    listaPixel[i].style.backgroundColor = 'white';
+  }
+})
+
+//cria a tabela
+function criaTabela(tamanho) {
+    const tabela = document.createElement('table');
+    tabela.setAttribute('id','pixel-board');
+    divPrincipal.appendChild(tabela);
+    for (let i = 0; i < tamanho; i++) {
+        const row = document.createElement('tr');
+        tabela.appendChild(row);
+        for (let y = 0; y < tamanho; y++) {
+            const celula = document.createElement('td');
+            celula.addEventListener('click',function(event) {
+                celula.style.backgroundColor = corAtual;
+            })
+            celula.setAttribute('class','pixel');
+            row.appendChild(celula);
+        }
+    }
 }
