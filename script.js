@@ -6,6 +6,7 @@ let colorBlue = document.querySelector('.corBlue');
 let colorGreen = document.querySelector('.corGreen');
 let colorYellow = document.querySelector('.corYellow');
 let board = document.getElementsByClassName('pixel');
+let limp = document.getElementById('clear-board');
 let fundo = 'black';
 
 colorBlue.addEventListener('click', selecaoBlue);
@@ -20,7 +21,7 @@ function selecaoBlue(){
 
 colorGreen.addEventListener('click', selecaoGreen);
 
-function selecaoGreen(){
+function selecaoGreen(event){
   colorGreen.classList.add('selected');
   colorBlack.classList.remove("selected");
   colorBlue.classList.remove("selected");
@@ -54,6 +55,13 @@ for (let i = 0; i < board.length; i += 1) {
  
   function cor (event){
   event.target.style.backgroundColor = fundo;
+}
+limp.addEventListener('click', limpar);
+
+function limpar (){
+  for (let i = 0; i < board.length; i += 1) {
+    board[i].style.backgroundColor = 'white';
+  }
 }
 
 }
