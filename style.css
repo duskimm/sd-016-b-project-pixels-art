@@ -1,19 +1,15 @@
-#paleta1{
-  background-color: black;
+*{
+  margin: 0%;
 }
 
-#paleta2{
-  background-color: red;
+#color-palette{
+  margin-top: 10px;
 }
 
-#paleta3{
-  background-color: blue;
+h1{
+  margin-left: 45%;
+  margin-top: 20px;
 }
-
-#paleta4{
-  background-color: green;
-}
-
 .squareSize{
   border: solid black 1px;
   width: 80px;
@@ -21,13 +17,22 @@
   display: inline-block;;
 }
 
-#pallete-container{
-  border: solid 1px red;
-  height: 80px;
-}
-
-.squareStyle{
+ .pixel{
   width: 40px;
   height: 40px;
-  border: 1px black;
+  border: solid black 1px;
+  background-color: white;
+  display: table-cell;
+}
+
+#pixel-board{
+  display: table;
+  margin-top: 20px;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
 }
