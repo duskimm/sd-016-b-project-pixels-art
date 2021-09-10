@@ -11,8 +11,8 @@ body {
 
 .bloco-preto {
   border: 5px solid black;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   display: inline-block;
   margin: 5px;
   background-color: black;
@@ -20,8 +20,8 @@ body {
 
 .bloco-vermelho {
   border: 5px solid black;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   display: inline-block;
   margin: 5px;
   background-color: red;
@@ -29,8 +29,8 @@ body {
 
 .bloco-azul {
   border: 5px solid black;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   display: inline-block;
   margin: 5px;
   background-color: blue;
@@ -38,9 +38,28 @@ body {
 
 .bloco-verde {
   border: 5px solid black;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   display: inline-block;
   margin: 5px;
   background-color: green;
+}
+.quadro {
+  margin: 5px;;
+}
+
+.linha1 .linha2 .linha3 .linha4 .linha5{
+  border: 2px solid black;
+  height: 80px;
+  width: 80px;
+  /* display: inline-block; */
+  margin: 0;
+}
+
+.bloco {
+  border: 2px solid black;
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+  margin: 0;
 }
