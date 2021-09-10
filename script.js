@@ -74,3 +74,13 @@ function addRemoveClassSelected(elemento) {
 window.onload = () => {
   addRemoveClassSelected(black);
 };
+
+// ******************************************************************************************** //
+// 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+const cores = document.getElementsByClassName('color');
+
+for (const cor of cores) {
+  cor.addEventListener('click', () => {
+    addRemoveClassSelected(cor);
+  })
+}
