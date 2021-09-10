@@ -12,18 +12,18 @@ function newChild(type, text, classs, id) {
 }
 
 // funcao para criar linhas onde serao colocados os pixels
-function createLines() {
+function createLines(lines) {
   const board = document.querySelector('#pixel-board');
-  for (let index = 0; index < 5; index += 1) {
+  for (let index = 0; index < lines; index += 1) {
     board.append(newChild('div', '', 'line', ''));
   }
 }
 
 // funcao para colocar pixels a serem pintados nas linhas
-function createPixels() {
+function createPixels(coluns) {
   const lines = document.querySelectorAll('.line');
   for (let indexLines = 0; indexLines < lines.length; indexLines += 1) {
-    for (let index = 0; index < 5; index += 1) {
+    for (let index = 0; index < coluns; index += 1) {
       lines[indexLines].append(newChild('div', '', 'pixel white', ''));
     }
   }
@@ -48,6 +48,25 @@ function paintPixels(event) {
   }
 }
 
+// Remove todos os pixels previamente existentes
+function clearBoard() {
+  const divBoard = document.querySelector('#pixel-board');
+  while (divBoard.firstChild) {
+    divBoard.removeChild(divBoard.firstChild);
+  }
+}
+
+// configura o tamanho dos pixels
+function setSizePixels() {
+  const sizePixel = Math.floor(200 / sessionStorage.boardSize);
+  const pixels = document.querySelectorAll('.pixel');
+  console.log(sizePixel);
+  console.log(pixels);
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.width = `${sizePixel}px`;
+  }
+}
+
 /* Metodo event bubbling adquirido atraves deste link https://gomakethings.com/attaching-multiple-elements-to-a-single-event-listener-in-vanilla-js/ */
 // evento que acontece quando clickamos em qualquer lugar da pagina
 document.addEventListener('click', (event) => {
@@ -55,10 +74,28 @@ document.addEventListener('click', (event) => {
   paintPixels(event);
 }, false);
 
+// evento para pegar a informacao colocada no input
+document.querySelector('#board-size').addEventListener('input', (event) => {
+  sessionStorage.boardSize = parseInt(event.target.value, 10);
+});
+
+// evento para setar o tabuleiro de acordo com o tamanho desejado
+document.querySelector('#generate-board').addEventListener('click', () => {
+  if (Number.isNaN(sessionStorage.boardSize) || (sessionStorage.boardSize <= 0)) {
+    window.alert('Board inválido!');
+  } else {
+    clearBoard();
+    createLines(sessionStorage.boardSize);
+    createPixels(sessionStorage.boardSize);
+    setSizePixels();
+  }
+});
+
 // evento que acontece quando a pagina termina de carregar
 window.onload = () => {
-  createLines();
-  createPixels();
+  sessionStorage.boardSize = '5';
+  createLines(sessionStorage.boardSize);
+  createPixels(sessionStorage.boardSize);
 };
 
 // evento que acontece quando clicamos no botao limpar
