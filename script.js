@@ -33,7 +33,6 @@ for (let index = 0; index < pixelBox.length; index += 1) {
 for (let index = 0; index < colorSelected.length; index += 1) {
   colorSelected[index].addEventListener('click', chosenColor);
   console.log(color);
-  // colorSelected[index].className = 'color';
 }
 
 function chosenColor(event) {
