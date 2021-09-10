@@ -1,3 +1,27 @@
 #title {
-  
+
+}
+
+.cblack {
+  background-color: black;
+  border: 1px solid black;
+}
+
+.cblue{
+  background-color: blue;
+  border: 1px solid black;
+}
+
+.cred {
+  background-color: red;
+  border: 1px solid black;
+}
+.cgreen {
+  background-color: green;
+  border: 1px solid black;
+}
+.color {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
 }
