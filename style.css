@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+}
+
+#title {
+  background-color: turquoise;
+  padding: 10px;
+}
+
+.color {
+  background-color: yellow;
+  border: 1px solid black;
+  display: inline-block;
+  height: 75px;
+  width: 75px;
+  margin: 15px;
+}
+
+.colorBlue {
+  background-color: hsl(240, 100%, 50%);
+}
+
+.colorYellow {
+  background-color: yellow;
+}
+
+.colorRed {
+  background-color: red;
+}
+
+.colorGreen {
+  background-color: green;
+}
