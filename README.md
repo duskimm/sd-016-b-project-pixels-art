@@ -233,7 +233,7 @@ O não cumprimento de um requisito, total ou parcialmente, impactará em sua ava
 ---
 
 ## 👀 Observações importantes:
-  
+
 * Lembrem-se que como pessoas desenvolvedoras devemos fazer pesquisas e garimpar resultados para auxiliar no entendimento do assunto. Assim, para solucionar os requisitos do projeto é inevitável e estimulado que pesquisas sejam feitas nas mais variadas fontes (course, vídeos do course, google, youtube, etc) sempre tomando cuidado para utilizar fontes "confiáveis" nas pesquisas da Internet, como por exemplo:
 
   * [Javascript.com](http://javascript.com/)
@@ -290,15 +290,15 @@ Neste projeto, você implementará um editor de arte com pixels.
 
 ### 2 - Adicione à página uma paleta contendo quatro cores distintas.
 
-- A paleta de cores deve ser um elemento com `id` denominado `color-palette`, ao passo que cada cor individual contida na paleta de cores deve possuir a `classe` `color`;
+- A paleta de cores deve ser um elemento com `id` denominado `color-palette`, ao passo que cada cor individual contida na paleta de cores deve possuir a `classe` `color`; OK
 
-- A cor de fundo de cada elemento da paleta deverá ser a cor que o elemento representa. **A única cor não permitida na paleta é a cor branca.**;
+- A cor de fundo de cada elemento da paleta deverá ser a cor que o elemento representa. **A única cor não permitida na paleta é a cor branca.**; OK
 
-- Cada elemento da paleta de cores deverá ter uma borda preta, sólida e com 1 pixel de largura;
+- Cada elemento da paleta de cores deverá ter uma borda preta, sólida e com 1 pixel de largura; OK
 
-- A paleta de cores deverá listar todas as cores disponíveis para utilização lado a lado, e deverá ser posicionada abaixo do título "Paleta de Cores";
+- A paleta de cores deverá listar todas as cores disponíveis para utilização lado a lado, e deverá ser posicionada abaixo do título "Paleta de Cores"; OK
 
-- A paleta de cores não deve conter cores repetidas.
+- A paleta de cores não deve conter cores repetidas. OK
 
 **O que será verificado:**
 
@@ -320,9 +320,9 @@ Neste projeto, você implementará um editor de arte com pixels.
 
 **O que será verificado:**
 
-- Verifica se a primeira cor da paleta é preta
+- Verifica se a primeira cor da paleta é preta. OK 
 
-- Verifica se as demais cores podem ser escolhidas livremente.
+- Verifica se as demais cores podem ser escolhidas livremente. OK
 
 ### 4 - Adicione à página um quadro de pixels, com 25 pixels.
 
