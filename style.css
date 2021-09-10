@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 section {
@@ -16,4 +17,31 @@ section {
   width: 100px;
   height: 100px;
   display: inline-block;
+}
+
+.pixelLine {
+  margin: 0;
+  height: 100px;
+  width: 500px;
+}
+
+.pixelLine:nth-of-type( odd ) {
+  border: 1px solid black;
+}
+
+.pixelLine:nth-of-type( even ) {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.pixel {
+  border-right: 1px solid black;
+  width: 20%;
+  height: 100%;
+  display: inline-block;
+  background-color: white;
+}
+
+.pixel:last-of-type {
+  border-right: 0;
 }
