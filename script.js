@@ -6,7 +6,7 @@ window.onload = function() {
       let pixelDiv = document.createElement('div');
       pixelDiv.className = 'pixel';
       pixelDiv.style.backgroundColor = 'white';
-      pixelDiv.style.color = 'white';
+      pixelDiv.style.border = '1px solid black';
       let board = document.getElementById('pixel-board');
       board.appendChild(pixelDiv);
     }
