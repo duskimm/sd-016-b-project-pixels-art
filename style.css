@@ -1,0 +1,46 @@
+
+#title {
+  text-align: center;
+}
+
+#color-palette {
+  text-align: center;
+}
+
+.color{
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.color1 {
+  background-color: black;
+}
+
+.color2 {
+  background-color: gray;
+}
+
+.color3 {
+  background-color: #0574ec;
+}
+
+.color4 {
+  background-color: cyan;
+}
+
+#pixel-board {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.pixel {
+  background-color: white;
+  height: 40px;
+  width: 40px;
+}
+
+.square {
+  text-align: center;
+}
