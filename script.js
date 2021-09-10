@@ -28,7 +28,7 @@ coresPaleta(paleta.children, ['black', geraCorAleatoria(), geraCorAleatoria(), g
 const listaCores = document.getElementsByClassName('color');
 
 // seta a cor inicial como preto
-const corAtual = 'black';
+let corAtual = 'black';
 
 // reseta a classe da paleta de cores
 function resetClass(lista) {
@@ -40,7 +40,7 @@ function resetClass(lista) {
 // adiciona evento de mudança da cor atual a todos os elementos com a classe color e adiciona a classe selected a cor selecionada
 for (let i = 0; i < listaCores.length; i += 1) {
   listaCores[i].addEventListener('click', (event) => {
-    this.corAtual = event.target.style.backgroundColor;
+    corAtual = event.target.style.backgroundColor;
     resetClass(listaCores);
     event.target.className += ' selected';
   });
@@ -75,7 +75,7 @@ for (let i = 0; i < 5; i += 1) {
   for (let y = 0; y < 5; y += 1) {
     const celula = document.createElement('td');
     celula.addEventListener('click', () => {
-      celula.style.backgroundColor = this.corAtual;
+      celula.style.backgroundColor = corAtual;
     });
     celula.setAttribute('class', 'pixel');
     row.appendChild(celula);
