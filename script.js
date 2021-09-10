@@ -34,6 +34,7 @@ defaultColorSelected();
 // Requisito 7 - Aplicar classe a cor escolhida
 const paleta = document.querySelector('#color-palette');
 let targetAtual = '';
+let corAtual = 'black';
 
 function unselect() {
   const selectedToBeRemoved = document.querySelector('.selected');
@@ -45,8 +46,21 @@ function colorSelected() {
     if (event.target.className === 'color') {
       unselect();
       targetAtual = event.target;
+      corAtual = targetAtual.style.backgroundColor;
       targetAtual.className = 'color selected';
     }
   });
 }
 colorSelected();
+
+// Requisito 8 - Aplica a cor do selected na grade de pixels
+// Cor atual está sendo declarada no requisito 7 para uso aqui
+const gradePixels = document.querySelector('#pixel-board');
+let alvo = '';
+function paint() {
+  gradePixels.addEventListener('click', (event) => {
+    alvo = event.target;
+    alvo.style.backgroundColor = corAtual;
+  });
+}
+paint();
