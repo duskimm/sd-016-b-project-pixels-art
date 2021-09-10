@@ -27,7 +27,7 @@ function plugHtml(fatherElement, sonElement) {
 // universal variables
 
 const user = {
-  paintingColor: 'black'
+  paintingColor: 'black',
 };
 
 // functions for the project
@@ -37,7 +37,7 @@ function generatorPixelLine() {
 
   rows.forEach((row) => {
     for (let i = 0; i < 5; i += 1) {
-      let pixel = createElement('div');
+      const pixel = createElement('div');
       addClass(pixel, 'pixel');
       plugHtml(row, pixel);
     }
@@ -48,7 +48,7 @@ function generatorPixelRow() {
   const canvas = getOne('#pixel-board');
 
   for (let i = 0; i < 5; i += 1) {
-    let row = createElement('div');
+    const row = createElement('div');
     addClass(row, 'pixel-row');
     plugHtml(canvas, row);
   }
@@ -61,9 +61,9 @@ function saveColor(color) {
 function getColor() {
   const palette = getAll('.color');
 
-  palette.forEach((color)  => {
+  palette.forEach((color) => {
     color.addEventListener('click', (event) => {
-      let selectColor = getComputedStyle(event.target)['backgroundColor'];
+      const selectColor = getComputedStyle(event.target).backgroundColor;
       saveColor(selectColor);
     });
   });
@@ -74,15 +74,15 @@ function paintingPixel() {
 
   allPixels.forEach((pixel) => {
     pixel.addEventListener('click', (event) => {
-      event.target.style.backgroundColor = user.paintingColor;
+      const pixelColor = event.target.style;
+      pixelColor.backgroundColor = user.paintingColor;
     });
   });
 }
 
-function resetSelection(arr) {
-  for (let color of arr) {
-    removeClass(color, 'selected');
-  }
+function resetSelection() {
+  const selectedColor = getOne('.selected');
+  removeClass(selectedColor, 'selected');
 }
 
 function changeSelection() {
@@ -90,7 +90,7 @@ function changeSelection() {
 
   palette.forEach((color) => {
     color.addEventListener('click', (event) => {
-      resetSelection(palette);
+      resetSelection();
       addClass(event.target, 'selected');
     });
   });
@@ -102,7 +102,8 @@ function clearPainting() {
 
   resetButton.addEventListener('click', () => {
     pixels.forEach((pixel) => {
-      pixel.style.backgroundColor = 'white';
+      const pixelColor = pixel.style;
+      pixelColor.backgroundColor = 'white';
     });
   });
 }
@@ -114,4 +115,4 @@ window.onload = () => {
   paintingPixel();
   changeSelection();
   clearPainting();
-}
+};
