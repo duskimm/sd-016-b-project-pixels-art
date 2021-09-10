@@ -1,0 +1,28 @@
+.color {
+  width: 87px;
+  height: 87px;
+  display: inline-block;
+  margin: 0 0.3%;
+  border: solid 1px;
+}
+
+#color-1 {
+  background-color: black;
+}
+
+#color-2 {
+  background-color: #288498;
+}
+
+#color-3 {
+  background-color: #FE6B64;
+}
+
+#color-4 {
+  background-color: #CED36F;
+}
+
+
+
+
+
