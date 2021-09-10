@@ -1,9 +1,19 @@
+#title {
+  margin: 2em;
+  text-align: center;
+}
+
 .color {
   width: 87px;
   height: 87px;
   display: inline-block;
   margin: 0 0.3%;
   border: solid 1px;
+  text-align: center;
+}
+
+#color-palette {
+  text-align: center;
 }
 
 #color-1 {
@@ -15,14 +25,31 @@
 }
 
 #color-3 {
-  background-color: #FE6B64;
+  background-color: #fe6b64;
 }
 
 #color-4 {
-  background-color: #CED36F;
+  background-color: #ced36f;
+}
+
+#pixel-board-container {
+}
+
+#pixel-board {
+  margin: 25px;
 }
 
 
 
+.line {
+  text-align: center;
+  font-size: 0;
+}
 
-
+.pixel {
+  width: 87px;
+  height: 87px;
+  display: inline-block;  
+  border: solid 1px;
+  background-color: white;
+}
