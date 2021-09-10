@@ -2,7 +2,7 @@
   height: 100px;
   width: 100px;
   background-color: purple;
-  border: 1px solid;
+  border: 1px solid black;
   display: inline-block;
 }
 
@@ -23,9 +23,9 @@
 }
 
 .pixel {
-  height: 30px;
-  width: 30px;
-  border: 1px solid;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
   display: inline-block;
   background-color: white;
 }
