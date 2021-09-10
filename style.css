@@ -1,22 +1,21 @@
+#black {
+  background-color: black;
+}
+
 #blue {
-    background-color: #0000ff;;
+  background-color: blue;
 }
 
 .color {
-    border: black solid 1px;
-    display: inline-block;
-    padding: 20px;
-}
-
-#pink {
-   
-    background-color: #ffc0cb;
+  border: black solid 1px;
+  display: inline-block;
+  padding: 20px;
 }
 
 #purple {
-    background-color: #800080 ;
+  background-color: purple;
 }
 
 #red {
-    background-color: #ff0000;
+  background-color: red;
 }
