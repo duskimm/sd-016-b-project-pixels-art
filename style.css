@@ -29,8 +29,10 @@ body {
 }
 
 #pixel-board {
+  border: 1px solid blue;
+  height: 210px;
   margin: 40px auto;
-  width: 220px;
+  width: 210px;
 }
 
 .pixel {
