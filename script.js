@@ -44,7 +44,6 @@ function selectingColor(event) {
   }
   eventSelected.target.className = 'color selected';
 }
-
 for (let i = 0; i < getEachColorPalette.length; i += 1) {
   getEachColorPalette[i].addEventListener('click', selectingColor);
 }
@@ -54,8 +53,7 @@ creatingPixels();
 function printingPixel(event) {
   const getSelected = document.getElementsByClassName('selected');
   const eventSelected = event;
-  const colorSelected = getSelected[0].style.backgroundColor;
-  eventSelected.target.style.backgroundColor = colorSelected;
+  eventSelected.target.style.backgroundColor = getSelected[0].style.backgroundColor;
 }
 
 for (let i = 0; i < getPixel.length; i += 1) {
@@ -92,10 +90,8 @@ function newPictureWithDifferentesLinesAndColumns() {
   // checkMinValue();
   if (status !== true) {
     getPixelBoard.innerHTML = '';
-    const newQuantityOfPixelsForLineAndColumns = getInput.value;
-    quantityOfPixels = newQuantityOfPixelsForLineAndColumns ** 2;
-    console.log(newQuantityOfPixelsForLineAndColumns);
-    getPixelBoard.style.width = `${newQuantityOfPixelsForLineAndColumns * 42}px`;
+    quantityOfPixels = getInput.value ** 2;
+    getPixelBoard.style.width = `${getInput.value * 42}px`;
     creatingPixels();
     removePixelsColors();
   }
