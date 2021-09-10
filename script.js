@@ -1,10 +1,10 @@
 const palette = document.getElementById('color-palette');
 const board = document.getElementById('pixel-board');
 const button = document.getElementById('clear-board');
-let pixelsArr = document.getElementsByClassName('pixel');
+const pixelsArr = document.getElementsByClassName('pixel');
 let selectedColor = 'black';
 
-//Cria a paletta que vamos pegar as cores
+// Cria a paletta que vamos pegar as cores
 function createPaletteAndAddColor() {
   const colors = ['black', 'red', 'blue', 'yellow'];
   for (const c of colors) {
@@ -33,31 +33,30 @@ function createPixels(line, column) {
   }
 }
 
-//Definindo div(cor) como selecionada
-palette.addEventListener('click', function(event) {
+// Definindo div(cor) como selecionada
+palette.addEventListener('click', function (event) {
   if (event.target.id !== 'color-palette') {
-    for (let child of palette.children) {
+    for (const child of palette.children) {
       child.classList.remove('selected');
     }
     event.target.classList.add('selected');
-    selectedColor= event.target.style.backgroundColor;
-  } 
-})
+    selectedColor = event.target.style.backgroundColor;
+  }
+});
 
 // Pintando os pixels
-board.addEventListener('click', function(event) {
+board.addEventListener('click', function (event) {
   if (event.target.id !== 'pixel-board' && event.target.className !== 'line') {
-    event.target.style.backgroundColor = selectedColor
+    event.target.style.backgroundColor = selectedColor;
   }
-})
+});
 
 // Limpando o board
-button.addEventListener('click', function() {
-  for (let pixel of pixelsArr) {
+button.addEventListener('click', function () {
+  for (const pixel of pixelsArr) {
     pixel.style.backgroundColor = 'white';
   }
-})
+});
 
 createPaletteAndAddColor();
 createPixels(5, 5);
-
