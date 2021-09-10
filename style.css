@@ -30,13 +30,13 @@ body {
 
 #pixel-board {
   margin: 40px auto;
-  width: 50%;
+  width: 220px;
 }
 
 .pixel {
   background-color: white;
   border: 1px solid black;
   float: left;
-  height: 80px;
-  width: 80px;
+  height: 40px;
+  width: 40px;
 }

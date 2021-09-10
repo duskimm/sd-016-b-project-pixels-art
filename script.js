@@ -19,3 +19,23 @@ function createPixel() {
   }
 }
 createPixel();
+
+function removeClass(listDivs) {
+  for (let i = 0; i < listDivs.length; i += 1) {
+    listDivs[i].classList.remove('selected');
+  }
+  return listDivs;
+}
+
+function colorSelected() {
+  const divsPixels = document.querySelectorAll('.color');
+  divsPixels[0].classList.add('selected');
+
+  divsPixels.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      removeClass(divsPixels);
+      event.target.classList.add('selected');
+    });
+  });
+}
+colorSelected();
