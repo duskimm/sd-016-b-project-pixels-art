@@ -13,23 +13,39 @@
 }
 
 .color {
+  cursor: pointer;
   height: 100px;
   width: 100px;
   border: 1px solid black;
 }
 
-.color:nth-child(1) {
+.color:nth-child( 1 ) {
   background-color: black;
 }
 
-.color:nth-child(2) {
+.color:nth-child( 2 ) {
   background-color: green;
 }
 
-.color:nth-child(3) {
+.color:nth-child( 3 ) {
   background-color: yellow;
 }
 
-.color:nth-child(4) {
+.color:nth-child( 4 ) {
   background-color: blue;
+}
+
+#pixel-board {
+  margin-top: 30px;
+}
+
+.line1 , .line2 , .line3 , .line4 , .line5 {
+  display: flex;
+}
+
+.pixel {
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
 }
