@@ -25,3 +25,20 @@ function selecionarCor(event){
 }
 
 paleta.addEventListener('click', selecionarCor)
+
+// Requisito 08 
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+// getComputedStyle(elemento)
+
+function pintar(event){
+    let select = document.querySelector('.selected');
+    let corSelecionada = getComputedStyle(select);
+    let backgorund = corSelecionada.backgroundColor;
+    event.target.style.backgroundColor = backgorund;
+}
+
+const pix = document.querySelectorAll('.pixel');
+
+for (let index = 0; index < pix.length; index += 1){
+pix[index].addEventListener('click', pintar)
+}
