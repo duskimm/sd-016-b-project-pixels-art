@@ -1,5 +1,6 @@
 const getPixelBoard = document.getElementById('pixel-board');
 const getEachColorPalette = document.getElementsByClassName('color');
+const getPixel = document.getElementsByClassName('pixel');
 const quantityOfPixels = 25;
 
 function creatingPixels() {
@@ -23,3 +24,14 @@ for (let i = 0; i < getEachColorPalette.length; i += 1) {
 }
 
 creatingPixels();
+
+function printingPixel(event) {
+  const getSelected = document.getElementsByClassName('selected');
+  const eventSelected = event;
+  const colorSelected = getSelected[0].innerHTML;
+  eventSelected.target.style.backgroundColor = colorSelected;
+}
+
+for (let i = 0; i < getPixel.length; i += 1) {
+  getPixel[i].addEventListener('click', printingPixel);
+}
