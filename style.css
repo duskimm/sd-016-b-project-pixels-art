@@ -18,11 +18,11 @@
   background-color: blue;
 }
 
-.color:nth-child(2) {
+.color:nth-child( 2 ) {
   background-color: red;
 }
 
-.color:nth-child(3) {
+.color:nth-child( 3 ) {
   background-color: green;
 }
 
@@ -31,6 +31,6 @@
   height: 40px;
   width: 40px;
   border: 1px solid black;
-  margin: 0px;
+  margin: 0;
   background-color: white;
 }
