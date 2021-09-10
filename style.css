@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+  }
+
+  section#color-palette {
+    width: 220px;
+    height: 50px;
+  }
+
+  .color {
+    display: inline-block;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+  }
+
+  .red {
+    backGround-color: red;
+  }
+
+  .blue {
+    background-color: blue;
+  }
+
+  .green {
+    background-color: green;
+  }
+
+  .black {
+    background-color: black;
+  }
