@@ -29,7 +29,6 @@ for (let index = 0; index < colors.length; index += 1) {
   colors[index].addEventListener('click', addSelected);
 }
 
-
 let pixels = document.getElementsByClassName('pixel');
 
 function addColor(event) {
@@ -39,5 +38,15 @@ function addColor(event) {
 }
 
 for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].addEventListener('click', addColor)
+  pixels[index].addEventListener('click', addColor);
 }
+
+function clearBoard() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+    }
+}
+
+let clearButton = document.getElementById('clear-board');
+
+clearButton.addEventListener('click', clearBoard);
