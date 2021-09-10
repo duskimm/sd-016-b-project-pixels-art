@@ -44,17 +44,17 @@ function paintPixels(event) {
 }
 
 /* Metodo event bubbling adquirido atraves deste link https://gomakethings.com/attaching-multiple-elements-to-a-single-event-listener-in-vanilla-js/ */
-document.addEventListener('click', function (event) {
+document.addEventListener('click', (event) => {
   changeSelectedPosition(event);
   paintPixels(event);
 }, false);
 
-window.onload = function () {
+window.onload = () => {
   createLines();
   createPixels();
 };
 
-document.querySelector('#clear-board').addEventListener('click', function () {
+document.querySelector('#clear-board').addEventListener('click', () => {
   const pixels = document.getElementsByClassName('pixel');
   for (const pixel of pixels) {
     pixel.classList.remove(pixel.classList[1]);
