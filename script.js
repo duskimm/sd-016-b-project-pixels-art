@@ -96,10 +96,22 @@ function changeSelection() {
   });
 }
 
+function clearPainting() {
+  const pixels = getAll('.pixel');
+  const resetButton = getOne('#clear-board');
+
+  resetButton.addEventListener('click', () => {
+    pixels.forEach((pixel) => {
+      pixel.style.backgroundColor = 'white';
+    });
+  });
+}
+
 window.onload = () => {
   generatorPixelRow();
   generatorPixelLine();
   getColor();
   paintingPixel();
   changeSelection();
+  clearPainting();
 }
