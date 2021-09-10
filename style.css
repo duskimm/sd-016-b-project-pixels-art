@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Comic Neue, cursive;
+}
+
+header {
+  background-color: rgb(70, 28, 118);
+}
+
+#title {
+  color: rgb(250, 244, 216);
+  font-size: 32px;
+  text-align: center;
+  padding: 20px;
+}
