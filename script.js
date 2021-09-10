@@ -19,9 +19,9 @@ function createLines() {
 
 function createPixels() {
   const lines = document.querySelectorAll('.line');
-  for (const line in lines) {
+  for (let indexLines = 0; indexLines < lines.length; indexLines += 1) {
     for (let index = 0; index < 5; index += 1) {
-      line.append(newChild('div', '', 'pixel white', ''));
+      lines[indexLines].append(newChild('div', '', 'pixel white', ''));
     }
   }
 }
@@ -56,7 +56,7 @@ window.onload = function () {
 
 document.querySelector('#clear-board').addEventListener('click', function () {
   const pixels = document.getElementsByClassName('pixel');
-  for (const pixel in pixels) {
+  for (const pixel of pixels) {
     pixel.classList.remove(pixel.classList[1]);
     pixel.classList.add('white');
   }
