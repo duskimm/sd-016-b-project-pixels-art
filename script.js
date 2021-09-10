@@ -28,7 +28,7 @@ function plugHtml(fatherElement, sonElement) {
 
 const user = {
   paintingColor: 'black',
-  boardSize: 5,
+  boardSize: '',
 };
 
 // functions for the project
@@ -110,7 +110,7 @@ function clearPainting() {
 }
 
 function customizeBoardSize() {
-  const newBoardSize = getOne('#generate-board');
+  const newBoardSize = getOne('#board-size');
 
   newBoardSize.addEventListener('input', (event) => {
     user.boardSize = event.target.value;
@@ -127,10 +127,10 @@ function resetCanvas() {
 }
 
 function applyNewBoardSize() {
-  const vqvButton = getOne('#vqv');
+  const generateButton = getOne('#generate-board');
 
-  vqvButton.addEventListener('click', () => {
-    if (Number.isInteger(user.boardSize)) {
+  generateButton.addEventListener('click', () => {
+    if (user.boardSize === '') {
       alert('Board inválido!');
     } else {
       resetCanvas();
