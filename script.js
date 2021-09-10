@@ -13,8 +13,8 @@ let lines = document.getElementsByClassName('pixel-line');
 
 // função que cria os pixels de acordo com o input recebido
 function generateLines(input) {
-    for (let index = 1; index <= input; index += 1) {
-        createDiv('pixel-line', pixelBoard);
+  for (let index = 1; index <= input; index += 1) {
+    createDiv('pixel-line', pixelBoard);
   }
 
   document.getElementById('board-size').value = '';
@@ -70,13 +70,21 @@ for (let index = 0; index < colors.length; index += 1) {
 }
 
 // Função que pinta os pixels
-document.querySelectorAll('.pixel').forEach(item => {
-  item.addEventListener('click', event => {
-    let selectedItem = document.querySelector('.selected');
-    let selectedColor = window.getComputedStyle(selectedItem).getPropertyValue('background-color');
-    event.target.style.backgroundColor = selectedColor;
-  });
-});
+
+function addColor(event) {
+    if (event.target.classList.contains('pixel') ) {
+        let selectedItem = document.querySelector('.selected');
+        let selectedColor = window.getComputedStyle(selectedItem).getPropertyValue('background-color');
+        event.target.style.backgroundColor = selectedColor;
+    }
+}
+
+document.addEventListener('click', addColor, false);
+
+// document.querySelectorAll('.pixel').forEach(item => {
+//   item.addEventListener('click', event => {
+//   });
+// });
 
 // Função que limpa o quadro
 function clearBoard() {
