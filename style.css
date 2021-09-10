@@ -7,28 +7,33 @@ body {
       font-size: 80px;
   }
 
-#color-pallete {
-    margin-left: 35%;
- 
+#color-palette {
+    text-align: center;
+ }
 
+#pixel-board {
+    height: 230px;
+    width: 240px;
+    border: solid;
+    margin-left: 43%;
 }
 
-#quadrados {
-    height: 630px;
-    width: 650px;
-    border: solid;
-    margin-left: 30%;
+.pixel {
+    background-color: white;
+    border: solid black 1px; 
+    width: 40px;
+    height: 40px;
+    display: inline-block ;
 }
 
 .color {
     border: solid 1px; 
     width: 120px;
     height: 120px;
-    background-color: yellow;
     display: inline-block ;
     margin: solid black 1px;
 }
-.color.blue {background-color: blue;}
+.color.black {background-color: black;}
 .color.red {background-color: red;}
 .color.orange {background-color: orange}
-.color.yellow {background-color: yellow;}
+.color.blue {background-color: blue;}
