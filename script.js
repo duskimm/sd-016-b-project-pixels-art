@@ -9,9 +9,6 @@ function resetSelected() {
 }
 
 let colorSelected = 'black';
-const blackColor = document.querySelector('#black');
-blackColor.style.border = '5px solid grey';
-blackColor.style.borderRadius = '50%';
 
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains('color')) {
