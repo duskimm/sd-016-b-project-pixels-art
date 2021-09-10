@@ -33,6 +33,12 @@
   min-width: 40px;
   background-color: #fff;
 }
+#pixel-board {
+  margin-top: 50px;
+}
+.pixel-row {
+  height: 40px;
+}
 main {
   margin-top: 100px;
 }
