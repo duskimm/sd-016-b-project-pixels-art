@@ -26,13 +26,31 @@ function createPixels() {
   }
 }
 
-//Metodo event bubbling adquirido atraves deste link https://gomakethings.com/attaching-multiple-elements-to-a-single-event-listener-in-vanilla-js/
-document.addEventListener('click', function (event) {
+function changeSelectedPosition(event) {
   if (event.target.classList.contains('color')) {
     const selectedColor = document.querySelector('.selected');
     selectedColor.classList.remove('selected');
     event.target.classList.add('selected');
   }
+}
+
+function paintPixels(event) {
+  if (event.target.classList.contains('pixel')) {
+    const selectedColor = document.querySelector('.selected');
+    let classColor = selectedColor.classList;
+    if (event.target.classList.length > 1) {
+      event.target.classList.remove(event.target.classList[1]);
+      event.target.classList.add(classColor[1]);
+    } else {
+      event.target.classList.add(classColor[1]);
+    }
+  }
+}
+
+/* Metodo event bubbling adquirido atraves deste link https://gomakethings.com/attaching-multiple-elements-to-a-single-event-listener-in-vanilla-js/ */
+document.addEventListener('click', function (event) {
+  changeSelectedPosition(event);
+  paintPixels(event);
 }, false);
 
 window.onload = function () {
