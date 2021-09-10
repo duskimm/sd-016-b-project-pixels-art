@@ -1,4 +1,4 @@
-const predefinedColors = ['red', 'black', 'blue', 'orange']
+const predefinedColors = ['black', 'red', 'blue', 'orange']
 
 function createColorPallete() {
     const container = document.createElement('div');
