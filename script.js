@@ -56,6 +56,12 @@ function selectColor(evt, inputColors) {
   evt.target.classList.add('selected');
 }
 
+function clearPixelBoard(boardSize) {
+  const board = document.getElementById('pixel-board');
+  board.innerHTML = '';
+  generatePixelBoard(boardSize);
+}
+
 window.onload = () => {
   const boardSize = 5;
   generateColorPalette();
@@ -69,4 +75,7 @@ window.onload = () => {
       inputColor.addEventListener('dblclick', (evt) => setColor(evt.target, getRandomColor()));
     }
   });
+
+  const clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', () => clearPixelBoard(boardSize));
 };
