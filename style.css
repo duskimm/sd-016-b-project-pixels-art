@@ -31,17 +31,17 @@ body {
   background-color: blue;
 }
 
-.color:hover {
-  cursor: pointer;
-}
-
 .color {
   border: 1px solid black;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   display: inline-block;
-  margin: 10px 10px;
+  margin: 10px;
+}
+
+.color:hover {
+  cursor: pointer;
 }
 
 .color__content {
@@ -49,17 +49,24 @@ body {
   text-align: center;
 }
 
+.centralize-board {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 #pixel-board {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 40px);
   margin: 10px auto;
-  width: 200px;
+  width: auto;
 }
 .pixel {
   width: 40px;
   height: 40px;
   border: 1px solid black;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 
 #clear-board {

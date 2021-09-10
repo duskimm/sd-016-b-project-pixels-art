@@ -31,13 +31,32 @@ function clearBoard() {
   }
 }
 
+function genBoard() {
+  const bigBoard = document.getElementById('pixel-board');
+  const inputValue = document.querySelector('#board-size').value;
+  if (inputValue === '') {
+    window.alert('Board Inválido!');
+  } else {
+    bigBoard.innerText = '';
+    bigBoard.style.gridTemplateColumns = `repeat(${inputValue}, 40px)`;
+    const inputVquad = inputValue ** 2;
+    for (let i = 1; i <= inputVquad; i += 1) {
+      const newDiv = document.createElement('div');
+      newDiv.className = 'pixel';
+      bigBoard.appendChild(newDiv);
+    }
+  }
+}
+
 // constantes
 const btnRed = document.querySelector('.color__content');
 const pixelBo = document.querySelector('#pixel-board');
 const btnClear = document.querySelector('#clear-board');
+const btnGen = document.querySelector('#generate-board');
 
 window.onload = resetColor;
 
 btnRed.addEventListener('click', addClassSelected);
 pixelBo.addEventListener('click', paintPix);
 btnClear.addEventListener('click', clearBoard);
+btnGen.addEventListener('click', genBoard);
