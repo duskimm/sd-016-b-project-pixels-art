@@ -1,7 +1,7 @@
 let colorSelected = document.querySelectorAll('#color-palette .color');
-let btnClear = document.querySelector('.btn-clear');
+let btnClear = document.getElementById('clear-board');
+btnClear.addEventListener('click', clearAll);
 
-// console.log(colorSelected);
 const pixelBoard = document.getElementById('pixel-board');
 let color = 'black';
 
@@ -21,7 +21,9 @@ const pixelBox = document.querySelectorAll('.pixel');
  * Função que pinta os pixels
  */
 function paintsElement(event) {
-  event.target.style.backgroundColor = color;
+  if (event.target.className === 'pixel') {
+    event.target.style.backgroundColor = color;
+  }
 }
 
 for (let index = 0; index < pixelBox.length; index += 1) {
@@ -31,14 +33,24 @@ for (let index = 0; index < pixelBox.length; index += 1) {
 for (let index = 0; index < colorSelected.length; index += 1) {
   colorSelected[index].addEventListener('click', chosenColor);
   console.log(color);
+  // colorSelected[index].className = 'color';
 }
 
 function chosenColor(event) {
   color = event.target.id;
 }
-btnClear.addEventListener('click', clearAll);
-function clearAll(event) {
+
+function clearAll() {
+  // Reseta a cor de fundo de todos os pixels
   for (let index = 0; index < pixelBox.length; index += 1) {
     pixelBox[index].style.backgroundColor = 'white';
+  }
+  // Reseta a cor selected para black
+  for (let index = 0; index < colorSelected.length; index += 1) {
+    if (colorSelected[index].id !== 'black') {
+      colorSelected[index].classList.remove('selected');
+    } else {
+      colorSelected[index].className = 'color selected';
+    }
   }
 }

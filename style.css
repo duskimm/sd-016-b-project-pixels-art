@@ -4,6 +4,8 @@
 }
 
 #title {
+  border-bottom: 2px solid teal;
+  font-family: 'Courier New', Courier, monospace;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -62,8 +64,10 @@
   text-align: center;
 }
 
-.btn-clear {
+#clear-board {
   background-color: teal;
   border-radius: 5px;
+  color: white;
+  font-weight: 500;
   padding: 10px;
 }
