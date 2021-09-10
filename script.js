@@ -2,6 +2,8 @@ const numberGridColumnsAndLines = 5;
 
 let lines = document.querySelectorAll('.gridColumns');
 
+const arrayColorsPalette = ['black', 'blue', 'red', 'green'];
+
 // Criando as divs da paleta de cores
 function colorPalettesFormation(arrayColors) {
   const colorPalette = document.getElementById('color-palette');
@@ -18,7 +20,7 @@ function gridLines(divLines) {
   for (let index = 0; index < numberGridColumnsAndLines; index += 1) {
     const divGridLines = document.createElement('div');
     divLines.appendChild(divGridLines);
-    divGridLines.classList.add('pixel');
+    divGridLines.classList.add('pixel', 'backGroundSet');
   }
 }
 
@@ -35,10 +37,41 @@ function gridFormation() {
   }
 }
 
-window.onload = function () {
-  const arrayColorsPalette = ['black', 'blue', 'red', 'green'];
+// Selecionando a cor preta como a selecionada inicialmente
+function defautColorSelected() {
+  const defautSelected = document.querySelector('.color');
+  defautSelected.classList.add('selected');
+}
 
+// Colocando a class selected na cor clicada
+function listenerPalette(event) {
+  document.querySelector('.selected').classList.remove('selected');
+  const divPaletteSelected = event.target;
+  divPaletteSelected.classList.add('selected');
+}
+
+// Colocando cor no pixel clicado
+function listenerPixels(event) {
+  const divPixelSelected = event.target;
+  const classSelectedColor = document.querySelector('.selected').classList[0];
+// divPixelSelected.classList.remove('backGroundSet');
+  divPixelSelected.setAttribute('class', 'pixel');
+  divPixelSelected.classList.add(classSelectedColor);
+  console.log(classSelectedColor);
+}
+
+window.onload = function () {
   colorPalettesFormation(arrayColorsPalette);
 
   gridFormation();
+
+  defautColorSelected();
+
+  const clickPalette = document.getElementById('color-palette');
+
+  clickPalette.addEventListener('click', listenerPalette);
+
+  const clickPixels = document.getElementById('pixel-board');
+
+  clickPixels.addEventListener('click', listenerPixels);
 };

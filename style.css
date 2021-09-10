@@ -10,7 +10,7 @@
 }
 
 .blue {
-  background-color:blue;
+  background-color: blue;
 }
 
 .red {
@@ -25,15 +25,20 @@
   background-color: black;
 }
 
+.selected {
+}
+
 .gridColumns {
-  height: 50px;
+  height: 40px;
 }
 
 .pixel {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   display: inline-block;
-  background-color: white;
 }
 
+.backGroundSet {
+  background-color: white;
+}
