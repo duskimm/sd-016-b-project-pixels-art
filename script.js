@@ -65,6 +65,7 @@ const pixelsBoardSide = 5;
 
 for (let line = 0; line < pixelsBoardSide; line += 1) {
   const pixelLine = creatElementHTML('div');
+  setClass(pixelLine, 'board-line');
   addElementToDOM(pixelsBoard, pixelLine);
 
   for (let column = 0; column < pixelsBoardSide; column += 1) {
