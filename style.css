@@ -9,11 +9,12 @@
 .color {
   border: black solid 1px;
   display: inline-block;
-  padding: 20px;
+  width: 40px;
+  height: 40px;
 }
 
-.line {
-  display: inline-block;
+#pixel-board .line {
+  display: flex;
 }
 
 .pixel {
@@ -21,6 +22,8 @@
   width: 40px;
   height: 40px;
   border: black solid 1px;
+  display: inline-block;
+
 }
 
 #purple {
