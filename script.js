@@ -1,14 +1,29 @@
+function genColor() {
+  const r = parseInt(Math.random() * 255, 10);
+  const g = parseInt(Math.random() * 255, 10);
+  const b = parseInt(Math.random() * 255, 10);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+function newColors() {
+  const childrenColors = document.getElementById('color-palette').children;
+  for (let i = 1; i < childrenColors.length; i += 1) {
+    childrenColors[i].style.backgroundColor = genColor();
+  }
+}
+
 function resetColor() {
   const blackColor = document.querySelector('.black');
   blackColor.classList.add('selected');
+  newColors();
 }
 
 function addClassSelected(event) {
   const classSelected = document.querySelector('.selected');
   const eventTarget = event.target;
   if (
-    eventTarget.classList.contains('selected') === false &&
-    eventTarget.classList.contains('color') === true
+    eventTarget.classList.contains('selected') === false
+    && eventTarget.classList.contains('color') === true
   ) {
     classSelected.classList.remove('selected');
     event.target.classList.add('selected');

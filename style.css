@@ -1,6 +1,6 @@
-*,
-*::after,
-*::before {
+* , 
+*:after , 
+*:before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -52,7 +52,6 @@ body {
 .centralize-board {
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
@@ -62,6 +61,7 @@ body {
   margin: 10px auto;
   width: auto;
 }
+
 .pixel {
   width: 40px;
   height: 40px;
