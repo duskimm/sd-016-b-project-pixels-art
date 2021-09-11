@@ -1,51 +1,41 @@
 window.onload = function() {
+  let printColor = 'black';
 
   //faz com que a cor black seja selecionada
-  selectColor();
-  function selectColor () {
+  setColor();
+  function setColor () {
       let colorSelect = document.querySelector('.color');
       colorSelect.classList.add('selected');
-      firstload = false;
   }
-
-  //chama cada cor para uma let
-  let color0 = document.getElementsByClassName('color')[0];
-  let color1 = document.getElementsByClassName('color')[1];
-  let color2 = document.getElementsByClassName('color')[2];
-  let color3 = document.getElementsByClassName('color')[3];
-
-  //adiciona evento nas cores, caso clicke chama uma função que marca ela e desmarca as outras cores
-
-  //black
-  color0.addEventListener('click', callColor0);
-  function callColor0() {
-    color0.classList.add('selected');
-    color1.classList.remove('selected');
-    color2.classList.remove('selected');
-    color3.classList.remove('selected');
+  //chama cada cor para uma let, adiciona evento nas cores, caso clicke chama uma função que marca ela e desmarca as outras cores
+  let color = [];
+  for(let index = 0; index < document.getElementsByClassName('color').length; index += 1) {
+    color.push(document.getElementsByClassName('color')[index]);
+    color[index].addEventListener('click', selectColor);
   }
-  //red
-  color1.addEventListener('click', callColor1);
-  function callColor1() {
-    color0.classList.remove('selected');
-    color1.classList.add('selected');
-    color2.classList.remove('selected');
-    color3.classList.remove('selected');
+  //funcao que seleciona e desmarca as outras cores da palheta
+  function selectColor(event) {
+    document.querySelector('.selected').classList.remove('selected');
+    event.target.classList.add('selected');
+    printColor = event.target.classList[1];
+    // event.target.querySelector('.selected').style.backgroundColor = event.target.classList[1];
   }
-  //blue
-  color2.addEventListener('click', callColor2);
-  function callColor2() {
-    color0.classList.remove('selected');
-    color1.classList.remove('selected');
-    color2.classList.add('selected');
-    color3.classList.remove('selected');
+  //chama cada pixel para uma let e add funcao de botao
+  let pixel = [];
+  for(let index = 0; index < document.getElementsByClassName('pixel').length; index += 1) {
+    pixel.push(document.getElementsByClassName('pixel')[index]);
+    pixel[index].addEventListener('click', print);
   }
-  //green
-  color3.addEventListener('click', callColor3);
-  function callColor3() {
-    color0.classList.remove('selected');
-    color1.classList.remove('selected');
-    color2.classList.remove('selected');
-    color3.classList.add('selected');
+  //pinta o quadrado clickado
+  function print (event) {
+    event.target.style.backgroundColor = printColor;
+  }
+  //limpa o quadro de pixel
+  let buttonClean = document.querySelector('#clear-board');
+  buttonClean.addEventListener('click', clearBoard);
+  function clearBoard () {
+    for(index = 0; index < document.getElementsByClassName('pixel').length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
   }
 }
