@@ -36,8 +36,11 @@ for (let index = 0; index < configurarCoresPaletas.length; index += 1){
     }    
 }
 
-
-
-
-
-
+function configurarSelecao(event){
+    let capturaClasseSection = document.querySelector('.selected');
+    capturaClasseSection.classList.remove('selected');
+    event.target.classList.add('selected');
+}
+for (let index = 0; index < configurarCoresPaletas.length; index += 1){
+    configurarCoresPaletas[index].addEventListener('click', configurarSelecao);
+}
