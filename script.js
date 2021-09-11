@@ -1,14 +1,13 @@
-function createABoardOfPixels (height, width){
+function createABoardOfPixels (tamanhoQuadrado){
   let pixelBoard = document.querySelector("#pixel-board");
-  console.log(pixelBoard);
-  for(indexLine = 1; indexLine <= height; indexLine += 1){
+  for(indexLine = 1; indexLine <= tamanhoQuadrado; indexLine += 1){
     let line = document.createElement("div");
     line.className = "line"
     pixelBoard.appendChild(line)
     
   }
-  for(let indexCollum = 0; indexCollum < width; indexCollum += 1){
-    for(let i = 0; i < width; i += 1){
+  for(let indexCollum = 0; indexCollum < tamanhoQuadrado; indexCollum += 1){
+    for(let i = 0; i < tamanhoQuadrado; i += 1){
 
       let line = document.querySelectorAll(".line")[indexCollum]
       let pixel = document.createElement("div");
@@ -19,4 +18,31 @@ function createABoardOfPixels (height, width){
 
 }
 
-createABoardOfPixels(5, 5)
+createABoardOfPixels(5)
+
+function addClassSelected(event) {
+  const classSelected = document.querySelector('.selected');
+  const eventTarget = event.target;
+  if (
+    eventTarget.classList.contains('selected') === false
+    && eventTarget.classList.contains('color') === true
+  ) {
+    classSelected.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+}
+
+function changeColor(event){ /* Foi utilizado a ajuda do 
+  Victor Shin Kamiguchi para a resolucao desse exercicio */
+  const eventTarget = event.target;
+  const colorSelected = document.querySelector(".selected"); 
+  const bgColor = window.getComputedStyle(colorSelected, null).getPropertyValue('background-color'); /* * */
+  eventTarget.style.backgroundColor = bgColor;
+}
+
+
+const colorSelect = document.querySelector("#color-palette")
+const pixelBoard = document.querySelector("#pixel-board")
+pixelBoard.addEventListener("click", changeColor)
+
+colorSelect.addEventListener("click", addClassSelected)
