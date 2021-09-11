@@ -9,24 +9,20 @@ body {
   border: 1px solid black;
 }
 
-#black {
+#firstColor {
   background-color: black;
 }
 
-#magenta {
+#secondColor {
   background-color: magenta;
 }
 
-#violet {
+#thirdColor {
   background-color: violet;
 }
 
-#darkorchid {
+#fourthColor {
   background-color: darkorchid;
-}
-
-#blueviolet {
-  background-color: blueviolet;
 }
 
 .pixel {
@@ -39,4 +35,17 @@ body {
 
 button {
   margin: 0.5em;
+}
+
+input {
+  width: 25px;
+}
+
+#tamanho {
+  display: inline-block;
+  margin: 10px;
+}
+
+#title {
+  margin: 0;
 }
