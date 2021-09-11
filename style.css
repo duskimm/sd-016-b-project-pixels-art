@@ -1,11 +1,24 @@
-#color-palette{
+/* Paleta de Cores */
+#color-palette {
   display: flex;
 }
 
-.color{
+.color {
   border: 1px solid black;
-  margin: 10px;
-	width: 25px;
-	height: 25px;
-	list-style-type: none;
+  margin: 7px;
+  width: 40px;
+  height: 40px;
+}
+
+/* Area dos pixels */
+li {
+  list-style-type: none;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  background-color: white;
+  display: inline-block;
 }
