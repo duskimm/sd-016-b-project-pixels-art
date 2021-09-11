@@ -17,7 +17,13 @@ createColorsPallete('yellow');
 // createColorsPallete('purple');
 // createColorsPallete('pink');
 
-// selecionando a cor preta com a classe selected
+// selecionando a cor preta do span com a classe selected
+function colorBlack (){
+  let colorFixed = document.getElementsByTagName('span')[0];
+  colorFixed.className = 'color selected'
+}
+colorBlack();
+
 
 // criar quadro Pixel com 5 elementos de largura e 5 elementos de altura. Fazer a lógica do quadrado de asteriscos.
 // Auxílio Airton Lopes para implementar a div line
@@ -40,6 +46,7 @@ function createboardPixel(number) {
   }
 }
 createboardPixel(5);
+
 
 
 
