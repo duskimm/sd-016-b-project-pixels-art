@@ -34,7 +34,6 @@ function criaLinha(){
  }
  criaLinha()
 
-
 function botaoReiniciar (){
     let botaoBranco = document.createElement('button');
     let corpoDoSite = document.getElementsByTagName('body')[0];
