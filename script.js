@@ -47,3 +47,9 @@ function createDivPixel() {
   }
 }
 createDivPixel();
+// 6.jn
+function setClassSelected() {
+  const classSelected = document.getElementsByClassName('color')[0];
+  classSelected.className = 'color selected';
+}
+setClassSelected();
