@@ -55,13 +55,3 @@ function reiniciaJogo(){
         quadrados[i].style.background = branco
     }
 }
-
-let vermelho = "red";
-function pintaDeVermelho(){
-    let quadrados = document.querySelectorAll(".pixel");
-    for (let i =0; i<quadrados.length; i+=1){
-        quadrados[i].style.background = vermelho
-    }
-}
-
-pintaDeVermelho()
