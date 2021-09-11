@@ -12,10 +12,17 @@ body {
  }
 
 #pixel-board {
-    height: 230px;
+    height: auto;
     width: 240px;
-    border: solid;
-    margin-left: 43%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#board-size {
+    width: 70px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .pixel {
@@ -23,13 +30,14 @@ body {
     border: solid black 1px; 
     width: 40px;
     height: 40px;
+    margin-right: 2px;
     display: inline-block ;
 }
 
 .color {
     border: solid 1px; 
-    width: 120px;
-    height: 120px;
+    width: 70px;
+    height: 70px;
     display: inline-block ;
     margin: solid black 1px;
 }
@@ -41,5 +49,5 @@ body {
 #clear-board {
     width: 120px;
     margin: 30px;
-    margin-left: 46%;
+    margin-left:42%;
 }
