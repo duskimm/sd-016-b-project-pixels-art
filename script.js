@@ -23,18 +23,24 @@ window.onload = function (params) {
         document.querySelector('#color-palette').appendChild(div);
     }
 
-    // configura o quadro
-    for (let j = 0; j < linhas; j += 1){
-        let linha = document.createElement('div');
-        linha.classList.add('linha');
-        for (let i = 0; i < linhas; i += 1) {
-            let div = document.createElement('div');
-            div.style.backgroundColor = 'white';//cor_aleatoria_lista();
-            div.classList.add('pixel');
-            linha.appendChild(div);
+    // gera o quadro
+    function geraQuadro() {
+        for (let j = 0; j < linhas; j += 1){
+            let linha = document.createElement('div');
+            linha.classList.add('linha');
+            linha.style.width = linhas * 42 + 'px';
+            for (let i = 0; i < linhas; i += 1) {
+                let div = document.createElement('div');
+                div.style.backgroundColor = 'white';//cor_aleatoria_lista();
+                div.classList.add('pixel');
+                linha.appendChild(div);
+            }
+            document.querySelector('#pixel-board').appendChild(linha);
         }
-        document.querySelector('#pixel-board').appendChild(linha);
     }
+    geraQuadro();
+
+    //document.querySelector('#pixel-board').style.width = linhas * 42 + 10 + 'px';
 
     // habilita pintar
     document.querySelector(
@@ -65,6 +71,19 @@ window.onload = function (params) {
             i.style.backgroundColor = 'white';
         }
     })
+
+    // implementa mudar tamanho do quadro
+    document.querySelector('#generate-board').addEventListener(
+        'click', function (e){
+        let n = document.querySelector('#board-size').value;
+        if (n.length == 0){ alert('Board inválido!'); return }
+        if (n > 50) n = 50;
+        if (n < 5) n = 5;
+        linhas = n;
+        removeElementosPelaClasse('pixel');
+        removeElementosPelaClasse('linha');
+        geraQuadro();
+    })
     
 }
 
@@ -87,6 +106,14 @@ function cor_aleatoria_rgb(r,g,b) {
         ga = g || Math.random() * 255,
         ba = b || Math.random() * 255;
     return "rgb("+ ra + "," + ga + "," + ba + ")";
+}
+
+function removeElementosPelaClasse(classe) {
+    let e = document.getElementsByClassName(classe);
+    while (e.length) {
+        e[0].remove();
+        e = document.getElementsByClassName(classe);
+    }
 }
 
 // não esqueça a linha em branco no final do arquivo
