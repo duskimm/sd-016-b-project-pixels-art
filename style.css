@@ -1,21 +1,24 @@
 .color {
-border: solid black 1px;
-display: inline;
+  border: solid black 1px;
+  display: inline;
 }
 
 #black {
-    background-color: black;
+  background-color: black;
 }
 
 #red {
-    background-color: red;
+  background-color: red;
 }
 
 #blue {
-    background-color: blue;
+  background-color: blue;
 }
 
 #yellow {
-   background-color: yellow;
+  background-color: yellow;
 }
 
+.pixel {
+  background-color: white;  
+}
