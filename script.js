@@ -40,9 +40,21 @@ function changeColor(event){ /* Foi utilizado a ajuda do
   eventTarget.style.backgroundColor = bgColor;
 }
 
+function clearBoard(event) {
+  const pixels = document.getElementsByClassName("pixel")
+  const pixelBoard = document.getElementById("pixel-board")
+  pixelBoard.style.backgroundColor = "rgb(255, 255, 255)";
+  
+  for (let i = 0; i < pixels.length; i += 1){
+    pixels[i].style.backgroundColor = "rgb(255, 255, 255)"
+  }
+ 
+}
+
 
 const colorSelect = document.querySelector("#color-palette")
-const pixelBoard = document.querySelector("#pixel-board")
+const pixelBoard = document.querySelector("#pixel-board");
+const clearBtn = document.querySelector('#clear-board');
+clearBtn.addEventListener("click", clearBoard)
 pixelBoard.addEventListener("click", changeColor)
-
 colorSelect.addEventListener("click", addClassSelected)
