@@ -14,6 +14,7 @@ function changeClass(event) {
   getClass.classList.remove("selected");
   event.target.classList.add("selected");
 }
+
 black.addEventListener("click", changeClass);
 red.addEventListener("click", changeClass);
 blue.addEventListener("click", changeClass);
