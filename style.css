@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: beige;
 }
 
-#title{
+#title{ 
   text-align: center;
   position: relative;
   top: 50px;
@@ -28,18 +28,18 @@ body{
   border: 1px solid black;
   margin-right: 10px;
 }
-#board-center{
+#board-center {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 35%; 
 }
+
 #pixel-board {
   display: grid;
   grid-template-columns: repeat(5, 0fr);
   right: auto;
   left: auto;
-
 }
 
 .pixel {
@@ -49,22 +49,24 @@ body{
   border: 1px solid black;
 }
 
-#inputs-content{
-display: block;
-position: relative;
-left: 42.8%;
-top:70px;
+#inputs-content {
+  display: block;
+  position: relative;
+  left: 42.8%;
+  top:70px;
 }
 
-#clear-board{
+#clear-board {
   display: inline-block;
 }
-#board-size{
+
+#board-size {
   border: 1px solid black;
   display: inline-block;
   width: 100px;
 }
-#generator-board{
+
+#generator-board {
   display: inline-block;
 }
 
