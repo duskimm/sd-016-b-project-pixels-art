@@ -16,11 +16,11 @@ window.onload = function() {
 // }
 
 
-function createListeners(){
+function createListenersPalette(){
     for (let i=0; i<colors.length; i+=1) {
         document.querySelector('.color.'+ colors[i]).addEventListener("click", select);
     }
-} createListeners();
+} createListenersPalette();
 
 
  // https://medium.com/@erycdasilva/como-adicionar-e-remover-classes-de-elementos-html-com-vanilla-js-7b6527b7aa2f
@@ -36,7 +36,9 @@ function select() {
     }
 }
 
-
+function paintPixel (){
+    event.target.style.backgroundColor = document.getElementsByClassName('selected')[0].className.split(' ')[1]; 
+}
 
 function createPixels (qtd) {
     for(let i= 0; i < qtd; i += 1) {
@@ -44,6 +46,8 @@ function createPixels (qtd) {
     const pixels = document.createElement('div');  
     pixels.className = 'pixel' 
     pixelBoard.appendChild(pixels);
+    pixels.addEventListener("click", paintPixel);
+
     }
 }
 createPixels(25);
