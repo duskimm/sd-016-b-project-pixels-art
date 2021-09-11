@@ -14,23 +14,22 @@ criaDivCores();
 
 let n = 5;
 let quadro = document.getElementById('pixel-board')
+let nDecrescente = 5-1
 
 function criaColuna(){
-    for (let i=1; i < n; i+=1){
+    for (let i=2; i <=n; i+=1){
         let pixel = document.createElement('div');
-        pixel.className= "pixel";
+        criaLinha()
         quadro.appendChild(pixel);
     }
-
 }
 criaColuna()
 
 function criaLinha(){
-for (let i=0; i < n; i+=1){
-    let pixel = document.createElement('div');
-    pixel.className= "pixel linha";
-    quadro.appendChild(pixel);
-}
-}
-
-criaLinha()
+     for (let i=1 ; i <=n; i+=1){
+       let pixel = document.createElement('div');
+       pixel.className= "pixel linha";
+       quadro.appendChild(pixel);
+     }
+ }
+ criaLinha()

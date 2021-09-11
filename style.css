@@ -22,6 +22,9 @@
     width: 40px;
     height: 40px;
 }
+.coluna{
+    display: block;
+}
 .linha{
     display: inline-block;
 }
