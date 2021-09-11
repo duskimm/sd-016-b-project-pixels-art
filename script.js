@@ -40,3 +40,10 @@ divBoardP.addEventListener('click', (event) => {
     event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   }
 });
+const button = document.getElementById('clear-board');
+button.addEventListener('click', () => {
+  const pixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
+  }
+});
