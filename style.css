@@ -1,7 +1,3 @@
-:root {
-    --pixel-size: 40px;
-}
-
 body {
     background-color: rgb(255, 236, 236);
 }
@@ -24,15 +20,11 @@ body {
 
 #pixel-board {
     border: 1px solid black;
-    width: calc((var(--pixel-size) * 5));
-    height: calc((var(--pixel-size) * 5));
     overflow: hidden;
     font-size: 0;
 }
 
 .pixel {
-    width: var(--pixel-size);
-    height: var(--pixel-size);
     display: inline-block;
     background-color: white;
     margin: 0;
