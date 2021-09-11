@@ -28,8 +28,19 @@ body {
   width: 80px;
 }
 
+.color:hover {
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.container-clear {
+  margin: 40px 0;
+  text-align: center;
+  width: 100%;
+}
+
 #pixel-board {
-  border: 1px solid blue;
+  border: 1px solid black;
   height: 210px;
   margin: 40px auto;
   width: 210px;
@@ -41,4 +52,24 @@ body {
   float: left;
   height: 40px;
   width: 40px;
+}
+
+.pixel:hover {
+  cursor: pointer;
+}
+
+#clear-board {
+  background-color: black;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+#clear-board:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }

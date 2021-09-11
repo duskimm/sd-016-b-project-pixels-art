@@ -17,6 +17,7 @@ function createPixel() {
     pixel.classList.add('pixel');
     boardPixel.appendChild(pixel);
   }
+  return boardPixel;
 }
 createPixel();
 
@@ -27,15 +28,46 @@ function removeClass(listDivs) {
   return listDivs;
 }
 
-function colorSelected() {
-  const divsPixels = document.querySelectorAll('.color');
-  divsPixels[0].classList.add('selected');
+function captureBgColor() {
+  const colorSelected = document.querySelector('.selected');
+  const pixelBgColor = window.getComputedStyle(colorSelected)
+    .getPropertyValue('background-color');
+  return pixelBgColor;
+}
 
-  divsPixels.forEach((item) => {
-    item.addEventListener('click', (event) => {
-      removeClass(divsPixels);
-      event.target.classList.add('selected');
+function paintPixels() {
+  const pixels = document.querySelectorAll('.pixel');
+  pixels.forEach((item) => {
+    item.addEventListener('click', () => {
+      const elementDiv = item;
+      const bgColor = captureBgColor();
+      elementDiv.style.backgroundColor = bgColor;
     });
   });
 }
-colorSelected();
+
+function cleanBoard() {
+  const btnClean = document.getElementById('clear-board');
+  btnClean.addEventListener('click', () => {
+    const elements = document.querySelectorAll('.pixel');
+    for (let i = 0; i < elements.length; i += 1) {
+      elements[i].style.backgroundColor = '#fff';
+    }
+  });
+}
+
+function selectBrush() {
+  const divsBrushs = document.querySelectorAll('.color');
+  divsBrushs[0].classList.add('selected');
+  paintPixels();
+  cleanBoard();
+
+  divsBrushs.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      removeClass(divsBrushs);
+      event.target.classList.add('selected');
+      paintPixels();
+    });
+  });
+}
+selectBrush();
