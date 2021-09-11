@@ -1,24 +1,27 @@
 .pixel  {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   display: inline-block;
   border: solid black 1px;
+  background-color: white;
 }
-#palette1 {
+.black {
  background-color:black;
 }
 
-#palette2 {
+.color1{
+  background-color: red;
+}
+
+.color2 {
   background-color: blue;
 }
 
-#palette3 {
+.color3 {
 background-color: green;
   
 }
-#palette4 {
-  background-color: orange;
-}
+
 
 .color {
   margin-right: 5px;
