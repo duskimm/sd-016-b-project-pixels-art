@@ -31,21 +31,30 @@ function clearBoard() {
   }
 }
 
-function genBoard() {
+function buildPixelBoard(inputV) {
   const bigBoard = document.getElementById('pixel-board');
-  const inputValue = document.querySelector('#board-size').value;
+  bigBoard.innerText = '';
+  bigBoard.style.gridTemplateColumns = `repeat(${inputV}, 40px)`;
+  const inputVquad = inputV ** 2;
+  for (let i = 1; i <= inputVquad; i += 1) {
+    const newDiv = document.createElement('div');
+    newDiv.className = 'pixel';
+    bigBoard.appendChild(newDiv);
+  }
+}
+
+function genBoard() {
+  let inputValue = document.querySelector('#board-size').value;
   if (inputValue === '') {
     window.alert('Board Inválido!');
-  } else {
-    bigBoard.innerText = '';
-    bigBoard.style.gridTemplateColumns = `repeat(${inputValue}, 40px)`;
-    const inputVquad = inputValue ** 2;
-    for (let i = 1; i <= inputVquad; i += 1) {
-      const newDiv = document.createElement('div');
-      newDiv.className = 'pixel';
-      bigBoard.appendChild(newDiv);
-    }
+  } else if (inputValue < 5) {
+    inputValue = 5;
+    buildPixelBoard(inputValue);
+  } else if (inputValue > 50) {
+    inputValue = 50;
+    buildPixelBoard(inputValue);
   }
+  buildPixelBoard(inputValue);
 }
 
 // constantes
