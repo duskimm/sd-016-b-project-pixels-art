@@ -63,7 +63,25 @@ function generateBoard() {
   }
 }
 
+function generateColors() {
+  const palette = [];
+  palette.push(document.querySelector('.color:nth-of-type( 2 )'));
+  palette.push(document.querySelector('.color:nth-of-type( 3 )'));
+  palette.push(document.querySelector('.color:nth-of-type( 4 )'));
+
+  for (let i = 0; i < palette.length; i += 1) {
+    const rgbValue = [];
+    rgbValue.push(Math.floor(Math.random() * 256).toString(10));
+    rgbValue.push(Math.floor(Math.random() * 256).toString(10));
+    rgbValue.push(Math.floor(Math.random() * 256).toString(10));
+    const color = rgbValue.toString();
+    // console.log(color);
+    palette[i].style.backgroundColor = 'rgb('.concat(color, ')');
+  }
+}
+
 window.onload = function main() {
+  generateColors();
   const paletaDeCores = document.querySelectorAll('.color');
   for (let i = 0; i < paletaDeCores.length; i += 1) {
     paletaDeCores[i].addEventListener('click', selectColor);

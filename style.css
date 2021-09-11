@@ -9,7 +9,7 @@
   background-color: black;
 }
 
-.color:nth-of-type( 2 ) {
+/* .color:nth-of-type( 2 ) {
   background-color: rgb(42, 157, 143);
 }
 
@@ -19,7 +19,7 @@
 
 .color:nth-of-type( 4 ) {
   background-color: rgb(231, 111, 81);
-}
+} */
 
 .pixel {
   background-color: white;
