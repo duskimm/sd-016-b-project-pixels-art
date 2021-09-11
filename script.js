@@ -8,7 +8,10 @@ function generateRandomColor() {
 
 function generateColorPalette(quantity) {
   const colorPalette = [];
-  for (let counter = 0; counter < quantity;) {
+  if (quantity > 0) {
+    colorPalette.push('rgb(0, 0, 0)');
+  }
+  for (let counter = 1; counter < quantity;) {
     const color = generateRandomColor();
     if (!colorPalette.includes(color) && color !== 'rgb(255, 255, 255)') {
       colorPalette.push(color);
