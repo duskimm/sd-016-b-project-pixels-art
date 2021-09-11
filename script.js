@@ -65,3 +65,18 @@ function selectedClasses(array) {
 }
 
 selectedClasses(colors);
+
+// task 8 functions
+const pixel = qAll('.pixel');
+
+function selectPixel(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    array[i].addEventListener('click', () => {
+      const stuf = array[i];
+      const selectedColor = q('.selected').style.backgroundColor;
+      stuf.style.backgroundColor = selectedColor;
+    });
+  }
+}
+
+selectPixel(pixel);
