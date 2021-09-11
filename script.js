@@ -7,13 +7,15 @@ const getButtonInput = document.getElementById('generate-board');
 let quantityOfPixels = 25;
 let status = false;
 
-function creatingPixels() {
-  for (let i = 1; i <= quantityOfPixels; i += 1) {
+function creatingPixels(quantity) {
+  for (let i = 1; i <= quantity; i += 1) {
     const createPixel = document.createElement('div');
     createPixel.className = 'pixel';
     getPixelBoard.appendChild(createPixel);
   }
 }
+
+creatingPixels(quantityOfPixels);
 
 // ref(1): https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
 // ref(2): http://devfuria.com.br/javascript/numeros-aleatorios/
@@ -44,11 +46,11 @@ function selectingColor(event) {
   }
   eventSelected.target.className = 'color selected';
 }
+
 for (let i = 0; i < getEachColorPalette.length; i += 1) {
   getEachColorPalette[i].addEventListener('click', selectingColor);
+  console.log(getEachColorPalette[i]);
 }
-
-creatingPixels();
 
 function printingPixel(event) {
   const getSelected = document.getElementsByClassName('selected');
@@ -56,8 +58,8 @@ function printingPixel(event) {
   eventSelected.target.style.backgroundColor = getSelected[0].style.backgroundColor;
 }
 
-for (let i = 0; i < getPixel.length; i += 1) {
-  getPixel[i].addEventListener('click', printingPixel);
+for (let j = 0; j < getPixel.length; j += 1) {
+  getPixel[j].addEventListener('click', printingPixel);
 }
 
 function removePixelsColors() {
@@ -84,6 +86,12 @@ function sizeMaxAndMin() {
   }
 }
 
+function printingWhenIclickInDiv() {
+  for (let j = 0; j < getPixel.length; j += 1) {
+    getPixel[j].addEventListener('click', printingPixel);
+  }
+}
+
 function newPictureWithDifferentesLinesAndColumns() {
   checkInput();
   sizeMaxAndMin();
@@ -92,8 +100,8 @@ function newPictureWithDifferentesLinesAndColumns() {
     getPixelBoard.innerHTML = '';
     quantityOfPixels = getInput.value ** 2;
     getPixelBoard.style.width = `${getInput.value * 42}px`;
-    creatingPixels();
-    removePixelsColors();
+    creatingPixels(quantityOfPixels);
+    printingWhenIclickInDiv();
   }
 }
 
