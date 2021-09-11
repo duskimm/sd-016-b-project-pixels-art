@@ -1,5 +1,8 @@
-const palleteColor = document.getElementById('color-palette');
+window.onload = function () {
+  colorBlack();
+};
 
+const palleteColor = document.getElementById('color-palette');
 
 // criar div para armazenar as cores do projeto, com classe "color" e ainda colocar a cor de forma dinâmica.
 function createColorsPallete(color) {
@@ -18,12 +21,10 @@ createColorsPallete('yellow');
 // createColorsPallete('pink');
 
 // selecionando a cor preta do span com a classe selected
-function colorBlack (){
+function colorBlack() {
   let colorFixed = document.getElementsByTagName('span')[0];
   colorFixed.className = 'color selected'
 }
-colorBlack();
-
 
 // criar quadro Pixel com 5 elementos de largura e 5 elementos de altura. Fazer a lógica do quadrado de asteriscos.
 // Auxílio Airton Lopes para implementar a div line
@@ -47,10 +48,17 @@ function createboardPixel(number) {
 }
 createboardPixel(5);
 
-
-
-
-
-
-
+// remover o selected de onde estava:
+// Auxilio do Luis Gustavo.
+let color = document.querySelectorAll('.color');
+function alteraClass(event) {
+  for (let index = 0; index < color.length; index += 1){
+    color[index].classList.remove('selected');
+  }
+  //seleciona o evento para iniciar ao ser clicado. toggle: alterna as classes.
+  event.target.classList.toggle('selected');
+}
+for (let index = 0; index < color.length; index += 1){
+  color[index].addEventListener('click', alteraClass);
+}
 
