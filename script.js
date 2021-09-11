@@ -1,8 +1,5 @@
-function addColor() {
-  const colors = ['black', 'white', 'blue', 'red']
-  const selectC = document.queryselector = (".color")
-  for (let index of colors) {
-    colors[index].style.backgroundColor = selectC[index]
-  }
+window.onload = function () {
+  let firstColor = document.querySelector("#bk");
+  firstColor.classList.add("selected");
+  firstColor.style.background = "black";
 }
-;
