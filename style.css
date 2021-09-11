@@ -2,7 +2,7 @@
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .pixel {
@@ -16,4 +16,10 @@
 
 .line {
   height: 41px;
+}
+
+#clear-board {
+  margin-bottom: 20px;
+  height: 40px;
+  width: 172px;
 }

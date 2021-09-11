@@ -59,8 +59,23 @@ const gradePixels = document.querySelector('#pixel-board');
 let alvo = '';
 function paint() {
   gradePixels.addEventListener('click', (event) => {
-    alvo = event.target;
-    alvo.style.backgroundColor = corAtual;
+    if (event.target.className === 'pixel') {
+      alvo = event.target;
+      alvo.style.backgroundColor = corAtual;
+    }
   });
 }
 paint();
+
+// Requisito 9 - Botão de clear para a tela
+const clearBtn = document.querySelector('#clear-board');
+const pixelCells = document.getElementsByClassName('pixel');
+
+function clearAll() {
+  clearBtn.addEventListener('click', () => {
+    for (let i = 0; i < pixelCells.length; i += 1) {
+      pixelCells[i].style.backgroundColor = 'white';
+    }
+  });
+}
+clearAll();
