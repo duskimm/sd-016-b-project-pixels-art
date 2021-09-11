@@ -28,3 +28,7 @@
   height: 40px;
   width: 40px;
 }
+
+.board-line {
+  font-size: 0;
+}
