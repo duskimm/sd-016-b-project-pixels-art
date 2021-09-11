@@ -15,6 +15,7 @@
 }
 #pixel-board{
     border: solid 1px black;
+    line-height: 0px;
 }
 .pixel{
     border: solid 1px black;
@@ -22,9 +23,7 @@
     width: 40px;
     height: 40px;
 }
-.coluna{
-    display: block;
-}
+
 .linha{
     display: inline-block;
 }
