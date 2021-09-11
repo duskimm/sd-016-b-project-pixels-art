@@ -37,6 +37,7 @@ palette.addEventListener('click', (event) => {
 
 divBoardP.addEventListener('click', (event) => {
   if (event.target.classList.contains('pixel')) {
+    // eslint-disable-next-line no-param-reassign
     event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   }
 });
@@ -46,4 +47,30 @@ button.addEventListener('click', () => {
   for (let index = 0; index < pixel.length; index += 1) {
     pixel[index].style.backgroundColor = 'white';
   }
+});
+
+const boardGen = document.getElementById('generate-board');
+function addPixel(n) {
+  divBoardP.innerHTML = '';
+  divBoardP.style.gridTemplateColumns = `repeat(${n}, 40px)`;
+  const inputN = n ** 2;
+  for (let i = 1; i <= inputN; i += 1) {
+    const divAdd = document.createElement('div');
+    divAdd.className = 'pixel';
+    divBoardP.appendChild(divAdd);
+  }
+}
+
+boardGen.addEventListener('click', () => {
+  let inputN = document.getElementById('board-size').value;
+  if (inputN === '') {
+    window.alert('Board Inválido!');
+  } else if (inputN < 5) {
+    inputN = 5;
+    addPixel(inputN = 5);
+  } else if (inputN > 50) {
+    inputN = 50;
+    addPixel(inputN);
+  }
+  addPixel(inputN);
 });
