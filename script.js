@@ -11,6 +11,15 @@ function newChild(type, text, classs, id) {
   return newChildItem;
 }
 
+// gera uma cor aleatoria
+function generateRandomColor() {
+  const colorArray = [];
+  for (let index = 0; index < 3; index += 1) {
+    colorArray.push([Math.floor(Math.random() * 255 + 1)]);
+  }
+  return colorArray;
+}
+
 // funcao para criar linhas onde serao colocados os pixels
 function createLines(lines) {
   const board = document.querySelector('#pixel-board');
@@ -24,7 +33,9 @@ function createPixels(coluns) {
   const lines = document.querySelectorAll('.line');
   for (let indexLines = 0; indexLines < lines.length; indexLines += 1) {
     for (let index = 0; index < coluns; index += 1) {
-      lines[indexLines].append(newChild('div', '', 'pixel white', ''));
+      const newElement = newChild('div', '', 'pixel', '');
+      newElement.style.backgroundColor = 'white';
+      lines[indexLines].append(newElement);
     }
   }
 }
@@ -40,11 +51,10 @@ function changeSelectedPosition(event) {
 
 // funcao para pintar os pixels com a cor do elemento da palheta de cores que possui a classe selected
 function paintPixels(event) {
-  if (event.target.classList.contains('pixel')) {
-    const selectedColor = document.querySelector('.selected');
-    const classColor = selectedColor.classList;
-    event.target.classList.remove(event.target.classList[1]);
-    event.target.classList.add(classColor[1]);
+  const pixel = event.target;
+  if (pixel.classList.contains('pixel')) {
+    const selectedColor = document.querySelector('.selected').style.backgroundColor;
+    pixel.style.backgroundColor = selectedColor;
   }
 }
 
@@ -62,6 +72,7 @@ function setSizePixels(boardSize) {
   const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.width = `${sizePixel}px`;
+    pixels[index].style.height = `${sizePixel}px`;
   }
 }
 
@@ -74,20 +85,15 @@ document.addEventListener('click', (event) => {
 
 // evento para setar o tabuleiro de acordo com o tamanho desejado
 document.querySelector('#generate-board').addEventListener('click', () => {
-  let boardSize = document.querySelector('#board-size').value;
-  if (Number.isNaN(boardSize)) {
+  let bSize = document.querySelector('#board-size').value;
+  if (bSize === '') {
     window.alert('Board inválido!');
   } else {
-    if (boardSize < 5) {
-      boardSize = 5;
-    }
-    if (boardSize > 50) {
-      boardSize = 50;
-    }
+    bSize = (bSize < 5) * 5 + (bSize > 50) * 50 + bSize * ((bSize >= 5) && (bSize <= 50));
     clearBoard();
-    createLines(boardSize);
-    createPixels(boardSize);
-    setSizePixels(boardSize);
+    createLines(bSize);
+    createPixels(bSize);
+    setSizePixels(bSize);
   }
 });
 
@@ -95,13 +101,18 @@ document.querySelector('#generate-board').addEventListener('click', () => {
 window.onload = () => {
   createLines(5);
   createPixels(5);
+  const palleteDivs = document.querySelectorAll('.color');
+  palleteDivs[0].style.backgroundColor = 'black';
+  for (let index = 1; index < palleteDivs.length; index += 1) {
+    const color = generateRandomColor();
+    palleteDivs[index].style.backgroundColor = `rgb(${color[0]},${color[1]},${color[2]})`;
+  }
 };
 
 // evento que acontece quando clicamos no botao limpar
 document.querySelector('#clear-board').addEventListener('click', () => {
   const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].classList.remove(pixels[index].classList[1]);
-    pixels[index].classList.add('white');
+    pixels[index].style.backgroundColor = 'white';
   }
 });
