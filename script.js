@@ -36,9 +36,9 @@ palette.addEventListener('click', (event) => {
 });
 
 divBoardP.addEventListener('click', (event) => {
+  const evento = event.target;
   if (event.target.classList.contains('pixel')) {
-    // eslint-disable-next-line no-param-reassign
-    event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    evento.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
   }
 });
 const button = document.getElementById('clear-board');
