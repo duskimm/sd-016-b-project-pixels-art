@@ -9,7 +9,7 @@ const colorButton = document.getElementById('color-button');
 paletColorBlack.classList.add('selected');
 paletColorBlack.style.backgroundColor = 'black';
 
-// Cores que podem ser utilizadas na paleta.
+// Cores que podem ser utilizadas na palette.
 const paletColors = ['red', 'green', 'blue', 'yellow', 'orange', 'grey', 'pink'];
 let indexColors = 0;
 
@@ -28,7 +28,7 @@ colorButton.addEventListener('click', () => {
   }
 });
 
-// Recupera o elemento com o Id 'color-palet'.
+// Recupera o elemento com o Id 'color-palette'.
 const colorPalet = document.getElementById('color-palette');
 
 // Adiciona a classe 'selected' à paleta que foi clicada, removendo das que foram clicadas anteriormente.
@@ -48,6 +48,17 @@ const pixel = document.getElementById('pixel-board');
 pixel.addEventListener('click', (event) => {
   const vitao = event.target;
   vitao.style.backgroundColor = selectedColor;
+});
+
+// Recupera o botão para limpar a tabela.
+const buttonReset = document.getElementById('clear-board');
+
+// Evento para o botão reset.
+buttonReset.addEventListener('click', () => {
+  const tabela = document.getElementsByClassName('pixel');
+  for (let index = 0; tabela.length; index += 1) {
+    tabela[index].style.backgroundColor = 'white'; // ta dando erro e não sei porque, no chrome.
+  }
 });
 // Recuperando as divs que possuem a classe 'pixel'.
 // const lines = document.getElementsByClassName('line');
