@@ -62,10 +62,16 @@ generatePixelBoard(5);
 // Source: https://gomakethings.com/attaching-multiple-elements-to-a-single-event-listener-in-vanilla-js/
 
 document.addEventListener('click', (event) => {
-  if (event.target.classList.contains('color')) {
+  const element = event.target;
+
+  if (element.classList.contains('color')) {
     const selectedColor = document.querySelector('.selected');
     selectedColor.classList.remove('selected');
 
-    event.target.classList.add('selected');
+    element.classList.add('selected');
+  } else if (element.classList.contains('pixel')) {
+    const selectedColor = document.querySelector('.selected');
+
+    element.style.backgroundColor = selectedColor.style.backgroundColor;
   }
 }, false);
