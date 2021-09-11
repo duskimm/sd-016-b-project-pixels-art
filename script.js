@@ -7,10 +7,15 @@ window.onload = function start() {
       for (let index = 0; index < baseGrid; index += 1) {
         const columnGrid = document.createElement('div');
         columnGrid.className = 'pixel';
-        rowDiv.appendChild(columnGrid);
         container.appendChild(rowDiv);
+        rowDiv.appendChild(columnGrid);
       }
     }
   }
+  function select() {
+    const pickedColor = document.querySelector('.color')
+    pickedColor.className += " selected"
+  };
   grid();
+  select();
 };
