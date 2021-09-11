@@ -36,7 +36,7 @@ function appendPixel() {
   for (let index = 0; index < pixels.length; index += 1) {
     // let posicaoLinha = pixels[index];
     let posicaoLinha = document.querySelectorAll('#linha')[index];
-    console.log(posicaoLinha);
+    // console.log(posicaoLinha);
     for (let segundoIndex = 0; segundoIndex < pixels.length; segundoIndex += 1) {
       // console.log(pixels[segundoIndex]);      
       let pixel = document.createElement('div');
@@ -94,3 +94,29 @@ blocoVerde.addEventListener('click', function (){
   removeSelected ();
   blocoVerde.classList.add('selected');
 });
+
+function recuperaCorAlvo() {
+  let paleta = document.querySelector('#color-palette');
+  for (let index = 0; index < paleta.childNodes.length; index += 1) {
+    // console.log(paleta.childNodes[index]);
+    if (paleta.childNodes[index].classList.contains('selected')) {
+      let corSelecionada = paleta.childNodes[index].classList[1];
+      return corSelecionada;
+      // console.log(corSelecionada);
+    }
+  }
+}
+// Exemplo de código que funciona em toda página
+// window.onclick = (e) => {
+//   console.log(e.target); // to get the element
+//   console.log(e.target.tagName); // to get the element tag name alone
+// };
+
+window.onclick = function(event) {
+  if (event.target.classList.contains('pixel')) {
+    console.log('Cor selecionada: ' + recuperaCorAlvo(event));
+    let corAlvo = recuperaCorAlvo(event);
+    event.target.style.backgroundColor = corAlvo;
+  }
+  // console.log(event.target.className);
+};
