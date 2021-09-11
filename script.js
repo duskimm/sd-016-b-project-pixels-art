@@ -3,6 +3,7 @@
  *
 */
 const mainContent = document.querySelector('.main-content');
+const divColorClass = document.getElementsByClassName('color');
 const userCount = 5;
 
 function defaultBoard(boardStyle) {
@@ -43,4 +44,56 @@ for (let indexX = 0; indexX < userCount; indexX += 1) {
     defaultBoard(divPixel);
     divFather[indexY].appendChild(divPixel);
   }
+}
+
+const pixelBox = document.getElementsByClassName('pixel');
+let colorTabela = 'black';
+
+function inputColor(e) {
+  e.style.backgroundColor = colorTabela;
+}
+
+function changeClass(cor) {
+  let newString = '';
+  for (let index = 0; index < divColorClass.length; index += 1) {
+    if (divColorClass[index].className.includes('selected')) {
+      newString = divColorClass[index].className.replace('selected', '');
+      divColorClass[index].className = newString;
+    } if (divColorClass[index].className.includes(cor)) {
+      divColorClass[index].className = `color ${cor} selected`;
+    }
+  }
+}
+
+function getColorPalette(a) {
+  if (a.target.className.includes('black')) {
+    colorTabela = 'black';
+    changeClass('black');
+  } else if (a.target.className.includes('red')) {
+    colorTabela = 'red';
+    changeClass('red');
+  } else if (a.target.className.includes('blue')) {
+    colorTabela = 'blue';
+    changeClass('blue');
+  } else if (a.target.className.includes('green')) {
+    colorTabela = 'green';
+    changeClass('green');
+  }
+  return colorTabela;
+}
+
+const getColor = document.querySelectorAll('.color');
+
+for (let index = 0; index < getColor.length; index += 1) {
+  getColor[index].addEventListener('click', (event) => {
+    getColorPalette(event);
+    console.log('click event');
+  });
+}
+
+for (let index = 0; index < pixelBox.length; index += 1) {
+  pixelBox[index].addEventListener('click', () => {
+    inputColor(pixelBox[index]);
+    console.log('click');
+  });
 }
