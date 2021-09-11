@@ -36,3 +36,11 @@ botaoApaga.setAttribute('id', 'clear-board');
 recebeBotao.appendChild(botaoApaga);
 
 // Limpar os pixels
+
+function limpaTela() {
+  for (let jdex = 0; jdex < pixels.length; jdex += 1) {
+    pixels[jdex].style.backgroundColor = 'white';
+  }
+}
+
+botaoApaga.addEventListener('click', limpaTela);
