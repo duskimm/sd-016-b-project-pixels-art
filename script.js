@@ -1,32 +1,25 @@
-const base = 5;
+const proportion = 5;
 const elementParent = document.querySelector('#pixel-board');
-const elementChild = document.querySelectorAll('.pixel');
 
 function firstDiv(numberOfBoxes) {
   for (let index = 1; index <= numberOfBoxes; index += 1) {
-    let lines = document.createElement('div');
+    const lines = document.createElement('div');
     lines.className = 'pixel';
     elementParent.appendChild(lines);
   }
 }
 
-firstDiv(base);
+firstDiv(proportion);
 
-function linesCreation(newDivLines) {
-  for (let lineColumn = 1; lineColumn < base; lineColumn += 1) {
-    if (newDivLines !== base) {
-      let lines = lineColumn;
-      lines = document.createElement('div');
-      lines.className = 'pixel2';
-      elementParent.appendChild(lines);
-      break;
-    }
-  }
-}
+const elementChild = document.querySelectorAll('.pixel');
 
 function creationtLines(numberOfBoxes) {
-  for (let index = 1; index <= numberOfBoxes; index += 1) {
-    linesCreation(numberOfBoxes[index]);
+  for (let index = 0; index < numberOfBoxes.length; index += 1) {
+    for (let lineColumn = 0; lineColumn < numberOfBoxes.length; lineColumn += 1) {
+      const lines = document.createElement('div');
+      lines.className = 'pixel';
+      numberOfBoxes[lineColumn].appendChild(lines);
+    }
   }
 }
 
