@@ -32,7 +32,6 @@ function select() {
         } else {
             listPalette[i].classList.remove('selected')
         }  
-        console.log(listPalette[i]); 
     }
 }
 
@@ -42,8 +41,8 @@ function paintPixel (){
 
 function createPixels (qtd) {
     for(let i= 0; i < qtd; i += 1) {
-    const pixelBoard = document.querySelector('#pixel-board');
-    const pixels = document.createElement('div');  
+    let pixelBoard = document.querySelector('#pixel-board');
+    let pixels = document.createElement('div');  
     pixels.className = 'pixel' 
     pixelBoard.appendChild(pixels);
     pixels.addEventListener("click", paintPixel);
@@ -52,3 +51,13 @@ function createPixels (qtd) {
 }
 createPixels(25);
 }
+
+
+function getClean (){
+    let pixels = document.querySelectorAll('.pixel')
+    for (let i=0; i<pixels.length; i+=1) {
+        pixels[i].style.backgroundColor = 'white';
+    }
+}
+
+document.querySelector('#clear-board').addEventListener("click", getClean);
