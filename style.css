@@ -5,26 +5,6 @@
   display: inline-block;
 }
 
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.yellow {
-  background-color: yellow;
-}
-
-.pink {
-  background-color: pink;
-}
-
-.black {
-  background-color: black;
-}
-
 .linha {
   height: 40px;
 }
@@ -37,7 +17,7 @@
   width: 40px;
 }
 
-#board-size, #generate-board {
+#board-size , #generate-board {
   margin-right: 5px;
   margin-bottom: 5px;
 }

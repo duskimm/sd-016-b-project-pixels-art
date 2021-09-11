@@ -2,10 +2,10 @@
 const colorPalette = document.getElementById('color-palette');
 
 // Função que cria cada div Color
-function createDIVColor(classePrincipal, classeColor) {
+function createDIVColor(classePrincipal, cor) {
   const elementColor = document.createElement('div');
   elementColor.classList.add(classePrincipal);
-  elementColor.classList.add(classeColor);
+  elementColor.style.backgroundColor = cor;
 
   colorPalette.appendChild(elementColor);
 }
@@ -18,8 +18,25 @@ function addClassColor(cores) {
   });
 }
 
+Math.floor(Math.random() * 256);
 // Cores que eu vou usar para criar as divs da paleta dinamicamente.
-const colors = ['black', 'red', 'yellow', 'pink'];
+const colors = ['black'];
+
+// Gera um rgb de cor aleatório.
+for (let index = 1; index < 4; index += 1) {
+  let color = 'rgb(';
+  for (let indice = 1; indice <= 3; indice += 1) {
+    if (indice < 3) {
+      color += `${Math.floor(Math.random() * 256)},`;
+    } else {
+      color += Math.floor(Math.random() * 256);
+    }
+  }
+  color += ')';
+
+  // Adiciona a cor gerada ao array de cores.
+  colors.push(color);
+}
 
 // Chama a função que adiciona a classe de cor ao criar um elemento da paleta
 addClassColor(colors);
@@ -67,12 +84,7 @@ function addRemoveClassSelected(elemento) {
   elemento.classList.add('selected');
 }
 
-// Faço com que só adicione a classe selected ao elementto black como padrão somente quando a página terminar de ser carregada.
-
-// Apagar o código a baixo caso não der problema no avaliador
-// window.onload = () => {
-//   addRemoveClassSelected(black);
-// };
+// Adiciona a classe selected ao elementto black como padrão.
 addRemoveClassSelected(black);
 
 // ******************************************************************************************** //
