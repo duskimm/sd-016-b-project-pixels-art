@@ -5,29 +5,29 @@
 #color-palette div:nth-of-type(1) {
     border: 1px solid black;
     background-color: black;
-    height: 75px;
-    width: 75px;
+    height: 50.5px;
+    width: 50.5px;
   }
 
 #color-palette div:nth-of-type(2) {
     border: 1px solid black;
     background-color: #E7042A;
-    height: 75px;
-    width: 75px;
+    height: 50.5px;
+    width: 50.5px;
   }
 
 #color-palette div:nth-of-type(3) {
     border: 1px solid black;
     background-color: #4773ec;
-    height: 75px;
-    width: 75px;
+    height: 50.5px;
+    width: 50.5px;
   }
 
 #color-palette div:nth-of-type(4) {
     border: 1px solid black;
     background-color: #2C6A45;
-    height: 75px;
-    width: 75px;
+    height: 50.5px;
+    width: 50.5px;
   } 
 
 .pixel {
@@ -37,17 +37,3 @@
   border: 1px solid black;
   background-color: white;
 }
- 
-
-
-
-
-/* 
-  Adicione à página um quadro de pixels, com 25 pixels.
-  O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
-  
-  O quadro de "pixels" deve possuir o id denominado pixel-board, ao passo que cada "pixel" individual dentro do quadro deve possuir a classe denominada pixel;
-  
-  A cor inicial dos "pixels" dentro do quadro, ao abrir a página, deve ser branca;
-  
-  O quadro de "pixels" deve aparecer abaixo da paleta de cores. */
