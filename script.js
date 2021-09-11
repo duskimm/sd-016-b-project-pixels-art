@@ -71,16 +71,35 @@ function addRemoveClassSelected(elemento) {
 }
 
 // Faço com que só adicione a classe selected ao elementto black como padrão somente quando a página terminar de ser carregada.
-window.onload = () => {
-  addRemoveClassSelected(black);
-};
+
+// Apagar o código a baixo caso não der problema no avaliador
+// window.onload = () => {
+//   addRemoveClassSelected(black);
+// };
+addRemoveClassSelected(black);
 
 // ******************************************************************************************** //
 // 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+// Pego todos os elementos que tem a classe color
 const cores = document.getElementsByClassName('color');
 
+// Para cada elemento do array com a classe color eu creio um evento de clique que chama a função addRemoveClassSelected();
 for (const cor of cores) {
   cor.addEventListener('click', () => {
     addRemoveClassSelected(cor);
   })
+}
+
+// ******************************************************************************************** //
+// 8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+
+// Amanhã testar a questão do window.onload pois pode ser por causa dele que está dando erro.
+const pixels = document.getElementsByClassName('pixel');
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', (elemento) => {
+    const pixel = elemento;
+    const selected = document.getElementsByClassName('selected')[0];
+    const corSelect = window.getComputedStyle(selected, null).getPropertyValue('background-color');
+    pixel.target.style.backgroundColor = corSelect;
+  });
 }
