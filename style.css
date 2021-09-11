@@ -18,12 +18,11 @@ header {
 .color {
   border: 1px solid black;
   display: inline-block;
-  line-height: 50px;
   padding: 30px;
 }
 
 #black {
-  background-color:black;
+  background-color : black;
 }
 
 #green {
@@ -38,8 +37,21 @@ header {
   background-color: purple;
 }
 
-
 .width-and-height {
   height: 80px;
   width: 80px;
+}
+
+#pixel-board {
+  width: 500px;
+  height: 800px;
+  text-align: center;
+}
+
+.pixel {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 25px;
+  height: 40px;
+  width: 40px;
 }
