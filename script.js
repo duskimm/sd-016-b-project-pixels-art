@@ -15,99 +15,95 @@ function removeElementosPelaClasse(classe) {
   }
 }
 
-window.onload = function (params) {
-  let paletaN = 4;
-  let linhas = 5;
-  let unica = [];
+const paletaN = 4;
+let linhas = 5;
+const unica = [];
 
-  // configura a paleta de cores
-  for (let i = 0; i < paletaN; i += 1){
-      let div = document.createElement('div');
-      let cor = corAleatoriaLista();
-      while(cor == 'white' || cor == 'black' ||
-          unica.includes(cor)){
-          cor = corAleatoriaLista();
-      }
-      unica.push(cor);
-      div.style.backgroundColor = cor;
-      div.classList.add('color');
-      
-      //se for o primeiro é preto e classe += 'selected'
-      if (i == 0) {
-          div.classList.add('selected');
-          div.style.backgroundColor = 'black';
-      }
-      document.querySelector('#color-palette').appendChild(div);
+// configura a paleta de cores
+for (let i = 0; i < paletaN; i += 1) {
+  const div = document.createElement('div');
+  let cor = corAleatoriaLista();
+  while (cor === 'white'
+    || cor === 'black'
+    || unica.includes(cor)) {
+    cor = corAleatoriaLista();
   }
+  unica.push(cor);
+  div.style.backgroundColor = cor;
+  div.classList.add('color');
 
-  // gera o quadro
-  function geraQuadro() {
-      for (let j = 0; j < linhas; j += 1){
-          let linha = document.createElement('div');
-          linha.classList.add('linha');
-          linha.style.width = linhas * 42 + 'px';
-          for (let i = 0; i < linhas; i += 1) {
-              let div = document.createElement('div');
-              div.style.backgroundColor = 'white';//corAleatoriaLista();
-              div.classList.add('pixel');
-              linha.appendChild(div);
-          }
-          document.querySelector('#pixel-board').appendChild(linha);
-      }
+  // se for o primeiro é preto e classe += 'selected'
+  if (i === 0) {
+    div.classList.add('selected');
+    div.style.backgroundColor = 'black';
   }
-  geraQuadro();
+  document.querySelector('#color-palette').appendChild(div);
+}
 
-  //document.querySelector('#pixel-board').style.width = linhas * 42 + 10 + 'px';
-
-  // habilita pintar
-  document.querySelector(
-      '#pixel-board').addEventListener('click', function(e){
-      if (e.target.classList.contains('pixel')) {
-          e.target.style.backgroundColor = cor_selecionada()
-      }
-  })
-
-  function cor_selecionada(){
-      return document.querySelector(
-          '.selected').style.backgroundColor;
-  }
-
-  // habilita selecionar cor
-  document.querySelector('#color-palette'
-      ).addEventListener('click', function(e){
-      if(e.target.classList.contains('color')) {
-          document.querySelector('.selected').classList.remove('selected');
-          e.target.classList.add('selected');
-      }
-  })
-
-  // habilita limpar o quadro
-  function limparQuadro(e) {
-    let a = document.getElementsByClassName('pixel');
-    for (let i of a) {
-      i.style.backgroundColor = 'white';
+// gera o quadro
+function geraQuadro() {
+  for (let j = 0; j < linhas; j += 1) {
+    const linha = document.createElement('div');
+    linha.classList.add('linha');
+    linha.style.width = `${linhas * 42}px`;
+    for (let i = 0; i < linhas; i += 1) {
+      const div = document.createElement('div');
+      div.style.backgroundColor = 'white';
+      div.classList.add('pixel');
+      linha.appendChild(div);
     }
+    document.querySelector('#pixel-board').appendChild(linha);
   }
+}
+geraQuadro();
 
-  document.querySelector('#clear-board').addEventListener(
-      'click', limparQuadro,
-  );
+// habilita pintar
+function corSelecionada() {
+  return document.querySelector('.selected').style.backgroundColor;
+}
 
-  // implementa mudar tamanho do quadro
-  function resetQuadro() {
-    let n = document.querySelector('#board-size').value;
-    if (n.length === 0) { alert('Board inválido!'); return; }
-    if (n > 50) n = 50;
-    if (n < 5) n = 5;
-    linhas = n;
-    removeElementosPelaClasse('pixel');
-    removeElementosPelaClasse('linha');
-    geraQuadro();
+function pintaPixel(e) {
+  if (e.target.classList.contains('pixel')) {
+    e.target.style.backgroundColor = corSelecionada();
   }
+}
+document.querySelector('#pixel-board').addEventListener('click', pintaPixel);
 
-  document.querySelector('#generate-board').addEventListener(
-    'click', resetQuadro,
-  );
-};
+// habilita selecionar cor
+function selCor(e) {
+  if (e.target.classList.contains('color')) {
+    document.querySelector('.selected').classList.remove('selected');
+    e.target.classList.add('selected');
+  }
+}
+document.querySelector('#color-palette').addEventListener('click', selCor);
+
+// habilita limpar o quadro
+function limparQuadro() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+}
+
+document.querySelector('#clear-board').addEventListener(
+  'click', limparQuadro,
+);
+
+// implementa mudar tamanho do quadro
+function resetQuadro() {
+  let n = document.querySelector('#board-size').value;
+  if (n.length === 0) { alert('Board inválido!'); return; }
+  if (n > 50) n = 50;
+  if (n < 5) n = 5;
+  linhas = n;
+  removeElementosPelaClasse('pixel');
+  removeElementosPelaClasse('linha');
+  geraQuadro();
+}
+
+document.querySelector('#generate-board').addEventListener(
+  'click', resetQuadro,
+);
 
 // não esqueça a linha em branco no final do arquivo
