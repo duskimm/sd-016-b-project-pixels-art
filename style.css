@@ -1,0 +1,32 @@
+#color-palette {
+    display: flex;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.color1 {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #4773ec;
+    height: 150px;
+    width: 150px;
+  }
+
+.color2 {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #E7042A;
+    height: 150px;
+    width: 150px;
+  }
+
+.color3 {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #FED200;
+    height: 150px;
+    width: 150px;
+  }
+
+.color4 {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #2C6A45;
+    height: 150px;
+    width: 150px;
+  }
