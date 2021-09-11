@@ -10,7 +10,7 @@ function generateColorPalette(quantity) {
   const colorPalette = [];
   for (let counter = 0; counter < quantity;) {
     const color = generateRandomColor();
-    if (!colorPalette.includes(color) && color !== 'rgb(0, 0, 0)') {
+    if (!colorPalette.includes(color) && color !== 'rgb(255, 255, 255)') {
       colorPalette.push(color);
       counter += 1;
     }
