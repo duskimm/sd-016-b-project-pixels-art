@@ -18,7 +18,7 @@ window.onload = function (params) {
         //se for o primeiro é preto e classe += 'selected'
         if (i == 0) {
             div.classList.add('selected');
-            div.style.backgroundColor = 'rgb(0, 0, 0)';
+            div.style.backgroundColor = 'black';
         }
         document.querySelector('#color-palette').appendChild(div);
     }
