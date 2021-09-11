@@ -62,6 +62,7 @@ function removeSelected() {
   }
 }
 
+// Selecionar cor - criar uma função anonima dentro do addEventListener
 function selecionarCor () {
   removeSelected();
   EventTarget.classList.add('selected');
@@ -71,7 +72,25 @@ let paletaCores = document.querySelectorAll('.color');
 // paletaCores.addEventListener('click', removeSelected);
 
 let blocoPreto = document.querySelector('.black');
-blocoPreto.addEventListener('click', selecionarCor);
+blocoPreto.addEventListener('click', function (){
+  removeSelected ();
+  blocoPreto.classList.add('selected');
+});
 
 let blocoVermelho = document.querySelector('.red');
-blocoVermelho.addEventListener('click', selecionarCor);
+blocoVermelho.addEventListener('click', function (){
+  removeSelected ();
+  blocoVermelho.classList.add('selected');
+});
+
+let blocoAzul = document.querySelector('.blue');
+blocoAzul.addEventListener('click', function (){
+  removeSelected ();
+  blocoAzul.classList.add('selected');
+});
+
+let blocoVerde = document.querySelector('.green');
+blocoVerde.addEventListener('click', function (){
+  removeSelected ();
+  blocoVerde.classList.add('selected');
+});
