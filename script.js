@@ -1,3 +1,15 @@
+function gerateColor (){
+  let color = Math.random() * 255;
+  return color
+}
+function gerateColor2 (){
+  let color = Math.random() * 255;
+  return color
+}
+function gerateColor3 (){
+  let color = Math.random() * 255;
+  return color
+}
 function addBlack (){
   let element1 = document.querySelector('.cblack');
   element1.style.backgroundColor = 'black';
@@ -5,17 +17,17 @@ function addBlack (){
 addBlack();
 function addRed (){
   let element1 = document.querySelector('.cred');
-  element1.style.backgroundColor = 'red';
+  element1.style.backgroundColor = 'rgb('+ gerateColor() + gerateColor2() + gerateColor3() +')';
 }
 addRed();
 function addBlue (){
   let element1 = document.querySelector('.cblue');
-  element1.style.backgroundColor = 'blue';
+  element1.style.backgroundColor = 'rgb('+ gerateColor() + gerateColor2() + gerateColor3() +')';
 }
 addBlue();
 function addGreen (){
   let element1 = document.querySelector('.cgreen');
-  element1.style.backgroundColor = 'green';
+  element1.style.backgroundColor = 'rgb('+ gerateColor() + gerateColor2() + gerateColor3() +')';
 }
 addGreen();
 function addWhite (){
@@ -97,17 +109,24 @@ let getFloor = document.querySelector('#pixel-board');
 
 
 getVQV.addEventListener('click', function (){
+
   let getLine = document.getElementById('pixel-board');
   let childLine = getLine.children;
   deleteDivs(childLine.length);
   
-   if (getInput.value != ''){
-    
-  for (let i = 0; i < getInput.value; i += 1){ 
+  if (getInput.value != ''){
+     let valor = getInput.value;
+      if (valor < 5){
+       valor = 5;
+     } else if (valor > 50){
+       valor = 50;
+     }
+
+  for (let i = 0; i < valor; i += 1){ 
     let criaDiv2 = document.createElement('div');
     criaDiv2.className = 'linePixels';
     getFloor.appendChild(criaDiv2);
-    for (i2 = 0; i2 < getInput.value; i2 += 1){
+    for (i2 = 0; i2 < valor; i2 += 1){
       let criaDiv = document.createElement('div');
       criaDiv.className = 'pixel';
       criaDiv2.appendChild(criaDiv);
@@ -128,5 +147,5 @@ function deleteDivs (n) {
     console.log('1');
     }
   }
-  
+
 }

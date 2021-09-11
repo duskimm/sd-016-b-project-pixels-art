@@ -35,3 +35,7 @@
 #clear-board {
   margin-bottom: 5px;
 }
+.newline {
+  height: 5px;
+  width: 5px;
+}
