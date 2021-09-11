@@ -1,4 +1,6 @@
 const colorPalette = document.getElementById('color-palette');
+const pixelFrame = document.getElementById('color-palette');
+
 
 function createColors() {
   const colors = ['black', 'red', 'blue', 'green'];
@@ -10,3 +12,18 @@ function createColors() {
   }
 }
 createColors();
+
+function createFrame() {
+  const pixel = document.getElementById('pixel-board');
+  for (let index = 1; index <= 25; index += 1) {
+    const div = document.createElement('div');
+    div.className = 'pixel';
+    pixel.appendChild(div);
+  }
+}
+createFrame();
+
+window.onload = function () {
+  const hugoDaniel = document.querySelector('.color');
+  hugoDaniel.classList.add('selected');
+}
