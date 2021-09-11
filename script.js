@@ -76,3 +76,16 @@ for (let line = 0; line < pixelsBoardSide; line += 1) {
 }
 
 setClass(colorList[0], 'selected');
+
+function selectColor(event) {
+  const selectedColor = document.querySelector('.selected');
+
+  if (event.target !== selectedColor) {
+    selectedColor.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
+}
+
+for (let index = 0; index < colorList.length; index += 1) {
+  colorList[index].addEventListener('click', selectColor);
+}
