@@ -45,7 +45,7 @@ function clearAll() {
   }
   // Reseta a cor selected para black
   for (let index = 0; index < colorSelected.length; index += 1) {
-    if (colorSelected[index].id !== 'black') {
+    if (colorSelected[index].style.backgroundColor !== 'black') {
       colorSelected[index].classList.remove('selected');
     } else {
       colorSelected[index].className = 'color selected';
