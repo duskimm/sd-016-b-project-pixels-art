@@ -33,9 +33,19 @@ function createPixel() {
   return pixel;
 }
 
+function getBoardSize() {
+  let size = document.querySelector('#board-size').value;
+  if (size === '') return;
+
+  if (size < 5) size = 5;
+  else if (size > 50) size = 50;
+
+  return size;
+}
+
 function generateBoard() {
-  const size = document.querySelector('#board-size').value;
-  if (size === '') {
+  const size = getBoardSize();
+  if (!size) {
     alert('Board inválido!');
     return;
   }
