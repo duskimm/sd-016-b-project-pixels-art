@@ -12,12 +12,17 @@
   height: 210px;
   font-size: 0px;
   border: 5px solid black;
- 
-  margin-top: 20px;
+   margin-top: 20px;
+}
+#color-palette
+ {
+ margin-left: 700px;
+ margin right: 500px;
 }
 
 #title{
  text-align: center;
+
 } 
 main {
   align-items: center;
@@ -39,41 +44,46 @@ li:hover{
 }
 
 #bk {
+  margin: 3px;
   width: 80px;
   height: 80px;
   background-color: black;
   border-style: solid;
   border-color: black;
-  border-width: 1px;
+  border-width: 5px;
   display: inline-block;
 }
 
 #r {
+  
+  margin: 3px;;
   width: 80px;
   height: 80px;
   background-color: red;
   border-style: solid;
   border-color: black;
-  border-width: 1px;
+  border-width: 5px;
   display: inline-block;
 }
 #b {
+  margin: 3px;
   width: 80px;
   height: 80px;
   background-color: blue;
   border-style: solid;
   border-color: black;
-  border-width: 1px;
+  border-width: 5px;
   display: inline-block;
 }
 
 #g {
+  margin: 3px;
   width: 80px;
   height: 80px;
   background-color: green;
   border-style: solid;
   border-color: black;
-  border-width: 1px;
+  border-width: 5px;
   display: inline-block;
 }
 
@@ -82,6 +92,6 @@ li:hover{
 
 
 
-li{
-  list-style-type: none;
+footer{
+  font-size: 200px;
 }
