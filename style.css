@@ -7,10 +7,16 @@
 
 body {
   background-color: rgb(129, 74, 129);
+  font-family: Indie Flower, cursive;
 }
 
 #title {
+  margin-top: 30px;
   text-align: center;
+  font-family: Lobster, cursive;
+  font-size: 130px;
+  margin-bottom: 50px;
+
 }
 
 .pixel {
@@ -20,6 +26,10 @@ body {
   display: inline-block;
   margin-bottom: 0;
   background-color: white;
+}
+
+h1 , h2 , h3 , h4 , h5 {
+  text-align: center;
 }
 
 h3 {
@@ -50,4 +60,16 @@ h5 {
 #board-size {
   width: 178px;
   margin-bottom: 25px;
+}
+
+#color-palette {
+  text-align: center;
+}
+
+#size-container {
+  text-align: center;
+}
+
+#pixel-board {
+  text-align: center;
 }
