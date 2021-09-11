@@ -85,7 +85,7 @@ document.addEventListener('click', (event) => {
 
 // evento para setar o tabuleiro de acordo com o tamanho desejado
 document.querySelector('#generate-board').addEventListener('click', () => {
-  let bSize = document.querySelector('#board-size').value;
+  let bSize = parseInt(document.querySelector('#board-size').value);
   if (bSize === '') {
     window.alert('Board inválido!');
   } else {
