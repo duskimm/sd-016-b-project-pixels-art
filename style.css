@@ -7,6 +7,7 @@
   height: 60px;
   width: 60px;
   border: 1px solid black;
+  margin-right: 10px;
 }
 
 #pixel-board{
