@@ -1,0 +1,27 @@
+
+ .color{
+    border: 1px solid black;
+    padding: 25px;
+    display: inline-block;
+}
+ #square1{
+    background-color: black;
+}
+ #square2{
+    background-color: #6FD6CB;
+}
+ #square3{
+    background-color: #F0E948;
+}
+  #square4{
+    background-color: #4300F5;
+}
+  #pixel-board{
+    width: 210px;
+}
+.pixel {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border: solid black 1px;
+ }
