@@ -37,16 +37,18 @@ margin-top: 30px;
 
 #pixel-board {
  border: 1px solid red;
- height: 226px;
+ height: 206px;
  margin: auto;
  margin-top: 50px;
- width: 210px;
+ width: 202px;
 
 }
 
 .pixel {
- border: 1px solid blue;
- display: inline-block;
+ border: 1px solid black;
+ display:inline-block;
  height: 40px;
  width: 40px;
+ margin-bottom:-5px;
+ margin-right: -2px;
 }
