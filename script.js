@@ -76,3 +76,14 @@ function paintPixels () {
 }
 paintPixels();
 
+function clearBoard() {
+    let pixel = document.querySelectorAll(".pixel")
+    let button = document.getElementById("clear-board");
+    button.addEventListener("click", function(){
+        for (let i = 0; i < pixel.length; i+=1) {
+            pixel[i].style.backgroundColor = "white"
+        }
+    })
+}
+
+clearBoard();
