@@ -9,7 +9,9 @@ const userCount = 5;
 function defaultBoard(boardStyle) {
   const change = boardStyle;
   change.style.border = '1px solid black';
-  change.style.padding = '25px';
+  change.style.width = '40px';
+  change.style.height = '40px';
+  change.style.padding = '15px';
   change.style.display = 'inline-block';
   change.style.backgroundColor = 'white';
 
