@@ -108,10 +108,32 @@ function getSelectedColor() {
 
 function paintPixels(event) {
   const colorClass = getSelectedColor();
-  event.target.classList.remove('white');
-  event.target.classList.add(colorClass);
+
+  if (!event.target.classList.contains(colorClass)) {
+    event.target.classList.remove('white');
+    event.target.classList.remove(event.target.classList.item(1));
+    event.target.classList.add(colorClass);
+  }
 }
 
 for (let index = 0; index < pixels.length; index += 1) {
   pixels[index].addEventListener('click', paintPixels);
 }
+
+// Requisito 9
+const clearButton = creatElementHTML('button');
+
+setId(clearButton, 'clear-board');
+
+setInnerText(clearButton, 'Limpar');
+
+pageBody.insertBefore(clearButton, pixelsBoard);
+
+function clearPixelsBoard() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].classList.remove(pixels[index].classList.item(1));
+    setClass(pixels[index], 'white');
+  }
+}
+
+clearButton.addEventListener('click', clearPixelsBoard);
