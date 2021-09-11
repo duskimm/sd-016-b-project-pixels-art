@@ -3,6 +3,8 @@ window.onload = function () {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
+  let select = document.querySelector('.black');
+  select.className = 'color black selected';
 };
 
 const arrayCores = ['black', 'red', 'blue', 'green'];
@@ -31,8 +33,9 @@ for (let linha = 0; linha < linhasColunas; linha += 1) {
 function appendPixel() {
   let pixels = document.querySelectorAll('#linha');
   // console.log(pixels.length)
-  for (let index = 0; index <= pixels.length; index += 1) {
-    let posicaoLinha = pixels[index];
+  for (let index = 0; index < pixels.length; index += 1) {
+    // let posicaoLinha = pixels[index];
+    let posicaoLinha = document.querySelectorAll('#linha')[index];
     console.log(posicaoLinha);
     for (let segundoIndex = 0; segundoIndex < pixels.length; segundoIndex += 1) {
       // console.log(pixels[segundoIndex]);      
@@ -45,3 +48,30 @@ function appendPixel() {
 }
 
 appendPixel();
+
+// pra remover classe -> element.classList.remove('nome')
+//Dica retirada do site:
+// https://www.codegrepper.com/code-examples/javascript/check+class+name+of+child+element+javascript
+function removeSelected() {
+  let paleta = document.querySelector('#color-palette');
+  for (let index = 0; index < paleta.childNodes.length; index += 1) {
+    // console.log(paleta.childNodes[index]);
+    if (paleta.childNodes[index].classList.contains('selected')) {
+      paleta.childNodes[index].classList.remove('selected');
+    }
+  }
+}
+
+function selecionarCor () {
+  removeSelected();
+  EventTarget.classList.add('selected');
+}
+
+let paletaCores = document.querySelectorAll('.color');
+// paletaCores.addEventListener('click', removeSelected);
+
+let blocoPreto = document.querySelector('.black');
+blocoPreto.addEventListener('click', selecionarCor);
+
+let blocoVermelho = document.querySelector('.red');
+blocoVermelho.addEventListener('click', selecionarCor);

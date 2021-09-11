@@ -46,7 +46,9 @@ body {
 }
 
 #linha {
-  margin-top: 0px;
+  /* margin-top: 0px; */
+  height: 40px;
+  margin-left: 5px;
 }
 
 .bloco {
@@ -63,4 +65,8 @@ body {
   border: 1px solid black;
   display: inline-block;
   /* background-color: white; */
+}
+
+.selected {
+  background-color: black;
 }
