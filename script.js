@@ -1,4 +1,24 @@
-// Challenge 4 - Function of the grid.
+// Challenge 1
+
+function ramdomColors() {
+  const otherColors = Math.floor(Math.random() * 255);
+  const otherColors1 = Math.floor(Math.random() * 255);
+  const otherColors2 = Math.floor(Math.random() * 255);
+  const palleteColor = `rgb(${otherColors}, ${otherColors1}, ${otherColors2})`;
+
+  return palleteColor;
+}
+
+function colorAtribution () {
+  const deposit = document.querySelectorAll('.color:not(:first-child)');
+  for (let color of deposit) {
+    color.style.backgroundColor = ramdomColors();
+  }
+}
+
+colorAtribution();
+
+// Challenge 4, 5, 6 - Function of the grid.
 
 const proportion = 5;
 const elementChild = document.querySelector('#pixel-board');
@@ -16,6 +36,32 @@ function creationtLines(numberOfBoxes) {
 }
 
 creationtLines(proportion);
+
+// Challenge 7
+
+function colorSpill() {
+  let pixels = document.querySelectorAll('.pixel');
+  let colors = document.querySelectorAll('.color');
+
+  for (let color of colors){
+    color.addEventListener('click', function(event) {
+      let pointedColor = document.querySelector('.selected');
+      if (pointedColor !== null) {
+        pointedColor.classList.remove('selected');
+      }
+        event.target.classList.add('selected');
+    });
+  }
+  for (let eachPixel of pixels) {
+    eachPixel.addEventListener('click', function(event){
+      let selectedColor = document.querySelector('.selected');
+      eachPixel.style.backgroundColor = window.getComputedStyle(selectedColor).backgroundColor;
+      
+    })
+  }
+}
+
+colorSpill();
 
 window.onload = function() {
   const pixelBoard = document.querySelector('.pixel');
@@ -39,8 +85,4 @@ window.onload = function() {
 
 // pixelBoard(elementChild);
 
-// function ramdomColors () {
-//   let otherColors = Math.floor(Math.random() * 255);
-//   let otherColors1 = Math.floor(Math.random() * 255);
-//   let otherColors2 = Math.floor(Math.random() * 255);
-//   let paletColor = `rgb(${otherColors}, ${otherColors1}, ${otherColors2})`;
+
