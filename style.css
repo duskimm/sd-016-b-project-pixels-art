@@ -3,7 +3,6 @@
   height: 50px;
   display: inline-block;
   border: 1px solid black;
-  border-collapse: collapse;
 }
 
 
@@ -24,10 +23,10 @@
 }
 
 #pixel-board {
-  display: inline-block;
   font-size: 0;
-  width: 210px;
-  height: 210px;
+  width: 206px;
+  height: 206px;
+  
 }
 
 .pixel {
@@ -35,6 +34,9 @@
   height: 40px;
   display: inline-block;
   border: 1px solid black;
+  margin-top: -1px;
+  margin-left: -1px;
+  background-color: white;
 }
 
 
