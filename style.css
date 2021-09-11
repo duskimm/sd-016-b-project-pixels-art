@@ -1,10 +1,10 @@
-/** {
-  width: 80%;
-}*/
-
 h1 {
   text-align: center;
   width: auto;
+}
+
+#pixel-board {
+  height: 72px;
 }
 
 .color {
@@ -16,19 +16,31 @@ h1 {
 .black {
   background-color: black;
 }
-/*
+
 .black:hover {
-  background-color: grey;
-}*/
+  background-color: rgb(26, 24, 24);
+}
 
 .red {
   background-color: red;
+}
+
+.red:hover {
+  background-color: rgb(199, 33, 33);
 }
 
 .blue {
   background-color: blue;
 }
 
+.blue:hover {
+  background-color: rgb(17, 17, 195);
+}
+
 .green {
   background-color: green;
+}
+
+.green:hover {
+  background-color: rgb(17, 172, 17);
 }

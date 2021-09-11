@@ -1,6 +1,5 @@
 /**
  * Criar um botão de reset que já vai servir para iniciar com a cor branca
- * 1 - O quadro deve ter 5 elementos de largura, e o elemento deve ter 25px
  *
 */
 const mainContent = document.querySelector('.main-content');
