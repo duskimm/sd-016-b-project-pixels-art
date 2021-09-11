@@ -29,6 +29,13 @@ for (let index = 0; index < elementosQuadro; index +=1){
     capturarSectionQuadro.appendChild(criarDivsQuadro);      
 }
 
+let buscarCor = 'black';
+for (let index = 0; index < configurarCoresPaletas.length; index += 1){
+    if (configurarCoresPaletas[index].style.backgroundColor === buscarCor){
+        configurarCoresPaletas[index].classList.add('selected');
+    }    
+}
+
 
 
 
