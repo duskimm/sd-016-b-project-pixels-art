@@ -22,6 +22,7 @@ function setInnerText(elementName, text) {
   element.innerText = text;
 }
 
+// Requisito 1
 const pageBody = document.querySelector('body');
 const pageTitle = creatElementHTML('h1');
 
@@ -31,6 +32,7 @@ setInnerText(pageTitle, 'Paleta de Cores');
 
 addElementToDOM(pageBody, pageTitle);
 
+// Requisitos 2 e 3
 const colorPalette = creatElementHTML('div');
 
 setId(colorPalette, 'color-palette');
@@ -55,6 +57,7 @@ setClass(colorList[2], 'yellow');
 
 setClass(colorList[3], 'green');
 
+// Requisitos 4 e 5
 const pixelsBoard = creatElementHTML('div');
 
 setId(pixelsBoard, 'pixel-board');
@@ -75,8 +78,10 @@ for (let line = 0; line < pixelsBoardSide; line += 1) {
   }
 }
 
+// Requisito 6
 setClass(colorList[0], 'selected');
 
+// Requisito 7
 function selectColor(event) {
   const selectedColor = document.querySelector('.selected');
 
@@ -88,4 +93,25 @@ function selectColor(event) {
 
 for (let index = 0; index < colorList.length; index += 1) {
   colorList[index].addEventListener('click', selectColor);
+}
+
+// Requisito 8
+const pixels = document.getElementsByClassName('pixel');
+
+function getSelectedColor() {
+  for (let index = 0; index < colorList.length; index += 1) {
+    if (colorList[index].classList.contains('selected')) {
+      return colorList[index].classList.item(1);
+    }
+  }
+}
+
+function paintPixels(event) {
+  const colorClass = getSelectedColor();
+  event.target.classList.remove('white');
+  event.target.classList.add(colorClass);
+}
+
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', paintPixels);
 }
