@@ -7,15 +7,16 @@ const getButtonInput = document.getElementById('generate-board');
 let quantityOfPixels = 25;
 let status = false;
 
-function creatingPixels(quantity) {
-  for (let i = 1; i <= quantity; i += 1) {
+function creatingPixels() {
+  for (let i = 1; i <= quantityOfPixels; i += 1) {
     const createPixel = document.createElement('div');
     createPixel.className = 'pixel';
+    createPixel.style.backgroundColor = 'white';
     getPixelBoard.appendChild(createPixel);
   }
 }
 
-creatingPixels(quantityOfPixels);
+creatingPixels();
 
 // ref(1): https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
 // ref(2): http://devfuria.com.br/javascript/numeros-aleatorios/
@@ -100,7 +101,7 @@ function newPictureWithDifferentesLinesAndColumns() {
     getPixelBoard.innerHTML = '';
     quantityOfPixels = getInput.value ** 2;
     getPixelBoard.style.width = `${getInput.value * 42}px`;
-    creatingPixels(quantityOfPixels);
+    creatingPixels();
     printingWhenIclickInDiv();
   }
 }
