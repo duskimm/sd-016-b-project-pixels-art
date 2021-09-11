@@ -1,47 +1,41 @@
-var pixelFrame = document.querySelector('#pixel-board');
-function pixelCreator(tamanho){
-    for (let i = 0; i < tamanho; i += 1) {
-        let pixel = document.createElement('div');
-        pixel.className = 'pixel';
-        pixelFrame.appendChild(pixel)
-        pixel.style.backgroundColor = 'white'
-        
-    }
+const pixelFrame = document.querySelector('#pixel-board');
+function pixelCreator(tamanho) {
+  for (let i = 0; i < tamanho; i += 1) {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixelFrame.appendChild(pixel);
+    pixel.style.backgroundColor = 'white';
+  }
 }
 pixelCreator('25');
 
+const color = document.getElementsByClassName('color');
+const paleta = document.getElementById('color-palette');
 
+paleta.addEventListener('click', (event) => {
+  for (let i = 0; i < color.length; i += 1) {
+    color[i].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+});
 
-let color = document.getElementsByClassName('color');
-let paleta = document.getElementById('color-palette');
+const pixels = document.getElementsByClassName('pixel');
 
-paleta.addEventListener('click', function (event) {
-    for (let i = 0; i < color.length; i += 1) {
-        color[i].classList.remove('selected');
-    }
-    event.target.classList.add('selected');
-})
-
-
-    let pixels = document.getElementsByClassName('pixel');
-    
-    
-    function changeColor(event){
-        let selectedColor = document.querySelector('.selected')
-        let eventTarget = event.target;
-        let bgColor = window
-        let corPixel = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color')
-        eventTarget.style.backgroundColor = corPixel;
-        
+function changeColor(event) {
+  const selectedColor = document.querySelector('.selected');
+  const eventTarget = event.target;
+  const bgColor = window;
+  const corPixel = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
+  eventTarget.style.backgroundColor = corPixel;
 }
-pixelFrame.addEventListener('click', changeColor)
+pixelFrame.addEventListener('click', changeColor);
 
-let botao = document.getElementById('clear-board');
-let pixel = document.getElementsByClassName('pixel');
+const botao = document.getElementById('clear-board');
+const pixel = document.getElementsByClassName('pixel');
 
-botao.addEventListener('click', function(){
-    for (let i = 0; i < pixel.length; i += 1) {
-        pixel[i].style.backgroundColor = 'white'
-        console.log(pixel[i]);
-    }
-})
+botao.addEventListener('click', () => {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+    console.log(pixel[i]);
+  }
+});
