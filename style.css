@@ -5,18 +5,9 @@
     display: inline-block;
 }
 
-#color1 {
-    background-color: black;
-}
-
-#color2 {
-    background-color:blue;
-}
-
-#color3 {
-    background-color: red;
-}
-
-#color4 {
-    background-color: yellow;
+#pixel-board {
+    border: 1px solid black;
+    display: inline-block;
+    width: 210px;
+    height: 225px;  
 }
