@@ -1,8 +1,8 @@
-#color-palette{
+#color-palette {
   display: block;
 }
 
-.color{
+.color {
   display: inline-block;
   height: 60px;
   width: 60px;
@@ -10,17 +10,17 @@
   margin-right: 10px;
 }
 
-#pixel-board{
+#pixel-board {
   display: grid;
-  grid-template-columns: repeat(5,0fr);
+  grid-template-columns: repeat(5, 0fr);
   position: relative;
   top: 10px;
 }
 
-.pixel{
+.pixel {
   background-color: white;
   height: 40px;
   width: 40px;
-  border: 1px solid black
+  border: 1px solid black;
 }
 
