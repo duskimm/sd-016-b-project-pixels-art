@@ -4,8 +4,9 @@ const clearButton = document.querySelector('#clear-board');
 const buttonValue = document.getElementById('generate-board');
 let boardSize = 5;
 
+
 function randomColor() {
-  return parseInt(Math.random() * 255, 10);
+  return (Math.random() * 255);
 }
 
 function rgb() {
@@ -50,7 +51,7 @@ createPixelBoard(pixelLine);
 
 const colors = document.getElementsByClassName('color');
 
-// creditos ao canal Rocketseat, video aula muito esclarecedora, que me ajudou a entender a "referencia" a funcao https://www.youtube.com/watch?v=UftSB4DaRU4&ab_channel=Rocketseat.
+// creditos ao canal Rocketseat, video aula muito esclarecedora, que me ajudou a entender a "referencia" de funcao https://www.youtube.com/watch?v=UftSB4DaRU4&ab_channel=Rocketseat.
 
 function selectColor(event) {
   for (let i = 0; i < colors.length; i += 1) {
