@@ -25,13 +25,18 @@ for (let index = 0; index < setColorsToDivs.length; index += 1) {
   });
 }
 
-
 const pixelClass = document.getElementsByClassName('pixel');
 for (let index = 0; index < pixelClass.length; index += 1) {
   pixelClass[index].addEventListener('click', function (event) {
-    let targetPixel = event.target;
+    const targetPixel = event.target;
     targetPixel.style.backgroundColor = selected.style.backgroundColor;
   });
 }
 
-
+const clearBoardId = document.getElementById('clear-board');
+clearBoardId.addEventListener('click', function () {
+  for(let index = 0; index < pixelClass.length; index += 1) {
+    const targetPixel = pixelClass[index];
+    targetPixel.style.backgroundColor = 'white';
+  }
+});
