@@ -1,4 +1,3 @@
-
 // Challenge 4 - Function of the grid.
 
 const proportion = 5;
@@ -7,7 +6,6 @@ const elementChild = document.querySelector('#pixel-board');
 function creationtLines(numberOfBoxes) {
   for (let index = 0; index < numberOfBoxes; index += 1) {
     const lines = document.createElement('div');
-    lines.className = 'pixel';
     elementChild.appendChild(lines);
     for (let lineColumn = 0; lineColumn < numberOfBoxes; lineColumn += 1) {
       const column = document.createElement('div');
@@ -23,8 +21,7 @@ window.onload = function() {
   const pixelBoard = document.querySelector('.pixel');
 
   pixelBoard.backgroundColor = 'white';
-
-}
+};
 
 // function hightNumbered(boxNumbered) {
 //   for (let index = 1; index <= base; index += 1) {
