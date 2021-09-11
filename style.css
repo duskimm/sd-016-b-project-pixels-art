@@ -31,7 +31,7 @@ todos os elementos https://developer.mozilla.org/pt-BR/docs/Web/CSS/:nth-child *
   background-color: #ee2933;
 }
 
-.pixel .pixel {
+.pixel {
   display: inline-block;
   border: solid 1px black;
   width: 50px;

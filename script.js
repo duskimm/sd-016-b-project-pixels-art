@@ -1,27 +1,18 @@
-const baseGrid = 5;
-let gridWidth = baseGrid;
-const gridPixel = document.querySelectorAll('.pixel');
-
-function createPixel(pixelClass) {
-  const pixel = document.createElement('div');
-  pixel.className = pixelClass;
-  return pixel;
-}
-
-function grid(pixels) {
-  for (let i = 1; i <= baseGrid; i += 1) {
-    if (i <= gridWidth) {
-      const pixel = createPixel('pixel');
-      pixels.appendChild(pixel);
+window.onload = function() {
+  let baseGrid = 5;
+  const container = document.getElementById('pixel-board')
+  
+  function grid() {
+    for (let i = 0; i < baseGrid; i += 1) {
+      const pixel = document.createElement('div')
+      pixel.className = 'pixel'
+      for (let index = 0; index < baseGrid; index += 1) {
+        const columnGrid = document.createElement('div')
+        columnGrid.className = 'pixel'
+        pixel.appendChild(columnGrid)
+      }
+      container.appendChild(pixel)
     }
   }
+grid()
 }
-
-function createGrid(gridPixelParam) {
-  for (let index = 0; index <= baseGrid; index += 1) {
-    grid(gridPixelParam[index]);
-    gridWidth += 1;
-  }
-}
-
-createGrid(gridPixel);
