@@ -73,5 +73,11 @@ document.addEventListener('click', (event) => {
     const selectedColor = document.querySelector('.selected');
 
     element.style.backgroundColor = selectedColor.style.backgroundColor;
+  } else if (element.id === 'clear-board') {
+    const pixels = document.querySelectorAll('.pixel');
+
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+    }
   }
 }, false);
