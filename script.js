@@ -1,8 +1,8 @@
 // Utilities
 
-/* function addClass(element, className) {
+function addClass(element, className) {
   element.classList.add(className);
-} */
+}
 
 function q(params) {
   return document.body.querySelector(params);
@@ -42,3 +42,26 @@ for (let i = 0; i < pixelLines.length; i += 1) {
 const pixelBoard = q('#pixel-board');
 const boardWidth = 40 * n + (n) * 2;
 pixelBoard.style.width = `${boardWidth}px`;
+
+// task 6 functions
+addClass(colors[0], 'selected');
+
+// task 7 functions
+
+function resetClass() {
+  for (let i = 0; i < colors.length; i += 1) {
+    colors[i].className = 'color';
+  }
+}
+
+function selectedClasses(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    array[i].addEventListener('click', () => {
+      resetClass();
+      const stuf = array[i];
+      stuf.className += ' selected';
+    });
+  }
+}
+
+selectedClasses(colors);
