@@ -1,7 +1,11 @@
-body {
-  margin: 0 auto;
+* {
+  margin: 0;
+  padding: 0  ;
 }
 
+h1 {
+  text-align: center;
+}
 .color {
   box-sizing: content-box;
   border: solid black 1px;
@@ -14,12 +18,9 @@ body {
   display: inline-block;
 }
 
-#title {
-  
-}
-
 #color-palette {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 #color1 {
@@ -38,11 +39,20 @@ body {
   background-color: #1b414a;
 }
 
+.pixel-board {
+  
+}
+
 .pixel {
-  background-color: #ffffff;
+  background-color: #fff;
   display: inline-block;
   width: 40px;
   height: 40px;
   box-sizing: content-box;
   border: solid black 1px;
+}
+
+.line {
+  font-size: 0;
+  text-align: center;
 }
