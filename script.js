@@ -12,3 +12,11 @@
 
 // PaletaCore(5);
 
+
+// quando a pagina carregar a cor preta deve estar selecionada
+// cor preta deve ter a classe Selected
+
+window.addEventListener('load', function(){
+    let corPreta = document.querySelector('#black');
+    corPreta.classList.add('selected');
+})
