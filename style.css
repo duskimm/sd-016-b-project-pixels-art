@@ -1,45 +1,33 @@
-div#paleta1 {
+.color {
     width: 100px;
     height: 100px;
     display: inline-block;
     border: 1px solid black;
+}
+#paleta1 {
     background-color: #000;
 }
 
-div#paleta2 {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    border: 1px solid black;
+#paleta2 {
     background-color: #219ebc;
 }
 
-div#paleta3 {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    border: 1px solid black;
+#paleta3 {
     background-color: #069e2d;
 }
 
-div#paleta4 {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    border: 1px solid black;
+#paleta4 {
     background-color: #dc2f02;
 }
 
-div.pixel {
-    display: inline-block;
+.pixel {
     height: 40px;
     width: 40px;
     border: 1px solid black;
 }
 
-div#pixel-board {
-    display: inline-block;
-    width: 210px;
-    height: 225px;
-    border: 1px solid black;
+#pixel-board {
+    margin-right: 500px;
+    display: grid;
+    grid-template-columns: repeat(5, 0fr);
 }

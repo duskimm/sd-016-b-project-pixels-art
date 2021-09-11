@@ -10,27 +10,38 @@ function pixelCreator(tamanho){
 }
 pixelCreator('25');
 
- 
-window.onload = function setSelected() {
-    let color = document.getElementsByClassName('color');
-    color[0].classList.add('selected');
-    for (let i = 1; i < color.length; i += 1) {
-        if(color[i].classList == 'selected'){
-            color[i].classList.remove('selected')
-            color[0].classList.add('selected')
-        }
-        
-    }
-}
 
 
 let color = document.getElementsByClassName('color');
 let paleta = document.getElementById('color-palette');
 
-paleta.addEventListener('click', function HellouClick(event) {
+paleta.addEventListener('click', function (event) {
     for (let i = 0; i < color.length; i += 1) {
         color[i].classList.remove('selected');
     }
     event.target.classList.add('selected');
 })
 
+
+    let pixels = document.getElementsByClassName('pixel');
+    
+    
+    function changeColor(event){
+        let selectedColor = document.querySelector('.selected')
+        let eventTarget = event.target;
+        let bgColor = window
+        let corPixel = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color')
+        eventTarget.style.backgroundColor = corPixel;
+        
+}
+pixelFrame.addEventListener('click', changeColor)
+
+let botao = document.getElementById('clear-board');
+let pixel = document.getElementsByClassName('pixel');
+
+botao.addEventListener('click', function(){
+    for (let i = 0; i < pixel.length; i += 1) {
+        pixel[i].style.backgroundColor = 'white'
+        console.log(pixel[i]);
+    }
+})
