@@ -7,15 +7,17 @@
 }
 
 .pixel{
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border: black solid 1px;
     display: inline-block;
     margin-top: -4px;
     background-color: white;
+
 }
 
 #pixel-board{
-    max-width: 450px;
+    max-width: 250px;
+    margin-left: 5px;
 }
 
