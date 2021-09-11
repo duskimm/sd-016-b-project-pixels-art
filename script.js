@@ -1,29 +1,30 @@
+
+// Challenge 4 - Function of the grid.
+
 const proportion = 5;
-const elementParent = document.querySelector('#pixel-board');
-
-function firstDiv(numberOfBoxes) {
-  for (let index = 1; index <= numberOfBoxes; index += 1) {
-    const lines = document.createElement('div');
-    lines.className = 'pixel';
-    elementParent.appendChild(lines);
-  }
-}
-
-firstDiv(proportion);
-
-const elementChild = document.querySelectorAll('.pixel');
+const elementChild = document.querySelector('#pixel-board');
 
 function creationtLines(numberOfBoxes) {
-  for (let index = 0; index < numberOfBoxes.length; index += 1) {
-    for (let lineColumn = 0; lineColumn < numberOfBoxes.length; lineColumn += 1) {
-      const lines = document.createElement('div');
-      lines.className = 'pixel';
-      numberOfBoxes[lineColumn].appendChild(lines);
+  for (let index = 0; index < numberOfBoxes; index += 1) {
+    const lines = document.createElement('div');
+    lines.className = 'pixel';
+    elementChild.appendChild(lines);
+    for (let lineColumn = 0; lineColumn < numberOfBoxes; lineColumn += 1) {
+      const column = document.createElement('div');
+      column.className = 'pixel';
+      lines.appendChild(column);
     }
   }
 }
 
-creationtLines(elementChild);
+creationtLines(proportion);
+
+window.onload = function() {
+  const pixelBoard = document.querySelector('.pixel');
+
+  pixelBoard.backgroundColor = 'white';
+
+}
 
 // function hightNumbered(boxNumbered) {
 //   for (let index = 1; index <= base; index += 1) {
