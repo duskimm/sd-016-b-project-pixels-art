@@ -57,11 +57,9 @@ function clearBoard() {
 }
 
 // configura o tamanho dos pixels
-function setSizePixels() {
-  const sizePixel = Math.floor(200 / sessionStorage.boardSize);
+function setSizePixels(boardSize) {
+  const sizePixel = Math.floor(200 / boardSize);
   const pixels = document.querySelectorAll('.pixel');
-  console.log(sizePixel);
-  console.log(pixels);
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.width = `${sizePixel}px`;
   }
@@ -74,28 +72,23 @@ document.addEventListener('click', (event) => {
   paintPixels(event);
 }, false);
 
-// evento para pegar a informacao colocada no input
-document.querySelector('#board-size').addEventListener('input', (event) => {
-  sessionStorage.boardSize = parseInt(event.target.value, 10);
-});
-
 // evento para setar o tabuleiro de acordo com o tamanho desejado
 document.querySelector('#generate-board').addEventListener('click', () => {
-  if (Number.isNaN(sessionStorage.boardSize) || (sessionStorage.boardSize <= 0)) {
+  const boardSize = document.querySelector('#board-size').value;
+  if (Number.isNaN(boardSize) || boardSize <= 0) {
     window.alert('Board inválido!');
   } else {
     clearBoard();
-    createLines(sessionStorage.boardSize);
-    createPixels(sessionStorage.boardSize);
-    setSizePixels();
+    createLines(boardSize);
+    createPixels(boardSize);
+    setSizePixels(boardSize);
   }
 });
 
 // evento que acontece quando a pagina termina de carregar
 window.onload = () => {
-  sessionStorage.boardSize = '5';
-  createLines(sessionStorage.boardSize);
-  createPixels(sessionStorage.boardSize);
+  createLines(5);
+  createPixels(5);
 };
 
 // evento que acontece quando clicamos no botao limpar
