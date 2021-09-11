@@ -21,7 +21,7 @@ function clickBlack() {
 colorBlue.addEventListener('click', clickBlue);
 function clickBlue() {
   colorBlack.classList.remove('selected');
-  colorBlue.classList.remove('selected');
+  colorBlue.classList.add('selected');
   colorRed.classList.remove('selected');
   colorGreen.classList.remove('selected');
 }
