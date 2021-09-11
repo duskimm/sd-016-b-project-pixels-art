@@ -1,11 +1,31 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,500;1,600&display=swap') ; */
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
 
 body {
+  display: block;
   font-family: Arial, sans-serif;
   text-align: center;
+  background-color: whitesmoke;
 }
+
+main {
+  background-color: teal;
+  display: contents;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
 #title {
-  margin-bottom: 30px;
+  padding: 1vmax;
+}
+
+header {
+  margin-bottom: 20px;
+  padding: 1vmax;
 }
 
 .color {
@@ -13,11 +33,13 @@ body {
   height: 40px;
   border: solid 1px black;
   display: inline-block;
+  border-radius: 10%;
 }
 
 #color-pallete {
   margin: 10px;
   border: 5px;
+  display: inline;
 }
 
 #cor1 {
@@ -36,6 +58,15 @@ body {
   background-color: rgb(253, 249, 8);
 }
 
-#color-pallete {
+ul {
   display: inline;
+}
+
+.pixel {
+  width: 38px;
+  height: 38px;
+  border-radius: 10%;
+  background-color: white;
+  border: solid 1px black;
+  display: inline-block;
 }
