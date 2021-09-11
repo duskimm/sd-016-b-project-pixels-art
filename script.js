@@ -4,29 +4,32 @@ function colorGenerator () {
     let randomColor1 = Math.floor(Math.random() * 255) + 1;
     let randomColor2 = Math.floor(Math.random() * 255) + 1;
     let randomColor3 = Math.floor(Math.random() * 255) + 1;
-    let randomColor = `rgb (${randomColor1}, ${randomColor2}, ${randomColor3})`;
+
+    let randomColor = `rgb(${randomColor1}, ${randomColor2}, ${randomColor3})`;
 
     return randomColor;
 }
-console.log(colorGenerator());
+
 
 // Função para setar primeira cor;
 function setFirstColor() {
-    let firstColor = document.querySelector(".firstColor");
+    let firstColor = document.querySelector("#firstColor");
     firstColor.style.backgroundColor = "black"
-
 }
 setFirstColor();
 
-// Função para setar cores aleatórias (NAO FUNCIONAL??)
+// Função para setar cores aleatórias
 
 function setRandomColors () {
-    let colors = document.querySelectorAll(".randomColors");
-    for (let i = 0; i < colors.length; i += 1) {
-        colors[i].style.backgroundColor = colorGenerator();
+    let randomPalettes = document.getElementsByClassName("randomColors");
+    for (let i = 0; i < randomPalettes.length; i+=1) {
+        randomPalettes[i].style.backgroundColor = colorGenerator();
     }
 }
+
 setRandomColors();
+
+
 
 // Funcao para selecionar a cor (INCOMPLETA) 
 function selectColor() { 
@@ -49,5 +52,27 @@ function createGrid(input) {
         board.appendChild(squares);
     }
 }
-
 createGrid(5);
+
+function selectColors() {
+    let colors = document.getElementById("color-palette");
+    colors.addEventListener ("click", function(event){
+    for (let i = 0; i < colors.children.length; i+=1){
+        colors.children[i].classList.remove('selected')
+    }
+    event.target.classList.add("selected")
+    })
+}
+selectColors();
+
+function paintPixels () {
+    let pixel = document.querySelectorAll(".pixel")
+    for (let i = 0; i < pixel.length; i+=1) {
+        pixel[i].addEventListener("click", function(event){
+        let selectedColor = document.querySelector(".selected");
+        event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+        })
+    }
+}
+paintPixels();
+
