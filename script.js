@@ -19,13 +19,12 @@ paleta.addEventListener('click', (event) => {
   event.target.classList.add('selected');
 });
 
-const pixels = document.getElementsByClassName('pixel');
-
 function changeColor(event) {
   const selectedColor = document.querySelector('.selected');
   const eventTarget = event.target;
-  const bgColor = window;
-  const corPixel = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
+  const corPixel = window
+    .getComputedStyle(selectedColor, null)
+    .getPropertyValue('background-color');
   eventTarget.style.backgroundColor = corPixel;
 }
 pixelFrame.addEventListener('click', changeColor);
@@ -36,6 +35,5 @@ const pixel = document.getElementsByClassName('pixel');
 botao.addEventListener('click', () => {
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
-    console.log(pixel[i]);
   }
 });
