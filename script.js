@@ -4,7 +4,6 @@ const clearButton = document.querySelector('#clear-board');
 const buttonValue = document.getElementById('generate-board');
 let boardSize = 5;
 
-
 function randomColor() {
   return (Math.random() * 255);
 }

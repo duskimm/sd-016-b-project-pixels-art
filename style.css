@@ -1,3 +1,9 @@
+@font-face {
+  src: url('ccoverbyteoffregular.otf');
+  font-family: nos;
+
+}
+
 .pixel {
   height: 40px;
   width: 40px;
@@ -20,9 +26,59 @@
 }
 
 .line {
-  width: 3000px;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #pixel-board {
   margin-top: 100px;
+}
+
+h1 {
+  font-family: nos, monospace;
+  border: solid 3px white;
+  padding: 30px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+body {
+  text-align: center;
+  background-image: url('games.jpg');
+}
+
+#clear-board {
+  margin-right: 30px;
+}
+
+.menu {
+  margin-bottom: 50px;
+  margin-top: 20px;
+  background-image: none;
+}
+
+.header {
+  margin: 30px;
+
+}
+
+footer {
+  font-family: nos, monospace;
+  background-image: url('bot2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+}
+
+p {
+  padding: 20px;
 }
