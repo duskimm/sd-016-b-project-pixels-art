@@ -30,8 +30,6 @@ function addColorsToColorPalette() {
   }
 }
 
-addColorsToColorPalette();
-
 function generatePixel() {
   const pixel = document.createElement('div');
   pixel.className = 'pixel';
@@ -39,45 +37,85 @@ function generatePixel() {
   return pixel;
 }
 
-function generateRow(dimension) {
+function generateRow(size) {
   const row = document.createElement('div');
   row.className = 'pixel-board-row';
 
-  for (let counter = 0; counter < dimension; counter += 1) {
+  for (let counter = 0; counter < size; counter += 1) {
     row.appendChild(generatePixel());
   }
   return row;
 }
 
-function generatePixelBoard(dimension) {
+function generatePixelBoard(size) {
   const pixelBoardContainer = document.querySelector('#pixel-board');
 
-  for (let counter = 0; counter < dimension; counter += 1) {
-    pixelBoardContainer.appendChild(generateRow(dimension));
+  pixelBoardContainer.innerHTML = '';
+  for (let counter = 0; counter < size; counter += 1) {
+    pixelBoardContainer.appendChild(generateRow(size));
   }
 }
 
-generatePixelBoard(5);
+function switchSelectedColor(event) {
+  const selectedColor = document.querySelector('.selected');
+  selectedColor.classList.remove('selected');
+  event.target.classList.add('selected');
+}
 
-// Source: https://gomakethings.com/attaching-multiple-elements-to-a-single-event-listener-in-vanilla-js/
-
-document.addEventListener('click', (event) => {
+function changePixelColor(event) {
+  const selectedColor = document.querySelector('.selected');
   const element = event.target;
+  element.style.backgroundColor = selectedColor.style.backgroundColor;
+}
 
-  if (element.classList.contains('color')) {
-    const selectedColor = document.querySelector('.selected');
-    selectedColor.classList.remove('selected');
+function clearBoard() {
+  const pixels = document.querySelectorAll('.pixel');
 
-    element.classList.add('selected');
-  } else if (element.classList.contains('pixel')) {
-    const selectedColor = document.querySelector('.selected');
-
-    element.style.backgroundColor = selectedColor.style.backgroundColor;
-  } else if (element.id === 'clear-board') {
-    const pixels = document.querySelectorAll('.pixel');
-
-    for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
-    }
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
   }
-}, false);
+}
+
+function addEventListenerTo(selectors, type, func) {
+  const element = document.querySelector(selectors);
+  element.addEventListener(type, func);
+}
+
+function addEventListenerToAll(selectors, type, func) {
+  const elements = document.querySelectorAll(selectors);
+  for (let index = 0; index < elements.length; index += 1) {
+    elements[index].addEventListener(type, func);
+  }
+}
+
+function resizePixelBoard() {
+  const boardSize = document.querySelector('#board-size');
+
+  if (!boardSize.value) {
+    window.alert('Board inválido!');
+  } else {
+    if (boardSize.value < 5) {
+      boardSize.value = 5;
+    } else if (boardSize.value > 50) {
+      boardSize.value = 50;
+    }
+    generatePixelBoard(Number(boardSize.value));
+    addEventListenerToAll('.pixel', 'click', changePixelColor);
+  }
+}
+
+function initEventListeners() {
+  addEventListenerToAll('.color', 'click', switchSelectedColor);
+  addEventListenerToAll('.pixel', 'click', changePixelColor);
+
+  addEventListenerTo('#clear-board', 'click', clearBoard);
+  addEventListenerTo('#generate-board', 'click', resizePixelBoard);
+}
+
+function init() {
+  addColorsToColorPalette();
+  generatePixelBoard(5);
+  initEventListeners();
+}
+
+window.onload = init;
