@@ -8,7 +8,7 @@ body {
   background-color: beige;
 }
 
-#title{ 
+#title {
   text-align: center;
   position: relative;
   top: 50px;
@@ -28,11 +28,12 @@ body {
   border: 1px solid black;
   margin-right: 10px;
 }
+
 #board-center {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 35%; 
+  top: 35%;
 }
 
 #pixel-board {
@@ -53,7 +54,7 @@ body {
   display: block;
   position: relative;
   left: 42.8%;
-  top:70px;
+  top: 70px;
 }
 
 #clear-board {
