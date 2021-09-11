@@ -8,9 +8,10 @@ colorBtns[3].style.backgroundColor = 'purple';
 // Requisito 4 e 5 - Quadro de pixels
 const pixelBoard = document.querySelector('#pixel-board');
 const pixelBoardLines = pixelBoard.children;
+let size = 5;
 
 function pixelAttribution(index) {
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < size; i += 1) {
     const onePixel = document.createElement('section');
     onePixel.className = 'pixel';
     pixelBoardLines[index].appendChild(onePixel);
@@ -18,7 +19,10 @@ function pixelAttribution(index) {
 }
 
 function lineDef() {
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < size; i += 1) {
+    const line = document.createElement('section');
+    line.className = 'line';
+    pixelBoard.appendChild(line);
     pixelAttribution(i);
   }
 }
@@ -79,3 +83,38 @@ function clearAll() {
   });
 }
 clearAll();
+
+// Requisito 10 e 11 - Usuário personaliza o tamanho e mensagens de erro caso o mesmo digite algo inválido
+const newSize = document.querySelector('#board-size');
+const applyBtn = document.querySelector('#generate-board');
+let newNum = 5;
+
+function removeLines() {
+  for (let i = 0; i < size; i += 1) {
+    pixelBoard.removeChild(pixelBoardLines[0]);
+  }
+}
+
+function conditions() {
+  removeLines();
+  size = newNum;
+  lineDef();
+}
+
+function validation() {
+  applyBtn.addEventListener('click', () => {
+    if (newSize.value.length === 0) {
+      alert('Board inválido!');
+    } else if (newSize.value < 5) {
+      newNum = 5;
+      conditions();
+    } else if (newSize.value > 50) {
+      newNum = 50;
+      conditions();
+    } else {
+      newNum = newSize.value;
+      conditions();
+    }
+  });
+}
+validation();
