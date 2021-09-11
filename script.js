@@ -1,9 +1,16 @@
+// Requisito 12 - Gera cores aleatórias para a paleta, exceto pelo preto
+function randomColor() {
+  const randomColorElement = Math.floor(Math.random() * 16777215).toString(16); // Fonte para o código que gera cores aleatórias https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
+  const novaCor = `#${randomColorElement}`; // Fonte no próprio developer.mozilla.org - na parte de Template Strings
+  return novaCor;
+}
+
 // Requisito 2 e 3 - Cores dos botões
 const colorBtns = document.getElementsByClassName('color');
 colorBtns[0].style.backgroundColor = 'black';
-colorBtns[1].style.backgroundColor = 'red';
-colorBtns[2].style.backgroundColor = 'green';
-colorBtns[3].style.backgroundColor = 'purple';
+colorBtns[1].style.backgroundColor = randomColor();
+colorBtns[2].style.backgroundColor = randomColor();
+colorBtns[3].style.backgroundColor = randomColor();
 
 // Requisito 4 e 5 - Quadro de pixels
 const pixelBoard = document.querySelector('#pixel-board');

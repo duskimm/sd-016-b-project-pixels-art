@@ -5,6 +5,14 @@
   margin-bottom: 20px;
 }
 
+body {
+  background-color: rgb(129, 74, 129);
+}
+
+#title {
+  text-align: center;
+}
+
 .pixel {
   border: 1px solid black;
   width: 40px;
