@@ -1,0 +1,45 @@
+div#paleta1 {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 1px solid black;
+    background-color: #000;
+}
+
+div#paleta2 {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 1px solid black;
+    background-color: #219ebc;
+}
+
+div#paleta3 {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 1px solid black;
+    background-color: #069e2d;
+}
+
+div#paleta4 {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 1px solid black;
+    background-color: #dc2f02;
+}
+
+div.pixel {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+}
+
+div#pixel-board {
+    display: inline-block;
+    width: 210px;
+    height: 225px;
+    border: 1px solid black;
+}
