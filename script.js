@@ -20,6 +20,14 @@ configurarCoresPaletas[1].style.backgroundColor = 'red';
 configurarCoresPaletas[2].style.backgroundColor = 'blue';
 configurarCoresPaletas[3].style.backgroundColor = 'green';
 
+let capturarSectionQuadro = document.querySelector('#pixel-board');
+let elementosQuadro = 25;
+for (let index = 0; index < elementosQuadro; index +=1){
+    let criarDivsQuadro = elementosQuadro;
+    criarDivsQuadro = document.createElement('div');
+    criarDivsQuadro.className = 'pixel';
+    capturarSectionQuadro.appendChild(criarDivsQuadro);      
+}
 
 
 
