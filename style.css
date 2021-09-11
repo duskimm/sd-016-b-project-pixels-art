@@ -26,6 +26,15 @@
     display: inline-block;
 }
 
-#color-pallete {
-    color: gray
+#pixel-board {
+    font-size: 0;
+}
+#colunas {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    background-color: white;
 }
