@@ -33,3 +33,35 @@ function criaLinha(){
      }
  }
  criaLinha()
+
+
+function botaoReiniciar (){
+    let botaoBranco = document.createElement('button');
+    let corpoDoSite = document.getElementsByTagName('body')[0];
+    botaoBranco.innerText = "Reiniciar";
+    botaoBranco.className = "botao"
+    corpoDoSite.appendChild(botaoBranco);
+}
+botaoReiniciar()
+
+let botaoBranco = document.querySelector(".botao");
+
+botaoBranco.addEventListener("clcik", reiniciaJogo)
+
+let branco = "white";
+function reiniciaJogo(){
+    let quadrados = document.querySelectorAll(".pixel");
+    for (let i =0; i<quadrados.length; i+=1){
+        quadrados[i].style.background = branco
+    }
+}
+
+let vermelho = "red";
+function pintaDeVermelho(){
+    let quadrados = document.querySelectorAll(".pixel");
+    for (let i =0; i<quadrados.length; i+=1){
+        quadrados[i].style.background = vermelho
+    }
+}
+
+pintaDeVermelho()
