@@ -70,3 +70,10 @@ body {
 .selected {
   background-color: black;
 }
+
+#clear-board {
+  display: block;
+  left: 20%;
+  /* margin-bottom: 20px; */
+  margin: 20px;
+}

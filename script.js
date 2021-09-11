@@ -120,3 +120,13 @@ window.onclick = function(event) {
   }
   // console.log(event.target.className);
 };
+
+function limparPixels () {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
+let botao = document.querySelector('#clear-board');
+botao.addEventListener('click', limparPixels);
