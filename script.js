@@ -32,7 +32,7 @@ function createColumn(elementoPai, qtdColunas) {
   for (let index = 0; index < qtdColunas; index += 1) {
     coluna = document.createElement('div');
     coluna.classList.add('pixel');
-    // coluna.classList.add('coluna');
+    coluna.style.backgroundColor = 'white';
     elementoPai.appendChild(coluna);
   }
 }
@@ -47,7 +47,7 @@ function createLine(qtdLinhas) {
     linha.classList.add('linha');
     pixelBoard.appendChild(linha);
 
-    createColumn(linha, 5);
+    createColumn(linha, qtdLinhas);
   }
 }
 
@@ -80,7 +80,7 @@ addRemoveClassSelected(black);
 // Pego todos os elementos que tem a classe color
 const cores = document.getElementsByClassName('color');
 
-// Para cada elemento do array com a classe color eu creio um evento de clique que chama a função addRemoveClassSelected();
+// Para cada elemento do array com a classe color eu crio um evento de clique que chama a função addRemoveClassSelected();
 for (let cor = 0; cor < cores.length; cor += 1) {
   cores[cor].addEventListener('click', () => {
     addRemoveClassSelected(cores[cor]);
@@ -89,33 +89,44 @@ for (let cor = 0; cor < cores.length; cor += 1) {
 
 // ******************************************************************************************** //
 // 8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
-// Recebendo todas as divs com a classe pixel
-const pixels = document.getElementsByClassName('pixel');
+// Responsável por criar o evento que fica esperando o clique no pixel.
+function eventoPrintPixel() {
+  // Recebendo todas as divs com a classe pixel
+  const pixels = document.getElementsByClassName('pixel');
+  // Para cada elemento da classe pixel eu adiciono um evento de clique
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', (elemento) => {
+      // Pegando o pixel que foi clicado
+      const pixel = elemento;
 
-// Para cada elemento da classe pixel eu adiciono um evento de clique
-for (let index = 0; index < pixels.length; index += 1) {
-  pixels[index].addEventListener('click', (elemento) => {
-    // Pegando o pixel que foi clicado
-    const pixel = elemento;
+      // Pegando a cor que está com a classe selected
+      const selected = document.getElementsByClassName('selected')[0];
 
-    // Pegando a cor que está com a classe selected
-    const selected = document.getElementsByClassName('selected')[0];
+      // O window.getComputedStyle abaixo foi baseado no exemplo que consta no site da w3schools no seguinte link: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
 
-    // O window.getComputedStyle abaixo foi baseado no exemplo que consta no site da w3schools no seguinte link: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
-
-    // Pegando a cor do elemento que tem a classe selected.
-    const corSelect = window.getComputedStyle(selected, null).getPropertyValue('background-color');
-    pixel.target.style.backgroundColor = corSelect;
-  });
+      // Pegando a cor do elemento que tem a classe selected.
+      const corSelec = window.getComputedStyle(selected, null).getPropertyValue('background-color');
+      pixel.target.style.backgroundColor = corSelec;
+    });
+  }
 }
+
+eventoPrintPixel();
 
 // ******************************************************************************************** //
 // 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
 // Estou pegando a segunda seção que vai ser o elemento pai.
 const quadroPixels = document.getElementsByTagName('section')[1];
-const buttonClear = document.createElement('button');
-buttonClear.id = 'clear-board';
-buttonClear.innerText = 'Limpar';
+
+// Função para criar butões pois terei mais de um botão na página.
+function createButton(id, texto) {
+  const button = document.createElement('button');
+  button.id = id;
+  button.innerText = texto;
+
+  return button;
+}
+const buttonClear = createButton('clear-board', 'Limpar');
 
 // Funciona como o appendChild mais consigo passar a posição informando primeiro o elemento que vai ser adicionado e o segundo parâmetro é um elemento filho de referência, ou seja o elemento adicionado vai ser adicionado antes do elemento de referência.
 // A função abaixo é baseada na em uma função de exemplo no site da mozilla. Link: https://developer.mozilla.org/pt-BR/docs/Web/API/Node/insertBefore
@@ -123,9 +134,51 @@ quadroPixels.insertBefore(buttonClear, pixelBoard);
 
 // Função que limpa cada div pixel colocando todas as cores como branco.
 function clearPixels() {
+  // Recebendo todas as divs com a classe pixel
+  const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'white';
   }
 }
 
 buttonClear.addEventListener('click', clearPixels);
+
+// ******************************************************************************************** //
+// 10 - Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
+// Criando o input
+const inputPixels = document.createElement('input');
+inputPixels.type = 'number';
+inputPixels.min = '1';
+inputPixels.id = 'board-size';
+// Inserindo o elemento input antes da div de quadro.
+quadroPixels.insertBefore(inputPixels, pixelBoard);
+
+// Criando o button
+const buttonAddPixels = createButton('generate-board', 'VQV');
+// Inserindo buttonAddPixels acima do elemento pixelBoard.
+quadroPixels.insertBefore(buttonAddPixels, pixelBoard);
+
+// Limpa o pixelBoard
+function ClearQuadroPixel() {
+  pixelBoard.innerHTML = '';
+}
+
+buttonAddPixels.addEventListener('click', () => {
+  if (inputPixels.value === '') {
+    alert('Board inválido!');
+  } else {
+    // Limpando o pixelBoard
+    ClearQuadroPixel();
+
+    // Fazendo com que o limite fique no padrão entre 5 e 50.
+    if (inputPixels.value < 5) {
+      inputPixels.value = 5;
+    } else if (inputPixels.value > 50) {
+      inputPixels.value = 50;
+    }
+
+    createLine(inputPixels.value);
+    eventoPrintPixel();
+    inputPixels.value = '';
+  }
+});

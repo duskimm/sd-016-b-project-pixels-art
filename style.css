@@ -37,6 +37,12 @@
   width: 40px;
 }
 
+#board-size, #generate-board {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
 #clear-board {
   margin-bottom: 5px;
+  display: block;
 }
