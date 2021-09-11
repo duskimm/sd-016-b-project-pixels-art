@@ -1,3 +1,7 @@
+body {
+  margin: 0 auto;
+}
+
 .color {
   box-sizing: content-box;
   border: solid black 1px;
@@ -10,9 +14,13 @@
   display: inline-block;
 }
 
-#title {}
+#title {
+  
+}
 
-#color-palette {}
+#color-palette {
+  margin-bottom: 20px;
+}
 
 #color1 {
   background-color: black;
@@ -28,4 +36,13 @@
 
 #color4 {
   background-color: #1b414a;
+}
+
+.pixel {
+  background-color: #ffffff;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  box-sizing: content-box;
+  border: solid black 1px;
 }
