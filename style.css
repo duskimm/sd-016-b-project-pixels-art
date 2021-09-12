@@ -1,22 +1,31 @@
-.color{
+.color {
   width: 50px;
   height: 50px;
-  border: solid 1px #000;
+  border: solid 1px black;
   display: inline-block;
 }
 
-.ouro{
+.preto {
   background-color: black;
 }
 
-.verde{
+.verde {
   background-color: green;
 }
 
-.azul{
+.azul {
   background-color: blue;
 }
 
-.violeta{
+.violeta {
   background-color: violet;
+}
+
+.pixel {
+  width: 50px;
+  height: 50px;
+  border: solid 1px black;
+  display: inline-block;
+  margin: 5px;
+  background-color: white;
 }
