@@ -35,7 +35,7 @@ function addPaletteColor(color) {
 
 addPaletteColor('black');
 
-function pixelBoard(height, width) {
+function addPixelBoard(height, width) {
   const pixelBoard = document.createElement('div');
   pixelBoard.id = 'pixel-board';
   for (let i = 0; i < height; i += 1) {
@@ -50,4 +50,15 @@ function pixelBoard(height, width) {
   body.appendChild(pixelBoard);
 }
 
-pixelBoard(5, 5);
+addPixelBoard(5, 5);
+
+function selectedColor(color) {
+  const paletteList = document.getElementsByClassName('color');
+  for (const palette of paletteList) {
+    if (palette.style.backgroundColor === color) {
+      palette.classList.add('selected');
+    }
+  }
+}
+
+selectedColor('black');
