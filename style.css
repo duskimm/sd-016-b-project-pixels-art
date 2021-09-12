@@ -17,8 +17,8 @@
 #color-palette
  {
  margin-left: 700px;
- margin right: 500px;
-}
+ margin-right: 500px;
+ }
 
 #title{
  text-align: center;
@@ -35,63 +35,52 @@ main {
   display: flex;
 }
 .color{
-  height: 100px;
-  width: 100px;
-}
-li:hover{
-  cursor: pointer;
-  align-items: 
-}
-
-#bk {
-  margin: 3px;
-  width: 80px;
-  height: 80px;
-  background-color: black;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  display: inline-block;
-}
-
-#r {
-  
   margin: 3px;;
   width: 80px;
   height: 80px;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  display: inline-block;
+  
+}
+
+.selected{
+  border-color: yellow;
+}
+
+li:hover{
+  cursor: pointer;
+}
+
+#black {
+  background-color: black;
+}
+
+#red {   
   background-color: red;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  display: inline-block;
 }
-#b {
-  margin: 3px;
-  width: 80px;
-  height: 80px;
+
+#blue {
   background-color: blue;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  display: inline-block;
 }
 
-#g {
-  margin: 3px;
-  width: 80px;
-  height: 80px;
+#green {
   background-color: green;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  display: inline-block;
 }
 
+.black {
+  background-color: black;
+}
 
+.red {   
+  background-color: red;
+}
 
+.blue {
+  background-color: blue;
+}
 
-
-
-footer{
-  font-size: 200px;
+.green {
+  background-color: green;
 }
