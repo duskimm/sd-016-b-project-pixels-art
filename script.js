@@ -1,5 +1,14 @@
 const board = document.getElementById('pixel-board');
 
+const colors = document.getElementsByTagName('li');
+
+const colorBlack = document.querySelector('#black');
+colorBlack.classList.add('selected');
+
+const pixels = document.getElementsByClassName('pixel');
+
+const button = document.getElementById('clear-board');
+
 window.onload = function createPixelArtBoard() {
   const numberOfLines = 25;
 
@@ -14,11 +23,6 @@ window.onload = function createPixelArtBoard() {
   }
   createDivs(numberOfLines);
 };
-
-const colors = document.getElementsByTagName('li');
-
-const colorBlack = document.querySelector('#black');
-colorBlack.classList.add('selected');
 
 function colorPicker(event) {
   const color = event.target;
@@ -41,3 +45,12 @@ function paintPixels(event) {
 }
 
 board.addEventListener('click', paintPixels);
+
+function clearBoard() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    const currentPixel = pixels[i];
+    currentPixel.style.backgroundColor = 'white';
+  }
+}
+
+button.addEventListener('click', clearBoard);

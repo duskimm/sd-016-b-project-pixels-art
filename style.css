@@ -48,6 +48,7 @@
 #pixel-board {
   width: 250px;
   height: 250px;
+  padding: 20px;
 }
 
 .pixels-div {
@@ -61,4 +62,9 @@
   height: 40px;
   display: inline-block;
   margin: 1px;
+}
+
+.reset-button {
+  text-align: center;
+  padding: 15px;
 }
