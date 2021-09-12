@@ -8,7 +8,7 @@ let colorYellow = document.querySelector('.corYellow');
 let board = document.getElementsByClassName('pixel');
 let limp = document.getElementById('clear-board');
 let fundo = 'black';
-
+let controle1; // pra verificar se ta vazio
 
 
 // Criação dos pixel dinamicos
@@ -20,25 +20,22 @@ let input1 = document.querySelector('input');
 let generateBoard = document.getElementById('generate-board');
 
 generateBoard.addEventListener('click', vqv);
-
 function vqv(){
   let number1 = input1.value;
-  console.log(number1);
+  controle1 = number1;
 
   // removendo pixels
   // olhei como apaga no site:
   // https://www.horadecodar.com.br/2021/06/27/remover-todos-os-elementos-filhos-com-javascript/
   
   pixelBoard.innerHTML = "";
-
+ 
   if(number1 >= 5 && number1 <= 50){
   n = number1;
 } else if (number1 < 5){
   n = 5;
 } else if (number1 > 50){
   n = 50;
-} else {
-  alert('Board inválido!');
 }
 
 // criar pixels
@@ -121,4 +118,12 @@ function limpar (){
 }
 vqv();
 
+// verifica se ta vazio
+generateBoard.addEventListener('click', controle);
+
+function controle (){
+  if (controle1.length < 1) {
+    alert('Board inválido!');
+  }
+}
 }
