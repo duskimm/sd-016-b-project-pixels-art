@@ -22,14 +22,14 @@
 
 #title{
  text-align: center;
+}
 
-} 
 main {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
- } 
+} 
 
 #color-palette{
   display: flex;
@@ -44,8 +44,6 @@ main {
   display: inline-block;
   
 }
-
-
 
 li:hover{
   cursor: pointer;
