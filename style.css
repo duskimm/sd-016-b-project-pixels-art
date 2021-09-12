@@ -40,7 +40,7 @@ main {
   height: 80px;
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 1px;
   display: inline-block;
   
 }
