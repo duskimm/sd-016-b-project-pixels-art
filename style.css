@@ -2,6 +2,10 @@
   margin: 0%;
 }
 
+#clear-board{
+  margin-top: 10px;
+}
+
 ul{
   display: flex;
   cursor: pointer;
@@ -35,7 +39,7 @@ h1{
 }
 
 #palettFour{
-  background-color: yellow;
+ background-color: yellow; 
 }
 
  .pixel{
@@ -45,6 +49,10 @@ h1{
   background-color: white;
   display: table-cell;
   cursor: pointer;
+}
+
+.selected{
+  
 }
 
 #pixel-board{

@@ -3,7 +3,10 @@ window.onload = function(){
   let colorOne = document.querySelector('#palettOne');
   let colorTwo = document.querySelector('#palettTwo');
   let colorThree = document.querySelector('#palettThree');
-  let colorFour = document.querySelector('#palettFour'); 
+  let colorFour = document.querySelector('#palettFour');
+  let pixel = document.querySelectorAll('.pixel');
+  let board = document.querySelector('#pixel-board');
+  let clearButton = document.querySelector('button');
 
   colorOne.addEventListener('click',function(){
     if(colorOne.className !== "selected"){
@@ -41,4 +44,25 @@ window.onload = function(){
     }
   })
 
+  board.addEventListener('click', function(evt){
+    const selectedColor = document.querySelector('.selected');
+    const cor = selectedColor.style.backgroundColor;
+    let div = evt.target;
+    
+    
+
+    if(div.style.backgroundColor !== selectedColor.style.backgroundColor){
+      div.style.backgroundColor = cor;
+    }
+  })
+
+  clearButton.addEventListener('click', function(){
+    for(let i = 0; i < pixel.length; i += 1){  
+      pixel[i].style.backgroundColor = 'white';
+    }
+  })
+
 }
+
+
+
