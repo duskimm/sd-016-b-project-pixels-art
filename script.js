@@ -18,10 +18,10 @@ createBoard(25);
 function test(event) {
   const x = document.querySelector('.selected');
   x.classList.remove('selected');
-  event.target.classList.add('selected')
+  event.target.classList.add('selected');
 }
 
-black.addEventListener("click", test);
-red.addEventListener("click", test);
-green.addEventListener("click", test);
-blue.addEventListener("click", test);
+black.addEventListener('click', test);
+red.addEventListener('click', test);
+green.addEventListener('click', test);
+blue.addEventListener('click', test);
