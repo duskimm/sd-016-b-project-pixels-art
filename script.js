@@ -1,4 +1,4 @@
- // quarto requisito abaixo: criando a matriz do quadro de pintura 5x5
+ // criando a matriz do quadro de pintura 5x5
 // o loop abaixo cria as linhas
 for (let i = 0; i < 5; i += 1) {
 
@@ -12,7 +12,7 @@ for (let i = 0; i < 5; i += 1) {
   
 }
    
-  const line = document.getElementsByClassName('line');
+const line = document.getElementsByClassName('line');
 
 // o loop abaixo pega cada linha e acrescenta colunas. 
 for (let i = 0; i < 5; i += 1) {
@@ -28,5 +28,23 @@ for (let i = 0; i < 5; i += 1) {
   }
 
 }
+// funcao para selecionar cor da paleta de cores para pintar 
+function selectedPaint() {
 
-  
+  const colorSelected = document.querySelector('#color-palette');
+
+  colorSelected.addEventListener('click', (event) => {
+
+    const selected = document.querySelector('.selected');
+
+    if (event.target.id !== 'color-palette') {
+
+      selected.classList.remove('selected');  // fonte: https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
+
+      event.target.classList.add('selected');
+
+    }
+  });
+}
+
+selectedPaint();
