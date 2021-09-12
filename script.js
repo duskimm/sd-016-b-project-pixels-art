@@ -13,13 +13,13 @@
 // PaletaCore(5);
 
 
-// Exercicio 6
+// Requisito 6: adiciona classe 'selected' para cor preta
 window.addEventListener('load', function() {
     let corPreta = document.querySelector('#black');
     corPreta.classList.add('selected');
 });
 
-// Exercicio 7
+// Requisito 7: adicona classe 'selected' para as outras cores
 
 let idBlack = document.querySelector('#black');
 let idRed = document.querySelector('#red');
@@ -40,7 +40,7 @@ idBlue.addEventListener('click', mudaClasseSelected);
 
 
 
-// Exercicio 8
+// Requisito 8: pinta os pixels
 
 function corPixel(event) {
     if (event.target.classList.contains('pixel')) {
@@ -51,3 +51,14 @@ function corPixel(event) {
     }
 }
 document.addEventListener('click', corPixel);
+
+// Requisito 9: botão para limpar o quadro
+
+let botaoLimpar = document.querySelector('#clear-board');
+let pixels = document.querySelectorAll('.pixel');
+
+botaoLimpar.addEventListener("click", function(){
+    for (let index = 0; index < pixels.length; index += 1){
+        pixels[index].style.backgroundColor = 'white';
+    }
+})
