@@ -1,11 +1,7 @@
-* {
-  margin: 0;
-  font-family: monospace;
-}
-
 body {
   margin: 15px;
   background-color: rgb(42, 40, 40);
+  font-family: monospace;
 }
 
 .align {
@@ -32,24 +28,23 @@ h1 {
   margin-bottom: 25px;
 }
 
-.black {
+#black {
   background-color: black;
 }
 
-.red {
+#red {
   background-color: red;
 }
 
-.green {
+#green {
   background-color: lime;
 }
 
-.blue {
+#blue {
   background-color: blue;
 }
 
 /* Referencias sobre display grid no video https://youtu.be/HN1UjzRSdBk */
-
 #pixel-board {
   justify-content: center;
   display: grid;
