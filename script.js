@@ -10,18 +10,19 @@ createTitleH1();
 function colorPalette() {
   const colors = document.getElementById('color-palette');
   const quantityColor = 4;
-
   // Ref.: Encontrei à solução, que retorna as cores aleatórias para as demais paletas no site https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript 
   for (let paletteIdx = 0; paletteIdx < quantityColor; paletteIdx += 1) {
     const palette = document.createElement('div');
     palette.className = 'color';
     colors.appendChild(palette);
   }
+
   colors.firstElementChild.style.backgroundColor = 'black';
   colors.firstElementChild.className = 'color selected';
-  colors.childNodes[1].style.backgroundColor = '#' + parseInt((Math.random() * 0xFFFFFF)).toString(16).padStart(6, '0');;
-  colors.childNodes[2].style.backgroundColor = '#' + parseInt((Math.random() * 0xFFFFFF)).toString(16).padStart(6, '0');;
-  colors.childNodes[3].style.backgroundColor = '#' + parseInt((Math.random() * 0xFFFFFF)).toString(16).padStart(6, '0');;
+
+  for (let idx = 1; idx < quantityColor; idx += 1) {
+    colors.childNodes[idx].style.backgroundColor = '#'+parseInt((Math.random() * 0xFFFFFF)).toString(16).padStart(6, '0');
+  }
 }
 colorPalette();
 
@@ -37,13 +38,3 @@ function SquarePalette() {
   }
 }
 SquarePalette();
-
-function buttonClear() {
-  const btn = document.getElementsByClassName('btn');
-  const createBtn = document.createElement('button');
-  const createText = document.createTextNode('Limpar');
-  createBtn.appendChild(createText);
-  createBtn.id = 'clear-board';
-  btn.appendChild(createBtn);
-}
-buttonClear();
