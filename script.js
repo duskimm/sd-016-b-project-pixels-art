@@ -10,6 +10,9 @@ let limp = document.getElementById('clear-board');
 let fundo = 'black';
 let controle1; // pra verificar se ta vazio
 
+// ideia do formulario vazio do site:
+// https://www.fabiobmed.com.br/site/verificar-se-um-campo-do-formulario-esta-vazio-via-javascript/
+
 
 // Criação dos pixel dinamicos
 let pixelBoard = document.querySelector('#pixel-board');
