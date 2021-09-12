@@ -1,7 +1,9 @@
 
-let pixelSection = document.getElementById('pixel-board');
-let pixelQuantity = 25;
+const pixelSection = document.getElementById('pixel-board');
+const BlackColorSelect = document.querySelector('#black')
 
+let pixelQuantity = 25;
+//Cria o "tabuleiro"
 function createPixels() {
   for(let i = 1; i<= pixelQuantity; i +=1) {
     const CreateDivPixel = document.createElement('div');
@@ -11,6 +13,8 @@ function createPixels() {
   }
 }
 createPixels();
+
+
 
 
 
