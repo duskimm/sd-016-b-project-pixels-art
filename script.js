@@ -1,4 +1,3 @@
-
 //exercicio 5.2 course
 const elementPixelBoard = document.createElement('div');
 elementPixelBoard.id = 'pixel-board';
@@ -14,6 +13,7 @@ for ( index = 0; index < line; index += 1) {
     elementPixelBoard.appendChild(elementPixel)
   }
 }
+
 
 // //exercicio 5.3 course
 const firstLi = document.getElementById('first-li');
@@ -44,7 +44,18 @@ function selectingColor() {
   })
 }
 
+function clearBoard() {
+  const allPixels = document.querySelectorAll('.pixel');
+  const button = document.getElementById('clear');
+  button.addEventListener('click', function() {
+    allPixels.forEach(function(pixel) {
+      const pixelColor = pixel.style;
+      pixelColor.backgroundColor = 'white'
+    })
+  })
+}
 
 window.onload = function start() {
-  selectingColor()
+  selectingColor();
+  clearBoard();
 };
