@@ -37,7 +37,7 @@ function criaLinha(){
 function botaoReiniciar (){
     let botaoBranco = document.createElement('button');
     let corpoDoSite = document.getElementsByTagName('body')[0];
-    botaoBranco.innerText = "Limpar";
+    botaoBranco.innerText = 'Limpar';
     botaoBranco.id = "clear-board"
     corpoDoSite.appendChild(botaoBranco);
 }
@@ -53,4 +53,9 @@ function reiniciaJogo(){
     for (let i =0; i<quadrados.length; i+=1){
         quadrados[i].style.background = branco
     }
+}
+
+window.onload = function() {
+   let paletaDeCores = document.querySelectorAll(".color");
+   paletaDeCores[0].className = "color selected"
 }
