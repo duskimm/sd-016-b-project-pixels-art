@@ -1,9 +1,8 @@
-/**
- * Criar um botão de reset que já vai servir para iniciar com a cor branca
- *
-*/
 const mainContent = document.querySelector('.main-content');
 const divColorClass = document.getElementsByClassName('color');
+const pixelBox = document.getElementsByClassName('pixel');
+const getColor = document.querySelectorAll('.color');
+let colorTabela = 'black';
 const userCount = 5;
 
 function defaultBoard(boardStyle) {
@@ -32,6 +31,16 @@ function createSectionId(nameId) {
   return genericSection;
 }
 
+function buttonClear() {
+  const createButtonClear = document.createElement('div');
+  createButtonClear.id = 'clear-board';
+  mainContent.appendChild(createButtonClear).innerText = 'Limpar';
+
+  return createButtonClear;
+}
+
+buttonClear();
+
 for (let index = 0; index < userCount; index += 1) {
   const sectionPixel = createSectionId('pixel-board');
   mainContent.appendChild(sectionPixel);
@@ -45,9 +54,6 @@ for (let indexX = 0; indexX < userCount; indexX += 1) {
     divFather[indexY].appendChild(divPixel);
   }
 }
-
-const pixelBox = document.getElementsByClassName('pixel');
-let colorTabela = 'black';
 
 function inputColor(e) {
   e.style.backgroundColor = colorTabela;
@@ -82,18 +88,30 @@ function getColorPalette(a) {
   return colorTabela;
 }
 
-const getColor = document.querySelectorAll('.color');
-
 for (let index = 0; index < getColor.length; index += 1) {
   getColor[index].addEventListener('click', (event) => {
     getColorPalette(event);
-    console.log('click event');
   });
 }
 
 for (let index = 0; index < pixelBox.length; index += 1) {
   pixelBox[index].addEventListener('click', () => {
     inputColor(pixelBox[index]);
-    console.log('click');
   });
 }
+
+for (let index = 0; index < pixelBox.length; index += 1) {
+  pixelBox[index].style.backgroundColor = 'white';
+}
+
+for (let index = 0; index < pixelBox.length; index += 1) {
+  document.querySelector('#clear-board').addEventListener('click', pixelBox);
+}
+
+const clear = document.getElementById('clear-board');
+
+clear.addEventListener('click', () => {
+  for (let index = 0; index < pixelBox.length; index += 1) {
+    pixelBox[index].style.backgroundColor = 'white';
+  }
+});
