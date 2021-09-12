@@ -18,7 +18,7 @@ function createABoardOfPixels (tamanhoQuadrado){
 
 }
 
-createABoardOfPixels(5)
+createABoardOfPixels(5) 
 
 function addClassSelected(event) {
   const classSelected = document.querySelector('.selected');
@@ -32,7 +32,7 @@ function addClassSelected(event) {
   }
 }
 
-function changeColor(event){ /* Foi utilizado a ajuda do 
+function changeColor(event){ /* Foi utilizada a ajuda do 
   Victor Shin Kamiguchi para a resolucao desse exercicio */
   const eventTarget = event.target;
   const colorSelected = document.querySelector(".selected"); 
@@ -40,7 +40,7 @@ function changeColor(event){ /* Foi utilizado a ajuda do
   eventTarget.style.backgroundColor = bgColor;
 }
 
-function clearBoard(event) {
+function clearBoard() {
   const pixels = document.getElementsByClassName("pixel")
   const pixelBoard = document.getElementById("pixel-board")
   pixelBoard.style.backgroundColor = "rgb(255, 255, 255)";
@@ -50,11 +50,62 @@ function clearBoard(event) {
   }
  
 }
+function verifyIfPixelExist(){
+  const pixelBoard = document.getElementById("pixel-board")
+  const pixelBoardChild = pixelBoard.children
+  const lines = document.getElementsByClassName("line")
+  while(pixelBoard.firstChild){
+    pixelBoard.removeChild(pixelBoard.lastChild)
+  }
+}
 
+function changeBoardSize() {
+  const sizeInput = document.getElementById("board-size");
+  let sizeValue = sizeInput.value
+  let value = parseInt(sizeValue)
+
+
+  if (sizeValue === ""){
+    window.alert("Board inválido!")
+  }
+  else if(value > 50){
+    value = 50
+    verifyIfPixelExist()
+    createABoardOfPixels(value)
+
+  }
+  else if(value < 5){
+    value = 5
+    verifyIfPixelExist()
+    createABoardOfPixels(value)
+  }
+  else{
+    verifyIfPixelExist()
+    createABoardOfPixels(value)
+  }
+}
+
+function numberRandomizer(){
+  const randon = Math.floor(Math.random()*255)
+  return randon
+}
+
+function randomColorPalette(){
+  const colors = document.getElementsByClassName("color")
+  for (let i = 1; i < colors.length; i += 1){
+    let r = numberRandomizer()
+    let g = numberRandomizer()
+    let b = numberRandomizer()
+    colors[i].style.backgroundColor = `rgb(${r}, ${g}, ${b}`
+  }
+}
+randomColorPalette()
 
 const colorSelect = document.querySelector("#color-palette")
 const pixelBoard = document.querySelector("#pixel-board");
 const clearBtn = document.querySelector('#clear-board');
+const createBtn = document.querySelector("#generate-board")
+createBtn.addEventListener("click", changeBoardSize)
 clearBtn.addEventListener("click", clearBoard)
 pixelBoard.addEventListener("click", changeColor)
 colorSelect.addEventListener("click", addClassSelected)
