@@ -62,7 +62,7 @@ function colorSpill() {
 colorSpill();
 
 function clearButtonCreation() {
-  const createButton = document.querySelector('#color-palette');
+  const createButton = document.querySelector('.clear-board');
   const existenceButton = document.createElement('button');
 
   existenceButton.innerHTML = 'Limpar';
@@ -74,7 +74,7 @@ clearButtonCreation();
 // Challenge 9
 
 function clearButtonEvent() {
-  const btnActionClean = document.querySelector('.clear-board');
+  const btnActionClean = document.querySelector('#clear-board');
 
   btnActionClean.addEventListener('click', () => {
     const pixelBoard = document.querySelectorAll('.pixel');
@@ -90,5 +90,3 @@ clearButtonEvent();
 
 //   pixelBoard.backgroundColor = 'white';
 // };
-
-
