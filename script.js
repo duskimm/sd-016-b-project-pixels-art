@@ -62,3 +62,25 @@ function selectedColor(color) {
 }
 
 selectedColor('black');
+
+function changeSelectedColor(){
+  const paletteList = document.getElementById('color-palette');
+  const paletteColors = document.getElementsByClassName('color');
+  paletteList.addEventListener('click', function (event) {
+    const selectedColor = event.target.style.backgroundColor;
+    for (const color of paletteColors) {
+      if (color.classList.contains('selected') === true) {
+        if (color.style.backgroundColor != selectedColor) {
+          color.classList.remove('selected');
+        }
+      } else {
+        if (color.style.backgroundColor === selectedColor) {
+          color.classList.add('selected');
+        }
+      }
+    }
+    console.log(selectedColor);
+  });
+}
+
+changeSelectedColor();
