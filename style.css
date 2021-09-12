@@ -33,3 +33,23 @@
   border: 1px solid black;
   background-color: green;
 }
+
+#pixel-board {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  width: 206px;
+  height: 206px;
+}
+
+.pixel {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-right: -5px;
+  margin-bottom: -5px;
+  margin-top: -5px;
+  position: relative;
+  border: 1px solid black;
+  background-color: white;
+}
