@@ -37,13 +37,13 @@ function criaLinha(){
 function botaoReiniciar (){
     let botaoBranco = document.createElement('button');
     let corpoDoSite = document.getElementsByTagName('body')[0];
-    botaoBranco.innerText = "Reiniciar";
-    botaoBranco.className = "botao"
+    botaoBranco.innerText = "Limpar";
+    botaoBranco.id = "clear-board"
     corpoDoSite.appendChild(botaoBranco);
 }
 botaoReiniciar()
 
-let botaoBranco = document.querySelector(".botao");
+let botaoBranco = document.querySelector("#clear-board");
 
 botaoBranco.addEventListener("click", reiniciaJogo)
 
