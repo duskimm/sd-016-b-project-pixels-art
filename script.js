@@ -1,7 +1,7 @@
 const body = document.getElementById('body');
 
 function pageTitle(string) {
-  let title = document.createElement('h1');
+  const title = document.createElement('h1');
   title.id = 'title';
   title.innerText = string;
   body.appendChild(title);
@@ -9,12 +9,12 @@ function pageTitle(string) {
 
 pageTitle('Paleta de Cores');
 
-function createPalette(colors){
-  let paletteList = document.createElement('div');
+function createPalette(colors) {
+  const paletteList = document.createElement('div');
   paletteList.id = 'color-palette';
 
   for (const color of colors) {
-    let paletteColor = document.createElement('div');
+    const paletteColor = document.createElement('div');
     paletteColor.className = 'color';
     paletteColor.style.backgroundColor = color;
     paletteList.appendChild(paletteColor);
@@ -24,3 +24,13 @@ function createPalette(colors){
 }
 
 createPalette(['red', 'blue', 'green', 'yellow']);
+
+function addPaletteColor(color) {
+  let paletteList = document.getElementById('color-palette');
+  let newColor = document.createElement('div');
+  newColor.className = 'color';
+  newColor.style.backgroundColor = color;
+  paletteList.prepend(newColor);
+}
+
+addPaletteColor('black');
