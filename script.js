@@ -1,10 +1,10 @@
 
-//exercicio 5.2
+//exercicio 5.2 course
 const elementPixelBoard = document.createElement('div');
 elementPixelBoard.id = 'pixel-board';
 document.body.appendChild(elementPixelBoard);
 
-//exercicio 4.2 / 5.2
+//exercicio 4.2 / 5.2 course
 const line = 5;
 const column = 5;
 for ( index = 0; index < line; index += 1) {
@@ -15,22 +15,36 @@ for ( index = 0; index < line; index += 1) {
   }
 }
 
-// //exrcicio 5.3
+// //exercicio 5.3 course
 const firstLi = document.getElementById('first-li');
 const secondLi = document.getElementById('second-li');
 const thirdLi = document.getElementById('third-li');
 const fourthLi = document.getElementById('fourth-li');
-const input = document.getElementById('input');
 
-function SelectinColor(event) {
+function changindProp(event) {
   const elementSelected = document.querySelector('.selected');
   elementSelected.classList.remove('selected');
   event.target.classList.add('selected');
-  input.value = '';
 }
 
-firstLi.addEventListener('click', SelectinColor);
-secondLi.addEventListener('click', SelectinColor);
-thirdLi.addEventListener('click', SelectinColor);
-fourthLi.addEventListener('click', SelectinColor);
-// REQUISITO 6 FEITO
+firstLi.addEventListener('click', changindProp);
+secondLi.addEventListener('click', changindProp);
+thirdLi.addEventListener('click', changindProp);
+fourthLi.addEventListener('click', changindProp);
+
+function selectingColor() {
+  const color = document.getElementById('pixel-board');
+  color.addEventListener('click', function pickedColor(pickedPixel) {
+    const curColor = document.querySelector('.selected');
+    const currentColor = window.getComputedStyle(curColor).backgroundColor;
+    const pixelTarget = pickedPixel.target;
+    if ( pixelTarget.className === 'pixel' ) {
+      pixelTarget.style.backgroundColor = currentColor;
+    }
+  })
+}
+
+
+window.onload = function start() {
+  selectingColor()
+};
