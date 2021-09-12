@@ -14,9 +14,6 @@
 <body>
   <h1 id="title">Paleta de Cores</h1>
 
-  <p id="tamanho">Tamanho:</p>
-  <input type="text">
-
   <div id="color-palette">
     <div class="color" id="firstColor"></div>
     <div class="color" id="secondColor"></div>
@@ -25,52 +22,15 @@
   </div>
 
   <button id="clear-board">Limpar</button>
-
-
-  <div id="pixel-board">
-    <div id="firstLine">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>
-
-    <div id="secondLine">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>
-
-    <div id="thirdLine">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>
-
-    <div id="fourthLine">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>
-
-    <div id="fifthLine">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>
-  </div>
+  <input id="board-size" type="number" placeholder="Tamanho" min="1">
+  <button id="generate-board">VQV</button>
 
 
   <script src="script.js"></script>
+
+  <div id="pixel-board"></div>
+
+
 
 </body>
 
