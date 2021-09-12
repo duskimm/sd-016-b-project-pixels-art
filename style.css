@@ -71,3 +71,7 @@
   font-weight: 500;
   padding: 10px;
 }
+
+.color, .pixel, #clear-board {
+  cursor: pointer;
+}
