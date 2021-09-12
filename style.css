@@ -1,8 +1,8 @@
 .color {
     display: inline-block;
     border: 1px black solid;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 }
 
 .color1 {
@@ -19,4 +19,17 @@
 
 .color4 {
     background-color: #ccc5b9;
+}
+
+.pixel {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border: 1px black solid;
+    display: inline-block;
+}
+
+.pixel-board {
+    width: 250px;
+    height: 150px;
 }
