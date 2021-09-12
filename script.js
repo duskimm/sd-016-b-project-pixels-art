@@ -2,7 +2,6 @@ window.onload = function inicialColor() {
   const blackColor = document.querySelector('.color');
   blackColor.classList.add('selected');
 };
-
 //----
 // este era meu codigo orignal, mas com ajuda do Hugo Daniel, cheguei ao debaixo.
 
@@ -22,6 +21,7 @@ function clickAlert() {
     });
   }
 //} */
+//---
 
 const colorArray = document.querySelector('#color-palette');
 
@@ -41,7 +41,6 @@ for (let index = 0; index < pixelBoardArray.length; index += 1) {
     event.target.style.backgroundColor = BGColorSelected;
   };
 }
-
 /* ou
 const pixelBoardArray = document.getElementsByClassName('pixel');
 for (let index = 0; index < pixelBoardArray.length; index += 1) {
@@ -53,6 +52,7 @@ for (let index = 0; index < pixelBoardArray.length; index += 1) {
       event.target.style.backgroundColor = BGColorSelected;
     };
 }; */
+//---
 
 const bigSection = document.createElement('section');
 bigSection.className = 'big session';
@@ -65,6 +65,7 @@ newSection.id = 'new-section';
 bigSection.appendChild(newSection);
 
 bigSection.appendChild((document.getElementById('pixel-board')));
+//----
 
 const botaoLimpar = document.createElement('button');
 botaoLimpar.id = 'clear-board';
@@ -77,7 +78,6 @@ botaoLimpar.onclick = function clean() {
   }
 };
 
-
 /* ou
 botaoLimpar.addEventListener ('click', clean);
 
@@ -87,3 +87,5 @@ function clean () {
   }
 };
  */
+//---
+
