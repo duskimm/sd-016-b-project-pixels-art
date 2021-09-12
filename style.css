@@ -47,7 +47,9 @@ h1 {
 .blue {
   background-color: blue;
 }
-/* Referencias sobre display grid no video https://youtu.be/HN1UjzRSdBk*/
+
+/* Referencias sobre display grid no video https://youtu.be/HN1UjzRSdBk */
+
 #pixel-board {
   justify-content: center;
   display: grid;

@@ -9,4 +9,4 @@ function createBoard(grids) {
   }
 }
 
-createBoardRow(25);
+createBoard(25);
