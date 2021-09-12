@@ -11,7 +11,7 @@
   width: 210px;
   height: 210px;
   font-size: 0px;
-  border: 5px solid black;
+  border: 1px solid black;
    margin-top: 20px;
 }
 #color-palette
@@ -45,9 +45,7 @@ main {
   
 }
 
-.selected{
-  border-color: yellow;
-}
+
 
 li:hover{
   cursor: pointer;
@@ -83,4 +81,8 @@ li:hover{
 
 .green {
   background-color: green;
+}
+
+.button-container{
+ margin-left: 920px;
 }

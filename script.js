@@ -32,3 +32,11 @@ for (let pixel of pixels) {
   pixel.addEventListener("click", changeColor)
 }
 
+const button = document.querySelector("#clear-board")
+button.addEventListener("click", function (event) {
+  let pixels = document.getElementsByClassName("pixel")
+  for (let pixel of pixels) {
+    pixel.classList.remove(...pixel.classList);
+    pixel.classList.add("pixel")
+  }
+})
