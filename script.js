@@ -42,9 +42,21 @@ function adicionaSelected(event) {
   for (let i = 0; i < selecionaCor.length; i += 1) {
     // className é uma constante, por isso vai manter color em todas. Pega o array inteiro
     selecionaCor[i].className = 'color';
-  //  classList é uma lista de classes, pega o index do array
+    //  classList é uma lista de classes, pega o index do array
     event.target.classList.add('selected');
 
   }
 }
 chamaDivPai.addEventListener('click', adicionaSelected);
+
+// Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+let classePixelBoard = document.querySelector('#pixel-board');
+function pintaPixel(event) {
+  let selecionarCor = document.querySelector('.selected');
+  let cor = selecionarCor.style.backgroundColor;
+  let pixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixel.length; i += 1){
+    event.target.style.backgroundColor = cor;
+  }
+}
+classePixelBoard.addEventListener('click', pintaPixel);
