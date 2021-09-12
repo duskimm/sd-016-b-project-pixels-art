@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 // Challenge 1
 
 function ramdomColors() {
@@ -9,13 +10,12 @@ function ramdomColors() {
   return palleteColor;
 }
 
-function colorAtribution () {
+function colorAtribution() {
   const deposit = document.querySelectorAll('.color:not(:first-child)');
-  for (let color of deposit) {
+  for (const color of deposit) {
     color.style.backgroundColor = ramdomColors();
   }
 }
-
 colorAtribution();
 
 // Challenge 4, 5, 6 - Function of the grid.
@@ -34,55 +34,61 @@ function creationtLines(numberOfBoxes) {
     }
   }
 }
-
 creationtLines(proportion);
 
-// Challenge 7
+// Challenge 7 and 8.
 
 function colorSpill() {
-  let pixels = document.querySelectorAll('.pixel');
-  let colors = document.querySelectorAll('.color');
+  const pixels = document.querySelectorAll('.pixel');
+  const colors = document.querySelectorAll('.color');
 
-  for (let color of colors){
-    color.addEventListener('click', function(event) {
-      let pointedColor = document.querySelector('.selected');
+  for (const color of colors) {
+    color.addEventListener('click', (event) => {
+      const pointedColor = document.querySelector('.selected');
       if (pointedColor !== null) {
         pointedColor.classList.remove('selected');
       }
-        event.target.classList.add('selected');
+      event.target.classList.add('selected');
     });
   }
-  for (let eachPixel of pixels) {
-    eachPixel.addEventListener('click', function(event){
-      let selectedColor = document.querySelector('.selected');
-      eachPixel.style.backgroundColor = window.getComputedStyle(selectedColor).backgroundColor;
-      
-    })
+  for (const eachPixel of pixels) {
+    eachPixel.addEventListener('click', (event) => {
+      const selectedColor = document.querySelector('.selected');
+      event.target.style.backgroundColor = window.getComputedStyle(selectedColor).backgroundColor;
+    });
   }
 }
 
 colorSpill();
 
-window.onload = function() {
-  const pixelBoard = document.querySelector('.pixel');
+function clearButtonCreation() {
+  const createButton = document.querySelector('#color-palette');
+  const existenceButton = document.createElement('button');
 
-  pixelBoard.backgroundColor = 'white';
-};
+  existenceButton.innerHTML = 'Limpar';
+  existenceButton.className = 'clear-board';
+  createButton.appendChild(existenceButton);
+}
+clearButtonCreation();
 
-// function hightNumbered(boxNumbered) {
-//   for (let index = 1; index <= base; index += 1) {
-//     let pixelCreate = document.createElement('div');
-//     pixelCreate.className = 'pixel';
-//     elementChild.appendchild(pixelCreate);
-//   }
-// }
+// Challenge 9
 
-// function pixelBoard(boxNumbered) {
-//   for (let index = 0; index < boxNumbered.length; index += 1) {
-//     hightNumbered(boxNumbered[index]);
-//   }
-// }
+function clearButtonEvent() {
+  const btnActionClean = document.querySelector('.clear-board');
 
-// pixelBoard(elementChild);
+  btnActionClean.addEventListener('click', () => {
+    const pixelBoard = document.querySelectorAll('.pixel');
+    for (const pixels of pixelBoard) {
+      pixels.style.backgroundColor = 'white';
+    }
+  });
+}
+clearButtonEvent();
+
+// window.onload = function () {
+//   const pixelBoard = document.querySelector('.pixel');
+
+//   pixelBoard.backgroundColor = 'white';
+// };
 
 
