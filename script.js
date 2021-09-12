@@ -27,7 +27,7 @@ function creatPaletColorsDiv(params) {
 }
 creatPaletColorsDiv(3)
 /* dividir em duas funçoes depois */
-
+/* exercicio 12 */
 function divBackGroundColor() {
     /*  peguei a referencia do codigo de cores aleatorias nesse video https://youtu.be/9nt9HRdPSpo */
     let catchDivColor = document.querySelectorAll(".color")
@@ -42,6 +42,7 @@ function divBackGroundColor() {
 divBackGroundColor()
 
 creatImput()
+/* ajuda do luiz W para criar uma section e colocar o pixelSquare dentro DelayNode, resolvendo o problema de criação de do requesito 11 */
 let creatSection = document.createElement("section");
 dadDivBody.appendChild(creatSection);
 
@@ -146,7 +147,7 @@ function creatImput() {
     creatDivImput.appendChild(creatImput);
     creatDivImput.appendChild(creatButton);
 }
-
+/* exercio 10 e 11 */
 function alteredPixelSquared() {
  
     let catchButton = document.querySelector("#generate-board")
