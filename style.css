@@ -1,0 +1,30 @@
+#title{
+    text-align: center;
+}
+
+#container{
+    text-align: center;
+}
+
+.color {
+    border: 1px solid black;
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+}
+
+.black {
+    background-color: black;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
