@@ -4,7 +4,7 @@ for (let i = 0; i < 5; i += 1) {
 
     const matriz = document.getElementById('pixel-board');
   
-    const createLine = document.createElement('line');
+    const createLine = document.createElement('div');
   
     createLine.className = 'line';
   
@@ -19,7 +19,7 @@ for (let i = 0; i < 5; i += 1) {
  
   for (let j = 0; j < 5; j += 1) {
   
-    const createColumn = document.createElement('Column');
+    const createColumn = document.createElement('div');
   
     createColumn.className = 'pixel';
   

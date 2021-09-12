@@ -1,8 +1,18 @@
+header {
+  border: solid black 1px;   
+  padding: 10px; 
+}
+
+main {
+    border: solid black 1px;
+    padding: 30px;  
+}
 .color {
   border: solid black 1px;
-  display: inline;
+  display: inline-block;
   height: 30px;
   width: 30px;
+  color:  white;
 }
 
 #black {
@@ -22,20 +32,21 @@
 }
 
 #pixel-board {
- height: auto;
- width: auto;
  display: block;
+ padding: 30px;
 }
 
 .pixel {
   background-color: white; 
   border: solid black 1px;
-  height: 40px;
   width: 40px;
+  height: 40px;
+  display: inline-block;
 }
 
 .line {
   display: block;
-  height: auto;
-  width: auto;
+  height: 40px;
+  width: 40px
+  border: solid black 1px;
 }
