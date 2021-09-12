@@ -83,32 +83,22 @@ window.onload = function() {
     tamanho = event.target.value;
   })
 
-
-
-  function deleteBoard() {
-    let botao = document.getElementById('generate-board');
-    let board = document.getElementById('pixel-board');
-
-    botao.addEventListener('click', function(event) {
-      if (tamanho == null || tamanho == '0' || tamanho == '') {
-        alert('Board inválido!');
-      } else
-      if (board.firstElementChild != null) {
-        for (let index = 0; index < board.children.length; index = 0) {
-          board.firstElementChild.remove();
-        }
-      }
-    })
-  }
-
-  deleteBoard();
-
   function createBoard() {
     let board = document.getElementById('pixel-board');
     let botao = document.getElementById('generate-board');
-
     botao.addEventListener('click', function() {
-      if (tamanho < 5) {
+      if (tamanho == 0) {
+        alert('Board inválido!');
+
+      } else if (tamanho == null) {
+        alert('Board inválido!');
+
+      } else if (tamanho < 5) {
+        if (board.firstElementChild != null) {
+          for (let index = 0; index < board.children.length; index = 0) {
+            board.firstElementChild.remove();
+          }
+        }
         for (let line = 0; line < 5; line++) {
           let lineCreated = document.createElement('div');
           lineCreated.className = 'line';
@@ -121,6 +111,11 @@ window.onload = function() {
         }
 
       } else if (tamanho > 50) {
+        if (board.firstElementChild != null) {
+          for (let index = 0; index < board.children.length; index = 0) {
+            board.firstElementChild.remove();
+          }
+        }
         for (let line = 0; line < 50; line++) {
           let lineCreated = document.createElement('div');
           lineCreated.className = 'line';
@@ -132,7 +127,10 @@ window.onload = function() {
           }
         }
 
-      } else
+      } else if (board.firstElementChild != null) {
+        for (let index = 0; index < board.children.length; index = 0) {
+          board.firstElementChild.remove();
+        }
         for (let line = 0; line < tamanho; line++) {
           let lineCreated = document.createElement('div');
           lineCreated.className = 'line';
@@ -143,9 +141,12 @@ window.onload = function() {
             board.children[line].appendChild(pixelCreated);
           }
         }
+      }
+
       paintPixels();
       erasePixels();
     })
   }
+
   createBoard();
 }
