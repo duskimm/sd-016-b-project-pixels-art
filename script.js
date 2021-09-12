@@ -70,15 +70,17 @@ function corSelecionada(event){
         event.target.classList.add('selected')
     }
 }
+
+//questao 8
     
     let quadroDepixels = document.querySelectorAll(".pixel");
     for(let i= 0; i <quadroDepixels.length; i+=1){
         quadroDepixels[i].addEventListener("click",pintarOpixelselecionado)
     }
-
+    
 function pintarOpixelselecionado(event){
+    
     for (let i = 0; i < quadroDepixels.length; i+=1){
-      let corSelecionada = document.querySelector('selected');
-      quadroDepixels[event].style.background = corSelecionada
+      let corSelecionada = document.querySelector(".selected")
     }
 }
