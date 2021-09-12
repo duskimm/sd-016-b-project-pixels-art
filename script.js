@@ -27,3 +27,14 @@ function paintPixel(event) {
 }
 
 document.addEventListener('click', paintPixel);
+
+//Função para limpar board
+const clear = document.querySelector('#clear-board');
+function clearBoard() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+}
+
+clear.addEventListener('click', clearBoard);

@@ -15,10 +15,6 @@ h1 {
   height: 50px;
 }
 
-.name-colors {
-  display: inline-block;
-}
-
 #color-palette {
   margin-bottom: 20px;
   text-align: center;
@@ -40,12 +36,8 @@ h1 {
   background-color: #1b414a;
 }
 
-.pixel-board {
-  
-}
-
 .pixel {
-  background-color:   white;
+  background-color:white;
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -56,4 +48,9 @@ h1 {
 .line {
   font-size: 0;
   text-align: center;
+}
+
+#clear-board {
+  text-align: center;
+  display: inline-block;
 }
