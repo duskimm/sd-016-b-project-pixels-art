@@ -1,4 +1,4 @@
-const body = document.getElementById('body');
+const body = document.getElementsByTagName('body')[0];
 
 function pageTitle(string) {
   const title = document.createElement('h1');
@@ -54,8 +54,8 @@ addPixelBoard(5, 5);
 const pixelList = document.getElementById('pixel-board');
 
 function selectedColor(color) {
-  const paletteList = document.getElementsByClassName('color');
-  for (const palette of paletteList) {
+  const colorList = document.getElementsByClassName('color');
+  for (const palette of colorList) {
     if (palette.style.backgroundColor === color) {
       palette.classList.add('selected');
     }
@@ -84,7 +84,29 @@ function changeSelectedColor() {
 
 changeSelectedColor();
 
-pixelList.addEventListener('click', (event) => {
-  const selected = document.querySelector('.selected');
-  event.target.style.backgroundColor = selected.style.backgroundColor;
-});
+function paintPixel() {
+  pixelList.addEventListener('click', (event) => {
+    const selected = document.querySelector('.selected');
+    event.target.style.backgroundColor = selected.style.backgroundColor;
+  });
+}
+
+paintPixel();
+
+function addClearButton() {
+  const clearButton = document.createElement('input');
+  clearButton.type = 'button';
+  clearButton.id = 'clear-board';
+  clearButton.innerText = 'Limpar';
+  clearButton.value = 'Limpar';
+  // Referência utilizada da função insertBefore: https://stackoverflow.com/questions/5882768/how-to-append-a-childnode-to-a-specific-position
+  body.insertBefore(clearButton, pixelList);
+  clearButton.addEventListener('click', () => {
+    const pixels = document.getElementsByClassName('pixel');
+    for (const pixel of pixels) {
+      pixel.style.backgroundColor = 'white';
+    }
+  });
+}
+
+addClearButton();
