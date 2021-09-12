@@ -48,3 +48,15 @@
   border: solid 1px;
   background-color: white;
 }
+
+#clear-board-container {
+  text-align: center;
+  margin: 1.5%;
+}
+
+#clear-board{
+  font-family: fantasy;
+  font-size: 2em;
+  width: 14%;
+  padding: 0.3%;
+}

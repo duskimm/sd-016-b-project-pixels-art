@@ -22,3 +22,14 @@ pixelBoard.addEventListener('click', function (event) {
     event.target.style.backgroundColor = cor;
   }
 });
+
+// Requisito 9
+let clearBoardButton = document.querySelector('#clear-board');
+
+clearBoardButton.addEventListener('click', function() {
+  let pixel = document.querySelectorAll('.pixel')
+
+  for (let i = 0; i < pixel.length; i++) {
+    pixel[i].style.backgroundColor = 'white'
+  }
+})
