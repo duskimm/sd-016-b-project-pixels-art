@@ -93,3 +93,19 @@ function clearBoard() {
 const clearButton = document.getElementById('clear-board');
 
 clearButton.addEventListener('click', clearBoard);
+
+// Função que gera novas cores aleatórias
+
+function generateRandomColor() {
+  const num1 = Math.round(Math.random() * 255);
+  const num2 = Math.round(Math.random() * 255);
+  const num3 = Math.round(Math.random() * 255);
+
+  return `rgb(${num1}, ${num2}, ${num3})`;
+}
+
+const randomElement = document.getElementsByClassName('random-color');
+
+for (let index = 0; index < randomElement.length; index += 1) {
+  randomElement[index].style.backgroundColor = generateRandomColor();
+}
