@@ -1,6 +1,7 @@
-window.onload = function () {
-  colorBlack();
-};
+// window.onload = function () {
+//   //colorBlack();
+// };
+
 
 const palleteColor = document.getElementById('color-palette');
 
@@ -15,20 +16,53 @@ createColorsPallete('black');
 createColorsPallete('red');
 createColorsPallete('orange');
 createColorsPallete('yellow');
-// createColorsPallete('green');
-// createColorsPallete('blue');
-// createColorsPallete('purple');
-// createColorsPallete('pink');
 
 // selecionando a cor preta do span com a classe selected
 function colorBlack() {
   let colorFixed = document.getElementsByTagName('span')[0];
-  colorFixed.className = 'color selected'
+  colorFixed.className = 'color selected';
 }
+colorBlack();
+
+// criar o Botão Clear
+function createButtonClear() {
+  const elementFather = document.querySelector('main');
+  let createButton = document.createElement('button');
+  createButton.id = 'clear-board';
+  createButton.innerText = 'Limpar';
+  elementFather.appendChild(createButton);
+}
+createButtonClear()
+
+// limpar o quadro pixel co clicar no button
+  let clearPixels = document.getElementById('clear-board');
+  function clearBoarder() {
+    let clearDivs = document.getElementsByClassName('pixel');
+    for (let index =0 ; index < clearDivs.length; index += 1){
+      clearDivs[index].style.backgroundColor = 'white';
+    }
+  }
+  clearPixels.addEventListener('click', clearBoarder);
+
+
+// pintar os pixels de preto ao carregar a página
+function colorBlackReload(){
+  let pixels = document.getElementsByClassName('pixel');
+  pixels.style.backgroundColor = 'black'
+}
+
+
+//criar a div com id "pixel-board'
+function createDivFathetBoardPixel() {
+  const elementFather = document.querySelector('main');
+  let createDiv = document.createElement('div');
+  createDiv.id = 'pixel-board';
+  elementFather.appendChild(createDiv);
+}
+createDivFathetBoardPixel()
 
 // criar quadro Pixel com 5 elementos de largura e 5 elementos de altura. Fazer a lógica do quadrado de asteriscos.
 // Auxílio Airton Lopes para implementar a div line
-
 function createboardPixel(number) {
   const boardPixel = document.querySelector('#pixel-board');
   // for para criar as linhas do Quadro Pixel.
@@ -41,7 +75,6 @@ function createboardPixel(number) {
       let divPai = document.querySelectorAll('.line')[index];
       let element = document.createElement('div');
       element.className = 'pixel';
-      element.style.backgroundColor = 'white';
       divPai.appendChild(element);
     }
   }
@@ -49,7 +82,7 @@ function createboardPixel(number) {
 createboardPixel(5);
 
 // remover o selected de onde estava:
-// Auxilio do Luis Gustavo.
+// Auxilio do Luis Gustavo no for.
 let color = document.querySelectorAll('.color');
 function alteraClass(event) {
   for (let index = 0; index < color.length; index += 1){
@@ -62,3 +95,26 @@ for (let index = 0; index < color.length; index += 1){
   color[index].addEventListener('click', alteraClass);
 }
 
+// selecionar cor e pintar os pixels ao clicar. Ajuda questão 10 do calendário.
+// auxilio grupo de estudos.
+function paintSelected() {
+  let paintColorSelected = document.querySelector('.selected');
+  //console.log(paintColorSelected.style.backgroundColor);
+
+  paintColorSelected.addEventListener('click', function (event) {
+    event.target.style.backgroundColor;
+  });
+}
+paintSelected();
+
+function printColor (){
+  // Auxilio Grupo de estudo sabado noite: Luis Wanderson.
+  let pixels = document.getElementsByClassName('pixel');
+  for(let index = 0; index < pixels.length; index += 1){
+    pixels[index].addEventListener('click', function(event) {
+    let paintColorSelected = document.querySelector('.selected');
+    event.target.style.backgroundColor = paintColorSelected.style.backgroundColor;
+    });
+  }
+}
+printColor();

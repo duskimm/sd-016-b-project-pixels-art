@@ -2,30 +2,47 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: Arial, Helvetica, sans-serif;
-  cursor: pointer;
 } 
+
+#header {
+padding: 20px;
+background-color: rgb(172, 165, 165);
+}
+
+
+#clear-board {
+  padding: 10px;
+  margin: 10px 0px;
+  background-color: rgb(172, 165, 165);
+  width: 210px;
+  cursor: pointer;
+}
+
+#pixel-board {
+  margin-bottom: 10px;
+  line-height: 0px;
+  cursor: pointer;
+}
 
 .main {
   background-color: gainsboro;
-  margin-bottom: 10px;
+  padding: 20px;
 }
 
 .color {
   width: 25px;
   height: 25px;
-  margin: 10px;
+  margin: 0px 10px;
   border: 1px solid black;
   display: inline-block;
+  cursor: pointer;
 }
 
-#pixel-board {
-  margin: 10px;
-  line-height: 0px;
-}
 
 .pixel {
   width: 40px;
   height: 40px;
   border: 1px solid black;
   display: inline-block;
+  background-color: white;
 }
