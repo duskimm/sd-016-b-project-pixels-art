@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 #title {
   color: red;
 }
@@ -23,4 +27,15 @@
 
 #roxo {
   background-color: purple;
+}
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: white;
+}
+#pixel-board {
+  margin-top: 25px;
+  line-height: 0;
 }
