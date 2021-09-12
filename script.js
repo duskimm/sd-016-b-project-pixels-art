@@ -5,10 +5,10 @@ window.onload = function startBlack() {
   colorBlack.classList.add('selected');
 };
 
-let colorBlack = document.querySelector('.colorBlack');
-let colorBlue = document.querySelector('.colorBlue');
-let colorRed = document.querySelector('.colorRed');
-let colorGreen = document.querySelector('.colorGreen');
+const colorBlack = document.querySelector('#colorBlack');
+const colorBlue = document.querySelector('#colorBlue');
+const colorRed = document.querySelector('#colorRed');
+const colorGreen = document.querySelector('#colorGreen');
 
 colorBlack.addEventListener('click', clickBlack);
 function clickBlack() {
@@ -41,3 +41,32 @@ function clickGreen() {
   colorRed.classList.remove('selected');
   colorGreen.classList.add('selected');
 }
+
+/* Nesse exercicio tive a ajuda do Hugo Daniel para resolver. */
+const pixelBoard = document.querySelector('#pixel-board');
+pixelBoard.addEventListener('click', (event) => {
+  const event1 = event.target;
+  const selected = document.querySelector('.selected');
+  if (event.target.classList.contains('pixel')) {
+    event1.style.backgroundColor = window
+      .getComputedStyle(selected, null)
+      .getPropertyValue('background-color');
+  }
+});
+
+function creationButton() {
+  const buttonCreate = document.getElementById('button-create');
+  const button = document.createElement('button');
+  button.id = 'clear-board';
+  button.innerText = 'Limpar';
+  buttonCreate.append(button);
+
+  button.addEventListener('click', () => {
+    const pixel = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
+creationButton();
