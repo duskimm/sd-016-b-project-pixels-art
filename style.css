@@ -2,5 +2,18 @@
   border: 1px solid black;
   display: inline-block;
   height: 30px;
+  margin-right: 5px;
   width: 30px;
+}
+
+#pixel-board {
+  line-height: 0;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
 }
