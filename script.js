@@ -1,21 +1,13 @@
-let size = 5;
+let tamanho = 6;
 
-//cria a pixel-board de acordo com o size indicado
-bordCreator(size);
-function bordCreator (hei) {
-  let width = hei;
-  let heigth = hei;
-  for(let index = 0; index < heigth; index += 1) {
-    for(let index = 0; index < width; index += 1) {
+//cria a pixel-board de acordo com o tamanho indicado
+bordCreator(tamanho);
+function bordCreator(tamanho) {
+  
+  for (let index = 0; index < tamanho; index += 1) {
+    for (let indice = 0; indice < tamanho; indice += 1) {
       let div = document.createElement("div");
-      document.querySelector('#pixel-board').appendChild(div);
-      // document.querySelector('#pixel-board').lastChild.classList.add('pixel')
-      if(index == 0) {
-        document.querySelector('#pixel-board').lastChild.classList.add('pixel')
-        // document.querySelector('#pixel-board').lastChild.classList.add('pixel1')
-      }else {
-        document.querySelector('#pixel-board').lastChild.classList.add('pixel')
-      }
+      document.querySelector('#pixel-board').appendChild(div).classList.add('pixel');
     }
     let br = document.createElement("br");
     document.querySelector('#pixel-board').appendChild(br);
