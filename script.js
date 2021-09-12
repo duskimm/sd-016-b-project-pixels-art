@@ -15,13 +15,22 @@ function select() {
   const pickedColor = document.querySelector('.color');
   pickedColor.classList.add('selected');
   const aquarela = document.querySelector('#color-palette');
-  aquarela.addEventListener('click', function pickColor(Event) {
+  aquarela.addEventListener('click', function pickColor(toPaint) {
     const selectedColor = document.querySelector('.selected');
     selectedColor.classList.remove('selected');
-    Event.target.classList.add('selected');
+    toPaint.target.classList.add('selected');
   });
+}
+function getColored() {
+  const container = document.getElementById('pixel-board');
+  container.addEventListener('click', function paint(clickedPixel) {
+    let currentColor = document.querySelector('.selected');
+    let currentColors = window.getComputedStyle(currentColor).backgroundColor
+    clickedPixel.target.style.backgroundColor = currentColors
+  })
 }
 window.onload = function start() {
   grid();
   select();
+  getColored();
 };
