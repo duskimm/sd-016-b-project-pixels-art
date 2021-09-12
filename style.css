@@ -1,3 +1,17 @@
+body {
+	margin: 100px auto;
+	text-align: center;
+	background: rgb(179, 204, 219);
+}
+
+#color-palette * {
+	margin: 10px 10px 20px 10px;
+}
+
+h1 {
+	font-size: 46px;
+}
+
 section .color {
   border: solid 1px black;
   width: 50px;
@@ -24,8 +38,7 @@ section .orange {
 
 /* Pixel board */
 #pixel-board {
-  width: 250px;
-	margin-top: 10px;
+	margin: 20px auto;
 }
 
 .pixel {
