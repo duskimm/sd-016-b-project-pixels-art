@@ -41,20 +41,20 @@ h1 {
 }
 
 .green {
-  background-color:  lime;
+  background-color: lime;
 }
 
 .blue {
-  background-color:  blue;
+  background-color: blue;
 }
-
+/* Referencias sobre display grid no video https://youtu.be/HN1UjzRSdBk*/
 #pixel-board {
   justify-content: center;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 0fr);
 }
 
 .pixel {
-
   background-color: white;
   border: 1px solid black;
   width: 40px;

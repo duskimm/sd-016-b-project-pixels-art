@@ -1,21 +1,12 @@
 const pixelBoard = document.getElementById('pixel-board');
 let pixels;
 
-function createBoardColumn(grids) {
-  for (let indexColumn = 1; indexColumn <= grids; indexColumn += 1) {
-    const pixelColumn = document.createElement('div');
-    pixelColumn.classList.add('pixel');
-    pixels.appendChild(pixelColumn);
-  }
-}
-
-function createBoardRow(grids) {
-  for (let indexRow = 1; indexRow <= grids; indexRow += 1) {
+function createBoard(grids) {
+  for (let index = 1; index <= grids; index += 1) {
     pixels = document.createElement('div');
-    pixels.classList.add('pixel-line');
+    pixels.classList.add('pixel');
     pixelBoard.appendChild(pixels);
-    createBoardColumn(grids);
   }
 }
 
-createBoardRow(5);
+createBoardRow(25);
