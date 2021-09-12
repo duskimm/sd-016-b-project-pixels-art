@@ -1,77 +1,108 @@
-// Paleta de cores e classificação dentro do document.
-const paletColorBlack = document.getElementsByClassName('color')[0];
-const paletColorTwo = document.getElementsByClassName('color')[1];
-const paletColorThree = document.getElementsByClassName('color')[2];
-const paletColorFour = document.getElementsByClassName('color')[3];
-const colorButton = document.getElementById('color-button');
+// Gerar cores aleatórias para a peleta de cores.
+function colorGenerator() {
+  const r = Math.random() * 254;
+  const g = Math.random() * 254;
+  const b = Math.random() * 254;
 
-// Define que o preto está selecionado já quando a página carrega.
-paletColorBlack.classList.add('selected');
-paletColorBlack.style.backgroundColor = 'black';
+  return `rgba(${r}, ${g}, ${b}`;
+}
+// Cor preta selecionada.
+document.getElementsByClassName('color')[0].classList.add('selected');
 
-// Cores que podem ser utilizadas na palette.
-const paletColors = ['red', 'green', 'blue', 'yellow', 'orange', 'grey', 'pink'];
-let indexColors = 0;
-
-paletColorTwo.style.backgroundColor = 'grey';
-paletColorThree.style.backgroundColor = 'brown';
-paletColorFour.style.backgroundColor = 'blue';
-
-// Evento para mudar as cores das paletas.
-colorButton.addEventListener('click', () => {
-  paletColorTwo.style.backgroundColor = paletColors[indexColors];
-  paletColorThree.style.backgroundColor = paletColors[indexColors + 1];
-  paletColorFour.style.backgroundColor = paletColors[indexColors + 2];
-  indexColors += 3;
-  if (indexColors > 7) {
-    indexColors = 0;
+const paleta = document.getElementsByClassName('color');
+function paletaDeCores() {
+  paleta[0].style.backgroundColor = 'black';
+  for (let index = 1; index < paleta.length; index += 1) {
+    paleta[index].style.backgroundColor = colorGenerator();
   }
-});
+}
+paletaDeCores();
 
-// Recupera o elemento com o Id 'color-palette'.
+let colorSelected = paleta[0].style.backgroundColor;
+
+// Gerar as linhas dos pixels.
+const areaPixels = document.getElementById('pixel-board');
+function linesPixels(valor) {
+  for (let index = 0; index < valor; index += 1) {
+    const line = document.createElement('div');
+    line.className = 'lines';
+    areaPixels.appendChild(line);
+    for (let index2 = 0; index2 < valor; index2 += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      line.appendChild(pixel);
+    }
+  }
+}
+
+// Seleciona a cor para pintar.
 const colorPalet = document.getElementById('color-palette');
 
-// Adiciona a classe 'selected' à paleta que foi clicada, removendo das que foram clicadas anteriormente.
-let selectedColor = paletColorBlack.style.backgroundColor;
 colorPalet.addEventListener('click', (event) => {
-  for (let index = 0; index < colorPalet.children.length; index += 1) {
+  const alvo = event.target;
+  for (let index = 0; index < paleta.length; index += 1) {
     colorPalet.children[index].className = 'color';
   }
-  selectedColor = event.target.style.backgroundColor;
-  event.target.classList.add('selected');
+  colorSelected = event.target.style.backgroundColor;
+  alvo.classList.add('selected');
 });
 
-// Recupera a tabela em branco.
-const pixel = document.getElementById('pixel-board');
-
-// Evento para pintar a tabela.
-pixel.addEventListener('click', (event) => {
-  const vitao = event.target;
-  vitao.style.backgroundColor = selectedColor;
+// Pinta os pixels.
+areaPixels.addEventListener('click', (event) => {
+  const alvo = event.target;
+  alvo.style.backgroundColor = colorSelected;
 });
 
-// Recupera o botão para limpar a tabela.
-const buttonReset = document.getElementById('clear-board');
+// Botões.
+const containerButton = document.getElementById('container-button');
 
-// Evento para o botão reset.
-buttonReset.addEventListener('click', () => {
-  const tabela = document.getElementsByClassName('pixel');
-  for (let index = 0; tabela.length; index += 1) {
-    tabela[index].style.backgroundColor = 'white'; // ta dando erro e não sei porque, no chrome.
+// Limpa os pixels.
+const pixels = document.getElementsByClassName('pixel');
+
+function clearButtonfun() {
+  const button = document.createElement('button');
+  button.id = 'pixel-board';
+  button.innerText = 'Limpar';
+  containerButton.appendChild(button);
+  button.addEventListener('click', () => {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
+}
+clearButtonfun();
+
+// Cria input para setar a quantidade de pixels.
+function inputSetSize() {
+  const input = document.createElement('input');
+  input.setAttribute('type', 'number');
+  input.id = 'board-size';
+  containerButton.appendChild(input);
+}
+inputSetSize();
+
+// Cria o botão para utilizar o inputSetSize.
+function generateBoard() {
+  const button = document.createElement('button');
+  button.id = 'generate-board';
+  button.innerText = 'VQV';
+  containerButton.appendChild(button);
+}
+generateBoard();
+
+// Botão para setar a quantidade de pixels;
+const vqv = document.getElementById('generate-board');
+linesPixels(5);
+vqv.addEventListener('click', () => {
+  const buttonValue = document.querySelector('#board-size').value;
+  let valorButton = buttonValue;
+  if (buttonValue === '') {
+    window.alert('Board Inválido!');
+  } else if (buttonValue < 5) {
+    valorButton = 5;
+  } else if (buttonValue > 50) {
+    valorButton = 50;
   }
+  areaPixels.innerHTML = '';
+  linesPixels(valorButton);
 });
-// Recuperando as divs que possuem a classe 'pixel'.
-// const lines = document.getElementsByClassName('line');
-// console.log(lines[0]);
-
-// console.log(lines.length);
-// Funµção para adicionar blocos inline (elementos dentro de cada div com a classe 'pixel'.
-// function criaBlocosInline() {
-//  const blocosInline = document.createElement('div');
-//  for (let index = 0; index < lines.length; index += 1) {
-//    console.log(index);
-
-//  }
-// }
-
-// criaBlocosInline();
