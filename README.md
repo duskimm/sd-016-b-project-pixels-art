@@ -290,31 +290,31 @@ Neste projeto, você implementará um editor de arte com pixels.
 
 ### 2 - Adicione à página uma paleta contendo quatro cores distintas.
 
-- A paleta de cores deve ser um elemento com `id` denominado `color-palette`, ao passo que cada cor individual contida na paleta de cores deve possuir a `classe` `color`; OK
+- A paleta de cores deve ser um elemento com `id` denominado `color-palette`, ao passo que cada cor individual contida na paleta de cores deve possuir a `classe` `color`; 
 
-- A cor de fundo de cada elemento da paleta deverá ser a cor que o elemento representa. **A única cor não permitida na paleta é a cor branca.**; OK
+- A cor de fundo de cada elemento da paleta deverá ser a cor que o elemento representa. **A única cor não permitida na paleta é a cor branca.**; 
 
-- Cada elemento da paleta de cores deverá ter uma borda preta, sólida e com 1 pixel de largura; OK
+- Cada elemento da paleta de cores deverá ter uma borda preta, sólida e com 1 pixel de largura; 
 
-- A paleta de cores deverá listar todas as cores disponíveis para utilização lado a lado, e deverá ser posicionada abaixo do título "Paleta de Cores"; OK
+- A paleta de cores deverá listar todas as cores disponíveis para utilização lado a lado, e deverá ser posicionada abaixo do título "Paleta de Cores"; 
 
-- A paleta de cores não deve conter cores repetidas. OK
+- A paleta de cores não deve conter cores repetidas. 
 
 **O que será verificado:**
 
-- A paleta de cores deve ser um elemento com `id` denominado `color-palette`
+- A paleta de cores deve ser um elemento com `id` denominado `color-palette` OK
 
-- Verifica se cada cor individual da paleta de cores possui a `classe` chamada `color`.
+- Verifica se cada cor individual da paleta de cores possui a `classe` chamada `color`. OK 
 
-- Verifica se a cor de fundo de cada elemento da paleta é a cor que o elemento representa. **A única cor não permitida na paleta é a cor branca.**
+- Verifica se a cor de fundo de cada elemento da paleta é a cor que o elemento representa. **A única cor não permitida na paleta é a cor branca.**OK
 
-- Verifica se cada elemento da paleta de cores tem uma borda preta, sólida e com 1 pixel de largura;
+- Verifica se cada elemento da paleta de cores tem uma borda preta, sólida e com 1 pixel de largura; OK
 
-- Verifica se a paleta lista todas as cores disponíveis para utilização, lado a lado.
+- Verifica se a paleta lista todas as cores disponíveis para utilização, lado a lado. OK
 
-- Verifica se a paleta de cores está posicionada abaixo do título \'Paleta de Cores\'
+- Verifica se a paleta de cores está posicionada abaixo do título \'Paleta de Cores\' OK 
 
-- Verifica se a paleta de cores não contém cores repetidas.
+- Verifica se a paleta de cores não contém cores repetidas.OK
 
 ### 3 - Adicione a cor **preta** como a primeira cor da paleta de cores.
 
@@ -360,9 +360,9 @@ Neste projeto, você implementará um editor de arte com pixels.
 
 **O que será verificado:**
 
-- Verifica se o elemento da cor preta possui, inicialmente, a `classe` `selected`
+- Verifica se o elemento da cor preta possui, inicialmente, a `classe` `selected`. OK
 
-- Verifica se nenhuma outra cor da paleta tem a `classe` `selected`
+- Verifica se nenhuma outra cor da paleta tem a `classe` `selected`. OK
 
 ### 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
 
