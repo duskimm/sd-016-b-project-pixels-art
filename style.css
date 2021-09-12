@@ -72,6 +72,6 @@
   padding: 10px;
 }
 
-.color, .pixel, #clear-board {
+.color , .pixel , #clear-board {
   cursor: pointer;
 }
