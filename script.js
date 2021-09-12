@@ -52,11 +52,12 @@ sectionPalette.addEventListener('click', (event) => {
   }
 });
 
-const divBoard = document.getElementById('pixel-board');
+const diviBoard = document.querySelector('#pixel-board');
 const pixel = document.querySelectorAll('.pixel');
-divBoard.addEventListener('click', (event) => {
+diviBoard.addEventListener('click', (event) => {
   const selectedPalette = document.querySelector('.selected');
+  const paramEvent = event.target;
   for (let pIndex = 0; pIndex < pixel.length; pIndex += 1) {
-    event.target.style.backgroundColor = selectedPalette.style.backgroundColor;
+    paramEvent.style.backgroundColor = selectedPalette.style.backgroundColor;
   }
 });
