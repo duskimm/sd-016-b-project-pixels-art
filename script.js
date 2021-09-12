@@ -45,7 +45,7 @@ botaoReiniciar()
 
 let botaoBranco = document.querySelector(".botao");
 
-botaoBranco.addEventListener("clcik", reiniciaJogo)
+botaoBranco.addEventListener("click", reiniciaJogo)
 
 let branco = "white";
 function reiniciaJogo(){
