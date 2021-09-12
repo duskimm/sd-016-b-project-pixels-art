@@ -20,3 +20,18 @@
 #colorGreen {
   background-color: green;
 }
+
+#pixel-board {
+  padding: 0;
+  width: 210px;
+  border: 1px solid red;
+}
+
+.pixel {
+  background-color: white;
+  padding: 0;
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
