@@ -1,4 +1,4 @@
- // criando a matriz do quadro de pintura 5x5
+ // quarto requisito abaixo: criando a matriz do quadro de pintura 5x5
 // o loop abaixo cria as linhas
 for (let i = 0; i < 5; i += 1) {
 
@@ -16,7 +16,7 @@ for (let i = 0; i < 5; i += 1) {
 
 // o loop abaixo pega cada linha e acrescenta colunas. 
 for (let i = 0; i < 5; i += 1) {
-  
+ 
   for (let j = 0; j < 5; j += 1) {
   
     const createColumn = document.createElement('Column');
@@ -26,7 +26,7 @@ for (let i = 0; i < 5; i += 1) {
     line[i].appendChild(createColumn);
   
   }
-  
+
 }
 
   

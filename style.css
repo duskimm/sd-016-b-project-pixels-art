@@ -1,6 +1,8 @@
 .color {
   border: solid black 1px;
   display: inline;
+  height: 30px;
+  width: 30px;
 }
 
 #black {
@@ -18,14 +20,22 @@
 #yellow {
   background-color: yellow;
 }
+
 #pixel-board {
  height: auto;
  width: auto;
  display: block;
 }
+
 .pixel {
   background-color: white; 
   border: solid black 1px;
   height: 40px;
   width: 40px;
+}
+
+.line {
+  display: block;
+  height: auto;
+  width: auto;
 }
