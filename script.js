@@ -66,7 +66,7 @@ function clearButtonCreation() {
   const existenceButton = document.createElement('button');
 
   existenceButton.innerHTML = 'Limpar';
-  existenceButton.className = 'clear-board';
+  existenceButton.id = 'clear-board';
   createButton.appendChild(existenceButton);
 }
 clearButtonCreation();

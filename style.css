@@ -36,11 +36,12 @@ h1 {
   background-color: black;
 }
 
-.clear-board {
+#clear-board {
   display: block;
   margin: 0 auto 0 auto;
   border-radius: 30%;
   padding: 10px;
+  font-family: 'Homemade Apple', cursive;
 }
 
 .container {
@@ -65,4 +66,5 @@ h1 {
   display: inline-block;
   height: 40px;
   width: 40px;
+
 }
