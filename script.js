@@ -3,9 +3,8 @@ const divColorClass = document.getElementsByClassName('color');
 const pixelBox = document.getElementsByClassName('pixel');
 const getColor = document.querySelectorAll('.color');
 let colorTabela = 'black';
-const userCount = 5;
 
-function defaultBoard(boardStyle) {
+function defaultSquare(boardStyle) {
   const change = boardStyle;
   change.style.border = '1px solid black';
   change.style.width = '40px';
@@ -35,29 +34,102 @@ function buttonClear() {
   const createButtonClear = document.createElement('div');
   createButtonClear.id = 'clear-board';
   mainContent.appendChild(createButtonClear).innerText = 'Limpar';
-
-  return createButtonClear;
 }
 
 buttonClear();
 
-for (let index = 0; index < userCount; index += 1) {
-  const sectionPixel = createSectionId('pixel-board');
-  mainContent.appendChild(sectionPixel);
+function boardInput() {
+  const newBoardInput = document.createElement('input');
+  newBoardInput.id = 'board-size';
+  newBoardInput.min = 1;
+  newBoardInput.max = 50;
+  newBoardInput.placeholder = 'Insira aqui um valor entre 5 e 50';
+  newBoardInput.type = 'number';
+
+  mainContent.appendChild(newBoardInput);
+
+  return newBoardInput.value;
 }
 
-for (let indexX = 0; indexX < userCount; indexX += 1) {
-  for (let indexY = 0; indexY < userCount; indexY += 1) {
-    const divPixel = createDiv('pixel');
-    const divFather = document.querySelectorAll('#pixel-board');
-    defaultBoard(divPixel);
-    divFather[indexY].appendChild(divPixel);
-  }
+boardInput();
+
+function valueBoardBtn() {
+  const generateBoard = document.createElement('div');
+  generateBoard.id = 'generate-board';
+  mainContent.appendChild(generateBoard).innerText = 'VQV';
 }
+
+valueBoardBtn();
+
+let newUserCount = document.querySelector('#board-size').value;
+newUserCount = 5;
+const valueBtnBoard = document.querySelector('#generate-board');
+
+// monta o quadro
 
 function inputColor(e) {
   e.style.backgroundColor = colorTabela;
 }
+
+function mountBoard(numberBoard) {
+  for (let index = 0; index < numberBoard; index += 1) {
+    const sectionPixel = createSectionId('pixel-board');
+    mainContent.appendChild(sectionPixel);
+  }
+
+  for (let indexX = 0; indexX < numberBoard; indexX += 1) {
+    for (let indexY = 0; indexY < numberBoard; indexY += 1) {
+      const divPixel = createDiv('pixel');
+      const divFather = document.querySelectorAll('#pixel-board');
+      defaultSquare(divPixel);
+      divFather[indexY].appendChild(divPixel);
+    }
+  }
+}
+
+// exclui o quadro
+
+function unMountBoard() {
+  const board = document.querySelectorAll('#pixel-board');
+  for (let index = 0; index < board.length; index += 1) {
+    mainContent.removeChild(board[index]);
+  }
+}
+
+// Insere evento a cada pixel e pinta cada um deles
+function insertEventSquare() {
+  for (let index = 0; index < pixelBox.length; index += 1) {
+    pixelBox[index].addEventListener('click', () => {
+      console.log(`pixelBox ${index}`);
+      inputColor(pixelBox[index]);
+    });
+  }
+}
+
+// testa valores < > e vazio, exclui tabela antiga e
+// monta a nova com o novo número do input
+
+valueBtnBoard.addEventListener('click', () => {
+  console.log('teste click newUserCount');
+  newUserCount = document.querySelector('#board-size').value;
+
+  if (newUserCount === '' || newUserCount === 0) {
+    alert('Board inválido!');
+  } else if (newUserCount < 5) {
+    newUserCount = 5;
+  } else if (newUserCount > 50) {
+    newUserCount = 50;
+  } else {
+    newUserCount = parseInt(newUserCount, 10);
+    unMountBoard();
+    mountBoard(newUserCount);
+    insertEventSquare();
+  }
+});
+
+mountBoard(newUserCount);
+
+// altera as classes das cores, e insere o 'selected' na cor selecionada
 
 function changeClass(cor) {
   let newString = '';
@@ -70,6 +142,7 @@ function changeClass(cor) {
     }
   }
 }
+// busca as cores selecionadas
 
 function getColorPalette(a) {
   if (a.target.className.includes('black')) {
@@ -88,30 +161,29 @@ function getColorPalette(a) {
   return colorTabela;
 }
 
+// Seleciona a cor correta para a pintura
+
 for (let index = 0; index < getColor.length; index += 1) {
   getColor[index].addEventListener('click', (event) => {
     getColorPalette(event);
   });
 }
 
-for (let index = 0; index < pixelBox.length; index += 1) {
-  pixelBox[index].addEventListener('click', () => {
-    inputColor(pixelBox[index]);
-  });
-}
+insertEventSquare();
+
+// insere cor branca em todos os pixels inicial
 
 for (let index = 0; index < pixelBox.length; index += 1) {
   pixelBox[index].style.backgroundColor = 'white';
 }
 
-for (let index = 0; index < pixelBox.length; index += 1) {
-  document.querySelector('#clear-board').addEventListener('click', pixelBox);
-}
+// Limpa toda a tabela pintando de branco
 
 const clear = document.getElementById('clear-board');
 
 clear.addEventListener('click', () => {
   for (let index = 0; index < pixelBox.length; index += 1) {
+    console.log('limpa tabela');
     pixelBox[index].style.backgroundColor = 'white';
   }
 });

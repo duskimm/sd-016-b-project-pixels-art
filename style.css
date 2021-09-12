@@ -50,6 +50,7 @@ h1 {
   background-color: grey;
   border: 1px solid black;
   color: white;
+  display: inline-block;
   font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
   font-weight: 800;
   margin: 10px 15px;
@@ -63,6 +64,39 @@ h1 {
   color: white;
 }
 
-/*
-Irei precisar do input color
-*/
+#board-size {
+  border: 1px solid black;
+  color: black;
+  display: inline-block;
+  font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  margin: 10px 15px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 250px;
+}
+
+#text-new-board {
+  display: inline-block;
+  font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+  font-size: 17px;
+}
+
+#generate-board {
+  background-color: grey;
+  border: 1px solid black;
+  color: white;
+  display: inline-block;
+  font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+  font-weight: 800;
+  margin: 10px 15px;
+  padding: 10px 20px;
+  text-align: center;
+  width: 50px;
+}
+
+#generate-board:hover {
+  background-color: darkslategray;
+  color: white;
+}
