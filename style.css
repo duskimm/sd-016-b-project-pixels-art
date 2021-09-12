@@ -1,3 +1,22 @@
+.body{
+    margin: 0;
+   background-image: url(wallpapersden.com_star-wars-2019_1920x1080.jpg);
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* colocar imagem no background https://www.youtube.com/watch?v=8OgQEexT2ps */
+}
+#title{
+    text-align: center;
+    font-family: fantasy;
+    font-size: 40px;
+    color:#800000;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #66989a;
+
+}
 .color{
     width: 50px;
     height: 50px;
@@ -22,29 +41,54 @@
   
     width: max-content;
 }
-
-#clear-board{
-    box-shadow:inset 0px 0px 14px -3px #f2fadc;
-	background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
-	background-color:#dbe6c4;
-	border-radius:36px;
-	border:1px solid #b2b8ad;
-	display:inline-block;
-	cursor:pointer;
-	color:#757d6f;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:8px 20px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #9dd64d;
-    margin-bottom:20px;
+ /*butoes inspirados desse site  https://edrodrigues.com.br/blog/20-incriveis-botoes-animados-de-css-puro/ */
+.buttons{
+    width: 80px;
+  height: 40px;
+  cursor: pointer;
+  background: goldenrod;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+  margin: 10px;
 }
-#clear-board:hover{
-    background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
-	background-color:#9ba892;
+.buttons:hover{
+    transition: 1s ease-in-out;
+  background: #4F95DA;
 }
-#clear-board:active{
+.buttons:active{
     position:relative;
 	top:1px;
+}
+.theGodFather{
+    
+ padding: 0 20%;
+}
+#generate-board{
+    margin-left: 30px;
+}
+#color-palette{
+    margin-top: 30px;
+    /* background-color: khaki; */
+    border-radius: 20px;
+    /* margin-right: 50%;
+    margin-left: 10%; */
+}
+#clear-board{
+    margin-top: 10px;
+    margin-left: 0;
+}
+.input{
+    display: inline-block;
+    margin-left: 5px;
+    
+}
+#board-size{
+    width: 10%;
+    height: 25px;
+    
+}
+#board-size-color{
+    width: 10%;
+    height: 25px;
 }
