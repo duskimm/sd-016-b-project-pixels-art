@@ -1,5 +1,4 @@
 //criar div dentro da div color-pallet que possuam a classe color;
-
 function criaDivCores (array){
     let arrayCores = ["black", "red", "green", "blue"];
     let divPaleta = document.getElementById('color-palette');
@@ -59,3 +58,4 @@ window.onload = function() {
    let paletaDeCores = document.querySelectorAll(".color");
    paletaDeCores[0].className = "color selected"
 }
+
