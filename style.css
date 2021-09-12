@@ -30,3 +30,63 @@
 #color4{
   background-color: red;
 }
+
+/* #pixel-board {
+  display: flex;
+  height: 75vh;
+  border: 1px solid black
+} */
+
+.pixel {
+  border: 1px solid black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 2px;
+  background-color: white;
+}
+
+/* .pixel1 {
+  border: 1px solid black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 2px;
+  background-color: white;
+} */
+
+/* #pixel2 {
+  border: 1px solid black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 2px;
+  background-color: white;
+}
+
+#pixel3 {
+  border: 1px solid black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 2px;
+  background-color: white;
+}
+
+#pixel4 {
+  border: 1px solid black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 2px;
+  background-color: white;
+}
+
+#pixel5 {
+  border: 1px solid black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 2px;
+  background-color: white;
+} */
