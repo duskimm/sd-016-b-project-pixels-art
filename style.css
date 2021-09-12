@@ -77,3 +77,11 @@ body {
   /* margin-bottom: 20px; */
   margin: 20px;
 }
+
+#div-area {
+  margin: 10px;
+}
+
+#board-size {
+  width: 150px;
+}
