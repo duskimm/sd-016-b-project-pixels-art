@@ -2,13 +2,17 @@
 const paletteBox = ['black', '#8871FE', '#D0CD94', '#FF331F'];
 const sectionPalette = document.getElementById('color-palette');
 const sectionBoard = document.getElementById('board');
-
+const selectedColor = document.querySelectorAll('.color');
 // Função que cria os quadrados
 function creatColorPalette() {
   for (let index = 0; index < paletteBox.length; index += 1) {
     const liPalette = document.createElement('div');
     liPalette.style.background = paletteBox[index];
-    liPalette.className = 'color';
+    if (paletteBox[index] === 'black') {
+      liPalette.className = 'color selected';
+    } else {
+      liPalette.className = 'color';
+    }
     sectionPalette.appendChild(liPalette);
   }
 }
@@ -29,4 +33,21 @@ function boardSquares(n) {
     diviBoard.appendChild(square);
   }
 }
-console.log(boardSquares(25));
+boardSquares(25);
+
+//   function addSelected(event) {
+//     const selectedColor = document.querySelectorAll('.color');
+//     for (let index = 0; index < selectedColor.length; index += 1) {
+//       selectedColor[index].className = 'color';
+//       event.target.classList.add('selected');
+//     }
+//  }
+// sectionPalette.addEventListener('click', addSelected)
+
+ sectionPalette.addEventListener('click', function (event) {
+   const selectedColor = document.querySelectorAll('.color');
+   for (let index = 0; index < selectedColor.length; index += 1) {
+     selectedColor[index].className = 'color';
+    event.target.classList.add('selected');
+   }
+ });
