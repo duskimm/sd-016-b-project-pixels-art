@@ -27,6 +27,27 @@ function setSelectedColor() {
   return background;
 }
 
+function clearButton() {
+  const pixelBoard = document.querySelector('#pixel-board');
+  const button = document.createElement('button');
+  button.innerHTML = 'Limpar';
+  button.id = 'clear-board';
+  document.body.insertBefore(button, pixelBoard);
+}
+clearButton();
+
+function clearBoard() {
+  const button = document.querySelector('#clear-board');
+  const pixels = document.getElementsByClassName('pixel');
+  const white = 'white';
+  button.addEventListener('click', () => {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = white;
+    }
+  });
+}
+clearBoard();
+
 window.onload = () => {
   const blockSelected = document.querySelector('.black');
   blockSelected.classList.add('selected');
