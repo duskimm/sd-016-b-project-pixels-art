@@ -1,6 +1,9 @@
+ window.onload = function(){
+
     let palettes = document.getElementsByClassName('color');
     let pixel = document.getElementsByClassName('pixel');
     let color = 'black';
+    clearBoard();
     //adicionando a classe selected a cor preta
     palettes[0].className = 'color selected';
     
@@ -46,8 +49,26 @@ function paint (event){
     let position = Array.from(pixel).indexOf(event.target);
     
     if (color == 'vine'){
-        pixel[position].style.background =  'rgb(125, 0, 0)';
+        pixel[position].style.backgroundColor =  'rgb(125, 0, 0)';
     }
     pixel[position].style.backgroundColor = color;
    
 }
+
+function clearBoard(){
+
+    let buttonClear = document.getElementById('clear-board');
+
+    buttonClear.addEventListener('click',function(){
+
+        for (let index = 0; index < pixel.length; index++) {
+  
+            pixel[index].style.backgroundColor = 'white';
+            
+            }
+        })
+
+  
+}
+
+ }   

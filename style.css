@@ -2,7 +2,7 @@
 
     margin:0;
     padding: 0;
-    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #title {
@@ -56,4 +56,19 @@
     border: 1px solid black;
     display: inline-block;
     background-color: rgb(255, 255,255);
+}
+#clear-board {
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align: center;
+    background-color: lightgrey;
+    font-size: 17px;
+
+}
+
+#button-position{
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
 }
