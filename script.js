@@ -2,7 +2,7 @@
 const paletteBox = ['black', '#8871FE', '#D0CD94', '#FF331F'];
 const sectionPalette = document.getElementById('color-palette');
 const sectionBoard = document.getElementById('board');
-const selectedColor = document.querySelectorAll('.color');
+
 // Função que cria os quadrados
 function creatColorPalette() {
   for (let index = 0; index < paletteBox.length; index += 1) {
@@ -44,10 +44,19 @@ boardSquares(25);
 //  }
 // sectionPalette.addEventListener('click', addSelected)
 
- sectionPalette.addEventListener('click', function (event) {
-   const selectedColor = document.querySelectorAll('.color');
-   for (let index = 0; index < selectedColor.length; index += 1) {
-     selectedColor[index].className = 'color';
+sectionPalette.addEventListener('click', (event) => {
+  const selectedColor = document.querySelectorAll('.color');
+  for (let index = 0; index < selectedColor.length; index += 1) {
+    selectedColor[index].className = 'color';
     event.target.classList.add('selected');
-   }
- });
+  }
+});
+
+const divBoard = document.getElementById('pixel-board');
+const pixel = document.querySelectorAll('.pixel');
+divBoard.addEventListener('click', (event) => {
+  const selectedPalette = document.querySelector('.selected');
+  for (let pIndex = 0; pIndex < pixel.length; pIndex += 1) {
+    event.target.style.backgroundColor = selectedPalette.style.backgroundColor;
+  }
+});
