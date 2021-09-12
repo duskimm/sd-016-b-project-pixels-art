@@ -53,42 +53,14 @@ areaPixels.addEventListener('click', (event) => {
   alvo.style.backgroundColor = colorSelected;
 });
 
-// Botões.
-const containerButton = document.getElementById('container-button');
-
 // Limpa os pixels.
 const pixels = document.getElementsByClassName('pixel');
-
-function clearButtonfun() {
-  const button = document.createElement('button');
-  button.id = 'pixel-board';
-  button.innerText = 'Limpar';
-  containerButton.appendChild(button);
-  button.addEventListener('click', () => {
-    for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'white';
-    }
-  });
-}
-clearButtonfun();
-
-// Cria input para setar a quantidade de pixels.
-function inputSetSize() {
-  const input = document.createElement('input');
-  input.setAttribute('type', 'number');
-  input.id = 'board-size';
-  containerButton.appendChild(input);
-}
-inputSetSize();
-
-// Cria o botão para utilizar o inputSetSize.
-function generateBoard() {
-  const button = document.createElement('button');
-  button.id = 'generate-board';
-  button.innerText = 'VQV';
-  containerButton.appendChild(button);
-}
-generateBoard();
+const button = document.getElementById('clear-board');
+button.addEventListener('click', () => {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
 
 // Botão para setar a quantidade de pixels;
 const vqv = document.getElementById('generate-board');
