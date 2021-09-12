@@ -59,13 +59,15 @@ window.onload = function() {
    paletaDeCores[0].className = "color selected"
 }
 
-function corInicial(){
     let paletaDeCores = document.querySelectorAll(".color");
     for (let i=0; i < paletaDeCores.length; i+=1){
-        paletaDeCores[i].addEventListener("click",corSelecionada) 
+        paletaDeCores[i].addEventListener("click",corSelecionada)
+    }
+    
+function corSelecionada(event){
+    for (let i=0; i < paletaDeCores.length; i+=1){
+        paletaDeCores[i].classList.remove('selected')
+        event.target.classList.add('selected')
     }
 }
 
-function corSelecionada(){
-    
-}
