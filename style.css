@@ -10,12 +10,20 @@ background-color: rgb(172, 165, 165);
 }
 
 
-#clear-board {
+#clear-board, #generate-board {
+  padding: 10px;
+  margin: 10px 20px;
+  background-color: rgb(172, 165, 165);
+  width: 100px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#board-size {
   padding: 10px;
   margin: 10px 0px;
-  background-color: rgb(172, 165, 165);
-  width: 210px;
   cursor: pointer;
+  display: inline-block;
 }
 
 #pixel-board {
@@ -45,4 +53,8 @@ background-color: rgb(172, 165, 165);
   border: 1px solid black;
   display: inline-block;
   background-color: white;
+}
+
+.line {
+  display: block;
 }
