@@ -28,7 +28,7 @@ for (let i = 0; i < 5; i += 1) {
   }
 
 }
-// funcao para selecionar cor da paleta de cores para pintar 
+// funcao para selecionar cor da paleta de cores para pintar
 function selectedPaint() {
 
   const colorSelected = document.querySelector('#color-palette');
@@ -61,6 +61,21 @@ matrixPaint.addEventListener('click', (event) => {
     const changeColorPixel = event.target;
 
     changeColorPixel.style.backgroundColor = currentColor;
+
+  }
+
+});
+
+// Apagar todo o quadro, deixando completamente branco
+const buttonClear = document.getElementById('clear-board');
+
+const pixels = document.getElementsByClassName('pixel');
+
+buttonClear.addEventListener('click', () => {
+
+  for (let i = 0; i < pixels.length; i += 1) {
+
+    pixels[i].style.backgroundColor = 'white';
 
   }
 
