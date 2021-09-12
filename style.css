@@ -6,15 +6,7 @@
 }
 
 body {
-  height: 100vh;
-}
-
-header {
-  /* background-image: url(images/square-2724387_1280.jpg);
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: 160px; */
-  /* height: 100px; */
+  min-height: 100vh;
 }
 
 header img {
@@ -53,6 +45,7 @@ main {
   clear: both;
   margin-top: 60px;
   text-align: center;
+  min-height: 60vh;
 }
 
 .color {
