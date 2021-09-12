@@ -62,7 +62,7 @@ header {
   height: 210px;
   width: 210px;
   margin: auto;
-  background-color: white;
+  background-color: red;
 }
 
 .pixel {
@@ -71,4 +71,6 @@ header {
   border: solid black 1px;
   background-color: white;
   display: inline-block;
+  margin: 0;
+  top: 0;
 }
