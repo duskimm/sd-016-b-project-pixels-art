@@ -8,3 +8,19 @@ function pageTitle(string) {
 }
 
 pageTitle('Paleta de Cores');
+
+function createPalette(colors){
+  let paletteList = document.createElement('div');
+  paletteList.id = 'color-palette';
+
+  for (const color of colors) {
+    let paletteColor = document.createElement('div');
+    paletteColor.className = 'color';
+    paletteColor.style.backgroundColor = color;
+    paletteList.appendChild(paletteColor);
+  }
+
+  body.appendChild(paletteList);
+}
+
+createPalette(['red', 'blue', 'green', 'yellow']);
