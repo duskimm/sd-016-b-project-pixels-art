@@ -24,9 +24,9 @@ function createPalette(colors) {
 }
 
 createPalette(['red', 'blue', 'green']);
+const paletteList = document.getElementById('color-palette');
 
 function addPaletteColor(color) {
-  const paletteList = document.getElementById('color-palette');
   const newColor = document.createElement('div');
   newColor.className = 'color';
   newColor.style.backgroundColor = color;
@@ -51,6 +51,7 @@ function addPixelBoard(height, width) {
 }
 
 addPixelBoard(5, 5);
+const pixelList = document.getElementById('pixel-board');
 
 function selectedColor(color) {
   const paletteList = document.getElementsByClassName('color');
@@ -63,24 +64,27 @@ function selectedColor(color) {
 
 selectedColor('black');
 
-function changeSelectedColor(){
-  const paletteList = document.getElementById('color-palette');
+function changeSelectedColor() {
   const paletteColors = document.getElementsByClassName('color');
-  paletteList.addEventListener('click', function (event) {
-    const selectedColor = event.target.style.backgroundColor;
+  paletteList.addEventListener('click', (event) => {
+    const newSelectedColor = event.target.style.backgroundColor;
     for (const color of paletteColors) {
       if (color.classList.contains('selected') === true) {
-        if (color.style.backgroundColor != selectedColor) {
+        if (color.style.backgroundColor !== newSelectedColor) {
           color.classList.remove('selected');
         }
       } else {
-        if (color.style.backgroundColor === selectedColor) {
-          color.classList.add('selected');
+        if (color.style.backgroundColor === newSelectedColor) {
+          selectedColor(newSelectedColor);
         }
       }
     }
-    console.log(selectedColor);
   });
 }
 
 changeSelectedColor();
+
+pixelList.addEventListener('click', (event) => {
+  const selected = document.querySelector('.selected');
+  event.target.style.backgroundColor = selected.style.backgroundColor;
+});
