@@ -1,11 +1,11 @@
 header {
-  border: solid black 1px;   
-  padding: 10px; 
+  border: solid black 1px;
+  padding: 10px;
 }
 
 main {
-    border: solid black 1px;
-    padding: 30px;  
+  border: solid black 1px;
+  padding: 30px;
 }
 .color {
   border: solid black 1px;
@@ -37,7 +37,7 @@ main {
 }
 
 .pixel {
-  background-color: white; 
+  background-color: white;
   border: solid black 1px;
   width: 40px;
   height: 40px;
