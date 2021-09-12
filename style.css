@@ -16,20 +16,8 @@
   text-align: center;
 }
 
-#color-1 {
+#initial-color {
   background-color: black;
-}
-
-#color-2 {
-  background-color: #288498;
-}
-
-#color-3 {
-  background-color: #fe6b64;
-}
-
-#color-4 {
-  background-color: #ced36f;
 }
 
 #pixel-board {
