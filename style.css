@@ -1,40 +1,29 @@
-#paletablack {
-  background-color: black;
+.color {
   border: 1px solid black ;
   width: 100px;
   height: 100px;
   display: inline-block;
+}
+
+#paletablack {
+  background-color: black;
 }
 
 #paletared {
   background-color: red;
-  border: 1px solid black ;
-  width: 100px;
-  height: 100px;
-  display: inline-block;
 } 
 
 #paletagreen {
   background-color: green;
-  border: 1px solid black ;
-  width: 100px;
-  height: 100px;
-  display: inline-block;
 }
 
 #paletablue {
   background-color: blue;
-  border: 1px solid black ;
-  width: 100px;
-  height: 100px;
-  display: inline-block;
 }
 
 #pixel-board {
-  display: inline-block;
-  border: 1px solid black ;
-  width: 210px;
-  height: 225px;
+  line-height: 0px;
+
 }
 
 .pixel {
@@ -42,4 +31,10 @@
   border: 1px solid black ;
   width: 40px;
   height: 40px;
+}
+
+#clear-board {
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
