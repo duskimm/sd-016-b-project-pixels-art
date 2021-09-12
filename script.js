@@ -1,19 +1,13 @@
 console.log('vamo q vamo');
-const colorPaintBlack = document.getElementById('blackColor');
-const colorPaintRed = document.getElementById('redColor');
 
-function selectedVerfifier() {
-  const selected = document.querySelectorAll('.color');
-  for (let index = 0; index < selected.length; index += 1) {
-    selected[index].classList.add('selected');
-    selected[index].classList.remove('selected');
-  }
-}
-selectedVerfifier();
+window.onload = function selecting() {
+  const corPreta = document.getElementById('black');
+  corPreta.classList.add('selected');
+};
 
 function createPixelBoardLine(colum) {
   const pixelBoardhtml = document.getElementById('pixel-board');
-  let divisao = document.createElement('div');
+  const divisao = document.createElement('div');
   pixelBoardhtml.appendChild(divisao);
   for (let index = 1; index <= colum; index += 1) {
     const criar = document.createElement('div');
@@ -24,7 +18,23 @@ function createPixelBoardLine(colum) {
 
 function createPixelColumns(line) {
   for (let index = 1; index <= line; index += 1) {
-    createPixelBoardLine(5);
+    createPixelBoardLine(colum);
   }
 }
-createPixelColumns(5);
+
+function changeDimension() {
+  const altura = document.getElementById('height-changer');
+  const largura = document.getElementById('width-changer');
+  if (altura.value == '' && largura.value == '') {
+    const line = 5;
+    colum = 5;
+    createPixelColumns(line);
+  } else {
+    line = parseInt.altura.value;
+    colum = parseInt.largura.value;
+    createPixelColumns(line);
+  }
+}
+
+const submitButton = document.getElementById('submit');
+submitButton.addEventListener('click', changeDimension());

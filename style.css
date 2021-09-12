@@ -33,11 +33,16 @@ body{
 }
 
 .pixel{
-  background-color: white;
+  background-color: rgb(255,255,255);
   display: inline-block;
   width: 40px;
   height: 40px;
   border:solid black 1px;
+}
+
+#size-changer{
+  line-height: 50px;
+  text-align: center;
 }
 
 #pixel-board{
