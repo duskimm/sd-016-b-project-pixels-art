@@ -71,9 +71,9 @@ classePixelBoard.addEventListener('click', pintaPixel);
 
 let button = document.querySelector('#clear-board');
 button.innerText = 'Limpar';
-button.addEventListener('click', function(){
-let pixelClass = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixelClass.length; i += 1){
+button.addEventListener('click', function () {
+  let pixelClass = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelClass.length; i += 1) {
     pixelClass[i].style.backgroundColor = 'white';
   }
 
