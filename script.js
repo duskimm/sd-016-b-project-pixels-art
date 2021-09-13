@@ -1,7 +1,7 @@
 // window.onload = function () {
 //   //colorBlack();
 // };
-//let number = 5;
+let number = 5;
 
 const palleteColor = document.getElementById('color-palette');
 
@@ -42,13 +42,8 @@ function createInputText() {
   createInput.type = 'number';
   createInput.min = '1';
   elementFather.appendChild(createInput);
-  //document.querySelector('#board-size').value = ;
 }
 createInputText();
-
-
-//-> recuperar o valor (createInput.innerText = input.value;) -> tratar o valor e recuperar o novo quadro com os tamanhos -> 
-// fazer remove
 
 // criar button com id 'button'
 function createButtonVQV() {
@@ -113,7 +108,7 @@ function createboardPixel(number) {
     }
   }
 }
-createboardPixel(5);
+createboardPixel(number);
 
 // remover o selected de onde estava:
 // Auxilio do Luis Gustavo no for.
@@ -154,18 +149,31 @@ function printColor() {
 }
 printColor();
 
+// fazer uma função para remover todos os elemntos para criar uma nova
+function removeBoardPixel() {
+  const elementFather = document.querySelector('#pixel-board');
+  const boardPixel = document.querySelectorAll('.line');
+  for(let pixel of boardPixel) {
+    elementFather.removeChild(pixel);
+  }
+}
+
 // criar funcao para recuperar o valor do input ao clicar o botao com id generate-board (VQV) 
+// auxilio do Gabriel Silvestre, Victor Hugor Baum, Airton Lopes.
 // pesquisa no site: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements
-// function valueInput() {
-//   let valueInput = document.querySelector('#board-size').value;
-//   let numberInput = parseInt(valueInput);
-//   let buttonValue = document.querySelector('#generate-board');
-//   buttonValue.addEventListener('click', function () {
-//       if(numberInput === ''){
-//         createboardPixel(5)
-//       } else {
-//         createboardPixel(numberInput);
-//       }
-//   });
-// }
-// valueInput();
+function valueInput() {
+  let valueInput = document.querySelector('#board-size');
+  let buttonValue = document.querySelector('#generate-board');
+  buttonValue.addEventListener('click', function () {
+    let numberInput = valueInput.value;
+    number = numberInput;
+    if (numberInput === ''){
+      alert('Board inválido!')
+    } else {
+      removeBoardPixel();
+      createboardPixel(number);
+      printColor();
+    }
+  })
+}
+valueInput();
