@@ -1,8 +1,10 @@
 let baseGrid = 5;
 const main = document.querySelector('main');
+const aquarela = document.querySelector('#color-palette');
+const pickedColor = document.querySelector('.color');
+const container = document.getElementById('pixel-board');
 const input = document.createElement('input');
 const VQVbutton = document.createElement('button');
-const container = document.getElementById('pixel-board');
 
 function grid(baseGrider) {
   baseGrid = baseGrider;
@@ -52,10 +54,20 @@ function inputButton() {
   });
 }
 
+function randomColors() {
+  const aquarelaColor = document.querySelectorAll('.color');
+  const randomAquarela = ['#F08080', '#9ACD32', '#EEE8AA', '#C0C0C0', '#7B68EE', '#0000CD',
+    '#777777', '#FFFAFA', '#FF4500', '#4169E1', '#FFF0F5', '#DDA0DD', '#008B8B', '#FF69B4',
+    '#DEB887', '#FF00FF', '#008080'];
+  for (let i = 1; i < 4; i += 1) {
+    const choosen = aquarelaColor[i];
+    const getAcolor = Math.floor(Math.random() * 17);
+    choosen.style.backgroundColor = randomAquarela[getAcolor];
+  }
+}
+
 function select() {
-  const pickedColor = document.querySelector('.color');
   pickedColor.classList.add('selected');
-  const aquarela = document.querySelector('#color-palette');
   aquarela.addEventListener('click', function pickColor(toPaint) {
     const selectedColor = document.querySelector('.selected');
     selectedColor.classList.remove('selected');
@@ -97,4 +109,5 @@ window.onload = function start() {
   clean();
   inputButton();
   grid(baseGrid);
+  randomColors();
 };
