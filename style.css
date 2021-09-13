@@ -26,7 +26,8 @@
     display: inline-block;
 }
 
-#pixel-board {
+.linhaPixel {
+    display: flex;
     font-size: 0;
 }
 .pixel {
@@ -37,5 +38,9 @@
     padding: 0px;
     display: inline-block;
     background-color: white;
+}
+
+#clear-board {
+    display: flex;
 }
 

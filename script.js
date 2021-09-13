@@ -1,17 +1,23 @@
 // Exercicio 4
-// function PaletaCore(pixels) {
-//     let divPai = document.querySelector('#pixel-board');
-//     let divPixels = document.querySelector('.pixel')
 
-//     for (let index = 0; index < pixels; index += 1) {
-//         divPixels = document.createElement('div');
-//         divPixels.classList.add('pixel');
-//         divPai.appendChild(divPixels);  
-//         }  
-// }
+let divPai = document.getElementById('pixel-board');
 
-// PaletaCore(5);
+function linha (numero) {
+    let criaLinha = document.createElement('div');
+    criaLinha.className = 'linhaPixel';
+    divPai.appendChild(criaLinha);
+    
+    for(let index = 0; index < numero; index += 1) {
+        let criaPIxel = document.createElement('div');
+        criaPIxel.className = 'pixel';
+        criaLinha.appendChild(criaPIxel);
+    }
+}
+linha(5);
 
+for (let index = 0; index < 4; index += 1){
+    linha(5);
+}
 
 // Requisito 6: adiciona classe 'selected' para cor preta
 window.addEventListener('load', function() {
