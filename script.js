@@ -71,7 +71,7 @@ function changeColor(event) {
   const seletorQueryId = document.querySelector('.selected').id;
   event.target.style.backgroundColor = seletorQueryId;
 }
-let pixelSelector2 = document.getElementsByClassName('pixel');
+let pixelSelector2 = document.querySelectorAll('.pixel');
 for (let index = 0; index < pixelSelector2.length; index += 1) {
   pixelSelector2[index].addEventListener('click', changeColor);
 }
