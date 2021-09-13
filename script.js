@@ -1,33 +1,43 @@
-// variavel de localização do Board
-// const gridlocal = document.querySelector('.color-pallete');
-// const quadro = document.createElement('div');
-// quadro.id = 'pixel-board';
-// gridlocal.appendChild(quadro);
+function rmvSelect() {
+  const atualSelect = document.querySelector('.selected');
+  atualSelect.classList.remove('selected');
+}
 
-// Criar a páleta de cores
-// primeira cor sempre sera preta
-// const paletta = document.getElementById('color-palette');
+function addClsSelect(event) {
+  const atualColor = event.target;
+  rmvSelect();
+  atualColor.classList.add('selected');
+}
 
-// const cor1 = document.createElement('div'); cor1.id = 'cor1';
-// cor1.className = 'color1 color'; paletta.appendChild(cor1);
-
-// // cores secundarias quereceberão o valor aleatoreo
-// const cor2 = document.createElement('div'); cor2.id = 'cor2';
-// cor2.className = 'color'; paletta.appendChild(cor2);
-// const cor3 = document.createElement('div'); cor3.id = 'cor3';
-// cor3.className = 'color'; paletta.appendChild(cor3);
-// const cor4 = document.createElement('div'); cor4.id = 'cor4';
-// cor4.className = 'color'; paletta.appendChild(cor4);
-
-// paleta de cores a serem usadas - a primeira sempre sera black
-function randomColor(tam) {
-  const arg = tam;
-  const colorPalette = ['Crimson', 'Tomato', 'Khaki', 'Moccasin', 'teal', 'Lavender', 'PowderBlue'];
-  const selectQPL = document.querySelectorAll('.color');
-  for (let ind = 0; ind < arg; ind += 1) {
-    const corActual = Math.floor(Math.random() * colorPalette.length);
-    selectQPL[ind].style.backgroundColor = colorPalette[corActual];
+function selectColor() {
+  const colors = document.querySelectorAll('.color');
+  for (let ind = 0; ind < colors.length; ind += 1) {
+    colors[ind].addEventListener('click', addClsSelect);
   }
+}
+
+selectColor();
+
+function changerColor(evt) {
+  const pixelAtual = evt.target;
+  const newColor = document.querySelector('.selected');
+  pixelAtual.style.backgroundColor = newColor.style.backgroundColor;
+}
+
+function clearAll() {
+  const pixelEraze = document.querySelectorAll('.pixel');
+  for (let clin = 0; clin < pixelEraze.length; clin += 1) {
+    pixelEraze[clin].style.backgroundColor = 'white';
+  }
+}
+
+function makeBotton() {
+  const locate = document.querySelector('#menis');
+  const botCliear = document.createElement('button');
+  botCliear.id = 'clear-board';
+  botCliear.innerText = 'Limpar';
+  locate.appendChild(botCliear);
+  botCliear.addEventListener('click', clearAll);
 }
 
 // montar a grid conforme valor passado para a função
@@ -35,12 +45,13 @@ function makeGrid(gSize) {
   const localGame = document.getElementById('pixel-board');
   const sizeGB = gSize;
   for (let line = 0; line < sizeGB; line += 1) {
-    const gridLine = document.createElement('ul');
+    const gridLine = document.createElement('li');
     gridLine.className = 'ul-pixel-line';
     localGame.appendChild(gridLine);
     for (let bloc = 0; bloc < sizeGB; bloc += 1) {
       const box = document.createElement('li');
       box.className = 'pixel';
+      box.addEventListener('click', changerColor);
       gridLine.appendChild(box);
     }
     const lin = document.createElement('br');
@@ -48,11 +59,6 @@ function makeGrid(gSize) {
   }
 }
 
-// start
-// instance Color Palette.
-// makePaleteColor(3);
-// cria a grid valor inicial 5
 makeGrid(5);
-// copiar cores para colar no grid
 
-// tamanho da grid pegar o valor do input e jogar como parametro da function makeGrid(*)
+makeBotton();
