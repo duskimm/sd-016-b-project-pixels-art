@@ -5,7 +5,7 @@
     display: inline-block;
 }
  #square1{
-    background-color: rgb(0, 0, 11);
+    background-color: rgb(0, 0, 0);
 }
  #square2{
     background-color: rgb(111, 214, 203);
@@ -18,10 +18,14 @@
 }
   #pixel-board{
     width: 210px;
+    height: 210px;
 }
 .pixel {
     width: 40px;
     height: 40px;
     display: inline-block;
     border: solid black 1px;
+    margin: 0;
+    margin-bottom: -4px;
+    background-color: rgb(255,255,255);
  }
