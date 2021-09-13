@@ -1,41 +1,98 @@
+@import url('http://fonts.cdnfonts.com/css/minecraft-3') ;
+
+@import url('https://fontlibrary.org//face/minecraftia') ;
+
 * {
   margin: 0;
   padding: 0;
 }
 
-#title {
-  text-align: center;
-  text-decoration: underline;
+body {
+  background-image: url('https://lh4.googleusercontent.com/proxy/xhkf_JBAnB1I9Jsgv5LnBcxGrFodpvBQ9cjRghu5nC0-Uqa3v3N4vpwnv10Zha0fiyGcDKwI62v6OsfaiUmTFbauHypXvgoiR2Hm9w=s0-d');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
 }
 
+header {
+  background-image: url('http://1.bp.blogspot.com/-sSC536WtaiM/T6AuKlOVKXI/AAAAAAAABOE/_Y86X3ydxDk/s1600/minecraft_brick.jpg');
+  background-size: contain;
+  padding: 10px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+}
+
+#title {
+  border: 1px solid black;
+  padding: 10px;
+  display: inline-block;
+  background-image: url('https://puu.sh/g2wwB/8c3331482b.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-decoration: underline;
+  font-family: Minecraft, sans-serif;
+}
+
+#color-palette {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
 
 .color {
-  display: inline-block;
+  display: flex;
+  margin: 10px;
   border: 1px solid black;
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
+
+.color:hover {
+  cursor: pointer;
 }
 
 #first {
   background-color: black;
 }
 
-#second {
-  background-color: red;
-}
-
-#third {
-  background-color: blue;
-}
-
-#fourth {
-  background-color: green;
+.board-config {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
 }
 
 #pixel-board {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: max-content;
+  margin: auto;
+}
+
+input {
+  padding: 10px;
+  width: 7%;
+  margin-left: 5px;
+  background-image: url('https://puu.sh/g2wwB/8c3331482b.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Minecraft, sans-serif;
+  font-size: 20px;
+}
+
+button {
+  margin-left: 5px;
+  padding: 10px;
+  background-image: url('https://puu.sh/g2wwB/8c3331482b.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Minecraft, sans-serif;
+  font-size: 20px;
 }
 
 .pixel {

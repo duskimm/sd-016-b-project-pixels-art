@@ -88,7 +88,7 @@ function randomColorPalette() {
   }
 }
 randomColorPalette();
-
+const randomizerColor = document.querySelector('#randomizeColor');
 const colorSelect = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
 const clearBtn = document.querySelector('#clear-board');
@@ -97,3 +97,4 @@ createBtn.addEventListener('click', changeBoardSize);
 clearBtn.addEventListener('click', clearBoard);
 pixelBoard.addEventListener('click', changeColor);
 colorSelect.addEventListener('click', addClassSelected);
+randomizerColor.addEventListener('click', randomColorPalette);
