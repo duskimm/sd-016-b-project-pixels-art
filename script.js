@@ -1,4 +1,6 @@
 // Cria divs com classe color com cores dinamicas
+//  Adicione à página uma paleta contendo quatro cores distintas.
+
 
 let chamaDivPai = document.getElementById('color-palette');
 
@@ -15,6 +17,8 @@ colorPalette('black');
 colorPalette('pink');
 colorPalette('purple');
 colorPalette('green');
+
+//  Adicione à página um quadro de pixels, com 25 pixels.
 
 function createDivBorderPixel(numero) {
   let divPixel = document.querySelector('#pixel-board');
@@ -37,6 +41,8 @@ function createDivBorderPixel(numero) {
 
 createDivBorderPixel(5);
 
+// Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+
 function adicionaSelected(event) {
   let selecionaCor = document.querySelectorAll('.color')
   for (let i = 0; i < selecionaCor.length; i += 1) {
@@ -49,14 +55,26 @@ function adicionaSelected(event) {
 }
 chamaDivPai.addEventListener('click', adicionaSelected);
 
-// Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+//  Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
 let classePixelBoard = document.querySelector('#pixel-board');
 function pintaPixel(event) {
   let selecionarCor = document.querySelector('.selected');
   let cor = selecionarCor.style.backgroundColor;
   let pixel = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixel.length; i += 1){
+  for (let i = 0; i < pixel.length; i += 1) {
     event.target.style.backgroundColor = cor;
   }
 }
 classePixelBoard.addEventListener('click', pintaPixel);
+
+// fiz o botão pelo html e então inseri o evento por aqui
+
+let button = document.querySelector('#clear-board');
+button.innerText = 'Limpar';
+button.addEventListener('click', function(){
+let pixelClass = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelClass.length; i += 1){
+    pixelClass[i].style.backgroundColor = 'white';
+  }
+
+});
