@@ -1,3 +1,4 @@
+//board
 const numberPixels = 5;
 const linePixel = document.querySelectorAll('.line-pixel');
 const boardElements = document.getElementById('pixel-board');
@@ -23,13 +24,43 @@ function createPixel(classe) {
   return pixel;
 }
 
-boardElements.addEventListener('click', presetColor);
-boardElements.addEventListener('dblclick', clearPixel);
+//colors
+const colorPallete = document.getElementById('color-palette');
+const colorType = document.getElementsByClassName('color');
+colorType[0].style.backgroundColor = 'black';
+colorType[1].style.backgroundColor = 'rgb(154, 49, 29)';
+colorType[2].style.backgroundColor = 'rgb(247, 136, 14)';
+colorType[3].style.backgroundColor = 'rgb(77, 255, 0)';
 
-function clearPixel(event) {
-  event.target.style.backgroundColor = 'white';
+//preset pincel onload (black)
+boardElements.addEventListener('click', function(event) {
+  if (divTarget === '' ) {
+    event.target.style.backgroundColor = 'black';
+  }
+});
+
+//pincel select and remove
+let divTarget = '';
+let pincelColor  = '';
+colorPallete.addEventListener('click', selectColor);
+boardElements.addEventListener('click', pincel);
+boardElements.addEventListener('dblclick', eraser)
+
+
+function selectColor(event) {
+  divTarget = event.target;
+  pincelColor = divTarget.style.backgroundColor;
+  console.log(divTarget);
 }
 
-function presetColor(event) {
-  event.target.style.backgroundColor = 'black';
+function pincel(event) {
+  if (divTarget !== '') {
+    event.target.style.backgroundColor = pincelColor;
+    console.log(event.target);
+  }
+}
+
+function eraser(event) {
+  event.target.style.backgroundColor = 'white';
+  console.log(event.target);
 }

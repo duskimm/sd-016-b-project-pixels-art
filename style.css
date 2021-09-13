@@ -1,24 +1,15 @@
+#color-palette {
+  display: inline-block;
+}
 .color {
   border: 1px solid black;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   display: inline-block;
 }
 
-.laranja {
-  background-color: rgb(247, 136, 14);
-}
-
-.marrom {
-  background-color: rgb(154, 49, 29);
-}
-
-.verde-claro {
-  background-color: rgb(77, 255, 0);
-}
-
-.preto {
-  background-color: black;
+#clear-board {
+  display: inline-block;
 }
 
 .pixel {
@@ -28,3 +19,13 @@
   width: 40px;
   background-color: white;
 }
+
+
+#pixel-board {
+  display: inline-block;
+}
+
+.line-pixel {
+  height: 40px;
+}
+
