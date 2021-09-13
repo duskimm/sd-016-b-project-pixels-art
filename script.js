@@ -24,3 +24,13 @@ function generatePixelBoard(dimension) {
 }
 
 generatePixelBoard(5);
+
+window.onload = function selectColor () {
+    let firstload = true;
+    if(firstload){
+      let colorSelect = document.querySelector('.color');
+      colorSelect.classList.add('selected');
+    }else {
+
+    }
+  }
