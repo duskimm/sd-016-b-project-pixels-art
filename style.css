@@ -20,20 +20,25 @@ body {
     background-color: rgb(66, 66, 66);
 }
 
-.purple {
-    background-color: rgb(158, 0, 137);
-}
-.pink {
+#pink {
     background-color: rgb(255, 0, 140);
 }
-.red {
+#red {
     background-color: rgb(255, 0, 43);
 }
-.orange {
+#orange {
     background-color: rgb(255, 102, 0);
 }
-.yellow {
+#yellow {
     background-color: rgb(255, 196, 0);
+}
+
+#black {
+    background-color: black;
+}
+
+#white {
+    background-color: white;
 }
 
 .color {
@@ -58,14 +63,10 @@ body {
     box-shadow: 0px 3px 10px black;
 }
 
-.center {
+.center-board {
     position: absolute;
     left: 50%;
     transform: translatex(-50%);
-}
-
-#clear-board{
-
 }
 
 .pixel {
@@ -76,6 +77,25 @@ body {
     border: solid 1px black;
 }
 
+.color:hover, .pixel:hover, button:hover {
+    cursor: pointer;
+}
+
+.selected {
+    box-shadow: 0px 0px 30px greenyellow;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+    margin: 28px;
+    box-shadow: 0px 3px 10px black;
+}
+
+#button-container {
+    position: relative;
+    text-align: center;
+}
 
 footer {
     background-color: rgb(33, 33, 33);

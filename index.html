@@ -5,20 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Pixels Art | Projeto</title>
+    <title>Pixel Art | Projeto</title>
 </head>
 <body>
 
     <h1 id="title">Paleta de Cores</h1>
     <div id="color-palette">
-        <div class="color purple"></div>
-        <div class="color pink"></div>
-        <div class="color red"></div>
-        <div class="color orange"></div>
-        <div class="color yellow"></div>
+        <div class="color" id="pink"></div>
+        <div class="color" id="red"></div>
+        <div class="color" id="orange"></div>
+        <div class="color" id="yellow"></div>
     </div>
 
-    <div class="center">
+    <div id="button-container">
+        <button id="clear-board">Clear Board</button>
+        <button id="vqv">VQV</button>
+    </div>
+
+    <div class="center-board">
     <div id="pixel-board">
         <div class="pixel"></div>
         <div class="pixel"></div>
@@ -46,11 +50,17 @@
         <div class="pixel"></div>
         <div class="pixel"></div>
     </div>
+        <div class="color" id="black"></div>
+        <div class="color" id="white"></div>
     </div>
+
+
+ 
 
     <footer>
             <p>© marllon | 2021</p>
     </footer>
     
+    <script src="script.js"></script>
 </body>
 </html>
