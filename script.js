@@ -123,4 +123,16 @@ window.onload = function () {
   document.querySelectorAll(".color")[3].classList.remove('selected')  
   })
 
-;
+  const pixelBoard = document.getElementById('pixel-board');
+
+// Pintar os pixels
+function changeColor(event) {
+  const selectedColor = document.querySelector('.selected');
+  event.target.style.backgroundColor = getComputedStyle(selectedColor).backgroundColor;
+  console.log(getComputedStyle(selectedColor).backgroundColor);
+}
+
+for (let i = 0; i < pixelBoard.children.length; i += 1) {
+  pixelBoard.children[i].addEventListener('click', changeColor);
+}
+

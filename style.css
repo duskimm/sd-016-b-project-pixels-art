@@ -38,3 +38,14 @@
   margin-right: 2px;
   background-color: white;
 }
+
+#clear-board {
+  display: block;
+  margin: 15px auto 5px;
+}
+
+#buttons {
+  height: 65px;
+  width: 250px;
+  margin: 30px auto;
+}
