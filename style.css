@@ -6,7 +6,7 @@ body {
   height: 40px;
 }
 
-.color{
+.color {
   height: 40px;
   width: 40px;
   display: inline-block;
@@ -30,7 +30,7 @@ body {
 }
 
 #pixel-board {
-width: auto;
+  width: auto;
 }
 
 .pixel {
@@ -39,4 +39,4 @@ width: auto;
   display: inline-block;
   background-color: white;
   border: 1px solid black;
-  }
+}
