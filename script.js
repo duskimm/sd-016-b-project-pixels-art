@@ -54,7 +54,7 @@ chamaDivPai.addEventListener('click', adicionaSelected);
 //  Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
 const classePixelBoard = document.querySelector('#pixel-board');
 function pintaPixel(event) {
-  let selecionarCor = document.querySelector('.selected');
+  const selecionarCor = document.querySelector('.selected');
   const cor = selecionarCor.style.backgroundColor;
   const pixel = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixel.length; i += 1) {
