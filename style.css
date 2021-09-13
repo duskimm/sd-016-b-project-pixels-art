@@ -24,3 +24,9 @@
   margin: -1px -1px -4px 0;
   background-color: white;
 }
+
+#clear-board {
+  background-color: black;
+  border-color: red;
+  color: white;
+}

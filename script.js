@@ -2,6 +2,7 @@
 const paletteBox = ['black', '#8871FE', '#D0CD94', '#FF331F'];
 const sectionPalette = document.getElementById('color-palette');
 const sectionBoard = document.getElementById('board');
+const sectionClear = document.getElementById('clear-button');
 
 // Função que cria os quadrados
 function creatColorPalette() {
@@ -59,5 +60,19 @@ diviBoard.addEventListener('click', (event) => {
   const paramEvent = event.target;
   for (let pIndex = 0; pIndex < pixel.length; pIndex += 1) {
     paramEvent.style.backgroundColor = selectedPalette.style.backgroundColor;
+  }
+});
+
+function creatClearButton() {
+  const clearButton = document.createElement('button');
+  clearButton.id = 'clear-board';
+  clearButton.innerText = 'Limpar';
+  sectionClear.appendChild(clearButton);
+}
+creatClearButton();
+
+sectionClear.addEventListener('click', () => {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].style.backgroundColor = 'white';
   }
 });
