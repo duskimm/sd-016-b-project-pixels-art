@@ -8,6 +8,7 @@ window.onload = function selecting() {
     cores[index].classList.remove('selected');
   }
 };
+// seletores
 
 function selector(event) {
   const colorSelector = document.querySelectorAll('.color');
@@ -18,16 +19,17 @@ function selector(event) {
   event.target.classList.add('selected');
 }
 
-let blackColor = document.getElementById('black');
-let redColor = document.getElementById('red');
-let greenColor = document.getElementById('green');
-let blueColor = document.getElementById('blue');
+const blackColor = document.getElementById('black');
+const redColor = document.getElementById('red');
+const greenColor = document.getElementById('green');
+const blueColor = document.getElementById('blue');
 
 blackColor.addEventListener('click', selector);
 redColor.addEventListener('click', selector);
 greenColor.addEventListener('click', selector);
 blueColor.addEventListener('click', selector);
 
+// gerando colunas e linhas
 function createPixelBoardLine(line) {
   const pixelBoardhtml = document.getElementById('pixel-board');
   const divisao = document.createElement('div');
@@ -46,11 +48,14 @@ function createPixelColumns(line) {
 }
 
 function generator() {
+  const innerHtmlPixelBoard = document.getElementById('pixel-board');
   const input = document.getElementById('board-size');
   if (input.value <= 0) {
+    innerHtmlPixelBoard.innerHTML ='';
     const lines = 5;
     createPixelColumns(lines);
   } else {
+    innerHtmlPixelBoard.innerHTML ='';
     lines = parseInt(input.value);
     createPixelColumns(lines);
   }
@@ -59,3 +64,15 @@ function generator() {
 const submitButton = document.getElementById('generate-board');
 submitButton.addEventListener('click', generator());
 const input = document.getElementById('board-size');
+
+// Pintando o quadro
+
+// resetando a cor do quadro
+function resetColor() {
+  let pixelboardSelector = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelboardSelector.length; index += 1) {
+    pixelboardSelector[index].style.backgroundColor = 'white';
+  }
+}
+
+let resetElement = document.getElementById('clear-board');

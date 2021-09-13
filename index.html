@@ -28,9 +28,10 @@
     <div id='size-changer'>
       Digite o tamanho desejado
         <input type="number" id='board-size' value="0" min="0" max="50">
-        <input type="submit" id='generate-board' value='VQV'>
+        <input type="submit" id='generate-board' value='VQV' onclick="generator()">
     </div>
     <div id="pixel-board"></div>
+    <div id="clear-board"><input type="button" value="RESET" onclick="resetColor()"></div>
   </main>
   <script src="script.js"></script>
 </body>

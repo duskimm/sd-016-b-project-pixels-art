@@ -1,6 +1,5 @@
 body{ 
   background-color: rgb(12, 145, 101);
-
 }
 
 #black{
@@ -50,7 +49,10 @@ body{
   text-align: center;
   line-height: 0%;
 }
-
+#clear-board{
+  text-align: center;
+  line-height: 50px;
+}
 #title{
   color: white;
   font-family: 'Times New Roman', Times, serif;
