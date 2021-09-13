@@ -1,7 +1,5 @@
 const colorPalette = document.getElementById('color-palette');
 
-
-
 function createColors() {
   const colors = ['black', 'red', 'blue', 'green'];
   for (let index = 0; index < colors.length; index += 1) {
@@ -38,9 +36,11 @@ function chanceSelected(event) {
 }
 colorPalette.addEventListener('click', chanceSelected);
 
-function name(params) {
-  
+
+const pixelBoard = document.getElementById('pixel-board');
+function paintFrame(event) {
+  if (event.target.classList.contains('pixel')) {
+    event.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+  }
 }
-
-
-
+pixelBoard.addEventListener('click', paintFrame);
