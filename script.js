@@ -86,8 +86,7 @@ function colorSpill() {
       const pointedColor = document.querySelector('.selected');
       if (pointedColor !== null) {
         pointedColor.classList.remove('selected');
-      }
-      event.target.classList.add('selected');
+      } event.target.classList.add('selected');
     });
   }
   for (let index = 0; index < pixels.length; index += 1) {
