@@ -10,7 +10,7 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 92vh;
+  min-height: 92vh
 }
 
 header {
@@ -70,6 +70,7 @@ header {
   flex-direction: column;
   width: max-content;
   margin: auto;
+  padding-bottom: 20px;
 }
 
 input {
