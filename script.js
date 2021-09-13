@@ -80,3 +80,10 @@ function selectPixel(array) {
 }
 
 selectPixel(pixel);
+
+// task 9 functions
+q('#clear-board').addEventListener('click', () => {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+});
