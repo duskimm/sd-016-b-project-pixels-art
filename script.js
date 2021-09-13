@@ -19,7 +19,7 @@ function color1 (){
   let div = document.querySelector('#color-palette')
   let div1 = document.createElement('div')
   div1.id = 'color1'
-  div1.className = "color";
+  div1.className = "selected";
   div.appendChild(div1)
 }
 color1 ()
@@ -60,32 +60,41 @@ function quadroPixel (){
 }
 quadroPixel();
 
-// Desafio 4 e 5
 
-//  criei uma variável para guardar o elemento Pai, nesse caso pixel-board
-let elementoPixelBoard = document.querySelector('#pixel-board');
+// Desafio 4 e 5
 
 function criarLinhas() {
 
-  // Primeiro criei as div das linhas 
-    for (let index = 0; index < 5; index += 1) {
-    let linhas = document.createElement('div');
+  //  criei uma variável para guardar o elemento Pai, nesse caso pixel-board
+  let elementoPixelBoard = document.querySelector('#pixel-board');
+
+  // criei as divs principais 
+    for (let i = 0; i < 5; i += 1) {
+    let divPrincipal = document.createElement('div');
   
-    // Fiz a apende das linhas com a pixel-board 
-    elementoPixelBoard.appendChild(linhas);
+    // Fiz a apende das divs principais com a pixel-board 
+    elementoPixelBoard.appendChild(divPrincipal);
   
-    //  agora criei as div das colunass
-    for (let colunas = 0; colunas < 5; colunas += 1) {
-      let colunas = document.createElement('div');
+    //  agora criei as div filhas
+    for (let j = 0; j < 5; j += 1) {
+      let pixel = document.createElement('div');
   
-      // aqui define a classe 'pixel' para todas as colunass
-      colunas.className = 'pixel';
+      // aqui define a classe 'pixel' para todas as pixel
+      pixel.className = 'pixel';
   
-      // aqui fiz o apende das linhas com as colunas, definindo as colunas como filhas das linhas
-      linhas.appendChild(colunas);
+      // aqui fiz o apende das divs principais com as divs filhas (pixel)
+      divPrincipal.appendChild(pixel);
     }
   }
 }
 
 criarLinhas();
 
+// Desafio 6
+
+function seis (){
+
+  let seis = document.querySelector('#color1')
+  seis.className += ' color'
+}
+seis ()
