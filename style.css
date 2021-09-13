@@ -1,15 +1,18 @@
 body {
   margin: 0;
+  background-color: blanchedalmond;
 }
 
 #color-palette {
-  display: flex;
+  display: inline;
 }
 
 .color {
+  border-radius: 100%;
   border: solid 1px black;
   height: 25px;
   width: 25px;
+  display: inline-block;
 }
 
 li {
@@ -26,6 +29,14 @@ li {
   height: 40px;
   width: 40px;
   background-color: white;
-  margin: 0;
-  padding: 0;
+}
+
+#clear-board {
+  background: none;
+  background-color: aqua;
+  border: 0;
+  box-sizing: border-box;
+  margin: 10px;
+  margin-right: 10px;
+  padding: 10px 20px;
 }
