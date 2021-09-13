@@ -71,6 +71,7 @@ function setBoardSize() {
     }
     elementChild.innerHTML = '';
     creationtLines(verifyValue);
+    colorSpill();
   });
 }
 setBoardSize();
