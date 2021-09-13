@@ -1,6 +1,6 @@
 body {
-  background-color: blanchedalmond;
   background-image: url('/assets/58930.jpg');
+  background-size: cover;
 }
 
 #title {
