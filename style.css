@@ -5,19 +5,19 @@
   display: inline-block;
 }
 
-.preto {
+#preto {
   background-color: black;
 }
 
-.verde {
+#verde {
   background-color: green;
 }
 
-.azul {
+#azul {
   background-color: blue;
 }
 
-.violeta {
+#violeta {
   background-color: violet;
 }
 

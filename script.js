@@ -1,14 +1,7 @@
-const cor = document.querySelectorAll('.color');
+// const cor = document.querySelectorAll('.color');
 const linhaPixel = document.querySelectorAll('.linhaPixel');
-const coresPaleta = ['preto', 'verde', 'azul', 'violeta'];
-// Adiciona as cores na paleta de cor
-function adicionarCorPaleta(classeCor) {
-  for (let index = 0; index < classeCor.length; index += 1) {
-    classeCor[index].classList.add(coresPaleta[index]);
-  }
-}
-adicionarCorPaleta(cor);
-// Cria uma caixa com base nas diferentes classes
+
+// Cria uma quadrado com base nas diferentes classes
 function criaQuadrado(className) {
   const box = document.createElement('div');
   box.className = className;
@@ -24,3 +17,14 @@ function percorrePixel(classePixel) {
   }
 }
 percorrePixel(linhaPixel);
+
+const corSelecionada = document.querySelector('#color-palette');
+
+function selecionarCor() {
+  corSelecionada.addEventListener('click', (event) => {
+    const classeSelecionada = document.querySelector('.selected');
+    classeSelecionada.classList.remove('selected');
+    event.target.classList.toggle('selected');
+  });
+}
+selecionarCor();
