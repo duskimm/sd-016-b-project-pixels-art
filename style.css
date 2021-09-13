@@ -21,3 +21,10 @@
     height: 40px;
     border: black solid 1px;
 }
+
+#clear-board {
+    display: block;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 5px;
+}

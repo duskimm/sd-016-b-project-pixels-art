@@ -28,3 +28,10 @@ function setColorSelected (color){
 function setPixelColour(pixel){
     pixel.style.backgroundColor = colorSelected
 }
+
+function clearPixels(){
+    let pixels = document.querySelectorAll('.pixel')
+    for (index = 0; index < pixels.length; index += 1){
+        pixels[index].style.backgroundColor = 'white'
+    }
+}
