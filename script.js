@@ -14,23 +14,26 @@ criaDivCores();
 //criar um quadro com n quadrados 
 
 let n = 5;
-let quadro = document.getElementById('pixel-board')
-let nDecrescente = 5-1
+let quadro = document.getElementById('pixel-board');
 
 function criaColuna(){
     for (let i=2; i <=n; i+=1){
-        let pixel = document.createElement('div');
+        let pixelColuna = document.createElement('div');
         criaLinha()
-        quadro.appendChild(pixel);
+        quadro.appendChild(pixelColuna);
     }
+
+    // for(let i=0; i < pixelColuna; i+=1){
+    //     pixelColuna.className = "pixel"
+    // }
 }
 criaColuna()
 
 function criaLinha(){
      for (let i=1 ; i <=n; i+=1){
-       let pixel = document.createElement('div');
-       pixel.className= "pixel linha";
-       quadro.appendChild(pixel);
+       let pixelLinha = document.createElement('div');
+       pixelLinha.className= "pixel linha";
+       quadro.appendChild(pixelLinha);
      }
  }
  criaLinha()
@@ -50,7 +53,7 @@ let botaoBranco = document.querySelector("#clear-board");
 
 botaoBranco.addEventListener("click", reiniciaJogo)
 
-let branco = "white";
+let branco =  'rgb(255, 255, 255)';
 function reiniciaJogo(){
     let quadrados = document.querySelectorAll(".pixel");
     for (let i =0; i<quadrados.length; i+=1){
@@ -78,8 +81,6 @@ function corSelecionada(event){
 }
 
 //pinta o pixel escolhido, com a cor selecionada
-
-    
     
     let quadroDepixels = document.querySelectorAll(".pixel");
     for(let i= 0; i <quadroDepixels.length; i+=1){
@@ -90,7 +91,7 @@ function pintarOpixelselecionado(event){
     
     for (let i = 0; i < quadroDepixels.length; i+=1){
         let corSelecionada = document.querySelector(".selected");
-        event.target.style.background = "black"
+        event.target.style.backgroundColor = "black"
 }
 }
 
