@@ -1,12 +1,8 @@
-// window.onload = function () {
-//   //colorBlack();
-// };
 let number = 5;
-
-const palleteColor = document.getElementById('color-palette');
 
 // criar div para armazenar as cores do projeto, com classe "color" e ainda colocar a cor de forma dinâmica.
 function createColorsPallete(color) {
+  const palleteColor = document.getElementById('color-palette');
   let element = document.createElement('span');
   element.classList = 'color';
   element.style.backgroundColor = color;
@@ -33,6 +29,26 @@ function createDivContainer() {
 }
 createDivContainer();
 
+// criar o Botão Clear
+function createButtonClear() {
+  const elementFather = document.querySelector('#container');
+  let createButton = document.createElement('button');
+  createButton.id = 'clear-board';
+  createButton.innerText = 'Limpar';
+  elementFather.appendChild(createButton);
+}
+createButtonClear()
+
+// limpar o quadro pixel ao clicar no button
+let clearPixels = document.getElementById('clear-board');
+function clearBoarder() {
+  let clearDivs = document.getElementsByClassName('pixel');
+  for (let index = 0; index < clearDivs.length; index += 1) {
+    clearDivs[index].style.backgroundColor = 'white';
+  }
+}
+clearPixels.addEventListener('click', clearBoarder);
+
 //criar a input com id "board-size"
 function createInputText() {
   const elementFather = document.querySelector('#container');
@@ -55,25 +71,7 @@ function createButtonVQV() {
 }
 createButtonVQV();
 
-// criar o Botão Clear
-function createButtonClear() {
-  const elementFather = document.querySelector('#container');
-  let createButton = document.createElement('button');
-  createButton.id = 'clear-board';
-  createButton.innerText = 'Limpar';
-  elementFather.appendChild(createButton);
-}
-createButtonClear()
 
-// limpar o quadro pixel co clicar no button
-let clearPixels = document.getElementById('clear-board');
-function clearBoarder() {
-  let clearDivs = document.getElementsByClassName('pixel');
-  for (let index = 0; index < clearDivs.length; index += 1) {
-    clearDivs[index].style.backgroundColor = 'white';
-  }
-}
-clearPixels.addEventListener('click', clearBoarder);
 
 // pintar os pixels de preto ao carregar a página
 function colorBlackReload() {
@@ -111,7 +109,7 @@ function createboardPixel(number) {
 createboardPixel(number);
 
 // remover o selected de onde estava:
-// Auxilio do Luis Gustavo no for.
+// Auxilio do Luis Gustavo no segundo for.
 let color = document.querySelectorAll('.color');
 function alteraClass(event) {
   for (let index = 0; index < color.length; index += 1) {
@@ -149,29 +147,32 @@ function printColor() {
 }
 printColor();
 
-// fazer uma função para remover todos os elemntos para criar uma nova
-function removeBoardPixel() {
-  const elementFather = document.querySelector('#pixel-board');
-  const boardPixel = document.querySelectorAll('.line');
-  for(let pixel of boardPixel) {
-    elementFather.removeChild(pixel);
-  }
-}
-
 // criar funcao para recuperar o valor do input ao clicar o botao com id generate-board (VQV) 
 // auxilio do Gabriel Silvestre, Victor Hugor Baum, Airton Lopes.
 // pesquisa no site: https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements
 function valueInput() {
   let valueInput = document.querySelector('#board-size');
   let buttonValue = document.querySelector('#generate-board');
+  let pixelBoard = document.querySelector('#pixel-board');
   buttonValue.addEventListener('click', function () {
     let numberInput = valueInput.value;
     number = numberInput;
-    if (numberInput === ''){
+    if (numberInput === '') {
       alert('Board inválido!')
     } else {
-      removeBoardPixel();
+      // utilizando o innerHTML para remover o quadro pixel anterior.
+      pixelBoard.innerHTML = '';
       createboardPixel(number);
+      printColor();
+    }
+
+    if (numberInput < 5) {
+      pixelBoard.innerHTML = '';
+      createboardPixel(5);
+      printColor();
+    } else if (numberInput > 50){
+      pixelBoard.innerHTML = '';
+      createboardPixel(50);
       printColor();
     }
   })
