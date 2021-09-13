@@ -69,3 +69,16 @@ for (let index = 0; index < capturarPixels.length; index += 1){
         }
     });
 }
+
+let capturarBotao = document.querySelector('#botao');
+let criarBotao = document.createElement('button');
+criarBotao.id = 'clear-board';
+criarBotao.innerHTML = 'Limpar';
+capturarBotao.appendChild(criarBotao);
+
+let botao = document.querySelector('#clear-board');
+botao.addEventListener('click', function(){
+    for (let index = 0; index < capturarPixels.length; index += 1){
+        capturarPixels[index].style.backgroundColor = 'white';
+    }
+})
