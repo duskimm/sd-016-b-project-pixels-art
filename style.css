@@ -29,11 +29,11 @@ body {
   background-color: purple;
 }
 .pixel {
+  background-color: white;
   width: 40px;
   height: 40px;
   border: 1px solid black;
   display: inline-block;
-  background-color: white;
 }
 #pixel-board {
   margin-top: 25px;
