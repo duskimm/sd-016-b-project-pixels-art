@@ -19,13 +19,13 @@
   margin-left: auto;
 }
 
-#c1 { background-color: black;}
+.c1 { background-color: black;}
 
-#c2 { background-color: rgb(222, 109, 32);}
+.c2 { background-color: rgb(222, 109, 32);}
 
-#c3 { background-color: rgb(255, 212, 177);}
+.c3 { background-color: rgb(255, 212, 177);}
 
-#c4 { background-color: rgb(208, 202, 176);}
+.c4 { background-color: rgb(208, 202, 176);}
 
 #pixel-board {
   margin: auto;

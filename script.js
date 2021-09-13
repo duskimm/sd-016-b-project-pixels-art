@@ -9,3 +9,18 @@ palette.addEventListener('click', (event) => { // seleciona o evento de "escuta"
   }
   event.target.classList.add('selected');
 });
+
+function addColor(event) {
+  const pixelSelecionado = event.target; // seleciona o evento de origem (todos os pixels)
+  const selectColor = document.querySelector('.selected'); // seleciona a cor aplicada na paleta de cores
+  pixelSelecionado.style.backgroundColor = selectColor.style.backgroundColor;
+}
+
+function paintingPixels() { // função criada para aplicar cor em todos os pixels ao clicar
+  const pixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener('click', addColor);
+  }
+}
+
+paintingPixels();
