@@ -8,7 +8,6 @@ body {
 
 main {
   height: 70%;
-  width: 100%;
   padding: 1%;
 }
 
@@ -25,7 +24,6 @@ header {
 }
 
 #pixel-board {
-  display: block;
   text-align: center;
   padding: 5%;
 }

@@ -57,7 +57,7 @@ function makeGrid(gSize) {
   const localGame = document.getElementById('pixel-board');
   const sizeGB = gSize;
   for (let line = 0; line < sizeGB; line += 1) {
-    const gridLine = document.createElement('li');
+    let gridLine = document.createElement('li');
     gridLine.className = 'ul-pixel-line';
     localGame.appendChild(gridLine);
     for (let bloc = 0; bloc < sizeGB; bloc += 1) {
