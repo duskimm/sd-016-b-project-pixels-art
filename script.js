@@ -47,9 +47,22 @@ function createDivPixel() {
   }
 }
 createDivPixel();
-// 6.jn
+
+// 6.cria selected
 function setClassSelected() {
-  const classSelected = document.getElementsByClassName('color')[0];
-  classSelected.className = 'color selected';
+  const classSelected = document.querySelectorAll('.color');
+  classSelected[0].className = 'color selected';
 }
 setClassSelected();
+// 7. Remove selected
+
+const selectedPaletttes = document.querySelector('#color-palette');
+
+function createSelectedOff() {
+  selectedPaletttes.addEventListener('click', (event) => {
+    const classSelected = document.querySelector('.selected');
+    classSelected.classList.remove('selected');
+    event.target.classList.toggle('selected');
+  });
+}
+createSelectedOff();
