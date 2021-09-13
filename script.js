@@ -52,13 +52,19 @@ createPixelColumns(5);
 function generator() {
   const innerHtmlPixelBoard = document.getElementById('pixel-board');
   const input = document.getElementById('board-size');
-  if (input.value <= 5 || input.value > 50) {
+  if (input.value <= 5) {
     innerHtmlPixelBoard.innerHTML = '';
     createPixelColumns(5);
+  } else if (input.value > 50) {
+    innerHtmlPixelBoard.innerHTML = '';
+    createPixelColumns(50);
   } else {
     innerHtmlPixelBoard.innerHTML = '';
     lines = parseInt(input.value);
     createPixelColumns(lines);
+  }
+  if (input.value == '') {
+    alert('Board Inválido');
   }
 }
 
@@ -71,7 +77,7 @@ function changeColor(event) {
   const seletorQueryId = document.querySelector('.selected').id;
   event.target.style.backgroundColor = seletorQueryId;
 }
-let pixelSelector2 = document.querySelectorAll('.pixel');
+const pixelSelector2 = document.querySelectorAll('.pixel');
 for (let index = 0; index < pixelSelector2.length; index += 1) {
   pixelSelector2[index].addEventListener('click', changeColor);
 }
