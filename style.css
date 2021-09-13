@@ -1,7 +1,7 @@
 body {
   margin: 100px auto;
   text-align: center;
-  background: rgb(179, 204, 219);
+  background: #049dd9;
 }
 
 #color-palette * {
@@ -10,6 +10,7 @@ body {
 
 h1 {
   font-size: 46px;
+  font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
 }
 
 section .color {
@@ -24,21 +25,10 @@ section .black {
   background-color: black;
 }
 
-section .red {
-  background-color: red;
-}
-
-section .blue {
-  background-color: blue;
-}
-
-section .orange {
-  background-color: orange;
-}
-
 /* Pixel board */
 #pixel-board {
   margin: 20px auto;
+  line-height: 0px;
 }
 
 .pixel {
@@ -47,4 +37,30 @@ section .orange {
   border: solid 1px black;
   display: inline-block;
   background-color: white;
+}
+
+.pixel:hover {
+  cursor: pointer;
+}
+
+.btn {
+  background-color: white;
+  border: solid 2px black;
+  padding: 4px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  font-weight: 900;
+}
+
+#board-size {
+  width: 67px;
+  background-color: white;
+  border: solid 2px black;
+  padding: 4px;
+}
+
+#clear-board {
+  margin-right: 30px;
 }
