@@ -52,7 +52,7 @@ createPixelColumns(5);
 function generator() {
   const innerHtmlPixelBoard = document.getElementById('pixel-board');
   const input = document.getElementById('board-size');
-  if (input.value <= 0) {
+  if (input.value <= 5 || input.value > 50) {
     innerHtmlPixelBoard.innerHTML = '';
     createPixelColumns(5);
   } else {
