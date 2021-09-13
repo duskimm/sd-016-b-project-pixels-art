@@ -1,18 +1,16 @@
 @import url('http://fonts.cdnfonts.com/css/minecraft-3') ;
 
-@import url('https://fontlibrary.org//face/minecraftia') ;
-
 * {
   margin: 0;
   padding: 0;
 }
 
-body {
+main {
   background-image: url('https://lh4.googleusercontent.com/proxy/xhkf_JBAnB1I9Jsgv5LnBcxGrFodpvBQ9cjRghu5nC0-Uqa3v3N4vpwnv10Zha0fiyGcDKwI62v6OsfaiUmTFbauHypXvgoiR2Hm9w=s0-d');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 90vh;
+  height: 92vh;
 }
 
 header {
@@ -105,4 +103,20 @@ button {
 
 .line {
   height: 40px;
+}
+
+footer {
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  background-image: url('http://1.bp.blogspot.com/-sSC536WtaiM/T6AuKlOVKXI/AAAAAAAABOE/_Y86X3ydxDk/s1600/minecraft_brick.jpg');
+  background-size: contain;
+}
+
+footer p {
+  padding: 20px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: Minecraft, sans-serif;
 }
