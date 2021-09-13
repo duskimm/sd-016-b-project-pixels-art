@@ -1,16 +1,18 @@
 const colors = document.querySelectorAll('.color');
 const pixels = document.querySelectorAll('.pixel');
 const corSelecionada = document.querySelector('.selected');
-let corAtual = window.getComputedStyle(corSelecionada, null).getPropertyValue('background-color');
+let corAtual = window.getComputedStyle(corSelecionada).backgroundColor;
 console.log(corAtual);
 
 // Requisito 7 - Troca qual cor da paleta possui a classe 'selected'
 
 function trocaSelected(event) {
-  const comSelected = document.querySelector('.selected');
+  let comSelected = document.querySelector('.selected');
+  console.log(comSelected);
   comSelected.classList.remove('selected');
   event.target.classList.add('selected');
-  corAtual = window.getComputedStyle(comSelected, null).getPropertyValue('background-color');
+  let novoSelected = document.querySelector('.selected');
+  corAtual = window.getComputedStyle(novoSelected).backgroundColor;
   return corAtual;
 }
 
