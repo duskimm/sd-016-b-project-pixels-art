@@ -8,6 +8,26 @@ window.onload = function(){
   let board = document.querySelector('#pixel-board');
   let clearButton = document.querySelector('button');
 
+
+  function randomColor(){
+    let colorR = Math.round(Math.random()* 255);
+    let colorG = Math.round(Math.random()* 255);
+    let colorB = Math.round(Math.random()* 255);
+    let fullColor = `rgb(${colorR}, ${colorG}, ${colorB})`;
+    return fullColor;
+   }
+   randomColor()
+ 
+   function putNewColor(){
+     colorTwo.style.backgroundColor = randomColor();
+     colorThree.style.backgroundColor = randomColor();
+     colorFour.style.backgroundColor = randomColor();
+   }
+ 
+   putNewColor();
+ 
+  
+
   colorOne.addEventListener('click',function(){
     if(colorOne.className !== "selected"){
       colorOne.classList.add('selected')
@@ -49,7 +69,7 @@ window.onload = function(){
     const cor = selectedColor.style.backgroundColor;
     let div = evt.target;
     
-    
+
 
     if(div.style.backgroundColor !== selectedColor.style.backgroundColor){
       div.style.backgroundColor = cor;
