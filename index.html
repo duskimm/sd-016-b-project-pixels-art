@@ -8,65 +8,74 @@
   <title>Pixel Art</title>
 </head>
 <body>
-  <h1 id="title">Paleta de Cores</h1>
+  <header>
+    <h1 id="title">Paleta de Cores</h1>
+</header>
 
-  <div id="color-palette">
+  <section>
+    <div id="color-palette">
   
-    <div>
-      <div class="color selected"  id="color1" ></div>
-      <div class="color" id="color2"></div>
-      <div class="color" id="color3"></div>
-      <div class="color" id="color4"></div>
+      <section>
+        <div class="color selected"  id="color1" ></div>
+        <div class="color" id="color2"></div>
+        <div class="color" id="color3"></div>
+        <div class="color" id="color4"></div>
+      </section>
     </div>
-  </div>
+  </section>
 
-  <input id = "board-size" type="number" min = "5" placeholder="Tamanho do board"> 
+  <section>
+    <input id = "board-size" type="number" min = "5" placeholder="Tamanho do board"> 
     <button id = "generate-board" class = "button">VQV</button>
-
+  
     <div>
         <button id = "clear-board" class = "button" type="button" autofocus>Limpar</button>
     </div>
+  </section>
+  
+  <section>
+    <div id="pixel-board" class = " container " ></div>
+      <div class="line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>
 
-  <div id="pixel-board" class = " container " ></div>
-    <div class="line">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>
+      <div class="line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>
 
-    <div class="line">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>
+      <div class="line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>
 
-    <div class="line">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>
+      <div class="line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>
 
-    <div class="line">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>
-
-    <div class="line">
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-      <div class="pixel"></div>
-    </div>  
+      <div class="line">
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+        <div class="pixel"></div>
+      </div>  
+  </section>
+  
   <script src= "script.js"></script>
 </body>
 </html>
