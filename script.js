@@ -5,9 +5,9 @@ function ramdomColors() {
   const otherColors = Math.floor(Math.random() * 255);
   const otherColors1 = Math.floor(Math.random() * 255);
   const otherColors2 = Math.floor(Math.random() * 255);
-  const palleteColor = `rgb(${otherColors}, ${otherColors1}, ${otherColors2})`;
+  const paletteColor = `rgb(${otherColors}, ${otherColors1}, ${otherColors2})`;
 
-  return palleteColor;
+  return paletteColor;
 }
 
 function colorAtribution() {
@@ -90,7 +90,7 @@ function colorSpill() {
       event.target.classList.add('selected');
     });
   }
-  for (let index = 0; index < pixels.length; index += 0) {
+  for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener('click', (e) => {
       const selectedColor = document.querySelector('.selected');
       e.target.style.backgroundColor = window.getComputedStyle(selectedColor).backgroundColor;
