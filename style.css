@@ -22,21 +22,170 @@ article,
 footer,
 section,
 textarea {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    line-height: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  line-height: 1;
 }
-/* ----------------------------------------------------------------------------------------------- */
-/* VARIAVEIS */
-/* ----------------------------------------------------------------------------------------------- */
-/* TAG */
-/* ----------------------------------------------------------------------------------------------- */
-/* ID */
-/* ----------------------------------------------------------------------------------------------- */
-/* CLASS */
-/* ----------------------------------------------------------------------------------------------- */
 
+/* VARIAVEIS */
+:root {
+  --blue: 0000FF;
+  --red: FF0000;
+  --green: 008000;
+  --yellow: FFFF00;
+  --purple: 800080;
+  --orange: FFA500;
+  --aqua: 00FFFF;
+  --black: 000000;
+  --gray: 808080;
+}
+
+/* TAG */
+body {
+  background-color: lightskyblue;
+  padding: 30px;
+}
+
+h1 {
+  color: white;
+  font-size: 24pt;
+  text-align: center;
+  text-shadow: 2px 2px black;
+}
+
+/* ID */
+#project-title {}
+
+#logo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
+#logo-tybe {
+  border: solid 1px black;
+  border-radius: 15px;
+  height: 150px;
+  width: 150px;
+}
+
+#logo-text {
+  color: white;
+  margin: 10px;
+  text-align: center;
+  text-shadow: 1px 1px black;
+}
+
+#tools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#tools-titlle,
+#title {
+  font-size: 18pt;
+  margin: 10px;
+}
+
+#tools-bar {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+#palette {
+  margin: 10px;
+}
+
+#color-palette {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+#pixel-grid {
+  align-items: center;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  transform: scale(1);
+  transform-origin: center center;
+  width: 500px;
+}
+
+#grid-drawing {
+  margin: 0 auto;
+}
+
+#credits {
+  display: flex;
+  justify-content: center;
+}
+
+#credits-links {}
+
+#links-list {
+  display: flex;
+  list-style: none;
+}
+
+#copyright {
+  align-items: center;
+  bottom: 0;
+  position: fixed;
+}
+
+#text-copyright {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#item1,
+#item2,
+#item3,
+#item4 {
+  border: outset;
+  border-radius: 5px;
+  background-color: none;
+  height: 40px;
+  margin: 5px;
+  width: 40px;
+}
+
+/* CLASS */
+.tool-botton {
+  border: outset;
+  border-radius: 5px;
+  height: 25px;
+  margin: 5px;
+  width: 50px;
+}
+
+.list-item {
+  margin: 10px;
+}
+
+.list-item-link {
+  color: black;
+}
+
+.content {
+  text-align: center;
+}
+
+.color-select {
+  width: 30px;
+  height: 30px;
+  border: 1px black solid;
+  border-radius: 5px;
+  margin: 5px;
+}
