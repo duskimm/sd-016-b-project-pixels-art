@@ -19,7 +19,7 @@ function color1 (){
   let div = document.querySelector('#color-palette')
   let div1 = document.createElement('div')
   div1.id = 'color1'
-  div1.className = "selected";
+  div1.className = "color";
   div.appendChild(div1)
 }
 color1 ()
@@ -92,9 +92,35 @@ criarLinhas();
 
 // Desafio 6
 
-function seis (){
+window.onload = function () {
 
-  let seis = document.querySelector('#color1')
-  seis.className += ' color'
+  let seis = document.querySelectorAll('.color')[0]
+  seis.classList.add('selected')
 }
-seis ()
+
+  document.querySelectorAll(".color")[1].addEventListener("click", function() {
+  document.querySelectorAll(".color")[1].classList.add('selected');
+  document.querySelectorAll(".color")[0].classList.remove('selected')
+  document.querySelectorAll(".color")[2].classList.remove('selected')  
+  document.querySelectorAll(".color")[3].classList.remove('selected')  
+  })
+  document.querySelectorAll(".color")[2].addEventListener("click", function() {
+  document.querySelectorAll(".color")[2].classList.add('selected');
+  document.querySelectorAll(".color")[0].classList.remove('selected')
+  document.querySelectorAll(".color")[1].classList.remove('selected')  
+  document.querySelectorAll(".color")[3].classList.remove('selected')    
+  })
+  document.querySelectorAll(".color")[3].addEventListener("click", function() {
+  document.querySelectorAll(".color")[3].classList.add('selected');
+  document.querySelectorAll(".color")[0].classList.remove('selected')
+  document.querySelectorAll(".color")[1].classList.remove('selected')  
+  document.querySelectorAll(".color")[2].classList.remove('selected')  
+  })
+  document.querySelectorAll(".color")[0].addEventListener("click", function() {
+  document.querySelectorAll(".color")[0].classList.add('selected');
+  document.querySelectorAll(".color")[1].classList.remove('selected')
+  document.querySelectorAll(".color")[2].classList.remove('selected')  
+  document.querySelectorAll(".color")[3].classList.remove('selected')  
+  })
+
+;
