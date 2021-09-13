@@ -1,3 +1,4 @@
+/* Paleta de Core */
 .color {
   border: 1px solid black;
   width: 50px;
@@ -19,4 +20,13 @@
 
 .green {
   background-color: green;
+}
+
+/* Quadro de Pixels */
+.pixel {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid black;
 }
