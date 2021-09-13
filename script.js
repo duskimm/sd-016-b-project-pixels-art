@@ -1,10 +1,11 @@
 window.onload = function selected() {
   const colors = document.getElementById('color-palette');
+  colors.addEventListener('click', toggleSelector);
   colors.firstElementChild.className = 'color selected';
   colors.firstElementChild.style.backgroundColor = 'black';
 };
 
-// função que cria H1
+// FUNÇÃO QUE CRIA H1
 function createTitleH1() {
   const createTitle = document.getElementById('container-title');
   const createH1 = document.createElement('h1');
@@ -14,7 +15,7 @@ function createTitleH1() {
 }
 createTitleH1();
 
-// Função que cria a Paleta de cores
+// FUNÇÃO QUE CRIA PALETA DE CORES
 function colorPalette() {
   const colors = document.getElementById('color-palette');
   const quantityColor = 4;
@@ -26,10 +27,10 @@ function colorPalette() {
 }
 colorPalette();
 
-// Função para gerar cores aleatórias
+// FUNÇÃO PARA GERAR CORES ALEATÓRIAS
 // Ref.: Encontrei à solução, que retorna as cores aleatórias para as demais paletas no site https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
 function randomColor() {
-  const randomcolors = document.querySelector('#color-palette');
+  const randomcolors = document.getElementById('color-palette');
   const quantityColor = 4;
   for (let idx = 1; idx < quantityColor; idx += 1) {
     randomcolors.childNodes[idx].style.background = `#${parseInt((Math.random() * 0xFFFFFF))
@@ -39,31 +40,30 @@ function randomColor() {
 }
 randomColor();
 
-// Função que cria o quadro
-function SquarePalette() {
-  const squareDivs = document.getElementById('pixel-board');
+// FUNÇÃO QUE CRIA QUADRO
+function boardPalette() {
+  const boardPixels = document.getElementById('pixel-board');
   const lines = 5;
   for (let lineIdx = 0; lineIdx < lines; lineIdx += 1) {
-    const square = document.createElement('div');
+    const boardColor = document.createElement('div');
     for (let columnsIdx = 1; columnsIdx <= lines; columnsIdx += 1) {
-      const squareDiv2 = document.createElement('div');
-      squareDiv2.classList.add('pixel');
-      square.appendChild(squareDiv2);
+      const boardPixelColors = document.createElement('div');
+      boardPixelColors.classList.add('pixel');
+      boardColor.appendChild(boardPixelColors);
     }
-    squareDivs.appendChild(square);
+    boardPixels.appendChild(boardColor);
   }
 }
-SquarePalette();
+boardPalette();
 
-const switchClass = document.getElementById('color-palette');
-switchClass.addEventListener('click', toggleSelector);
-
+// FUNÇÃO PARA SELECIONAR COR
 function toggleSelector(event) {
   const selectedClass = document.getElementsByClassName('color selected')[0];
   selectedClass.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
+// FUNÇÃO QUE CRIA BOTÃO LIMPAR
 function createBtnClear() {
   const clearBtn = document.getElementById('section-tools');
   const createButtonClear = document.createElement('button');
@@ -71,8 +71,9 @@ function createBtnClear() {
   createButtonClear.innerHTML = 'Limpar';
   clearBtn.appendChild(createButtonClear);
 }
-createBtnClear()
+createBtnClear();
 
+// FUNÇÃO QUE CRIA INPUT
 function createInput() {
   const setFrame = document.getElementById('section-tools');
   const createInput = document.createElement('input');
@@ -85,8 +86,9 @@ function createInput() {
     alert('Board inválido!');
   }
 }
-createInput()
+createInput();
 
+// FUNÇÃO QUE CRI BOTÃO VQV
 function createBtn() {
   const vqvBtn = document.getElementById('section-tools');
   const createButton = document.createElement('button');
@@ -94,4 +96,4 @@ function createBtn() {
   createButton.innerHTML = 'VQV';
   vqvBtn.appendChild(createButton);
 }
-createBtn()
+createBtn();
