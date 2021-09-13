@@ -2,13 +2,8 @@ body {
   display: block;
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: whitesmoke;
   margin: 0;
-}
-
-main {
-  height: 70%;
-  padding: 1%;
+  background-color: rgb(173, 162, 139);
 }
 
 header {
@@ -17,15 +12,32 @@ header {
   background-color: cadetblue;
 }
 
+main {
+  padding: 1%;
+  background-color: whitesmoke;
+
+}
+
+.footer {
+  background-color: rgb(236, 158, 93);
+  bottom: 0;
+  height: 10%;
+}
+
 #color-pallete {
-  margin: 10px;
+  margin: 5px;
   border: 5px;
   display: inline;
 }
 
 #pixel-board {
   text-align: center;
-  padding: 5%;
+  padding: 2%;
+}
+
+#clear-board {
+  padding: 1px;
+  margin-top: 9px;
 }
 
 .color {

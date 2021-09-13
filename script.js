@@ -57,7 +57,7 @@ function makeGrid(gSize) {
   const localGame = document.getElementById('pixel-board');
   const sizeGB = gSize;
   for (let line = 0; line < sizeGB; line += 1) {
-    let gridLine = document.createElement('li');
+    const gridLine = document.createElement('li');
     gridLine.className = 'ul-pixel-line';
     localGame.appendChild(gridLine);
     for (let bloc = 0; bloc < sizeGB; bloc += 1) {
@@ -72,8 +72,17 @@ function makeGrid(gSize) {
 }
 
 function rmvGrid() {
-  const alvo = document.querySelector('#pixel-board');
-  alvo.parentNode.removeChild(alvo);
+  const nodeSize = document.querySelectorAll('.ul-pixel-line');
+  for (let pas = 0; pas < nodeSize.length; pas += 1) {
+    const lineAtual = nodeSize;
+    for (let del = 0; del < lineAtual.length; del += 1) {
+      const kill = lineAtual[del];
+      lineAtual.removeChild(kill);
+    }
+    const nodePhater = document.querySelector('#pixel-board');
+    const nodeInsistente = document.querySelector('.ul-pixel-line');
+    nodePhater.removeChild(nodeInsistente);
+  }
 }
 
 function newGrid(num) {
