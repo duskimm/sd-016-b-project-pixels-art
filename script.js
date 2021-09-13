@@ -58,46 +58,22 @@ buttonClear.addEventListener('click', () => {
 }
 clearBoard();
 
-// input e botao para aumentar o quadro de pintura
-
-/* const input = document.getElementById('board-size');
-
+// input e botao para aumentar o quadro de pintura:
+const input = document.getElementById('board-size');
 const buttonInitial = document.getElementById('generate-board');
-
-let inputInt = 5;
-
+// numero digitado pelo usurario é adicionado ao n
 input.addEventListener('keyup',(event) => {
-  inputInt = parseInt(event.target.value,10);
+  n = parseInt(event.target.value,10);
 });
-
-function matrix () {
-  for (let i = 0; i < inputInt; i += 1) {
-    const matriz = document.getElementById('pixel-board');
-  
-    const createLine = document.createElement('div');
-  
-    createLine.className = 'line';
-  
-    matriz.appendChild(createLine);
-  }
-  const line = document.getElementsByClassName('line');
-  
-  // o loop abaixo pega cada linha e acrescenta colunas.
-  for (let i = 0; i < inputInt; i += 1) {
-    for (let j = 0; j < inputInt; j += 1) {
-      const createColumn = document.createElement('div');
-  
-      createColumn.className = 'pixel';
-  
-      line[i].appendChild(createColumn);
-    }
-  }
-}
-
+//botao que muda o tamanho do quadro de pintura caso receba um valor n
 buttonInitial.addEventListener('click', () => {
+  const myNode = document.getElementById('pixel-board');
+  while (myNode.firstChild) {
+    myNode.removeChild(myNode.lastChild);  // fonte: https://qastack.com.br/programming/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+  }
   if (input.value === '') {
     alert("Board inválido!");
   } else {
-    matrix();
+    createMatriz(n);
   }
-}); */
+});
