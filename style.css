@@ -1,6 +1,7 @@
 header {
   border: solid black 1px;
   padding: 10px;
+  color: rgb(150, 169, 187);
 }
 
 main {
@@ -13,7 +14,6 @@ main {
   display: inline-block;
   height: 30px;
   width: 30px;
-  color: white;
 }
 
 #black {
@@ -24,12 +24,12 @@ main {
   background-color: red;
 }
 
-#blue {
-  background-color: blue;
+#green {
+  background-color: green;
 }
 
-#yellow {
-  background-color: yellow;
+#blue {
+  background-color: blue;
 }
 
 #pixel-board {
@@ -49,3 +49,5 @@ main {
   display: block;
   height: 40px;
 }
+
+

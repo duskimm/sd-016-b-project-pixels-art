@@ -1,4 +1,4 @@
-//criando a matriz do quadro de pintura 5x5:
+// criando a matriz do quadro de pintura 5x5:
 let n = 5; // numero de linhas e colunas (matriz quadrada)
 function createMatriz (n) {
  // o loop abaixo cria as linhas:
@@ -10,17 +10,33 @@ function createMatriz (n) {
  }
  const line = document.getElementsByClassName('line');
  // o loop abaixo pega cada linha e acrescenta colunas:
-for (let i = 0; i < n; i += 1) {
+ for (let i = 0; i < n; i += 1) {
   for (let j = 0; j < n; j += 1) {
     const createColumn = document.createElement('div');
     createColumn.className = 'pixel';
     line[i].appendChild(createColumn);
   }
-}
+ }
 } 
 createMatriz (n);  
+/*
+// gerar cores aletorias: 
+function gerarCorRandom() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+  return `rgb(${r}, ${g}, ${b})`;   // fonte: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+}
 
-//Seleciona uma cor da paleta de cores para pintar:
+let cor1 = document.getElementById('red');
+cor1.style.backgroundColor = gerarCorRandom();
+let cor2 = document.getElementById('green');
+cor2.style.backgroundColor = gerarCorRandom();
+let cor3 = document.getElementById('blue');
+cor3.style.backgroundColor = gerarCorRandom();
+*/
+
+// Seleciona uma cor da paleta de cores para pintar:
 function selectedPaint() {
   const colorSelected = document.querySelector('#color-palette');
   colorSelected.addEventListener('click', (event) => {
@@ -70,7 +86,7 @@ input.addEventListener('keyup',(event) => {
     n = 50;
   } 
 });
-//botao que muda o tamanho do quadro de pintura caso receba um valor n
+//botao que muda o tamanho do quadro de pintura caso receba um valor n:
 buttonInitial.addEventListener('click', () => {
   const myNode = document.getElementById('pixel-board');
   while (myNode.firstChild) {
@@ -82,3 +98,4 @@ buttonInitial.addEventListener('click', () => {
     createMatriz(n);
   }
 });
+
