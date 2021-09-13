@@ -28,12 +28,23 @@ header {
   padding: 1vmax;
 }
 
+.color1 {
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  border-radius: 10%;
+  margin: 5px;
+  background-color: black;
+}
+
 .color {
   width: 40px;
   height: 40px;
   border: solid 1px black;
   display: inline-block;
   border-radius: 10%;
+  margin: 5px;
 }
 
 #color-pallete {
@@ -47,19 +58,22 @@ header {
 }
 
 #cor2 {
-  background-color: rgb(240, 6, 6);
+  background-color: Tomato;
 }
 
 #cor3 {
-  background-color: rgb(16, 19, 212);
+  background-color: Khaki;
 }
 
 #cor4 {
-  background-color: rgb(253, 249, 8);
+  background-color: PowderBlue;
 }
 
 ul {
   display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 .pixel {
@@ -67,6 +81,7 @@ ul {
   height: 38px;
   border-radius: 10%;
   background-color: white;
-  border: solid 1px black;
+  border: solid 1px rgba(109, 189, 162, 0.808);
   display: inline-block;
+  margin: 1px 3px;
 }
