@@ -64,6 +64,11 @@ const buttonInitial = document.getElementById('generate-board');
 // numero digitado pelo usurario é adicionado ao n
 input.addEventListener('keyup',(event) => {
   n = parseInt(event.target.value,10);
+  if (n < 5) {
+    n = 5;
+  } else if ( n > 50) {
+    n = 50;
+  } 
 });
 //botao que muda o tamanho do quadro de pintura caso receba um valor n
 buttonInitial.addEventListener('click', () => {
