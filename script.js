@@ -6,6 +6,7 @@ createColorPalette();
 createRows();
 createColumns();
 blackColorSelected();
+clickColor();
 
 function createColorPalette() {
   const colors = ['black', 'yellow', 'red', 'blue'];
@@ -19,7 +20,7 @@ function createColorPalette() {
     }
 }
 
-function createRows() {
+function createRows() { 
   let recoveryDivPixelB = document.getElementById('pixel-board');
   for(let index = 0; index < rows; index += 1) {  //cria as linhas
     let divRow = document.createElement('div');
@@ -29,10 +30,10 @@ function createRows() {
   }
 }
 
- function createColumns() {
-  let recoveryDivPixelB = document.getElementById('pixel-board');
-  for(let index = 0; index < rows; index += 1) {
-      for(let index2 = 0; index2 < (columns -1); index2 +=1 ) { // o columns -1 é usado pq a primeira linha já foi criada na função anterior
+function createColumns() {
+    let recoveryDivPixelB = document.getElementById('pixel-board');
+    for(let index = 0; index < rows; index += 1) {
+        for(let index2 = 0; index2 < (columns -1); index2 +=1 ) { // o columns -1 é usado pq a primeira linha já foi criada na função anterior
         let divColumn = document.createElement('div');
         divColumn.className = 'pixel'
         divColumn.style.backgroundColor = 'white';
@@ -41,9 +42,36 @@ function createRows() {
 }
 }
 
- function blackColorSelected() {
+ function blackColorSelected() { // Requisito 6
     let recoveryDivColor = document.querySelector('.color');
     recoveryDivColor.classList.add('selected');
+   // recoveryDivColor.addEventListener('click',alertEvent)
     // console.log(recoveryDivColor);
  }
+
+ function changeColorSelected () {
+  alert("Está clicando!"); // Essa função meio que repete a próxima por conta de eu não tá conseguindo criar a função após o 'click'
+  let colorSelected = document.getElementsByClassName('color');
+    
+  for(let index = 0; index < colorSelected.length; index += 1) {
+    let selectedColor = colorSelected[index];
+    selectedColor.classList.remove('selected'); // mesmo que retira ele vai adicionar com event.target
+  }
+    event.target.classList.add('selected'); // adiciona elemento naquele que foi clicado
+  }
+
+function clickColor() { // Requisito 7
+    let colorSelected = document.getElementsByClassName('color');
+    
+    for(let index = 0; index < colorSelected.length; index += 1) {
+      let selectedColor = colorSelected[index];
+      selectedColor.addEventListener('click', changeColorSelected); // dando erro pra criar outra função aqui
+    }
 }
+
+function paintPixel() {
+  
+}
+
+}
+
