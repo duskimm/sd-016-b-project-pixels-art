@@ -15,11 +15,11 @@ h1 {
 }
 
 .black {
-background-color: black;
+  background-color: black;
 }
 
 .black:hover {
-background-color: rgb(41, 37, 37);
+  background-color: rgb(41, 37, 37);
 }
 
 /* .red {
