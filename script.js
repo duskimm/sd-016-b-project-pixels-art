@@ -19,7 +19,8 @@ pixelBoard.addEventListener('click', (event) => {
   if (event.target.classList.contains('pixel')) {
     const selected = document.querySelector('.selected');
     const selectedColor = getComputedStyle(selected).backgroundColor;
-    event.target.style.backgroundColor = selectedColor;
+    const pixel = event.target;
+    pixel.style.backgroundColor = selectedColor;
   }
 });
 
@@ -34,41 +35,43 @@ clearBoardButton.addEventListener('click', () => {
   }
 });
 
-// Requisito 10
+// Requisito 10 e 11
+function boardMaker(input) {
+  // const pixelBoard = document.querySelector('#pixel-board');
+  pixelBoard.innerHTML = '';
+  for (let i = 0; i < input; i += 1) {
+    const line = document.createElement('div');
+    line.className = 'line';
+    for (let ind = 0; ind < input; ind += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      line.appendChild(pixel);
+    }
+    pixelBoard.appendChild(line);
+  }
+}
+
 const generateBoardButton = document.querySelector('#generate-board');
 
 generateBoardButton.addEventListener('click', () => {
   const boardSize = document.querySelector('#board-size');
   let input = boardSize.value;
-  const pixel = document.querySelectorAll('.pixel');
-
-  if (input === '') {
-    alert('Board inválido!');
-  } 
-
+  if (input === '') { alert('Board inválido!'); }
   if (input < 5) {
     input = 5;
     boardSize.value = 5;
   }
-
   if (input > 50) {
     input = 50;
     boardSize.value = 50;
   }
-
-  for (let i = 0; i < pixel.length; i += 1) {
-    pixel[i].style.width = `${input}px`;
-    pixel[i].style.height = `${input}px`;
-    pixel[i].style.backgroundColor = 'unset';
-  }
+  boardMaker(input);
 });
-
-// Requisito 11
 
 // Requisito 12
 for (let i = 1; i < color.length; i += 1) {
-  let a = Math.random() * 255;
-  let b = Math.random() * 255;
-  let c = Math.random() * 255;
+  const a = Math.random() * 255;
+  const b = Math.random() * 255;
+  const c = Math.random() * 255;
   color[i].style.backgroundColor = `rgb(${a}, ${b}, ${c})`;
 }
