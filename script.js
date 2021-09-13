@@ -66,3 +66,18 @@ function createSelectedOff() {
   });
 }
 createSelectedOff();
+
+document.onload = function startColor() {
+  const initialColor = document.querySelector('.color');
+  initialColor[0].classList.add('selected');
+};
+// 8. add quadro
+function createPixelPaint() {
+  const pixelPaint = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelPaint.length; index += 1) {
+    pixelPaint[index].addEventListener('click', function() {
+     const SetColorPaint = document.querySelector('.selected');
+     pixelPaint[index].style.backgroundColor = SetColorPaint.style.backgroundColor;})
+  }
+}
+createPixelPaint();
