@@ -1,15 +1,29 @@
 * {
-  font-family: ubuntu;
+  font-family: Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-  
 }
+
+body {
+  background-color: rgb(40, 50, 60);
+}
+
 main {
+  padding: 20px;
   margin: 0 20px;
 }
 
+section {
+  margin: 15px 0;
+}
+
+#color-palette {
+  text-align: center;
+}
+
+
 #container-title {
-  background-color: rgb(16, 159, 11);
+  background-color: rgb(160, 159, 101);
   height: 5em;
   margin-bottom: 10px;
   text-align: center;
@@ -34,6 +48,7 @@ main {
   font-size: 0;
   padding: 0;
   width: 210px;
+  margin: 0 auto;
 }
 
 .pixel {
@@ -43,4 +58,13 @@ main {
   height: 40px;
   padding: 0;
   width: 40px;
+}
+
+.btn-clear {
+  text-align: center;
+}
+
+#clear-board {
+  padding: 5px;
+  font-weight: 700;
 }
