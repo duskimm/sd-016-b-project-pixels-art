@@ -1,5 +1,4 @@
 const colors = document.querySelector('#color-palette');
-let actualColor = 'black';
 
 function getColor() {
   colors.addEventListener('click', (event) => {
@@ -10,3 +9,16 @@ function getColor() {
 }
 
 getColor();
+
+function setColor() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixel.length; i++) {
+    pixel[i].addEventListener('click', () => {
+      const actualColor = document.querySelector('.selected');
+      console.log(actualColor);
+      pixel[i].style.backgroundColor = window.getComputedStyle(actualColor).backgroundColor;
+    });
+  }
+}
+
+setColor();
