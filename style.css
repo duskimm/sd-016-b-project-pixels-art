@@ -5,16 +5,16 @@
     display: inline-block;
 }
  #square1{
-    background-color: black;
+    background-color: rgb(0, 0, 11);
 }
  #square2{
-    background-color: #6FD6CB;
+    background-color: rgb(111, 214, 203);
 }
  #square3{
-    background-color: #F0E948;
+    background-color: rgb(240, 233, 72);
 }
   #square4{
-    background-color: #4300F5;
+    background-color: rgb(67, 0, 245);
 }
   #pixel-board{
     width: 210px;
