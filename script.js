@@ -1,17 +1,12 @@
-const cor1 = document.querySelector('.black');
-const cor2 = document.querySelector('.lightblue');
-const cor3 = document.querySelector('.red');
-const cor4 = document.querySelector('.pink');
+const cores = document.querySelector('#color-palette');
+const cor = document.querySelectorAll('.color'); //NodeList 0-black 1-lightblue 2-red 3-pink
 
-function selecionaCor(e) {
-    e.stopPropagation();
-   const corSel = document.querySelectorAll('.color');
-   for (let i = 0; i < corSel.length; i+=1) {
-     if (corSel[i].classList.contains('selected')) {
-       corSel[i].classList.remove('selected')
-     } 
-   } e.target.classList.add('selected');
- }
- document.querySelector('#color-palette').addEventListener('click', selecionaCor);
+function selecionarCor(e) {
+  for (let i = 0; i < cor.length; i+=1)
+  if (cor[i].classList.contains('selected')){
+    cor[i].classList.remove('selected')
+  } e.target.classList.add('selected')
+}
 
- 
+cores.addEventListener('click', selecionarCor);
+
