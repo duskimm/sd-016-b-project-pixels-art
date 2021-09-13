@@ -83,17 +83,18 @@ function generateColors() {
 window.onload = function main() {
   generateColors();
   const paletaDeCores = document.querySelectorAll('.color');
+  const pixels = document.querySelectorAll('.pixel');
+  const clearButton = document.querySelector('#clear-board');
+  const generateBoardButton = document.querySelector('#generate-board');
+
   for (let i = 0; i < paletaDeCores.length; i += 1) {
     paletaDeCores[i].addEventListener('click', selectColor);
   }
   // adicionar evento para que ao clicar em um pixel ele seja preenchido com a cor selecionada
-  const pixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].addEventListener('click', paintPixel);
   }
-  const clearButton = document.querySelector('#clear-board');
   clearButton.addEventListener('click', clearBoard);
   // usuário muda o tamanho do quadro
-  const generateBoardButton = document.querySelector('#generate-board');
   generateBoardButton.addEventListener('click', generateBoard);
 };
