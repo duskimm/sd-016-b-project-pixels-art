@@ -1,27 +1,19 @@
 window.onload = function () {
-//Faz a cor preta estar selecionada ao carregar a página
     const firstColor = document.getElementById('black');
     firstColor.classList.add('selected');
 };
 
-const pink = document.getElementById('pink');
+const black = document.getElementById('black');
 const red = document.getElementById('red');
 const orange = document.getElementById('orange');
 const yellow = document.getElementById('yellow');
-const white = document.getElementById('white');
-const black = document.getElementById('black');
+const clearButton = document.getElementById('clear-board');
+
 
 const pixels = document.getElementsByClassName('pixel');
 for (const pixel of pixels) {
   pixel.addEventListener('click', colorPixel);
 }
-
-pink.addEventListener('click', selectColor);
-red.addEventListener('click', selectColor);
-orange.addEventListener('click', selectColor);
-yellow.addEventListener('click', selectColor);
-white.addEventListener('click', selectColor);
-black.addEventListener('click', selectColor);
 
 function selectColor(event) {
     const selectedColor = document.querySelector('.selected');
@@ -35,3 +27,16 @@ function colorPixel(event) {
     const pixel = event.target;
     pixel.style.backgroundColor = color;
 }
+
+function clearBoard(){
+    const paintedPixels = document.querySelectorAll('.pixel');
+    for (let i = 0; i < paintedPixels.length; i+= 1){
+        paintedPixels[i].style.backgroundColor = 'white';
+    }
+}
+
+black.addEventListener('click', selectColor);
+red.addEventListener('click', selectColor);
+orange.addEventListener('click', selectColor);
+yellow.addEventListener('click', selectColor);
+clearButton.addEventListener('click', clearBoard);
