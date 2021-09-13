@@ -1,24 +1,35 @@
 
 window.onload = function() {
-    let firstSelect = document.querySelector('.color');
+    let firstSelect = document.getElementsByClassName('color')[0];
     firstSelect.classList.add("selected");
-    colors =['black', 'red', 'orange', 'blue']
+    colors =['black'];
+
+    //https://css-tricks.com/snippets/javascript/random-hex-color/  - > Random Color
 
 
-// function createPalette (qtd) {
-//     for(let i= 0; i < qtd; i += 1) {
-//     const pixelBoard = document.querySelector('#pixel-board');
-//     const pixels = document.createElement('div');  
-//     pixels.className = 'pixel' 
-//     pixelBoard.appendChild(pixels);
-//     console.log(pixels);
-//     }
-// }
+function createPalette () {
+
+    for(let i=0; i<3; i += 1) {
+    let palette = document.querySelector('#color-palette')
+    let color = document.createElement('div')
+    var randomColor = Math.floor(Math.random()*16777).toString(16);
+    color.classList.add('color')
+    color.classList.add('a' + randomColor)
+    colors.push(randomColor);
+    color.style.backgroundColor = '#' + randomColor;
+    palette.appendChild(color)
+}
+} createPalette();
+
 
 
 function createListenersPalette(){
     for (let i=0; i<colors.length; i+=1) {
+        if (i== 0 ) {
         document.querySelector('.color.'+ colors[i]).addEventListener("click", select);
+        } else {
+        document.querySelector('.color.a'+ colors[i]).addEventListener("click", select);
+        }
     }
 } createListenersPalette();
 
@@ -36,7 +47,13 @@ function select() {
 }
 
 function paintPixel (){
-    event.target.style.backgroundColor = document.getElementsByClassName('selected')[0].className.split(' ')[1]; 
+    let color = document.getElementsByClassName('selected')[0].className.split(' ');
+    if(color[1] == 'black') {
+    event.target.style.backgroundColor = color[1];
+    } else {
+    event.target.style.backgroundColor = '#' + document.getElementsByClassName('selected')[0].className.split(' ')[1].substring(1); 
+}
+    console.log(document.getElementsByClassName('selected')[0].className.split(' ')[1]);
 }
 
 function createPixels (qtd) {
