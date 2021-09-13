@@ -34,3 +34,12 @@ window.onload = function selectColor () {
 
     }
   }
+
+  document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('color')) {
+      const selectedColor = document.querySelector('.selected');
+      selectedColor.classList.remove('selected');
+  
+      event.target.classList.add('selected');
+    }
+  }, false);
