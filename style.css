@@ -57,3 +57,19 @@ h1 {
   width: 40px;
   height: 40px;
 }
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: lime;
+}
+
+.blue {
+  background-color: blue;
+}

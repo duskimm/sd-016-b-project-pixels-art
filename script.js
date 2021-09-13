@@ -1,13 +1,13 @@
+const toPaintInBoard = document.getElementsByClassName('pixel');
 const pixelBoard = document.getElementById('pixel-board');
 const black = document.getElementById('black');
 const red = document.getElementById('red');
 const green = document.getElementById('green');
 const blue = document.getElementById('blue');
-let pixels;
 
 function createBoard(grids) {
   for (let index = 1; index <= grids; index += 1) {
-    pixels = document.createElement('div');
+    const pixels = document.createElement('div');
     pixels.classList.add('pixel');
     pixelBoard.appendChild(pixels);
   }
@@ -15,13 +15,26 @@ function createBoard(grids) {
 
 createBoard(25);
 
-function test(event) {
-  const x = document.querySelector('.selected');
-  x.classList.remove('selected');
+function addSelected(event) {
+  const select = document.querySelector('.selected');
+  select.classList.remove('selected');
   event.target.classList.add('selected');
 }
 
-black.addEventListener('click', test);
-red.addEventListener('click', test);
-green.addEventListener('click', test);
-blue.addEventListener('click', test);
+black.addEventListener('click', addSelected);
+red.addEventListener('click', addSelected);
+green.addEventListener('click', addSelected);
+blue.addEventListener('click', addSelected);
+
+// Referencias do getAttribute nesses videos https://youtu.be/UubFxrc0-kw , https://youtu.be/UftSB4DaRU4
+function toPaintBoard(event) {
+  const paint = document.querySelector('.selected').getAttribute('id');
+  const toPaint = event.target;
+  toPaint.classList.remove(...toPaint.classList);
+  toPaint.classList.add('pixel');
+  toPaint.classList.add(paint);
+}
+
+for (const index of toPaintInBoard) {
+  index.addEventListener('click', toPaintBoard);
+}
