@@ -20,7 +20,7 @@ function colorPalette() {
   const quantityColor = 4;
   for (let paletteIdx = 0; paletteIdx < quantityColor; paletteIdx += 1) {
     const palette = document.createElement('div');
-    palette.className = 'color';
+    palette.classList.add('color');
     colors.appendChild(palette);
   }
 }
@@ -41,14 +41,57 @@ randomColor();
 
 // Função que cria o quadro
 function SquarePalette() {
-  const lines = 5;
   const squareDivs = document.getElementById('pixel-board');
+  const lines = 5;
   for (let lineIdx = 0; lineIdx < lines; lineIdx += 1) {
+    const square = document.createElement('div');
     for (let columnsIdx = 1; columnsIdx <= lines; columnsIdx += 1) {
-      const square = document.createElement('div');
-      square.className = 'pixel';
-      squareDivs.appendChild(square);
+      const squareDiv2 = document.createElement('div');
+      squareDiv2.classList.add('pixel');
+      square.appendChild(squareDiv2);
     }
+    squareDivs.appendChild(square);
   }
 }
 SquarePalette();
+
+const switchClass = document.getElementById('color-palette');
+switchClass.addEventListener('click', toggleSelector);
+
+function toggleSelector(event) {
+  const selectedClass = document.getElementsByClassName('color selected')[0];
+  selectedClass.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+function createBtnClear() {
+  const clearBtn = document.getElementById('section-tools');
+  const createButtonClear = document.createElement('button');
+  createButtonClear.id = 'clear-board';
+  createButtonClear.innerHTML = 'Limpar';
+  clearBtn.appendChild(createButtonClear);
+}
+createBtnClear()
+
+function createInput() {
+  const setFrame = document.getElementById('section-tools');
+  const createInput = document.createElement('input');
+  createInput.id = 'board-size';
+  createInput.type = 'number';
+  createInput.min = 1;
+  createInput.max = 50;
+  setFrame.appendChild(createInput);
+  if (createInput.min < 0) {
+    alert('Board inválido!');
+  }
+}
+createInput()
+
+function createBtn() {
+  const vqvBtn = document.getElementById('section-tools');
+  const createButton = document.createElement('button');
+  createButton.id = 'generate-board';
+  createButton.innerHTML = 'VQV';
+  vqvBtn.appendChild(createButton);
+}
+createBtn()

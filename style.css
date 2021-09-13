@@ -47,8 +47,7 @@ section {
 #pixel-board {
   font-size: 0;
   padding: 0;
-  width: 210px;
-  margin: 0 auto;
+  text-align: center;
 }
 
 .pixel {
@@ -62,9 +61,20 @@ section {
 
 .btn-clear {
   text-align: center;
+  
 }
 
-#clear-board {
+#section-tools {
+  text-align: center;
+}
+
+#board-size {
+  margin: 0 15px;
+  width: 50px;
+}
+
+#clear-board, #generate-board {
   padding: 5px;
+  border-radius: 20px;
   font-weight: 700;
 }
