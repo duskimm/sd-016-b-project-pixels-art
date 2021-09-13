@@ -47,32 +47,42 @@ function createPixelColumns(line) {
   }
 }
 
+createPixelColumns(5);
+
 function generator() {
   const innerHtmlPixelBoard = document.getElementById('pixel-board');
   const input = document.getElementById('board-size');
   if (input.value <= 0) {
-    innerHtmlPixelBoard.innerHTML ='';
-    const lines = 5;
-    createPixelColumns(lines);
+    innerHtmlPixelBoard.innerHTML = '';
+    createPixelColumns(5);
   } else {
-    innerHtmlPixelBoard.innerHTML ='';
+    innerHtmlPixelBoard.innerHTML = '';
     lines = parseInt(input.value);
     createPixelColumns(lines);
   }
 }
 
 const submitButton = document.getElementById('generate-board');
-submitButton.addEventListener('click', generator());
+submitButton.addEventListener('click', generator);
 const input = document.getElementById('board-size');
 
 // Pintando o quadro
+function changeColor(event) {
+  const seletorQueryId = document.querySelector('.selected').id;
+  event.target.style.backgroundColor = seletorQueryId;
+}
+let pixelSelector2 = document.getElementsByClassName('pixel');
+for (let index = 0; index < pixelSelector2.length; index += 1) {
+  pixelSelector2[index].addEventListener('click', changeColor);
+}
 
 // resetando a cor do quadro
 function resetColor() {
-  let pixelboardSelector = document.querySelectorAll('.pixel');
+  const pixelboardSelector = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixelboardSelector.length; index += 1) {
     pixelboardSelector[index].style.backgroundColor = 'white';
   }
 }
 
-let resetElement = document.getElementById('clear-board');
+const resetElement = document.getElementById('clear-board');
+resetElement.addEventListener('click', resetColor);
