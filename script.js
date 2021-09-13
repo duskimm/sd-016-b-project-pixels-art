@@ -16,7 +16,7 @@ function selectColor() {
   }
 }
 
-function selectAleatoreColor() {
+function randomColor() {
   const colorPalette = ['Crimson', 'Tomato', 'Khaki', 'Moccasin', 'teal', 'Lavender', 'PowderBlue'];
   const redColors = document.querySelectorAll('.randomColor');
   for (let loop = 0; loop < redColors.length; loop += 1) {
@@ -24,7 +24,7 @@ function selectAleatoreColor() {
     redColors[loop].style.backgroundColor = `${colorPalette[corAtual]}`;
   }
 }
-selectAleatoreColor();
+randomColor();
 
 selectColor();
 
@@ -91,11 +91,20 @@ function newGrid(num) {
   makeGrid(size);
 }
 
+function makeImputSize() {
+  const loc = document.querySelector('#inputs');
+  const impt = document.createElement('input');
+  impt.id = 'board-size'; impt.className = 'imputes';
+  impt.type = 'imput'; impt.placeholder = 'Insira o tamanho da grid';
+  impt.maxLength = '2';
+  loc.appendChild(impt);
+}
+
 function maxNum(numSize) {
-  const num = numSize;
-  if (num < 0) {
-    alert('Board inválido!');
-    return;
+  let num = numSize;
+  if (num < 5) {
+    num = 5;
+    newGrid(num);
   }
   if (num > 50) {
     alert('Board inválido!');
@@ -104,22 +113,23 @@ function maxNum(numSize) {
   newGrid(num);
 }
 
+function validImput(imputn) {
+  let numVBalid = imputn;
+  if (numVBalid === '') {
+    alert('Board inválido!');
+    return;
+  }
+  if (numVBalid < 5) {
+    numVBalid = 5;
+    alert('O menor valor permitido é 5!');
+    return maxNum(numVBalid);
+  }
+  return maxNum(numVBalid);
+}
+
 function numImput() {
   const imptNUm = document.querySelector('#board-size').value;
-  return imptNUm;
-}
-
-function makeImputSize() {
-  const loc = document.querySelector('#inputs');
-  const impt = document.createElement('input');
-  impt.id = 'board-size'; impt.className = 'imputes';
-  impt.type = 'imput'; impt.placeholder = 'Insira o tamanho da grid';
-  loc.appendChild(impt);
-}
-
-function instancNew() {
-  const size = numImput();
-  maxNum(size);
+  return validImput(imptNUm);
 }
 
 makeImputSize();
@@ -131,7 +141,7 @@ function makeBtnNumGrid() {
   btnVQV.innerText = 'VQV';
   btnVQV.setAttribute('type', 'button', 'class', 'impurus');
   locateBtn.appendChild(btnVQV);
-  btnVQV.addEventListener('click', instancNew);
+  btnVQV.addEventListener('click', numImput);
 }
 
 makeBtnNumGrid();
