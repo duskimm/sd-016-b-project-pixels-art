@@ -5,15 +5,15 @@ function ramdomColors() {
   const otherColors = Math.floor(Math.random() * 255);
   const otherColors1 = Math.floor(Math.random() * 255);
   const otherColors2 = Math.floor(Math.random() * 255);
-  const paletteColor = `rgb(${otherColors}, ${otherColors1}, ${otherColors2})`;
+  const palleteColor = `rgb(${otherColors}, ${otherColors1}, ${otherColors2})`;
 
-  return paletteColor;
+  return palleteColor;
 }
 
 function colorAtribution() {
   const deposit = document.querySelectorAll('.color:not(:first-child)');
-  for (let index = 0; index < deposit.length; index += 1) {
-    deposit[index].style.backgroundColor = ramdomColors();
+  for (const color of deposit) {
+    color.style.backgroundColor = ramdomColors();
   }
 }
 colorAtribution();
@@ -81,18 +81,19 @@ function colorSpill() {
   const pixels = document.querySelectorAll('.pixel');
   const colors = document.querySelectorAll('.color');
 
-  for (let index = 0; index < colors.length; index += 1) {
-    colors[index].addEventListener('click', (event) => {
+  for (const color of colors) {
+    color.addEventListener('click', (event) => {
       const pointedColor = document.querySelector('.selected');
       if (pointedColor !== null) {
         pointedColor.classList.remove('selected');
-      } event.target.classList.add('selected');
+      }
+      event.target.classList.add('selected');
     });
   }
-  for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].addEventListener('click', (e) => {
+  for (const eachPixel of pixels) {
+    eachPixel.addEventListener('click', (event) => {
       const selectedColor = document.querySelector('.selected');
-      e.target.style.backgroundColor = window.getComputedStyle(selectedColor).backgroundColor;
+      event.target.style.backgroundColor = window.getComputedStyle(selectedColor).backgroundColor;
     });
   }
 }
@@ -116,8 +117,8 @@ function clearButtonEvent() {
 
   btnActionClean.addEventListener('click', () => {
     const pixelBoard = document.querySelectorAll('.pixel');
-    for (let index = 0; index < pixelBoard.length; index += 0) {
-      pixelBoard[index].style.backgroundColor = 'white';
+    for (const pixels of pixelBoard) {
+      pixels.style.backgroundColor = 'white';
     }
   });
 }
