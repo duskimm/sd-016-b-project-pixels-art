@@ -91,7 +91,7 @@ function pintarOpixelselecionado(event){
     
     for (let i = 0; i < quadroDepixels.length; i+=1){
         let corSelecionada = document.querySelector(".selected");
-        event.target.style.backgroundColor = "black"
+        event.target.style.backgroundColor = corSelecionada.style.backgroundColor
 }
 }
 
