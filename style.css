@@ -4,7 +4,7 @@ h1 {
   width: auto;
 }
 
-#pixel-board {
+.board-pixel {
   height: 72px;
 }
 
@@ -20,6 +20,10 @@ h1 {
 
 .black:hover {
   background-color: rgb(41, 37, 37);
+}
+
+.pixel {
+
 }
 
 /* .red {
