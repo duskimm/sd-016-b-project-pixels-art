@@ -1,0 +1,21 @@
+#title {}
+
+#color-palette{}
+
+.color{border: black solid 1px;}
+
+#pink{background-color: pink;
+padding: 5px;}
+
+#brown{background-color: brown;}
+
+#black{background-color: black;}
+
+#purple{background-color: purple;}
+
+#pixel-board{width: 25px;
+height:25px;
+background-color: white;}
+
+.pixel{border: 1px black ;
+width: 40px; height: 40px;}
