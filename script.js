@@ -67,7 +67,7 @@ boardGen.addEventListener('click', () => {
     window.alert('Board Inválido!');
   } else if (inputN < 5) {
     inputN = 5;
-    addPixel(inputN = 5);
+    addPixel(inputN);
   } else if (inputN > 50) {
     inputN = 50;
     addPixel(inputN);
