@@ -32,6 +32,8 @@ pixelFrame.addEventListener('click', changeColor);
 const botao = document.getElementById('clear-board');
 const pixel = document.getElementsByClassName('pixel');
 
+// Créditos ao Hugo Daniel.
+
 botao.addEventListener('click', () => {
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
