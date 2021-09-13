@@ -12,8 +12,8 @@ function ramdomColors() {
 
 function colorAtribution() {
   const deposit = document.querySelectorAll('.color:not(:first-child)');
-  for (const color of deposit) {
-    color.style.backgroundColor = ramdomColors();
+  for (let index = 0; index < deposit.length; index += 1) {
+    deposit[index].style.backgroundColor = ramdomColors();
   }
 }
 colorAtribution();
@@ -81,8 +81,8 @@ function colorSpill() {
   const pixels = document.querySelectorAll('.pixel');
   const colors = document.querySelectorAll('.color');
 
-  for (const color of colors) {
-    color.addEventListener('click', (event) => {
+  for (let index = 0; index < colors.length; index += 1) {
+    colors[index].addEventListener('click', (event) => {
       const pointedColor = document.querySelector('.selected');
       if (pointedColor !== null) {
         pointedColor.classList.remove('selected');
@@ -90,10 +90,10 @@ function colorSpill() {
       event.target.classList.add('selected');
     });
   }
-  for (const eachPixel of pixels) {
-    eachPixel.addEventListener('click', (event) => {
+  for (let index = 0; index < pixels.length; index += 0) {
+    pixels[index].addEventListener('click', (e) => {
       const selectedColor = document.querySelector('.selected');
-      event.target.style.backgroundColor = window.getComputedStyle(selectedColor).backgroundColor;
+      e.target.style.backgroundColor = window.getComputedStyle(selectedColor).backgroundColor;
     });
   }
 }
@@ -117,8 +117,8 @@ function clearButtonEvent() {
 
   btnActionClean.addEventListener('click', () => {
     const pixelBoard = document.querySelectorAll('.pixel');
-    for (const pixels of pixelBoard) {
-      pixels.style.backgroundColor = 'white';
+    for (let index = 0; index < pixelBoard.length; index += 0) {
+      pixelBoard[index].style.backgroundColor = 'white';
     }
   });
 }
