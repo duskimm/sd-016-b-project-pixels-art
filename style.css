@@ -18,6 +18,13 @@ main {
 
 }
 
+.imputes {
+  margin: 2px;
+  padding: 1px;
+  border: solid teal 0.6px;
+  border-radius: 4px;
+}
+
 .footer {
   background-color: rgb(236, 158, 93);
   bottom: 0;

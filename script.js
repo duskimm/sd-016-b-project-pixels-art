@@ -79,10 +79,10 @@ function rmvGrid() {
       const kill = lineAtual[del];
       lineAtual.removeChild(kill);
     }
-    const nodePhater = document.querySelector('#pixel-board');
-    const nodeInsistente = document.querySelector('.ul-pixel-line');
-    nodePhater.removeChild(nodeInsistente);
   }
+  const nodePhater = document.querySelector('#pixel-board');
+  const nodeInsistente = document.querySelector('.ul-pixel-line');
+  nodePhater.removeChild(nodeInsistente);
 }
 
 function newGrid(num) {
@@ -106,15 +106,20 @@ function maxNum(numSize) {
 
 function numImput() {
   const imptNUm = document.querySelector('#board-size').value;
-  maxNum(imptNUm);
+  return imptNUm;
 }
 
 function makeImputSize() {
   const loc = document.querySelector('#inputs');
   const impt = document.createElement('input');
-  impt.id = 'board-size';
-  impt.setAttribute('type', 'imput');
+  impt.id = 'board-size'; impt.className = 'imputes';
+  impt.type = 'imput'; impt.placeholder = 'Insira o tamanho da grid';
   loc.appendChild(impt);
+}
+
+function instancNew() {
+  const size = numImput();
+  maxNum(size);
 }
 
 makeImputSize();
@@ -124,9 +129,9 @@ function makeBtnNumGrid() {
   const btnVQV = document.createElement('button');
   btnVQV.id = 'generate-board';
   btnVQV.innerText = 'VQV';
-  btnVQV.setAttribute('type', 'button');
+  btnVQV.setAttribute('type', 'button', 'class', 'impurus');
   locateBtn.appendChild(btnVQV);
-  btnVQV.addEventListener('click', numImput);
+  btnVQV.addEventListener('click', instancNew);
 }
 
 makeBtnNumGrid();
