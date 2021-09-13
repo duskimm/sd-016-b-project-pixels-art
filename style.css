@@ -29,8 +29,3 @@
   display: inline-block;
   background-color: white;
 }
-
-.pixel1 {
-  display: block;
-  margin-right: window.screen.width - 40px;
-}

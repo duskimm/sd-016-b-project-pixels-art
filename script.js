@@ -1,5 +1,4 @@
 let printColor = 'black';
-let color = [];
 
 //chama cada pixel para uma let e add funcao de botao
 function CreatBoardButton() {
@@ -24,11 +23,25 @@ function eraseBoard() {
   }
 }
 
+//indica o tamanho da board
+function UserBoard() {
+  let entrada = document.querySelector('#board-size').value;
+  azul = entrada;
+  if(azul == ""){
+    alert("Board inválido!");
+    azul = 5;
+  }else if(azul < 5) {
+    azul = 5;
+  }else if(azul > 50){
+    azul = 50
+  }
+  bordCreator (azul);
+}
+
 //cria a pixel-board de acordo com o tamanho indicado
-function bordCreator() {
+function bordCreator(tamanho) {
   pixel = [];
   eraseBoard();
-  let tamanho = 5;
   for (let index = 0; index < tamanho; index += 1) {
     for (let indice = 0; indice < tamanho; indice += 1) {
       let div = document.createElement("div");
@@ -53,7 +66,7 @@ function print (event) {
   event.target.style.backgroundColor = printColor;
 }
 
-bordCreator();
+bordCreator(5);
 
 window.onload = function() {  
 //faz com que a cor black seja selecionada
@@ -70,8 +83,9 @@ setColor();
     buttonClean.addEventListener('click', clearBoard);
     //botao para carregar o board
     let buttonUser = document.querySelector('#generate-board');
-    buttonUser.addEventListener('click', bordCreator);
+    buttonUser.addEventListener('click', UserBoard);
     //chama cada cor para uma let, adiciona evento nas cores, caso clicke chama uma função que marca ela e desmarca as outras cores
+    let color = [];
     for(let index = 0; index < document.getElementsByClassName('color').length; index += 1) {
       color.push(document.getElementsByClassName('color')[index]);
       color[index].addEventListener('click', selectColor);
