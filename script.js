@@ -23,6 +23,16 @@ function grid(baseGrider) {
   }
 }
 
+function remover(toRemove) {
+  for (let index = 0; index < toRemove.length; index += 1) {
+    toRemove[index].remove();
+  }
+  const removePixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < removePixels.length; i += 1) {
+    removePixels[i].remove();
+  }
+}
+
 function inputButton() {
   input.type = 'number';
   input.setAttribute('min', 1);
@@ -36,10 +46,8 @@ function inputButton() {
     if (input.value === '') {
       alert('Board inválido!');
     }
-    const remove = document.querySelectorAll('.pixel');
-    for (let index = 0; index < remove.length; index += 1) {
-      remove[index].remove();
-    }
+    const remove = document.querySelectorAll('.gridRow');
+    remover(remove);
     grid(input.value);
   });
 }
