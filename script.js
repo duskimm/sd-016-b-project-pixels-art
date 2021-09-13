@@ -2,6 +2,7 @@ const mainContent = document.querySelector('.main-content');
 const divColorClass = document.getElementsByClassName('color');
 const pixelBox = document.getElementsByClassName('pixel');
 const getColor = document.querySelectorAll('.color');
+// const sectionColorPalette = document.querySelector('#color-palette');
 let colorTabela = 'black';
 
 function defaultSquare(boardStyle) {
@@ -9,6 +10,7 @@ function defaultSquare(boardStyle) {
   change.style.border = '1px solid black';
   change.style.width = '40px';
   change.style.height = '40px';
+  change.style.margin = '0.01px';
   change.style.padding = '15px';
   change.style.display = 'inline-block';
   change.style.backgroundColor = 'white';
@@ -29,6 +31,35 @@ function createSectionId(nameId) {
 
   return genericSection;
 }
+
+// Cria a paleta de cores
+
+// function createPaletteColors() {
+//   sectionColorPalette.appendChild(createDiv('color black selected'));
+//   sectionColorPalette.appendChild(createDiv('color red'));
+//   sectionColorPalette.appendChild(createDiv('color blue'));
+//   sectionColorPalette.appendChild(createDiv('color green'));
+// }
+
+// createPaletteColors();
+
+function aleatoryColors() {
+  const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return randomColor;
+  // Fonte para o código que gera cores aleatórias https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
+}
+
+const colorPack = document.querySelectorAll('.color');
+
+function setColorPalette() {
+  colorPack[0].style.backgroundColor = 'black';
+  for (let index = 1; index < colorPack.length; index += 1) {
+    colorPack[index].style.backgroundColor = aleatoryColors();
+  }
+  // return q;
+}
+
+setColorPalette();
 
 function buttonClear() {
   const createButtonClear = document.createElement('div');
@@ -116,8 +147,10 @@ valueBtnBoard.addEventListener('click', () => {
   if (newUserCount === '' || newUserCount === 0) {
     alert('Board inválido!');
   } else if (newUserCount < 5) {
+    alert('Valor é menor que 5');
     newUserCount = 5;
   } else if (newUserCount > 50) {
+    alert('Valor é maior que 50');
     newUserCount = 50;
   } else {
     newUserCount = parseInt(newUserCount, 10);
@@ -146,16 +179,16 @@ function changeClass(cor) {
 
 function getColorPalette(a) {
   if (a.target.className.includes('black')) {
-    colorTabela = 'black';
+    colorTabela = colorPack[0].style.backgroundColor;
     changeClass('black');
   } else if (a.target.className.includes('red')) {
-    colorTabela = 'red';
+    colorTabela = colorPack[1].style.backgroundColor; // https://eslint.org/docs/rules/prefer-destructuring
     changeClass('red');
   } else if (a.target.className.includes('blue')) {
-    colorTabela = 'blue';
+    colorTabela = colorPack[2].style.backgroundColor;
     changeClass('blue');
   } else if (a.target.className.includes('green')) {
-    colorTabela = 'green';
+    colorTabela = colorPack[3].style.backgroundColor;
     changeClass('green');
   }
   return colorTabela;
