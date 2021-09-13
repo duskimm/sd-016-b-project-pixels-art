@@ -30,18 +30,6 @@ body {
   background-color: black;
 }
 
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-}
-
 #pixel-board {
   margin-top: 25px;
   margin-left: auto;
@@ -60,24 +48,24 @@ body {
 
 #clear-board {
   display: block;
-  margin: 15px auto 5px auto;
+  margin: 15px auto 5px;
 }
 
 #buttons {
   height: 65px;
   width: 250px;
-  margin: 30px auto 30px auto;
+  margin: 30px auto;
 }
 
 #board-size {
   width: 50px;
   display: inline-block;
   height: 25px;
-  margin: 0px 10px 0 60px;
+  margin: 0 10px 0 60px;
 }
 
 #generate-board {
   display: inline-block;
   height: 30px;
-  margin: 0 0 0 0;
+  margin: 0;
 }

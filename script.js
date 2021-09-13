@@ -1,4 +1,15 @@
 const boardID = 'pixel-board';
+
+function randomColorsPalette() {
+  const colors = document.getElementsByClassName('color');
+  for (let index = 1; index < colors.length; index += 1) {
+    const random1 = Math.ceil(Math.random() * 255);
+    const random2 = Math.ceil(Math.random() * 255);
+    const random3 = Math.ceil(Math.random() * 255);
+    colors[index].style.backgroundColor = `rgb(${random1}, ${random2}, ${random3})`;
+  }
+}
+
 function createPixelBoard(numberOfPixelsPerLine) {
   const board = document.createElement('section');
   const pixelSize = 42;
@@ -137,6 +148,7 @@ function generatePixelBoard() {
 }
 
 window.onload = () => {
+  randomColorsPalette();
   createPixelBoard(5);
   createPixel(25);
   clearButton();
