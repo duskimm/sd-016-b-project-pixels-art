@@ -115,16 +115,18 @@ function mountBoard(numberBoard) {
   for (let index = 0; index < numberBoard; index += 1) {
     const sectionBoardPixel = createSectionClass('line');
     sectionPixel.appendChild(sectionBoardPixel);
-  }
 
-  for (let indexX = 0; indexX < numberBoard; indexX += 1) {
     for (let indexY = 0; indexY < numberBoard; indexY += 1) {
       const divPixel = createDiv('pixel');
-      const divFather = document.querySelectorAll('.line');
+      // const divFather = document.querySelectorAll('.line');
       defaultSquare(divPixel);
-      divFather[indexY].appendChild(divPixel);
+      sectionBoardPixel.appendChild(divPixel);
     }
   }
+
+  // for (let indexX = 0; indexX < numberBoard; indexX += 1) {
+
+  // }
 }
 
 // exclui o quadro
@@ -150,6 +152,12 @@ function insertEventSquare() {
 // testa valores < > e vazio, exclui tabela antiga,
 // monta a nova com o novo número do input e insere novamente o evento nos pixels
 
+function eventNewBoard() {
+  unMountBoard();
+  mountBoard(newUserCount);
+  insertEventSquare();
+}
+
 valueBtnBoard.addEventListener('click', () => {
   console.log('teste click newUserCount');
   newUserCount = document.querySelector('#board-size').value;
@@ -157,16 +165,16 @@ valueBtnBoard.addEventListener('click', () => {
   if (newUserCount === '' || newUserCount === 0) {
     alert('Board inválido!');
   } else if (newUserCount < 5) {
-    alert('Valor é menor que 5');
+    // alert('Valor é menor que 5');
     newUserCount = 5;
+    eventNewBoard();
   } else if (newUserCount > 50) {
-    alert('Valor é maior que 50');
+    // alert('Valor é maior que 50');
     newUserCount = 50;
+    eventNewBoard();
   } else {
     newUserCount = parseInt(newUserCount, 10);
-    unMountBoard();
-    mountBoard(newUserCount);
-    insertEventSquare();
+    eventNewBoard();
   }
 });
 
