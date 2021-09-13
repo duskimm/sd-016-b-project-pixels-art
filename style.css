@@ -36,12 +36,31 @@ h1 {
   background-color: black;
 }
 
+.btns {
+  text-align: center;
+}
+
 #clear-board {
   display: block;
   margin: 0 auto 0 auto;
   border-radius: 30%;
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+#generate-board, #board-size {
+  text-align: center;
+  margin: 20px auto 20px auto;
+  display: inline-block;
+  border-radius: 10%;
   padding: 10px;
-  font-family: 'Homemade Apple', cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+input {
+  width: 250px;
 }
 
 .container {
@@ -49,7 +68,7 @@ h1 {
   margin-right: auto;
   text-align: center;
   padding: 25px;
-  width: 85%;
+  width: 100%;
 }
 #pixel-board {
   text-align: center;

@@ -20,12 +20,12 @@ colorAtribution();
 
 // Challenge 4, 5, 6 - Function of the grid.
 
-const proportion = 5;
 const elementChild = document.querySelector('#pixel-board');
 
 function creationtLines(numberOfBoxes) {
   for (let index = 0; index < numberOfBoxes; index += 1) {
     const lines = document.createElement('div');
+    lines.className = 'line';
     elementChild.appendChild(lines);
     for (let lineColumn = 0; lineColumn < numberOfBoxes; lineColumn += 1) {
       const column = document.createElement('div');
@@ -34,7 +34,46 @@ function creationtLines(numberOfBoxes) {
     }
   }
 }
-creationtLines(proportion);
+
+// Challenge 10
+function createInputBtn() {
+  const placeInputBtn = document.querySelector('.input');
+  const createInput = document.createElement('input');
+  const createButton = document.createElement('button');
+
+  createInput.type = 'number';
+  createInput.min = '1';
+  createInput.id = 'board-size';
+  createInput.placeholder = 'insira um número entre 5 e 50';
+  createInput.oninput = 'this.value = Math.abs(this.value)';
+
+  createButton.id = 'generate-board';
+  createButton.innerHTML = 'VQV';
+
+  placeInputBtn.appendChild(createInput);
+  placeInputBtn.appendChild(createButton);
+}
+createInputBtn();
+
+function setBoardSize() {
+  const boardValue = document.querySelector('#generate-board');
+  creationtLines(5);
+
+  boardValue.addEventListener('click', () => {
+    const getValue = document.querySelector('#board-size').value;
+    let verifyValue = getValue;
+    if (verifyValue === '') {
+      alert('Board inválido!');
+    } else if (verifyValue < 5) {
+      verifyValue = 5;
+    } else if (verifyValue > 50) {
+      verifyValue = 50;
+    }
+    elementChild.innerHTML = '';
+    creationtLines(verifyValue);
+  });
+}
+setBoardSize();
 
 // Challenge 7 and 8.
 
@@ -84,9 +123,3 @@ function clearButtonEvent() {
   });
 }
 clearButtonEvent();
-
-// window.onload = function () {
-//   const pixelBoard = document.querySelector('.pixel');
-
-//   pixelBoard.backgroundColor = 'white';
-// };
