@@ -1,18 +1,3 @@
-window.onload = function () {
-  createABoardOfPixels(5);
-  randomColorPalette();
-  const randomizerColor = document.querySelector('#randomizeColor');
-  const colorSelect = document.querySelector('#color-palette');
-  const pixelBoard = document.querySelector('#pixel-board');
-  const clearBtn = document.querySelector('#clear-board');
-  const createBtn = document.querySelector('#generate-board');
-  createBtn.addEventListener('click', changeBoardSize);
-  clearBtn.addEventListener('click', clearBoard);
-  pixelBoard.addEventListener('click', changeColor);
-  colorSelect.addEventListener('click', addClassSelected);
-  randomizerColor.addEventListener('click', randomColorPalette);
-}
-
 function createABoardOfPixels(tamanhoQuadrado) {
   const pixelBoard = document.querySelector('#pixel-board');
   for (let indexLine = 1; indexLine <= tamanhoQuadrado; indexLine += 1) {
@@ -30,14 +15,11 @@ function createABoardOfPixels(tamanhoQuadrado) {
   }
 }
 
-
 function addClassSelected(event) {
   const classSelected = document.querySelector('.selected');
   const eventTarget = event.target;
-  if (
-    eventTarget.classList.contains('selected') === false
-    && eventTarget.classList.contains('color') === true
-  ) {
+  if (eventTarget.classList.contains('selected') === false
+  && eventTarget.classList.contains('color') === true) {
     classSelected.classList.remove('selected');
     event.target.classList.add('selected');
   }
@@ -102,3 +84,17 @@ function randomColorPalette() {
   }
 }
 
+window.onload = () => {
+  createABoardOfPixels(5);
+  randomColorPalette();
+  const randomizerColor = document.querySelector('#randomizeColor');
+  const colorSelect = document.querySelector('#color-palette');
+  const pixelBoard = document.querySelector('#pixel-board');
+  const clearBtn = document.querySelector('#clear-board');
+  const createBtn = document.querySelector('#generate-board');
+  createBtn.addEventListener('click', changeBoardSize);
+  clearBtn.addEventListener('click', clearBoard);
+  pixelBoard.addEventListener('click', changeColor);
+  colorSelect.addEventListener('click', addClassSelected);
+  randomizerColor.addEventListener('click', randomColorPalette);
+};
