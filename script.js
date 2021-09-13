@@ -19,3 +19,12 @@ colorPalette.addEventListener('click', function clicker(event) {
     }
     event.target.classList.add('selected');
 })
+
+let colorSelected = "black"
+function setColorSelected (color){
+    colorSelected = color
+}
+
+function setPixelColour(pixel){
+    pixel.style.backgroundColor = colorSelected
+}
