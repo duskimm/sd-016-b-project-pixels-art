@@ -17,13 +17,14 @@ function selectColor() {
 }
 
 function randomColor() {
-  const colorPalette = ['Crimson', 'Tomato', 'Khaki', 'Moccasin', 'teal', 'Lavender', 'PowderBlue'];
+  const corPalette = ['Crimson', 'Tomato', 'Khaki', 'Moccasin', 'teal', 'Lavender', 'Blue', 'red'];
   const redColors = document.querySelectorAll('.randomColor');
   for (let loop = 0; loop < redColors.length; loop += 1) {
-    const corAtual = Math.floor(Math.random() * colorPalette.length);
-    redColors[loop].style.backgroundColor = `${colorPalette[corAtual]}`;
+    const corAtual = Math.floor(Math.random() * corPalette.length);
+    redColors[loop].style.backgroundColor = `${corPalette[corAtual]}`;
   }
 }
+
 randomColor();
 
 selectColor();
@@ -72,17 +73,8 @@ function makeGrid(gSize) {
 }
 
 function rmvGrid() {
-  const nodeSize = document.querySelectorAll('.ul-pixel-line');
-  for (let pas = 0; pas < nodeSize.length; pas += 1) {
-    const lineAtual = nodeSize;
-    for (let del = 0; del < lineAtual.length; del += 1) {
-      const kill = lineAtual[del];
-      lineAtual.removeChild(kill);
-    }
-  }
-  const nodePhater = document.querySelector('#pixel-board');
-  const nodeInsistente = document.querySelector('.ul-pixel-line');
-  nodePhater.removeChild(nodeInsistente);
+  const nodeSize = document.querySelector('#pixel-board');
+  nodeSize.innerHTML = '';
 }
 
 function newGrid(num) {
@@ -95,8 +87,9 @@ function makeImputSize() {
   const loc = document.querySelector('#inputs');
   const impt = document.createElement('input');
   impt.id = 'board-size'; impt.className = 'imputes';
-  impt.type = 'imput'; impt.placeholder = 'Insira o tamanho da grid';
-  impt.maxLength = '2';
+  impt.type = 'number'; impt.placeholder = 'Insira o tamanho da grid';
+  impt.maxLength = '2'; impt.min = '1';
+  impt.max = '50';
   loc.appendChild(impt);
 }
 
@@ -107,8 +100,8 @@ function maxNum(numSize) {
     newGrid(num);
   }
   if (num > 50) {
-    alert('Board inválido!');
-    return;
+    num = 50;
+    newGrid(num);
   }
   newGrid(num);
 }
@@ -121,7 +114,6 @@ function validImput(imputn) {
   }
   if (numVBalid < 5) {
     numVBalid = 5;
-    alert('O menor valor permitido é 5!');
     return maxNum(numVBalid);
   }
   return maxNum(numVBalid);
