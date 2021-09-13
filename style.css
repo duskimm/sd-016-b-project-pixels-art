@@ -1,13 +1,8 @@
 body {
-    text-align: center;
-}
-
-#title {
   text-align: center;
 }
 
 #color-palette {
-  text-align: center;
   height: 40px;
 }
 
@@ -35,13 +30,13 @@ body {
 }
 
 #pixel-board {
-    height: 226px;
+width: auto;
 }
 
 .pixel {
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    background-color: white;
-    border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid black;
   }
