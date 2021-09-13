@@ -1,5 +1,6 @@
 const toPaintInBoard = document.getElementsByClassName('pixel');
 const pixelBoard = document.getElementById('pixel-board');
+const eraseButton = document.querySelector('#clear-board');
 const black = document.getElementById('black');
 const red = document.getElementById('red');
 const green = document.getElementById('green');
@@ -38,3 +39,11 @@ function toPaintBoard(event) {
 for (const index of toPaintInBoard) {
   index.addEventListener('click', toPaintBoard);
 }
+
+eraseButton.addEventListener('click', function () {
+  const erase = document.getElementsByClassName('pixel');
+  for (const erased of erase) {
+    erased.classList.remove(...erased.classList);
+    erased.classList.add('pixel');
+  }
+});
