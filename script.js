@@ -98,14 +98,22 @@ function deleteElements(element) {
   node.innerHTML = '';
 }
 
+function resetBoard(num) {
+  deleteElements('#pixel-board');
+  generateBoard(num);
+}
+
 q('#generate-board').addEventListener('click', () => {
   n = q('#board-size').value;
   if (n === '') {
     alert('Board inválido!');
-  }
-  if (n !== '') {
-    deleteElements('#pixel-board');
-    n = q('#board-size').value;
-    generateBoard(n);
+  } else if (n < 5) {
+    n = 5;
+    resetBoard(n);
+  } else if (n > 50) {
+    n = 50;
+    resetBoard(n);
+  } else {
+    resetBoard(n);
   }
 });
