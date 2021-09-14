@@ -1,12 +1,29 @@
 #color-pallete {
     display: inline-block;
+    margin-left: 10px;
 }
 
 .color {
-    border:1px, solid, black;
     padding:initial;
     margin: 5px;
     width: 100px;
     height: 100px;
     display: inline-block;
+}
+
+#pixel-board {
+    display: inline-block;
+    margin-right: 385px;
+    margin-left: 5px;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.pixel {
+    padding:initial;
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+    background-color: white;
+    
 }
