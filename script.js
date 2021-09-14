@@ -34,8 +34,42 @@ function addCores() {
   const element = document.querySelector('#color-palette');
   for (let ind = 0; ind < element.children.length; ind += 1) {
     const boxColor = document.getElementById(`color${ind + 1}`);
-    console.log(boxColor);
     boxColor.style.backgroundColor = cores[ind];
   }
 }
 addCores();
+//Configurando as entradas
+const iputLine = document.getElementById('size-line').value;
+const iputColum = document.getElementById('size-colum').value;
+// Criando o Pixel Board
+function criarPixelBoard(line, colum) {
+  // Cria tabela de pixel
+  const element1 = document.getElementById('pixel-board');
+  const pLine = document.createElement('ul');
+  pLine.setAttribute('id', 'pixelLine');
+  element1.appendChild(pLine);
+  // Loop de cração dos pixels
+  for (let ind = 0; ind < line; ind += 1) {
+    // Cria linhas de pixel em branco
+    const element2 = document.getElementById('pixelLine');
+    const pColum = document.createElement('li');
+    pColum.className = 'pixelColum';
+    element2.appendChild(pColum);
+  }
+  const element3 = document.querySelectorAll('.pixelColum')
+  for (let ind = 0; ind < colum; ind += 1) {
+    // Cria colunar de pixel em branco
+    for (let ind2 = 0; ind2 < element3.length; ind2 += 1) {
+      const pBlock = document.createElement('div');
+      pBlock.className = 'pixel';
+      element3[ind].appendChild(pBlock);
+    }
+  }
+}
+// Função limpar a grid
+function limparDesenho() {}
+// Inserindo botões ao DOM
+const btnClear = document.getElementById('clear');
+btnClear.addEventListener('click', limparDesenho());
+const btnCreate = document.getElementById('create');
+btnCreate.addEventListener('click', criarPixelBoard(iputLine, iputColum));

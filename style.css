@@ -33,23 +33,41 @@ textarea {
 
 /* VARIAVEIS */
 :root {
-  --white: #ffffff;
-  --blue: #0000ff;
-  --red: #ff0000;
-  --green: #008000;
-  --yellow: #ffff00;
-  --purple: #800080;
-  --orange: #ffa500;
-  --aqua: #00ffff;
-  --black: #000000;
-  --gray: #808080;
-  --lightskyblue: #87cefa
+  --white: rgb(255, 255, 255);
+  --blue: rgb(0, 0, 255);
+  --red: rgb(255, 0, 0);
+  --green: rgb(0, 136, 0);
+  --yellow: hsl(60, 100%, 50%);
+  --purple: rgb(136, 0, 136);
+  --orange: rgb(255, 170, 85);
+  --aqua: rgb(0, 255, 255);
+  --black: rgb(0, 0, 0);
+  --gray: rgb(128, 128, 128);
+  --lightskyblue: rgb(135, 206, 250);
 }
 
 /* TAG */
+html {
+  background: rgb(0, 43, 21);
+  background: linear-gradient(180deg, rgba(0, 43, 21, 1) 2%, rgba(0, 139, 11, 1) 35%, rgba(255, 255, 255, 1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 body {
-  background-color: var(--lightskyblue);
+
   padding: 30px;
+}
+
+main {
+  background-image: url(/img/old-paper.jpg);
+  border: outset;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 10px;
 }
 
 h1 {
@@ -64,10 +82,10 @@ label {
   margin: 10px;
 }
 
-footer{
-  position:absolute;
-  bottom:0;
-  width:100%;
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 /* ID */
@@ -95,12 +113,18 @@ footer{
   text-shadow: 1px 1px var(--black);
 }
 
-#indice{
+#indice {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 0 auto;
+  flex: right;
+  margin: 0;
   max-width: 1300px;
+}
+
+#pixel-grid {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #tools {
@@ -124,11 +148,9 @@ footer{
   margin: 5px;
 }
 
-#size-line{}
+#size-line {}
 
-#size-colum{}
-
-#tool-botton {}
+#size-colum {}
 
 #color-palette {
   display: flex;
@@ -145,8 +167,10 @@ footer{
 
 #color4 {}
 
-#pixel-grid {
-  align-items: center;
+#pixel-board {
+  background-color: var(--gray);
+  border: outset;
+  border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -155,13 +179,15 @@ footer{
   transform: scale(1);
   transform-origin: center center;
 }
-#palette{
+
+#palette {
   align-self: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 200px;
 }
+
 #grid-drawing {
   display: flex;
   flex-wrap: wrap;
@@ -180,12 +206,15 @@ footer{
   list-style: none;
 }
 
-#copyright {
-}
+#copyright {}
 
 #text-copyright {
   text-align: center;
   margin: 0 auto;
+}
+
+#pixelLine {
+  list-style: none;
 }
 
 /* CLASS */
@@ -198,17 +227,18 @@ footer{
 }
 
 .color {
+  border: 1px black solid;
   border: outset;
   border-radius: 5px;
   height: 40px;
-  margin: 1px;
   width: 40px;
 }
 
-.pixel-empty {
-  border: 1px black solid;
+.pixel {
+  background-color: white;
+  border: 1px solid var(--gray);
+  border-radius: 2px;
   height: 25px;
-  margin: 1px;
   width: 25px;
 }
 
@@ -240,4 +270,10 @@ footer{
   margin: 5px;
   width: 100px;
   text-align: center;
+}
+
+.pixelColum {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
