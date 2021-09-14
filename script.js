@@ -93,6 +93,7 @@ q('#clear-board').addEventListener('click', () => {
 
 // task 10
 function deleteElements(element) {
+  // Referência para limpar um nodo usando o DOM: https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
   const node = q(element);
   node.innerHTML = '';
 }
