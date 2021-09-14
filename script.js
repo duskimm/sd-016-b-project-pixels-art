@@ -1,23 +1,22 @@
-const colors = document.getElementsByClassName('color');
+let colorOnload = document.getElementById('black');
+colorOnload.classList.add('selected');
 
-function colorSelection (whenClicked) {
+const colors = document.getElementsByClassName('color');
+function colorSelection (event) {
     for (let index = 0; index < colors.length; index += 1) {
         colors[index].classList.remove('selected');
     }
-    whenClicked.target.classList.add('selected');
+    event.target.classList.add('selected');
 }
 for (let index = 0; index < colors.length; index += 1) {
     colors[index].addEventListener('click', colorSelection);
 }
-// change pixel color:
-const pixels = document.getElementsByClassName('pixels');
-function paintPixel(whenClicked) {
-    for (let index = 0; index < pixels.length; index += 1) {
-        pixels[index].addEventListener('click', colorFill);
-    }
+// Exercicio solucionado com auxilio do Gabriel Pinheiro.
+function paintPixel (event) {
+    const color = document.querySelector('.selected');
+    event.target.style.backgroundColor = color.innerText;
 }
-function colorFill(whenClicked2) {
-    const selectedColor = document.querySelector('.selected');
-    whenClicked2.target.style.backgroundColor = selectedColor.style.backgroundColor;
+const pixels = document.getElementsByClassName('pixel');
+for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', paintPixel);
 }
-paintPixel();

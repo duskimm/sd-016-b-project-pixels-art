@@ -17,18 +17,22 @@
 
 #black {
   background-color: black;
+  font-size: 0;
 }
 
 #red {
   background-color: red;
+  font-size: 0;
 }
 
 #yellow {
   background-color: yellow;
+  font-size: 0;
 }
 
 #blue {
   background-color: blue;
+  font-size: 0;
 }
 
 main {
