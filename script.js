@@ -20,3 +20,14 @@ const pixels = document.getElementsByClassName('pixel');
 for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener('click', paintPixel);
 }
+// botão que remove as cores:
+
+function removeColors () {
+    const pixels = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixels.length; index += 1) {
+        if (pixels[index].style.backgroundColor !== 'white') {
+            pixels[index].style.backgroundColor = 'white';
+        }
+    }
+}
+document.getElementById('clear-board').addEventListener('click', removeColors);
