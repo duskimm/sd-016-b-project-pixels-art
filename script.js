@@ -1,29 +1,44 @@
 // board
-const numberPixels = 5;
-const linePixel = document.querySelectorAll('.line-pixel');
+const inputPixels = document.getElementById('board-size');
+const buttonSize = document.getElementById('generate-board')
+const linePixel = document.getElementsByClassName('line-pixel');
 const boardElements = document.getElementById('pixel-board');
 
-function createPixel(classe) {
+function createClass(classe) {
   const createDiv = document.createElement('div');
   createDiv.className = classe;
   return createDiv;
 }
 
-function createLine(line) {
-  for (let index = 1; index <= numberPixels; index += 1) {
-    const pixel = createPixel('pixel');
+function createLine() {
+  for (let index = 1; index <= parseInt(inputPixels.value); index += 1) {
+    const lineDiv = createClass('line-pixel');
+    boardElements.appendChild(lineDiv);
+    console.log('chamou coluna ??');
+  }
+}
+
+function createPixels(line) {
+  for (let index = 1; index <= parseInt(inputPixels.value); index += 1) {
+    const pixel = createClass('pixel');
     line.appendChild(pixel);
   }
 }
 
 function creatBoard() {
-  for (let index = 0; index < linePixel.length; index += 1) {
-    createLine(linePixel[index]);
+  if (inputPixels.value === '') {
+    alert('Board inválido!')
+  } else if (boardElements.children.length === 0) {
+    createLine();
+    for (let index = 0; index < linePixel.length; index += 1) {
+      createPixels(linePixel[index]);
+      console.log('chamou linha?');
+    }
   }
-  return linePixel;
 }
 
-creatBoard();
+buttonSize.addEventListener('click', creatBoard);
+
 
 // button clear board
 const clearboard = document.getElementById('clear-board');
