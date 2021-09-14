@@ -13,6 +13,7 @@ window.onload= function () {
             colorsPalette.appendChild(color);
         }
     }
+    
     createColors (colors);
 
     // Requisito 4
@@ -21,7 +22,7 @@ window.onload= function () {
     let pixelBoard = document.getElementById("pixel-board");
 
     function generatePixelBoard (size) {
-        for (i = 1; i = size; i++ ) {
+        for (let i = 1; i <= size; i++ ) {
             let pixel = document.createElement("div");
             pixel.className = "pixel";
             pixelBoard.appendChild(pixel);
@@ -30,4 +31,18 @@ window.onload= function () {
 
     generatePixelBoard(numberOfPixelBoard);
 
+    // Requisito 5 cumprido no style.css
+
+    // Requisito 6
+
+    function selectColor (color) {
+        let listOfColors = document.getElementsByClassName("color");
+        for (i = 0; i < listOfColors.length; i ++) {
+            if (listOfColors[i].style.backgroundColor === color) {
+                listOfColors[i].classList.add("selected");
+            }
+        }
+    }
+    
+    selectColor("black");
 }
