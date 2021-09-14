@@ -42,5 +42,6 @@
 
 #clear-board {
     display: flex;
+    margin: 10px;
 }
 
