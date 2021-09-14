@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 0,
-    "start": "2021-09-10T21:31:33.429Z",
-    "end": "2021-09-10T21:31:36.178Z",
-    "duration": 2749,
+    "start": "2021-09-10T22:42:36.136Z",
+    "end": "2021-09-10T22:42:39.099Z",
+    "duration": 2963,
     "testsRegistered": 41,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2d60df78-82b8-4dd7-919f-252b38298e65",
+      "uuid": "5dcc1411-f182-4e79-a578-1eb25bd195ce",
       "title": "",
       "fullFile": "cypress/integration/project.spec.js",
       "file": "cypress/integration/project.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b428371e-f50f-4101-9787-7ab1eaf9dbf8",
+          "uuid": "d589b82a-ef19-4f63-a056-de4349d15f8f",
           "title": "1 - Adicione à página o título \"Paleta de Cores\".",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Verifica se contém um elemento `h1` com o id `title` com o título correto",
               "fullTitle": "1 - Adicione à página o título \"Paleta de Cores\". Verifica se contém um elemento `h1` com o id `title` com o título correto",
               "timedOut": null,
-              "duration": 273,
+              "duration": 294,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -47,12 +47,12 @@
               "context": null,
               "code": "cy.get('h1#title').should('contain.text', 'Paleta de Cores');",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '1 - Adicione à página o tít...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '1 - Adicione à página o tít...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '1 - Adicione à página o tít...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '1 - Adicione à página o tít...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "2f3c7b16-ea24-492c-9668-085c637ca690",
-              "parentUUID": "b428371e-f50f-4101-9787-7ab1eaf9dbf8",
+              "uuid": "5e965a0f-eb8b-4166-8079-f80f4c7f03fd",
+              "parentUUID": "d589b82a-ef19-4f63-a056-de4349d15f8f",
               "isHook": false,
               "skipped": false
             }
@@ -60,17 +60,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "2f3c7b16-ea24-492c-9668-085c637ca690"
+            "5e965a0f-eb8b-4166-8079-f80f4c7f03fd"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 273,
+          "duration": 294,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "9e9451b9-d336-4adf-96e7-fa9a768d8491",
+          "uuid": "f88de034-3884-417b-b519-7ddff6a96bb6",
           "title": "2 - Adicione à página uma paleta de quatro cores distintas.",
           "fullFile": "",
           "file": "",
@@ -81,7 +81,7 @@
               "title": "A paleta de cores deve ser um elemento com `id` denominado `color-palette`",
               "fullTitle": "2 - Adicione à página uma paleta de quatro cores distintas. A paleta de cores deve ser um elemento com `id` denominado `color-palette`",
               "timedOut": null,
-              "duration": 219,
+              "duration": 224,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -90,12 +90,12 @@
               "context": null,
               "code": "cy.get('#color-palette').should('be.visible');\ncy.get('#color-palette').children('.color');",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '2 - Adicione à página uma p...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '2 - Adicione à página uma p...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '2 - Adicione à página uma p...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '2 - Adicione à página uma p...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "09503ec7-4d4d-4486-8169-c6b496d5e197",
-              "parentUUID": "9e9451b9-d336-4adf-96e7-fa9a768d8491",
+              "uuid": "09028225-2f5f-472a-98e7-d83dd023dc01",
+              "parentUUID": "f88de034-3884-417b-b519-7ddff6a96bb6",
               "isHook": false,
               "skipped": false
             },
@@ -112,8 +112,8 @@
               "context": null,
               "code": "cy.get('.color').should('have.length', 4).then(function (colors) {\n  for (var i = 0; i < colors.length; i++) {\n    cy.wrap(colors[i]).should('be.visible');\n  }\n});",
               "err": {},
-              "uuid": "cdb8a923-bbda-4875-8e3e-a8c0723c9dfd",
-              "parentUUID": "9e9451b9-d336-4adf-96e7-fa9a768d8491",
+              "uuid": "90821dcf-a2cd-4ed6-a15a-85eb506bbd08",
+              "parentUUID": "f88de034-3884-417b-b519-7ddff6a96bb6",
               "isHook": false,
               "skipped": true
             },
@@ -130,8 +130,8 @@
               "context": null,
               "code": "cy.get('.color').each(function (color) {\n  cy.wrap(color).should('have.class', 'color').and('not.have.css', 'background-color', WHITE);\n  cy.wrap(color).should('have.css', 'background-color');\n});",
               "err": {},
-              "uuid": "7fc2410d-8a9a-4904-8771-20b505ab6e0b",
-              "parentUUID": "9e9451b9-d336-4adf-96e7-fa9a768d8491",
+              "uuid": "2a96626d-7d6f-42e4-a517-d925bccb800a",
+              "parentUUID": "f88de034-3884-417b-b519-7ddff6a96bb6",
               "isHook": false,
               "skipped": true
             },
@@ -148,8 +148,8 @@
               "context": null,
               "code": "cy.get('.color').each(function (color) {\n  cy.wrap(color).and('have.css', 'border', \"1px solid \".concat(BLACK)).and('have.class', 'color');\n});",
               "err": {},
-              "uuid": "182ef5b7-8650-4ae8-a94c-8873450ef327",
-              "parentUUID": "9e9451b9-d336-4adf-96e7-fa9a768d8491",
+              "uuid": "c75fde2c-af26-43b4-af0f-f564f2d45b2a",
+              "parentUUID": "f88de034-3884-417b-b519-7ddff6a96bb6",
               "isHook": false,
               "skipped": true
             },
@@ -166,8 +166,8 @@
               "context": null,
               "code": "cy.get('.color').then(function (colors) {\n  for (var index = 1; index < colors.length; index += 1) {\n    var currentColor = colors[index];\n    var previousColor = colors[index - 1];\n    cy.wrap(currentColor).should('be.onTheRightOf', previousColor).and('be.horizontallyAlignedWith', previousColor);\n  }\n});",
               "err": {},
-              "uuid": "f4800778-c739-459d-98e9-dc0c3e31a2e3",
-              "parentUUID": "9e9451b9-d336-4adf-96e7-fa9a768d8491",
+              "uuid": "5d158766-f28d-4e7a-b762-e01dd9c2c3f2",
+              "parentUUID": "f88de034-3884-417b-b519-7ddff6a96bb6",
               "isHook": false,
               "skipped": true
             },
@@ -184,8 +184,8 @@
               "context": null,
               "code": "cy.get('h1#title').then(function (title) {\n  cy.get('#color-palette').should('be.belowOf', title);\n});",
               "err": {},
-              "uuid": "4f45b48a-3395-425b-8e57-582f58e490e8",
-              "parentUUID": "9e9451b9-d336-4adf-96e7-fa9a768d8491",
+              "uuid": "ec165d95-cc14-46d7-8032-595ef2451c05",
+              "parentUUID": "f88de034-3884-417b-b519-7ddff6a96bb6",
               "isHook": false,
               "skipped": true
             },
@@ -202,8 +202,8 @@
               "context": null,
               "code": "cy.get('.color').then(function (colors) {\n  var allColors = Array.from(colors).map(function (color) {\n    return Cypress.$(color).css('background-color');\n  });\n  cy.log(allColors);\n  var uniqColors = (0, _toConsumableArray2[\"default\"])(new Set(allColors));\n  cy.log(uniqColors);\n  expect(allColors.length).to.eq(uniqColors.length);\n});",
               "err": {},
-              "uuid": "a1a4e886-23d6-4a66-a553-b32689b9f6d6",
-              "parentUUID": "9e9451b9-d336-4adf-96e7-fa9a768d8491",
+              "uuid": "7ddfa4cd-dfa3-423a-8e78-28b4d8ba7b6e",
+              "parentUUID": "f88de034-3884-417b-b519-7ddff6a96bb6",
               "isHook": false,
               "skipped": true
             }
@@ -211,24 +211,24 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "09503ec7-4d4d-4486-8169-c6b496d5e197"
+            "09028225-2f5f-472a-98e7-d83dd023dc01"
           ],
           "pending": [],
           "skipped": [
-            "cdb8a923-bbda-4875-8e3e-a8c0723c9dfd",
-            "7fc2410d-8a9a-4904-8771-20b505ab6e0b",
-            "182ef5b7-8650-4ae8-a94c-8873450ef327",
-            "f4800778-c739-459d-98e9-dc0c3e31a2e3",
-            "4f45b48a-3395-425b-8e57-582f58e490e8",
-            "a1a4e886-23d6-4a66-a553-b32689b9f6d6"
+            "90821dcf-a2cd-4ed6-a15a-85eb506bbd08",
+            "2a96626d-7d6f-42e4-a517-d925bccb800a",
+            "c75fde2c-af26-43b4-af0f-f564f2d45b2a",
+            "5d158766-f28d-4e7a-b762-e01dd9c2c3f2",
+            "ec165d95-cc14-46d7-8032-595ef2451c05",
+            "7ddfa4cd-dfa3-423a-8e78-28b4d8ba7b6e"
           ],
-          "duration": 219,
+          "duration": 224,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "36183c57-083a-4de2-a918-c0505a57a3a8",
+          "uuid": "cfb44fc5-4612-4699-b913-89d4058e9f23",
           "title": "3 - Adicione a cor **preta** como a primeira cor da paleta de cores.",
           "fullFile": "",
           "file": "",
@@ -239,7 +239,7 @@
               "title": "Verifica se a primeira cor da paleta é preta",
               "fullTitle": "3 - Adicione a cor **preta** como a primeira cor da paleta de cores. Verifica se a primeira cor da paleta é preta",
               "timedOut": null,
-              "duration": 196,
+              "duration": 369,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -248,12 +248,12 @@
               "context": null,
               "code": "cy.get('.color').first().should('have.css', 'background-color', BLACK);",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '3 - Adicione a cor **preta*...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '3 - Adicione a cor **preta*...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '3 - Adicione a cor **preta*...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '3 - Adicione a cor **preta*...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "5c4d8fb0-b39f-497f-bac5-624bb4fa5651",
-              "parentUUID": "36183c57-083a-4de2-a918-c0505a57a3a8",
+              "uuid": "a8c3233e-0b02-4f58-8e42-c9e5c40e8818",
+              "parentUUID": "cfb44fc5-4612-4699-b913-89d4058e9f23",
               "isHook": false,
               "skipped": false
             },
@@ -270,8 +270,8 @@
               "context": null,
               "code": "cy.get('.color').eq(1).should('not.have.css', 'background-color', BLACK);\ncy.get('.color').eq(1).should('not.have.css', 'background-color', WHITE);\ncy.get('.color').eq(1).should('not.have.css', 'background-color', 'rgba(0, 0, 0, 0)');\ncy.get('.color').eq(1).should('have.css', 'background-color');\ncy.get('.color').eq(2).should('not.have.css', 'background-color', BLACK);\ncy.get('.color').eq(2).should('not.have.css', 'background-color', WHITE);\ncy.get('.color').eq(2).should('not.have.css', 'background-color', 'rgba(0, 0, 0, 0)');\ncy.get('.color').eq(2).should('have.css', 'background-color');\ncy.get('.color').eq(3).should('not.have.css', 'background-color', BLACK);\ncy.get('.color').eq(3).should('not.have.css', 'background-color', WHITE);\ncy.get('.color').eq(3).should('not.have.css', 'background-color', 'rgba(0, 0, 0, 0)');\ncy.get('.color').eq(3).should('have.css', 'background-color');",
               "err": {},
-              "uuid": "cbadc820-163b-4323-b7a8-2cd6b74d56e1",
-              "parentUUID": "36183c57-083a-4de2-a918-c0505a57a3a8",
+              "uuid": "425cb0d7-b8a3-4186-87b1-61b0bfe69516",
+              "parentUUID": "cfb44fc5-4612-4699-b913-89d4058e9f23",
               "isHook": false,
               "skipped": true
             }
@@ -279,19 +279,19 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "5c4d8fb0-b39f-497f-bac5-624bb4fa5651"
+            "a8c3233e-0b02-4f58-8e42-c9e5c40e8818"
           ],
           "pending": [],
           "skipped": [
-            "cbadc820-163b-4323-b7a8-2cd6b74d56e1"
+            "425cb0d7-b8a3-4186-87b1-61b0bfe69516"
           ],
-          "duration": 196,
+          "duration": 369,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "ad183fb3-95e6-44fc-88c3-8711e3a81e15",
+          "uuid": "1d268d5d-30c2-4604-9537-49706da641fd",
           "title": "4 - Adicione à página um quadro de pixels, com 25 pixels.",
           "fullFile": "",
           "file": "",
@@ -302,7 +302,7 @@
               "title": "Verifica se o quadro de pixels possui o `id` denominado `pixel-board`",
               "fullTitle": "4 - Adicione à página um quadro de pixels, com 25 pixels. Verifica se o quadro de pixels possui o `id` denominado `pixel-board`",
               "timedOut": null,
-              "duration": 232,
+              "duration": 273,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -311,12 +311,12 @@
               "context": null,
               "code": "cy.get('#pixel-board').should('be.visible');",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '4 - Adicione à página um qu...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '4 - Adicione à página um qu...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '4 - Adicione à página um qu...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '4 - Adicione à página um qu...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "76f6da7b-87a2-4edf-95da-27b18c29eb65",
-              "parentUUID": "ad183fb3-95e6-44fc-88c3-8711e3a81e15",
+              "uuid": "8872570f-c826-4d09-8db4-ebd029f59d50",
+              "parentUUID": "1d268d5d-30c2-4604-9537-49706da641fd",
               "isHook": false,
               "skipped": false
             },
@@ -333,8 +333,8 @@
               "context": null,
               "code": "cy.get('.pixel').should('have.length', 25);",
               "err": {},
-              "uuid": "0e2ebfe3-8a23-4fbe-be5e-6ef2d967b9c0",
-              "parentUUID": "ad183fb3-95e6-44fc-88c3-8711e3a81e15",
+              "uuid": "ce3c8454-69ec-43f8-a533-270db5d6b6cb",
+              "parentUUID": "1d268d5d-30c2-4604-9537-49706da641fd",
               "isHook": false,
               "skipped": true
             },
@@ -351,8 +351,8 @@
               "context": null,
               "code": "cy.get('.pixel').should('have.length', 25).each(function (pixel) {\n  expect(pixel).to.have.css('background-color', WHITE);\n});",
               "err": {},
-              "uuid": "d2a4640f-5fe9-490b-993c-bf622f17a0da",
-              "parentUUID": "ad183fb3-95e6-44fc-88c3-8711e3a81e15",
+              "uuid": "5a73fb0f-a17f-40f8-bb65-deaa7695a34a",
+              "parentUUID": "1d268d5d-30c2-4604-9537-49706da641fd",
               "isHook": false,
               "skipped": true
             },
@@ -369,8 +369,8 @@
               "context": null,
               "code": "cy.get('#color-palette').then(function (palette) {\n  cy.get('#pixel-board').should('be.belowOf', palette);\n});",
               "err": {},
-              "uuid": "0286bb8e-6aeb-4a12-90e7-c4923a2bd0b6",
-              "parentUUID": "ad183fb3-95e6-44fc-88c3-8711e3a81e15",
+              "uuid": "bfcd86f7-d614-4e5a-b4b6-5feb5ddbb7e7",
+              "parentUUID": "1d268d5d-30c2-4604-9537-49706da641fd",
               "isHook": false,
               "skipped": true
             }
@@ -378,21 +378,21 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "76f6da7b-87a2-4edf-95da-27b18c29eb65"
+            "8872570f-c826-4d09-8db4-ebd029f59d50"
           ],
           "pending": [],
           "skipped": [
-            "0e2ebfe3-8a23-4fbe-be5e-6ef2d967b9c0",
-            "d2a4640f-5fe9-490b-993c-bf622f17a0da",
-            "0286bb8e-6aeb-4a12-90e7-c4923a2bd0b6"
+            "ce3c8454-69ec-43f8-a533-270db5d6b6cb",
+            "5a73fb0f-a17f-40f8-bb65-deaa7695a34a",
+            "bfcd86f7-d614-4e5a-b4b6-5feb5ddbb7e7"
           ],
-          "duration": 232,
+          "duration": 273,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "44962be8-d22d-4d9a-bf92-7db25b2dbaa3",
+          "uuid": "9c4e5684-5c10-49e9-b724-e6430433715e",
           "title": "5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura e seja delimitado por uma borda preta de 1 pixel.",
           "fullFile": "",
           "file": "",
@@ -403,7 +403,7 @@
               "title": "Verifica se o quadro de pixels tem altura e comprimento de 5 elementos",
               "fullTitle": "5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura e seja delimitado por uma borda preta de 1 pixel. Verifica se o quadro de pixels tem altura e comprimento de 5 elementos",
               "timedOut": null,
-              "duration": 222,
+              "duration": 216,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -412,12 +412,12 @@
               "context": null,
               "code": "cy.get('.pixel').should('have.length', 25).each(function (pixel) {\n  expect(pixel).to.have.css('background-color', WHITE);\n}).and(function (pixels) {\n  var rows = chunk(pixels, 5);\n  rows.forEach(function (row) {\n    for (var index = 1; index < row.length; index += 1) {\n      var current = pixels[index];\n      var previous = pixels[index - 1];\n      cy.wrap(current).should('be.onTheRightOf', previous).and('be.horizontallyAlignedWith', previous);\n    }\n  });\n  for (var index = 1; index < 5; index += 1) {\n    expect(pixels[index * 5]).to.be.belowOf(pixels[(index - 1) * 5]);\n  }\n});",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '5 - Faça com que cada eleme...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '5 - Faça com que cada eleme...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '5 - Faça com que cada eleme...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '5 - Faça com que cada eleme...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "660b572d-8701-4de5-9384-a44258f8e5d3",
-              "parentUUID": "44962be8-d22d-4d9a-bf92-7db25b2dbaa3",
+              "uuid": "fee998ab-7b61-4f13-b716-b8a8901f3bec",
+              "parentUUID": "9c4e5684-5c10-49e9-b724-e6430433715e",
               "isHook": false,
               "skipped": false
             },
@@ -434,8 +434,8 @@
               "context": null,
               "code": "cy.get('.pixel').each(function (pixel) {\n  cy.wrap(pixel).should('have.css', 'height', '40px').and('have.css', 'width', '40px').and('have.css', 'border', \"1px solid \".concat(BLACK));\n});",
               "err": {},
-              "uuid": "c968fd26-895f-4255-972d-d8ed82e359b2",
-              "parentUUID": "44962be8-d22d-4d9a-bf92-7db25b2dbaa3",
+              "uuid": "a1012d64-06d2-4314-bc6b-d161507a65a5",
+              "parentUUID": "9c4e5684-5c10-49e9-b724-e6430433715e",
               "isHook": false,
               "skipped": true
             }
@@ -443,19 +443,19 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "660b572d-8701-4de5-9384-a44258f8e5d3"
+            "fee998ab-7b61-4f13-b716-b8a8901f3bec"
           ],
           "pending": [],
           "skipped": [
-            "c968fd26-895f-4255-972d-d8ed82e359b2"
+            "a1012d64-06d2-4314-bc6b-d161507a65a5"
           ],
-          "duration": 222,
+          "duration": 216,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "4ab6a6e3-822d-4ba6-9613-792dca699469",
+          "uuid": "0348e581-c564-43c8-9509-45633ef46766",
           "title": "6 - Defina a cor preta como cor inicial. Ao carregar a página a cor preta já deve estar selecionada para pintar os pixels",
           "fullFile": "",
           "file": "",
@@ -466,7 +466,7 @@
               "title": "Verifica se o elemento da cor preta possui, inicialmente, a `classe` `selected`",
               "fullTitle": "6 - Defina a cor preta como cor inicial. Ao carregar a página a cor preta já deve estar selecionada para pintar os pixels Verifica se o elemento da cor preta possui, inicialmente, a `classe` `selected`",
               "timedOut": null,
-              "duration": 179,
+              "duration": 176,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -475,12 +475,12 @@
               "context": null,
               "code": "cy.get('.selected').first().should('have.css', 'background-color', BLACK);",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '6 - Defina a cor preta como...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '6 - Defina a cor preta como...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '6 - Defina a cor preta como...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '6 - Defina a cor preta como...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "e0521261-6b4c-49fe-85cd-6b9436193349",
-              "parentUUID": "4ab6a6e3-822d-4ba6-9613-792dca699469",
+              "uuid": "265af137-d09e-4228-b063-a1bf56479ac8",
+              "parentUUID": "0348e581-c564-43c8-9509-45633ef46766",
               "isHook": false,
               "skipped": false
             },
@@ -497,8 +497,8 @@
               "context": null,
               "code": "cy.get('.color:not(:first-child)').each(function (color) {\n  cy.wrap(color).should('not.have.class', 'selected');\n});",
               "err": {},
-              "uuid": "8ba42ab2-2292-4bf9-92fa-a65c108a20bb",
-              "parentUUID": "4ab6a6e3-822d-4ba6-9613-792dca699469",
+              "uuid": "9814f626-4160-4742-83cb-13d7a50a5c11",
+              "parentUUID": "0348e581-c564-43c8-9509-45633ef46766",
               "isHook": false,
               "skipped": true
             }
@@ -506,19 +506,19 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "e0521261-6b4c-49fe-85cd-6b9436193349"
+            "265af137-d09e-4228-b063-a1bf56479ac8"
           ],
           "pending": [],
           "skipped": [
-            "8ba42ab2-2292-4bf9-92fa-a65c108a20bb"
+            "9814f626-4160-4742-83cb-13d7a50a5c11"
           ],
-          "duration": 179,
+          "duration": 176,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "3ca2a359-5251-4f29-878a-5c1557ba7a72",
+          "uuid": "3516749e-cbbd-4bcd-94d9-0754defb31eb",
           "title": "7 - Clicar em uma das cores da paleta, faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.",
           "fullFile": "",
           "file": "",
@@ -529,7 +529,7 @@
               "title": "Verifica se somente uma cor da paleta de cores tem a classe `selected` de cada vez",
               "fullTitle": "7 - Clicar em uma das cores da paleta, faz com que ela seja selecionada e utilizada para preencher os pixels no quadro. Verifica se somente uma cor da paleta de cores tem a classe `selected` de cada vez",
               "timedOut": null,
-              "duration": 195,
+              "duration": 223,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -538,12 +538,12 @@
               "context": null,
               "code": "cy.get('.color').each(function (selectedColor, selectedColorIndex) {\n  cy.wrap(selectedColor).click();\n  cy.get('.color').each(function (color, colorIndex) {\n    if (colorIndex === selectedColorIndex) {\n      expect(color).to.have[\"class\"]('selected');\n    } else {\n      expect(color).not.to.have[\"class\"]('selected');\n    }\n  });\n});",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '7 - Clicar em uma das cores...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '7 - Clicar em uma das cores...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '7 - Clicar em uma das cores...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '7 - Clicar em uma das cores...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "c4e75d88-b3c1-40ad-abae-5b5406fd90ec",
-              "parentUUID": "3ca2a359-5251-4f29-878a-5c1557ba7a72",
+              "uuid": "53b3af3a-01d2-48f3-958c-c6ba5d0b78bd",
+              "parentUUID": "3516749e-cbbd-4bcd-94d9-0754defb31eb",
               "isHook": false,
               "skipped": false
             },
@@ -560,8 +560,8 @@
               "context": null,
               "code": "cy.get('.color').each(function (color) {\n  var backgroundColor = color.css('background-color');\n  cy.wrap(color).click();\n  cy.get('.pixel').each(function (pixel) {\n    cy.wrap(pixel).click().should('not.have.class', 'selected');\n  });\n});",
               "err": {},
-              "uuid": "1d7f3c2c-ebc2-4742-9cd9-209b76f28af0",
-              "parentUUID": "3ca2a359-5251-4f29-878a-5c1557ba7a72",
+              "uuid": "273f3244-2129-4875-987c-1be559bc2de4",
+              "parentUUID": "3516749e-cbbd-4bcd-94d9-0754defb31eb",
               "isHook": false,
               "skipped": true
             }
@@ -569,19 +569,19 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "c4e75d88-b3c1-40ad-abae-5b5406fd90ec"
+            "53b3af3a-01d2-48f3-958c-c6ba5d0b78bd"
           ],
           "pending": [],
           "skipped": [
-            "1d7f3c2c-ebc2-4742-9cd9-209b76f28af0"
+            "273f3244-2129-4875-987c-1be559bc2de4"
           ],
-          "duration": 195,
+          "duration": 223,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "3b353dc0-8876-4ae9-9c14-1d22827fb753",
+          "uuid": "36f5f85d-c431-41be-8bf8-be32e09bd5b5",
           "title": "8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta, faz com que o pixel seja preenchido com a cor selecionada.",
           "fullFile": "",
           "file": "",
@@ -601,12 +601,12 @@
               "context": null,
               "code": "cy.get('.pixel').each(function (pixel) {\n  cy.wrap(pixel).click().should('have.css', 'background-color', BLACK);\n});",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '8 - Clicar em um pixel dent...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '8 - Clicar em um pixel dent...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '8 - Clicar em um pixel dent...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '8 - Clicar em um pixel dent...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "ddb7930d-5d37-41d0-ada0-75942f9ecc5c",
-              "parentUUID": "3b353dc0-8876-4ae9-9c14-1d22827fb753",
+              "uuid": "4bb5fbb6-ebf7-414a-bd59-499a6c1822c2",
+              "parentUUID": "36f5f85d-c431-41be-8bf8-be32e09bd5b5",
               "isHook": false,
               "skipped": false
             },
@@ -623,8 +623,8 @@
               "context": null,
               "code": "cy.get('.color').each(function (color) {\n  var backgroundColor = color.css('background-color');\n  cy.wrap(color).click();\n  cy.get('.pixel').each(function (pixel) {\n    cy.wrap(pixel).click().should('have.css', 'background-color', backgroundColor);\n  });\n});",
               "err": {},
-              "uuid": "3a4f16f8-a1d0-4821-af92-d13a8161cf18",
-              "parentUUID": "3b353dc0-8876-4ae9-9c14-1d22827fb753",
+              "uuid": "b8a563af-920e-435d-9fba-068ed2c7d47e",
+              "parentUUID": "36f5f85d-c431-41be-8bf8-be32e09bd5b5",
               "isHook": false,
               "skipped": true
             },
@@ -641,8 +641,8 @@
               "context": null,
               "code": "var colorToPixelIndexMap = {\n  0: 6,\n  1: 8,\n  2: 16,\n  3: 18\n};\ncy.get('.color').each(function (color, index) {\n  cy.wrap(color).click();\n  var backgroundColor = color.css('background-color');\n  var clickedPixelIndex = colorToPixelIndexMap[index];\n  cy.get('.pixel').eq(clickedPixelIndex).click();\n  cy.get('.pixel').eq(clickedPixelIndex - 1).should('not.have.css', 'background-color', backgroundColor);\n  cy.get('.pixel').eq(clickedPixelIndex + 1).should('not.have.css', 'background-color', backgroundColor);\n  cy.get('.pixel').eq(clickedPixelIndex - 5).should('not.have.css', 'background-color', backgroundColor);\n  cy.get('.pixel').eq(clickedPixelIndex + 5).should('not.have.css', 'background-color', backgroundColor);\n  cy.get('.pixel').eq(clickedPixelIndex - 6).should('not.have.css', 'background-color', backgroundColor);\n  cy.get('.pixel').eq(clickedPixelIndex - 4).should('not.have.css', 'background-color', backgroundColor);\n  cy.get('.pixel').eq(clickedPixelIndex + 4).should('not.have.css', 'background-color', backgroundColor);\n  cy.get('.pixel').eq(clickedPixelIndex + 6).should('not.have.css', 'background-color', backgroundColor);\n});",
               "err": {},
-              "uuid": "1311948f-27e1-4885-8a0a-8d2ce1f9964a",
-              "parentUUID": "3b353dc0-8876-4ae9-9c14-1d22827fb753",
+              "uuid": "cb28ac9d-6a9c-4434-9250-06562663efdc",
+              "parentUUID": "36f5f85d-c431-41be-8bf8-be32e09bd5b5",
               "isHook": false,
               "skipped": true
             }
@@ -650,12 +650,12 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "ddb7930d-5d37-41d0-ada0-75942f9ecc5c"
+            "4bb5fbb6-ebf7-414a-bd59-499a6c1822c2"
           ],
           "pending": [],
           "skipped": [
-            "3a4f16f8-a1d0-4821-af92-d13a8161cf18",
-            "1311948f-27e1-4885-8a0a-8d2ce1f9964a"
+            "b8a563af-920e-435d-9fba-068ed2c7d47e",
+            "cb28ac9d-6a9c-4434-9250-06562663efdc"
           ],
           "duration": 191,
           "root": false,
@@ -663,7 +663,7 @@
           "_timeout": 2000
         },
         {
-          "uuid": "d946ada0-c58d-4bba-a298-7988eab08654",
+          "uuid": "3d2f3e0e-cee2-431a-b27c-fb5c8d05717a",
           "title": "9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.",
           "fullFile": "",
           "file": "",
@@ -674,7 +674,7 @@
               "title": "Verifica se o botão tem o `id` denominado `clear-board`",
               "fullTitle": "9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco. Verifica se o botão tem o `id` denominado `clear-board`",
               "timedOut": null,
-              "duration": 179,
+              "duration": 219,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -683,12 +683,12 @@
               "context": null,
               "code": "cy.get('#clear-board').should('be.visible');",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '9 - Crie um botão que, ao s...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '9 - Crie um botão que, ao s...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '9 - Crie um botão que, ao s...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '9 - Crie um botão que, ao s...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "3f469294-e717-4736-afba-02c19e4e1431",
-              "parentUUID": "d946ada0-c58d-4bba-a298-7988eab08654",
+              "uuid": "1bb62b62-79c3-4ce7-9bff-5610077862e6",
+              "parentUUID": "3d2f3e0e-cee2-431a-b27c-fb5c8d05717a",
               "isHook": false,
               "skipped": false
             },
@@ -705,8 +705,8 @@
               "context": null,
               "code": "cy.get('#color-palette').then(function (palette) {\n  cy.get('#clear-board').should('be.belowOf', palette);\n});\ncy.get('#clear-board').then(function (clearBtn) {\n  cy.get('#pixel-board').should('be.belowOf', clearBtn);\n});",
               "err": {},
-              "uuid": "c4f9c2f5-ff2a-4294-9bf3-90005604c23c",
-              "parentUUID": "d946ada0-c58d-4bba-a298-7988eab08654",
+              "uuid": "37a963d7-76ac-408f-bebe-5e09bc73997e",
+              "parentUUID": "3d2f3e0e-cee2-431a-b27c-fb5c8d05717a",
               "isHook": false,
               "skipped": true
             },
@@ -723,8 +723,8 @@
               "context": null,
               "code": "cy.get('#clear-board').should('contain.text', 'Limpar');",
               "err": {},
-              "uuid": "10198d1a-e926-45f3-ab67-d7b7ec5cf926",
-              "parentUUID": "d946ada0-c58d-4bba-a298-7988eab08654",
+              "uuid": "64bcfafd-93b7-4b4a-8c0c-f024d7ac175e",
+              "parentUUID": "3d2f3e0e-cee2-431a-b27c-fb5c8d05717a",
               "isHook": false,
               "skipped": true
             },
@@ -741,8 +741,8 @@
               "context": null,
               "code": "cy.get('.color').eq(1).then(function (color) {\n  var backgroundColor = color.css('background-color');\n  cy.wrap(color).click();\n  cy.get('.pixel').each(function (pixel) {\n    cy.wrap(pixel).click().should('have.css', 'background-color', backgroundColor);\n  });\n});\ncy.get('#clear-board').click();\ncy.get('.pixel').each(function (pixel) {\n  cy.wrap(pixel).should('have.css', 'background-color', WHITE);\n});",
               "err": {},
-              "uuid": "bc49f89b-945e-4ecb-b3d9-785f8755e16f",
-              "parentUUID": "d946ada0-c58d-4bba-a298-7988eab08654",
+              "uuid": "70877de7-420e-408d-b1d0-049bfd6eddf2",
+              "parentUUID": "3d2f3e0e-cee2-431a-b27c-fb5c8d05717a",
               "isHook": false,
               "skipped": true
             }
@@ -750,21 +750,21 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "3f469294-e717-4736-afba-02c19e4e1431"
+            "1bb62b62-79c3-4ce7-9bff-5610077862e6"
           ],
           "pending": [],
           "skipped": [
-            "c4f9c2f5-ff2a-4294-9bf3-90005604c23c",
-            "10198d1a-e926-45f3-ab67-d7b7ec5cf926",
-            "bc49f89b-945e-4ecb-b3d9-785f8755e16f"
+            "37a963d7-76ac-408f-bebe-5e09bc73997e",
+            "64bcfafd-93b7-4b4a-8c0c-f024d7ac175e",
+            "70877de7-420e-408d-b1d0-049bfd6eddf2"
           ],
-          "duration": 179,
+          "duration": 219,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+          "uuid": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
           "title": "10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário.",
           "fullFile": "",
           "file": "",
@@ -775,7 +775,7 @@
               "title": "Verifica se existe um input com o id `board-size`",
               "fullTitle": "10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário. Verifica se existe um input com o id `board-size`",
               "timedOut": null,
-              "duration": 247,
+              "duration": 194,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -784,12 +784,12 @@
               "context": null,
               "code": "cy.get('#board-size').should('be.visible');",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '10 - Faça o quadro de pixel...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '10 - Faça o quadro de pixel...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '10 - Faça o quadro de pixel...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '10 - Faça o quadro de pixel...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "177ed193-4022-43da-a908-3337379226ef",
-              "parentUUID": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+              "uuid": "989a27e7-9e39-408d-af31-4cfc25dae5dc",
+              "parentUUID": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
               "isHook": false,
               "skipped": false
             },
@@ -806,8 +806,8 @@
               "context": null,
               "code": "cy.get('#generate-board').should('be.visible');",
               "err": {},
-              "uuid": "580de8f4-d78c-45f6-b657-a869c3dc6bb1",
-              "parentUUID": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+              "uuid": "232bbb51-115a-421a-b02b-b3a7b1d2df67",
+              "parentUUID": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
               "isHook": false,
               "skipped": true
             },
@@ -824,8 +824,8 @@
               "context": null,
               "code": "cy.get('#board-size[type=\\'number\\'][min=\\'1\\']');",
               "err": {},
-              "uuid": "6dbf994d-fe74-47e5-aa04-fc8ddd2785b6",
-              "parentUUID": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+              "uuid": "5d288e02-d0c7-4ac3-9570-113b13aa72ab",
+              "parentUUID": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
               "isHook": false,
               "skipped": true
             },
@@ -842,8 +842,8 @@
               "context": null,
               "code": "cy.get('#generate-board').contains(/vqv/i);",
               "err": {},
-              "uuid": "48b82d25-5020-4922-8260-110ff25b6c02",
-              "parentUUID": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+              "uuid": "996e5aec-c05c-41ab-9d86-ca38f80b9526",
+              "parentUUID": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
               "isHook": false,
               "skipped": true
             },
@@ -860,8 +860,8 @@
               "context": null,
               "code": "cy.get('#color-palette').then(function (palette) {\n  cy.get('#board-size').should('be.belowOf', palette);\n});\ncy.get('#board-size').then(function (palette) {\n  cy.get('#pixel-board').should('be.belowOf', palette);\n});",
               "err": {},
-              "uuid": "31826a41-cb5f-42e6-9881-287fdbe450ed",
-              "parentUUID": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+              "uuid": "d8d47e60-ce80-4b19-bc58-4d4977a9161b",
+              "parentUUID": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
               "isHook": false,
               "skipped": true
             },
@@ -878,8 +878,8 @@
               "context": null,
               "code": "cy.get('#board-size').then(function (board) {\n  cy.get('#generate-board').should('be.onTheRightOf', board);\n});",
               "err": {},
-              "uuid": "9e0dae79-2db4-4511-ad4a-d629d55fbe89",
-              "parentUUID": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+              "uuid": "12cd4726-704c-41fe-89eb-a1593aafa7fa",
+              "parentUUID": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
               "isHook": false,
               "skipped": true
             },
@@ -896,8 +896,8 @@
               "context": null,
               "code": "var alerted = false;\ncy.on('window:alert', function (msg) {\n  return alerted = msg;\n});\ncy.get('#generate-board').click().then(function () {\n  return expect(alerted).to.match(/Board inválido!/i);\n});",
               "err": {},
-              "uuid": "34826551-349b-4228-b5cf-b7666f63808d",
-              "parentUUID": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+              "uuid": "3ad1e795-b8c9-4961-9449-8d198adca814",
+              "parentUUID": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
               "isHook": false,
               "skipped": true
             },
@@ -914,8 +914,8 @@
               "context": null,
               "code": "cy.get('#board-size').clear().type(10);\ncy.get('#generate-board').click();\ncy.get('.pixel').should('have.length', 100);",
               "err": {},
-              "uuid": "518d2878-3f22-4715-bd49-efeee460ae94",
-              "parentUUID": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+              "uuid": "5fa1f6da-e373-4345-baa6-8fe613a90889",
+              "parentUUID": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
               "isHook": false,
               "skipped": true
             },
@@ -932,8 +932,8 @@
               "context": null,
               "code": "cy.get('#board-size').clear().type(6);\ncy.get('#generate-board').click();\ncy.get('.pixel').should('have.length', 36).each(function (pixel) {\n  expect(pixel).to.have.css('background-color', WHITE);\n});",
               "err": {},
-              "uuid": "563c6ac4-14a1-467b-932a-2608dc6f31f8",
-              "parentUUID": "cfe3471c-dd6d-42b4-b4d4-273dfea7c7af",
+              "uuid": "5401a47c-a79e-47be-935b-d540db3b7f4b",
+              "parentUUID": "2ae2ecb4-d1b8-4742-8e48-08baa5783e3a",
               "isHook": false,
               "skipped": true
             }
@@ -941,26 +941,26 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "177ed193-4022-43da-a908-3337379226ef"
+            "989a27e7-9e39-408d-af31-4cfc25dae5dc"
           ],
           "pending": [],
           "skipped": [
-            "580de8f4-d78c-45f6-b657-a869c3dc6bb1",
-            "6dbf994d-fe74-47e5-aa04-fc8ddd2785b6",
-            "48b82d25-5020-4922-8260-110ff25b6c02",
-            "31826a41-cb5f-42e6-9881-287fdbe450ed",
-            "9e0dae79-2db4-4511-ad4a-d629d55fbe89",
-            "34826551-349b-4228-b5cf-b7666f63808d",
-            "518d2878-3f22-4715-bd49-efeee460ae94",
-            "563c6ac4-14a1-467b-932a-2608dc6f31f8"
+            "232bbb51-115a-421a-b02b-b3a7b1d2df67",
+            "5d288e02-d0c7-4ac3-9570-113b13aa72ab",
+            "996e5aec-c05c-41ab-9d86-ca38f80b9526",
+            "d8d47e60-ce80-4b19-bc58-4d4977a9161b",
+            "12cd4726-704c-41fe-89eb-a1593aafa7fa",
+            "3ad1e795-b8c9-4961-9449-8d198adca814",
+            "5fa1f6da-e373-4345-baa6-8fe613a90889",
+            "5401a47c-a79e-47be-935b-d540db3b7f4b"
           ],
-          "duration": 247,
+          "duration": 194,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "686de88d-0b56-4566-9f5b-5e2a52801ad4",
+          "uuid": "19ed32cd-9599-44e9-8336-b78a0b6dc83d",
           "title": "11 - Limite o tamanho mínimo e máximo do board.",
           "fullFile": "",
           "file": "",
@@ -971,7 +971,7 @@
               "title": "Verifica se a altura máxima do board é 50",
               "fullTitle": "11 - Limite o tamanho mínimo e máximo do board. Verifica se a altura máxima do board é 50",
               "timedOut": null,
-              "duration": 212,
+              "duration": 227,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -980,12 +980,12 @@
               "context": null,
               "code": "cy.get('#board-size').clear().type(50);\ncy.get('#generate-board').click();\ncy.get('.pixel').should('have.length', 2500);",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '11 - Limite o tamanho mínim...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '11 - Limite o tamanho mínim...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '11 - Limite o tamanho mínim...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '11 - Limite o tamanho mínim...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "3d0ce54d-baa7-4df2-9aa2-8d416d40e267",
-              "parentUUID": "686de88d-0b56-4566-9f5b-5e2a52801ad4",
+              "uuid": "b24647c7-177e-42ce-8628-307494ffde3e",
+              "parentUUID": "19ed32cd-9599-44e9-8336-b78a0b6dc83d",
               "isHook": false,
               "skipped": false
             },
@@ -1002,8 +1002,8 @@
               "context": null,
               "code": "cy.get('#board-size').clear().type(4);\ncy.get('#generate-board').click();\ncy.get('.pixel').should('have.length', 25);",
               "err": {},
-              "uuid": "2b85c0aa-8d65-4f5d-9f8d-5bfeee097d5c",
-              "parentUUID": "686de88d-0b56-4566-9f5b-5e2a52801ad4",
+              "uuid": "2337cd8e-6f6d-4179-8f35-c698c783abeb",
+              "parentUUID": "19ed32cd-9599-44e9-8336-b78a0b6dc83d",
               "isHook": false,
               "skipped": true
             },
@@ -1020,8 +1020,8 @@
               "context": null,
               "code": "cy.get('#board-size').clear().type(51);\ncy.get('#generate-board').click();\ncy.get('.pixel').should('have.length', 2500);",
               "err": {},
-              "uuid": "c40adb21-4e2d-45a8-b483-1cc7ddccbaf1",
-              "parentUUID": "686de88d-0b56-4566-9f5b-5e2a52801ad4",
+              "uuid": "0c745a2b-66fc-411e-b3e0-399118df0be2",
+              "parentUUID": "19ed32cd-9599-44e9-8336-b78a0b6dc83d",
               "isHook": false,
               "skipped": true
             }
@@ -1029,20 +1029,20 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "3d0ce54d-baa7-4df2-9aa2-8d416d40e267"
+            "b24647c7-177e-42ce-8628-307494ffde3e"
           ],
           "pending": [],
           "skipped": [
-            "2b85c0aa-8d65-4f5d-9f8d-5bfeee097d5c",
-            "c40adb21-4e2d-45a8-b483-1cc7ddccbaf1"
+            "2337cd8e-6f6d-4179-8f35-c698c783abeb",
+            "0c745a2b-66fc-411e-b3e0-399118df0be2"
           ],
-          "duration": 212,
+          "duration": 227,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "ecf8a228-ffcd-4245-a463-1daddbc33d58",
+          "uuid": "737fa279-0d8c-43ff-a954-d16fa57063c1",
           "title": "12 - Faça com que as cores da paleta sejam geradas aleatoriamente ao carregar a página.",
           "fullFile": "",
           "file": "",
@@ -1053,7 +1053,7 @@
               "title": "Verifica se as cores geradas na paleta são diferentes a cada carregamento da página",
               "fullTitle": "12 - Faça com que as cores da paleta sejam geradas aleatoriamente ao carregar a página. Verifica se as cores geradas na paleta são diferentes a cada carregamento da página",
               "timedOut": null,
-              "duration": 244,
+              "duration": 210,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -1062,12 +1062,12 @@
               "context": null,
               "code": "cy.get('.color').then(function (colors) {\n  var currentColors;\n  var previousColors;\n  previousColors = Array.from(colors).map(function (color) {\n    return Cypress.$(color).css('background-color');\n  });\n  for (var i = 0; i < 5; i += 1) {\n    cy.reload();\n    cy.get('.color').then(function (colors) {\n      currentColors = Array.from(colors).map(function (color) {\n        return Cypress.$(color).css('background-color');\n      });\n      expect(currentColors).not.to.deep.equal(previousColors);\n      previousColors = currentColors;\n    });\n  }\n});",
               "err": {
-                "message": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '12 - Faça com que as cores ...'",
-                "estack": "Uncaught ReferenceError: pixel is not defined\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '12 - Faça com que as cores ...'\n    at http://localhost:39183/script.js:21:23",
+                "message": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '12 - Faça com que as cores ...'",
+                "estack": "Uncaught TypeError: Cannot read property 'addEventListener' of null\n\nThis error originated from your application code, not from Cypress.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the 'uncaught:exception' event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a 'before each' hook we are skipping the remaining tests in the current suite: '12 - Faça com que as cores ...'\n    at http://localhost:41841/script.js:33:12",
                 "diff": null
               },
-              "uuid": "6ce7bd16-ddbc-4cd6-a989-fc944f634d58",
-              "parentUUID": "ecf8a228-ffcd-4245-a463-1daddbc33d58",
+              "uuid": "2401fd62-f962-4392-a42a-d77b015839a0",
+              "parentUUID": "737fa279-0d8c-43ff-a954-d16fa57063c1",
               "isHook": false,
               "skipped": false
             },
@@ -1084,8 +1084,8 @@
               "context": null,
               "code": "cy.get('.color').then(function (colors) {\n  var currentColors;\n  var previousColors;\n  previousColors = Array.from(colors).map(function (color) {\n    return Cypress.$(color).css('background-color');\n  });\n  expect(previousColors[0]).to.eq(BLACK);\n  for (var i = 0; i < 5; i += 1) {\n    cy.reload();\n    cy.get('.color').then(function (colors) {\n      currentColors = Array.from(colors).map(function (color) {\n        return Cypress.$(color).css('background-color');\n      });\n      expect(currentColors[0]).to.eq(BLACK);\n      expect(currentColors).not.to.deep.equal(previousColors);\n      previousColors = currentColors;\n    });\n  }\n});",
               "err": {},
-              "uuid": "b6e323b0-d68b-400e-885d-d11c9fb4ab07",
-              "parentUUID": "ecf8a228-ffcd-4245-a463-1daddbc33d58",
+              "uuid": "59f15396-b83a-4d99-bbf5-e7fd51bdacf6",
+              "parentUUID": "737fa279-0d8c-43ff-a954-d16fa57063c1",
               "isHook": false,
               "skipped": true
             }
@@ -1093,13 +1093,13 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "6ce7bd16-ddbc-4cd6-a989-fc944f634d58"
+            "2401fd62-f962-4392-a42a-d77b015839a0"
           ],
           "pending": [],
           "skipped": [
-            "b6e323b0-d68b-400e-885d-d11c9fb4ab07"
+            "59f15396-b83a-4d99-bbf5-e7fd51bdacf6"
           ],
-          "duration": 244,
+          "duration": 210,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
