@@ -1,64 +1,64 @@
-let colorsDiv = document.querySelector("#color-palette");
-let colorsChildren = colorsDiv.children;
-let pixelsDiv = document.querySelector("#pixel-board");
-let pixelsChildren = pixelsDiv.children; 
+const colorsDiv = document.querySelector('#color-palette');
+const colorsChildren = colorsDiv.children;
+const pixelsDiv = document.querySelector('#pixel-board');
+const pixelsChildren = pixelsDiv.children;
 
-function createColors () {  
-  let numberOfColors = 4;
-  let colors = ['black', 'red', 'blue', 'green']
+function createColors() {
+  const numberOfColors = 4;
+  const colors = ['black', 'red', 'blue', 'green'];
   let div;
-  for (index = 0; index < numberOfColors; index += 1) {
-    div = document.createElement("div");    
-    div.classList.add('color')                   
+  for (let index = 0; index < numberOfColors; index += 1) {
+    div = document.createElement('div');
+    div.classList.add('color');
     colorsDiv.appendChild(div);
     colorsDiv.children[index].style.backgroundColor = (colors[index]);
-  }  
+  }
   colorsChildren[0].classList.add('selected');
-} 
-function createPixel () {   
-  let pixelNumber = 5;
+}
+function createPixel() {
+  const pixelNumber = 5;
   let div;
   let count = 0;
-  for (index1 = 0; index1 < pixelNumber; index1 += 1) {
-    div = document.createElement("div");    
-    div.classList.add('pixels-lines')                   
+  for (let index1 = 0; index1 < pixelNumber; index1 += 1) {
+    div = document.createElement('div');
+    div.classList.add('pixels-lines');
     pixelsDiv.appendChild(div);
-    for (index = 0; index < pixelNumber; index += 1) {
-      div = document.createElement("div");    
-      div.classList.add('pixel')                     
-      pixelsChildren[index1].appendChild(div);       
-      let pix = document.querySelectorAll(".pixel");
-      pix[count].style.backgroundColor ='white';
+    for (let index = 0; index < pixelNumber; index += 1) {
+      div = document.createElement('div');
+      div.classList.add('pixel');
+      pixelsChildren[index1].appendChild(div);
+      const pix = document.querySelectorAll('.pixel');
+      pix[count].style.backgroundColor = 'white';
       count += 1;
     }
   }
 }
-function listenerColor () {  
-  for (index = 0; index < colorsChildren.length; index += 1) {    
-    colorsChildren[index].addEventListener('click', selectColor);
-  }  
-}
 function selectColor(listenerColor) {
- console.log(listenerColor.target.style.backgroundColor);     
-  return    
+  for (let index = 0; index < colorsChildren.length; index += 1) {
+    colorsChildren[index].classList.remove('selected');
+  }
+  listenerColor.target.classList.add('selected');
 }
-
-// function listenerPixel () {   
-//   let pix = document.querySelectorAll(".pixel"); 
-//   for (index = 0; index < pix.length; index += 1) {        
+function listenerColor() {
+  for (let index = 0; index < colorsChildren.length; index += 1) {
+    colorsChildren[index].addEventListener('click', selectColor);
+  }
+}
+// function listenerPixel () {
+//   let pix = document.querySelectorAll(".pixel");
+//   for (index = 0; index < pix.length; index += 1) {
 //     pix[index].addEventListener('click', function () {
-//       if (selectColor != pix[0].style.backgroundColor) {        
-//         console.log(pix[0].style.backgroundColor); 
+//       if (selectColor != pix[0].style.backgroundColor) {
+//         console.log(pix[0].style.backgroundColor);
 //         // console.log(selectColor(listenerColor));
 //         // pix[0].style.backgroundColor = selectColor;
 //       }
-//     });        
+//     });
 //   }
 // }
-
-window.onload = function start () {
-  createColors ();
-  createPixel ();
-  listenerColor ();
-  // listenerPixel ();
-}
+window.onload = function start() {
+  createColors();
+  createPixel();
+  listenerColor();
+  // listenerPixel();
+};
