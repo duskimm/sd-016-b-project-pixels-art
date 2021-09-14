@@ -74,38 +74,41 @@ function selectedClasses(array) {
 selectedClasses(colors);
 
 // task 8 functions
-const pixel = qAll('.pixel');
 
-function selectPixel(array) {
-  for (let i = 0; i < array.length; i += 1) {
-    array[i].addEventListener('click', () => {
-      const stuf = array[i];
+function selectPixel() {
+  const pixel = qAll('.pixel');
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener('click', () => {
+      const stuf = pixel[i];
       const selectedColor = q('.selected').style.backgroundColor;
       stuf.style.backgroundColor = selectedColor;
     });
   }
 }
 
-selectPixel(pixel);
+selectPixel();
 
 // task 9 functions
 q('#clear-board').addEventListener('click', () => {
+  const pixel = qAll('.pixel');
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
   }
 });
 
 // task 10 and 11 functions
+const pixelBoard = q('#pixel-board');
 function deleteElements(element) {
-  // Referência para limpar um nodo usando o DOM: https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
-  const node = q(element);
-  node.innerHTML = '';
+  // Referência para limpar um nodo usando o DOM: https://attacomsian.com/blog/javascript-dom-remove-all-children-of-an-element
+  while (element.lastChild) {
+    element.removeChild(element.lastChild);
+  }
 }
 
 function resetBoard(num) {
-  deleteElements('#pixel-board');
+  deleteElements(pixelBoard);
   generateBoard(num);
-  selectPixel(pixel);
+  selectPixel();
 }
 
 q('#generate-board').addEventListener('click', () => {
