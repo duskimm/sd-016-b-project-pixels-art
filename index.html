@@ -14,35 +14,45 @@
         <h1 id="project-title">Pixels Art</h1>
     </header>
     <figure id="logo">
-        <img id="logo-tybe" src="" alt="">
+        <img id="logo-tybe" src="/img/2020-12-07_13-18_logo.png" alt="logo-trybe">
         <figcaption id="logo-text">@Trybe</figcaption>
     </figure>
     <main>
-        <section id="tools">
-            <h1 id="tools-titlle">Ferramentas de Desenho</h1>
-            <div id="tools-bar">
-                <button class="tool-botton">Reset</button>
-                <button class="tool-botton">Eraser</button>
-            </div>
-        </section>
-        <section id="palette">
-            <h1 id="title">Paleta de Cores</h1>
-            <div id="color-palette">
-            </div>
-        </section>
-        <section id="pixel-grid">
-            <div id="grid-drawing">
-            </div>
-        </section>
+        <aside id="indice">
+            <!-- Ferramentas -->
+            <section id="tools">
+                <h1 id="tools-titlle">Ferramentas de Desenho</h1>
+                <div id="tools-bar">
+                    <label for="">Limpar Dezenho</label>
+                    <button class="tool-botton">Limpar</button>
+                    <label for="">Tabela</label>
+                    <input id="size-line" class="grid-size" type="number" min="1" max="10" placeholder="Linhas">
+                    <input id="size-colum" class="grid-size" type="number" min="1" max="10" placeholder="Colunas">
+                    <button class="tool-botton">Criar</button>
+                </div>
+            </section>
+            <!-- Tabela de Pixel -->
+            <section id="pixel-grid">
+            </section>
+            <!-- Paleta de Cores -->
+            <section id="palette">
+                <h1 id="title">Paleta de Cores</h1>
+                <div id="color-palette">
+                </div>
+            </section>
+        </aside>
     </main>
     <footer>
         <section id="credits">
             <nav id="credits-links">
                 <ul id="links-list">
-                    <li class="list-item"><a class="list-item-link" href="https://www.instagram.com/dev.codding/">Instagram</a></li>
-                    <li class="list-item"><a class="list-item-link" href="https://www.linkedin.com/in/lucas-camargo-80a015190/">Linkedin</a>
+                    <li class="list-item"><a class="list-item-link"
+                            href="https://www.instagram.com/dev.codding/">Instagram</a></li>
+                    <li class="list-item"><a class="list-item-link"
+                            href="https://www.linkedin.com/in/lucas-camargo-80a015190/">Linkedin</a>
                     </li>
-                    <li class="list-item"><a class="list-item-link" href="https://github.com/lbcamargo94">Github</a></li>
+                    <li class="list-item"><a class="list-item-link" href="https://github.com/lbcamargo94">Github</a>
+                    </li>
                 </ul>
             </nav>
         </section>
