@@ -3,10 +3,14 @@
   border: 1px solid black;
   width: 50px;
   height: 50px;
+  border-radius: 30%;
 }
-/* Procurei no stackoverflow para conseguir reduzir os espaçaos entre os
+
+/* Procurei no stackoverflow para conseguir reduzir os espaços entre os
 inline-blocks
-link: https://stackoverflow.com/questions/5184512/cant-get-rid-of-spaces-between-inline-block-elements*/
+link:
+https://stackoverflow.com/questions/5184512/cant-get-rid-of-spaces-between-inline-block-elements
+*/
 .pixel {
   background-color: white;
   border: 1px solid black;
@@ -46,8 +50,4 @@ link: https://stackoverflow.com/questions/5184512/cant-get-rid-of-spaces-between
 body {
   margin: 0;
   background-image: url("pixel-art.jpeg");
-}
-
-.color {
-  border-radius: 30%;
 }
