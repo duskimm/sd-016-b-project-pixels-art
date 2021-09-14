@@ -1,0 +1,1 @@
+console.log(document.getElementById("title").innerText = "Paleta de Cores");
