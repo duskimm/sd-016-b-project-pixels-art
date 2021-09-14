@@ -47,25 +47,19 @@ window.onload= function () {
     
     selectInitialColor("black");
 
-    // Requisito 7
+    // Requisito 7 e 8
 
     document.addEventListener('click', function (event) {
         if (event.target.classList.contains("color")) {
-            if (event.target.classList.contains("selected")) {
-                event.target.classList.remove("selected");
-            } else {
                 for (i = 0; i < listOfColors.length; i++) {
                     listOfColors[i].classList.remove("selected");
                 }
                 event.target.classList.add("selected");
-            }
         } else if (event.target.classList.contains("pixel")) {
             let newColor = document.getElementsByClassName("selected")[0];
             event.target.style.backgroundColor = newColor.style.backgroundColor;
         }
     }, false);
-
-    // Requisito 8
 
     // Requisito 9
 
@@ -77,6 +71,4 @@ window.onload= function () {
             pixels[i].style.backgroundColor = "white";
         }
     })
-
-    
 }
