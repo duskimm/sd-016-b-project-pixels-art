@@ -1,23 +1,7 @@
-window.onload = function selected() {
-  const colors = document.getElementById('color-palette');
-  colors.addEventListener('click', toggleSelector);
-  colors.firstElementChild.className = 'color selected';
-  colors.firstElementChild.style.backgroundColor = 'black';
-};
-
-// FUNÇÃO QUE CRIA H1
-function createTitleH1() {
-  const createTitle = document.getElementById('container-title');
-  const createH1 = document.createElement('h1');
-  createH1.id = 'title';
-  createH1.innerText = 'Paleta de Cores';
-  createTitle.appendChild(createH1);
-}
-createTitleH1();
+const colors = document.getElementById('color-palette');
 
 // FUNÇÃO QUE CRIA PALETA DE CORES
 function colorPalette() {
-  const colors = document.getElementById('color-palette');
   const quantityColor = 4;
   for (let paletteIdx = 0; paletteIdx < quantityColor; paletteIdx += 1) {
     const palette = document.createElement('div');
@@ -37,6 +21,8 @@ function randomColor() {
       .toString(16)
       .padStart(6, '0')}`;
   }
+  colors.firstElementChild.className = 'color selected';
+  colors.firstElementChild.style.backgroundColor = 'black';
 }
 randomColor();
 
@@ -49,6 +35,7 @@ function boardPalette() {
     for (let columnsIdx = 1; columnsIdx <= lines; columnsIdx += 1) {
       const boardPixelColors = document.createElement('div');
       boardPixelColors.classList.add('pixel');
+      boardColor.addEventListener('click' , selectColor);
       boardColor.appendChild(boardPixelColors);
     }
     boardPixels.appendChild(boardColor);
@@ -62,38 +49,11 @@ function toggleSelector(event) {
   selectedClass.classList.remove('selected');
   event.target.classList.add('selected');
 }
+colors.addEventListener('click', toggleSelector);
 
-// FUNÇÃO QUE CRIA BOTÃO LIMPAR
-function createBtnClear() {
-  const clearBtn = document.getElementById('section-tools');
-  const createButtonClear = document.createElement('button');
-  createButtonClear.id = 'clear-board';
-  createButtonClear.innerHTML = 'Limpar';
-  clearBtn.appendChild(createButtonClear);
+function selectColor(event) {
+  const color = document.querySelector('.selected');
+  const getColor = event.target;
+  getColor.style.backgroundColor = color.style.backgroundColor;
 }
-createBtnClear();
 
-// FUNÇÃO QUE CRIA INPUT
-function createInput() {
-  const setFrame = document.getElementById('section-tools');
-  const createInput = document.createElement('input');
-  createInput.id = 'board-size';
-  createInput.type = 'number';
-  createInput.min = 1;
-  createInput.max = 50;
-  setFrame.appendChild(createInput);
-  if (createInput.min < 0) {
-    alert('Board inválido!');
-  }
-}
-createInput();
-
-// FUNÇÃO QUE CRI BOTÃO VQV
-function createBtn() {
-  const vqvBtn = document.getElementById('section-tools');
-  const createButton = document.createElement('button');
-  createButton.id = 'generate-board';
-  createButton.innerHTML = 'VQV';
-  vqvBtn.appendChild(createButton);
-}
-createBtn();

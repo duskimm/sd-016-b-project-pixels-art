@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +8,17 @@
   <title>Project Pixels Art</title>
 </head>
 <body>
-  <header id="container-title"></header>
+  <header id="container-title">
+    <h1 id="title">Paleta de Cores</h1>
+  </header>
   <main>
     <section>
       <div id="color-palette"></div>
     </section>
     <section id="section-tools">
+      <button id="clear-board">Limpar</button>
+      <input type="number" id="board-size" min="1" max="50">
+      <button id="generate-board">VQV</button>
     </section>
     <section>
       <div id="pixel-board"></div>
