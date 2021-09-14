@@ -105,6 +105,7 @@ function deleteElements(element) {
 function resetBoard(num) {
   deleteElements('#pixel-board');
   generateBoard(num);
+  selectPixel(pixel);
 }
 
 q('#generate-board').addEventListener('click', () => {
