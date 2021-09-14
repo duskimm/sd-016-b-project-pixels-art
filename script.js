@@ -2,7 +2,7 @@ const colorOnload = document.getElementById('black');
 colorOnload.classList.add('selected');
 
 const colors = document.getElementsByClassName('color');
-function colorSelection (event){
+function colorSelection(event) {
   for (let index = 0; index < colors.length; index += 1) {
     colors[index].classList.remove('selected');
   }
@@ -12,7 +12,7 @@ for (let index = 0; index < colors.length; index += 1) {
   colors[index].addEventListener('click', colorSelection);
 }
 // Exercicio solucionado com auxilio do Gabriel Pinheiro.
-function paintPixel (event){
+function paintPixel() {
   const color = document.querySelector('.selected');
   event.target.style.backgroundColor = color.innerText;
 }
@@ -23,10 +23,9 @@ for (let index = 0; index < pixels.length; index += 1) {
 // botão que remove as cores:
 
 function removeColors () {
-  const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     if (pixels[index].style.backgroundColor !== 'white') {
-        pixels[index].style.backgroundColor = 'white';
+      pixels[index].style.backgroundColor = 'white';
     }
   }
 }
