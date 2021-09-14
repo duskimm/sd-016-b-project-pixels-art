@@ -46,8 +46,8 @@ function newSize() {
   if (size > 50) {
     size = 50;
   }
-  board.style.height = size * 42 + 'px';
-  board.style.width = size * 42 + 'px';
+  board.style.height = `${(size * 42)}px`;
+  board.style.width = `${(size * 42)}px`;
   for (let index = 0; index < (size * size); index += 1) {
     const newPixel = document.createElement('div');
     newPixel.classList.add('pixel');
