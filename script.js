@@ -26,6 +26,12 @@ function randomColor() {
 }
 randomColor();
 
+function selectColor(event) {
+  const color = document.querySelector('.selected');
+  const getColor = event.target;
+  getColor.style.backgroundColor = color.style.backgroundColor;
+}
+
 // FUNÇÃO QUE CRIA QUADRO
 function boardPalette() {
   const boardPixels = document.getElementById('pixel-board');
@@ -35,7 +41,7 @@ function boardPalette() {
     for (let columnsIdx = 1; columnsIdx <= lines; columnsIdx += 1) {
       const boardPixelColors = document.createElement('div');
       boardPixelColors.classList.add('pixel');
-      boardColor.addEventListener('click' , selectColor);
+      boardColor.addEventListener('click', selectColor);
       boardColor.appendChild(boardPixelColors);
     }
     boardPixels.appendChild(boardColor);
@@ -50,10 +56,3 @@ function toggleSelector(event) {
   event.target.classList.add('selected');
 }
 colors.addEventListener('click', toggleSelector);
-
-function selectColor(event) {
-  const color = document.querySelector('.selected');
-  const getColor = event.target;
-  getColor.style.backgroundColor = color.style.backgroundColor;
-}
-
