@@ -1,24 +1,29 @@
 window.onload = function () {
-    const firstColor = document.getElementById('black');
+    const firstColor = document.getElementById('color1');
     firstColor.classList.add('selected');
+
+    randomColors()
+
+    let secondColor = document.getElementById('color2');
+    let thirdColor = document.getElementById('color3');
+    let fourthColor = document.getElementById('color4');
+
+    secondColor.style.backgroundColor = randomColor;
+    thirdColor.style.backgroundColor = randomColor2;
+    fourthColor.style.backgroundColor = randomColor3;
 };
 
-const black = document.getElementById('black');
-const red = document.getElementById('red');
-const orange = document.getElementById('orange');
-const yellow = document.getElementById('yellow');
-const clearButton = document.getElementById('clear-board');
-
-
-const pixels = document.getElementsByClassName('pixel');
-for (const pixel of pixels) {
-  pixel.addEventListener('click', colorPixel);
-}
+const firstColor = document.getElementById('color1');
+let secondColor = document.getElementById('color2');
+let thirdColor = document.getElementById('color3');
+let fourthColor = document.getElementById('color4');
+let clearButton = document.getElementById('clear-board');
 
 function selectColor(event) {
     const selectedColor = document.querySelector('.selected');
+    const glowColor = window.getComputedStyle(selectedColor).backgroundColor;
     selectedColor.classList.remove('selected');
-    event.target.classList.add('selected');
+    event.target.classList.add('selected')
 }
 
 function colorPixel(event) {
@@ -26,6 +31,22 @@ function colorPixel(event) {
     const color = window.getComputedStyle(selected).backgroundColor;
     const pixel = event.target;
     pixel.style.backgroundColor = color;
+
+}
+
+const pixels = document.getElementsByClassName('pixel');
+for (const pixel of pixels) {
+  pixel.addEventListener('click', colorPixel);
+}
+
+function randomColors(){
+    let rgbValue1 = Math.floor(Math.random() * 215) + 1;
+    let rgbValue2 = Math.floor(Math.random() * 225) + 1;
+    let rgbValue3 = Math.floor(Math.random() * 235) + 1;
+
+    randomColor = `rgb(${rgbValue1}, ${rgbValue2}, ${rgbValue3})`;
+    randomColor2 = `rgb(${rgbValue3}, ${rgbValue2}, ${rgbValue1})`;
+    randomColor3 = `rgb(${rgbValue2}, ${rgbValue1}, ${rgbValue3})`;
 }
 
 function clearBoard(){
@@ -35,8 +56,8 @@ function clearBoard(){
     }
 }
 
-black.addEventListener('click', selectColor);
-red.addEventListener('click', selectColor);
-orange.addEventListener('click', selectColor);
-yellow.addEventListener('click', selectColor);
+firstColor.addEventListener('click', selectColor);
+secondColor.addEventListener('click', selectColor);
+thirdColor.addEventListener('click', selectColor);
+fourthColor.addEventListener('click', selectColor);
 clearButton.addEventListener('click', clearBoard);
