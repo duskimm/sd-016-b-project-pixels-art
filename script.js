@@ -4,17 +4,7 @@ function gerarCorHexadecimal() {
     .toString(16)
     .padStart(3, '0')}`;
 }
-// Criar Bloco de Cores
-function criarBlocoDeCores(blocos) {
-  for (let ind = 0; ind < blocos; ind += 1) {
-    const newDiv = document.getElementById('color-palette');
-    const colorBlock = document.createElement('div');
-    colorBlock.classList.add('color');
-    colorBlock.setAttribute('id', `color${ind + 1}`);
-    newDiv.appendChild(colorBlock);
-  }
-}
-criarBlocoDeCores(4);
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Montando Paleta de cores
 function criarPaleta() {
   const cores = ['#000'];
@@ -28,25 +18,28 @@ function criarPaleta() {
   }
   return cores;
 }
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Adiconar core aos blocos da paleta de cores
-function addCores() {
-  const cores = criarPaleta();
-  const element = document.querySelector('#color-palette');
-  for (let ind = 0; ind < element.children.length; ind += 1) {
-    const boxColor = document.getElementById(`color${ind + 1}`);
-    boxColor.style.backgroundColor = cores[ind];
-  }
+const cores = criarPaleta();
+const element = document.querySelector('#color-palette');
+for (let ind = 0; ind < element.children.length; ind += 1) {
+  const boxColor = document.getElementById(`color${ind + 1}`);
+  boxColor.style.backgroundColor = cores[ind];
 }
-addCores();
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Criando o Pixel Board
 function criarPixelBoard(line, colum) {
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   // Cria tabela de pixel
   const element1 = document.getElementById('pixel-board');
   const pLine = document.createElement('ul');
   pLine.setAttribute('id', 'pixelLine');
   element1.appendChild(pLine);
+  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   // Loop de cração dos pixels
   for (let ind = 0; ind < line; ind += 1) {
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // Cria linhas de pixel em branco
     const element2 = document.getElementById('pixelLine');
     const pColum = document.createElement('li');
@@ -55,6 +48,7 @@ function criarPixelBoard(line, colum) {
   }
   const element3 = document.querySelectorAll('.pixelColum')
   for (let ind = 0; ind < colum; ind += 1) {
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // Cria colunar de pixel em branco
     for (let ind2 = 0; ind2 < element3.length; ind2 += 1) {
       const pBlock = document.createElement('div');
@@ -64,14 +58,16 @@ function criarPixelBoard(line, colum) {
   }
 }
 criarPixelBoard(5, 5);
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Função limpar a grid
 function limparDesenho() {}
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Inserindo botões ao DOM
-const btnClear = document.getElementById('clear');
+const btnClear = document.getElementById('clear-board');
 btnClear.addEventListener('click', limparDesenho());
 const btnCreate = document.getElementById('create');
 btnCreate.addEventListener('click', function () {
-  let iputLine = document.querySelector('#size-line').value;
+  let iputLine = document.querySelector('#board-size').value;
   let iputColum = document.querySelector('#size-colum').value;
   if (iputLine !== "" && iputColum !== "") {
     const clearBoard = document.querySelector('#pixelLine').remove();
@@ -81,4 +77,35 @@ btnCreate.addEventListener('click', function () {
     criarPixelBoard(5, 5);
   }
 });
-
+// Função seleciona a cor para desenhar
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+function corParaDesenho(event) {
+  const corInitial = document.querySelector('.selected');
+  corInitial.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+// Adicionando eventos de cores ás divs
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+const color1 = document.getElementById('color1');
+color1.addEventListener('click', corParaDesenho);
+const color2 = document.getElementById('color2');
+color2.addEventListener('click', corParaDesenho);
+const color3 = document.getElementById('color3');
+color3.addEventListener('click', corParaDesenho);
+const color4 = document.getElementById('color4');
+color4.addEventListener('click', corParaDesenho);
+// Função troca de cor
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+function trocarCor() {
+  const colorPrint = document.getElementById('pixel-board');
+  colorPrint.addEventListener('click', function (event) {
+    const colorSelect = document.querySelector('.selected');
+    const elementPixel = event.target.className;
+    if (elementPixel === 'pixel') {
+      event.target.style.backgroundColor = colorSelect.style.backgroundColor;
+    }
+  })
+}
+trocarCor()
+// Função troca de cor
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
