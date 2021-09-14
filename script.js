@@ -1,5 +1,5 @@
 let colors = {
-    active: null,
+    active: 'black',
     previous: ['black', 'red', 'green', 'blue']
 }
 let board = {
@@ -17,6 +17,8 @@ function generatePalette() {
         const div = document.createElement('div');
         div.classList.add('color');
         div.style.background = item;
+        if (item === 'black')
+            div.classList.add('selected');
         element.appendChild(div);
     }
 
@@ -113,6 +115,13 @@ function updatePalette() {
     });
 }
 
+function clearPixelGrid() {
+    const element = document.querySelectorAll('.pixel');
+    element.forEach(element => {
+        element.style.background = 'white';
+    });
+}
+
 window.onload = function() {
     // Inicializade uma paleta de cores com valores padrões
     generatePalette();
@@ -120,7 +129,9 @@ window.onload = function() {
     updatePalette();
     // Gera o Pixel Grid;
     generatePixelGrid();
-
+    document.querySelector('#clear-board').addEventListener('click', event => {
+        clearPixelGrid();
+    });
     document.querySelectorAll('.pixel').forEach(element => {
         element.addEventListener('click', event =>  {
             element.style.background = colors.active;
