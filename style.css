@@ -64,10 +64,10 @@ main {
   border: outset;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
   min-height: 400px;
-  max-width: 720px;
+  max-width: 400px;
   padding: 10px;
 }
 
@@ -84,9 +84,7 @@ label {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  margin: 10px;
 }
 
 /* ID */
@@ -118,7 +116,7 @@ footer {
   display: flex;
   flex: right;
   margin: 0;
-  max-width: 1300px;
+  max-width: 720px;
 }
 
 #pixel-grid {
@@ -174,6 +172,7 @@ footer {
 #color4:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+  border: 2px red solid
 }
 
 #pixel-board {
@@ -226,6 +225,18 @@ footer {
   list-style: none;
 }
 
+#clear-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#create-button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 /* CLASS */
 .tool-botton {
   transition: all 0.25s;
@@ -258,21 +269,25 @@ footer {
   background-color: white;
   border: 1px solid var(--gray);
   border-radius: 2px;
-  height: 38px;
-  width: 38px;
+  height: 39px;
+  width: 39px;
 }
 
-.pixel:hover{
+.pixel:hover {
   -webkit-transform: scale(1.25);
   transform: scale(.9);
 }
 
 .list-item {
-  margin: 10px;
+  margin-top: 50px;
 }
 
 .list-item-link {
+  align-items: center;
   color: var(--black);
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
 
 .content {
@@ -301,4 +316,11 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.icon {
+  border-radius: 100%;
+  display: flex;
+  height: 30px;
+  width: 30px;
 }

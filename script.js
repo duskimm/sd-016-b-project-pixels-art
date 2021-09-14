@@ -59,13 +59,16 @@ function criarPixelBoard(line, colum) {
 }
 criarPixelBoard(5, 5);
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// Função limpar a grid
-function limparDesenho() {}
+// Botão limpar board
+document.getElementById('clear-board').addEventListener('click', function () {
+  const clearPixels = document.querySelectorAll('.pixel');
+  for (let ind = 0; ind < clearPixels.length; ind += 1) {
+    clearPixels[ind].style.backgroundColor = '#fff';
+  }
+});
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// Inserindo botões ao DOM
-const btnClear = document.getElementById('clear-board');
-btnClear.addEventListener('click', limparDesenho());
-const btnCreate = document.getElementById('create');
+// Botão criar board
+const btnCreate = document.getElementById('generate-board');
 btnCreate.addEventListener('click', function () {
   let iputLine = document.querySelector('#board-size').value;
   let iputColum = document.querySelector('#size-colum').value;
