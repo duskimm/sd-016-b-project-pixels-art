@@ -38,9 +38,6 @@ function addCores() {
   }
 }
 addCores();
-//Configurando as entradas
-const iputLine = document.getElementById('size-line').value;
-const iputColum = document.getElementById('size-colum').value;
 // Criando o Pixel Board
 function criarPixelBoard(line, colum) {
   // Cria tabela de pixel
@@ -66,10 +63,22 @@ function criarPixelBoard(line, colum) {
     }
   }
 }
+criarPixelBoard(5, 5);
 // Função limpar a grid
 function limparDesenho() {}
 // Inserindo botões ao DOM
 const btnClear = document.getElementById('clear');
 btnClear.addEventListener('click', limparDesenho());
 const btnCreate = document.getElementById('create');
-btnCreate.addEventListener('click', criarPixelBoard(iputLine, iputColum));
+btnCreate.addEventListener('click', function () {
+  let iputLine = document.querySelector('#size-line').value;
+  let iputColum = document.querySelector('#size-colum').value;
+  if (iputLine !== "" && iputColum !== "") {
+    const clearBoard = document.querySelector('#pixelLine').remove();
+    criarPixelBoard(iputLine, iputColum);
+  } else {
+    const clearBoard = document.querySelector('#pixelLine').remove();
+    criarPixelBoard(5, 5);
+  }
+});
+

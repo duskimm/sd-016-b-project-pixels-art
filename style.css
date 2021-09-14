@@ -228,9 +228,9 @@ footer {
 
 .color {
   border: 1px black solid;
-  border: outset;
   border-radius: 5px;
   height: 40px;
+  margin: 1px;
   width: 40px;
 }
 
