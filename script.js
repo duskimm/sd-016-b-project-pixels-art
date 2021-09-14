@@ -21,11 +21,15 @@ function appendStuf(father, child, className, number) {
 
 // Task 2 functions
 // Referência para função matemática que gera cores aleatórias: https://codepen.io/chriscoyier/pen/Xojwzw/
-const ramdomColor1 = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-const ramdomColor2 = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-const ramdomColor3 = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+function generateColor() {
+  let color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  if (color === '#000000') {
+    color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }
+  return color;
+}
 
-const usedColors = ['black', ramdomColor1, ramdomColor2, ramdomColor3];
+const usedColors = ['black', generateColor(), generateColor(), generateColor()];
 const colors = qAll('.color');
 
 for (let i = 0; i < colors.length; i += 1) {
