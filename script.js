@@ -21,17 +21,17 @@ function generatePalette() {
     }
 
     /* Seletor das cores */
-    const form = document.createElement('form');
-    const input = document.createElement('input');
+    // const form = document.createElement('form');
+    // const input = document.createElement('input');
 
-    input.classList.add('color', 'colorpick');
-    input.setAttribute('type', 'color');
+    // input.classList.add('color', 'colorpick');
+    // input.setAttribute('type', 'color');
 
-    message.innerHTML = "Seletor de Cores";
+    // message.innerHTML = "Seletor de Cores";
 
-    element.appendChild(form);
-    form.appendChild(message);
-    form.appendChild(input);
+    // element.appendChild(form);
+    // form.appendChild(message);
+    // form.appendChild(input);
 }
 
 function generatePixelGrid() {
@@ -82,25 +82,25 @@ function updateColorPrevious(active) {
 }
 
 function updatePalette() {
-    let input = document.querySelector('.colorpick'),
-        elements = document.querySelectorAll('.color:not(.colorpick)');
+    // let input = document.querySelector('.colorpick');
+    let elements = document.querySelectorAll('.color:not(.colorpick)');
     let prev = elements[elements.length - 1].style.background,
         active;
-    input.addEventListener('change', event => {
-        active = input.value;
-        // Atualiza as cores do objeto colors;
-        updateColorPrevious(active);
-        // Atualiza as cores da paleta
-        updateElements(elements);
-        // Seleciona a cor
-        colors.active = active;
-    });
+    // input.addEventListener('change', event => {
+    //     active = input.value;
+    //     // Atualiza as cores do objeto colors;
+    //     updateColorPrevious(active);
+    //     // Atualiza as cores da paleta
+    //     updateElements(elements);
+    //     // Seleciona a cor
+    //     colors.active = active;
+    // });
 
     elements.forEach(element => {
         element.addEventListener('click', event => {
             active = element.style.background;
             // Atualiza as cores do objeto colors;
-            updateColorPrevious(active);
+            //updateColorPrevious(active);
             // Atualiza as cores da paleta
             updateElements(elements);
             // Seleciona a cor
