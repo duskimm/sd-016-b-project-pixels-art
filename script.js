@@ -85,15 +85,15 @@ function random() {
 
 const colorPalette = document.getElementById('color-palette');
 const colorType = document.getElementsByClassName('color');
-colorType[0].classList = 'color';
+colorType[0].classList.add('selected');
 colorType[0].style.backgroundColor = 'black';
+colorType[1].style.backgroundColor = random();
 colorType[2].style.backgroundColor = random();
 colorType[3].style.backgroundColor = random();
-colorType[1].style.backgroundColor = random();
 
-// Pintar e Apagar
-let divTarget = '';
-let pincelColor = '';
+// Pintar e Apagarelton
+let divTarget = colorType[0];
+let pincelColor = colorType[0].style.backgroundColor;
 
 function removeSelectedClass() {
   if (divTarget !== '' && divTarget.classList.contains('selected')) {
@@ -109,10 +109,8 @@ function selectColor(event) {
 }
 
 function pincel(event) {
-  if (divTarget !== '') {
     const localPaint = event.target;
     localPaint.style.backgroundColor = pincelColor;
-  }
 }
 
 function eraser(event) {
@@ -120,14 +118,15 @@ function eraser(event) {
   erase.style.backgroundColor = 'white';
 }
 // preset pincel onload (black)
-function presetColor(event) {
+/*function presetColor(event) {
   if (divTarget === '') {
     const onloadPaint = event.target;
-    onloadPaint.style.backgroundColor = 'black';
+    onloadPaint.style.backgroundColor = pincelColor;
+    console.log('rodou ?');
   }
-}
+}*/
 
-boardElements.addEventListener('click', presetColor);
+//boardElements.addEventListener('click', presetColor);
 
 // eventos
 colorPalette.addEventListener('click', selectColor);
