@@ -28,20 +28,23 @@ for (let i = 0; i < colors.length; i += 1) {
   colors[i].style.backgroundColor = usedColors[i];
 }
 
-// Task 4 functions
-const n = 5;
-const pixerBoard = q('#pixel-board');
-appendStuf(pixerBoard, 'div', 'pixelLine', n);
+// Task 4 and 5 functions
+let n = 5;
 
-const pixelLines = qAll('.pixelLine');
-for (let i = 0; i < pixelLines.length; i += 1) {
-  appendStuf(pixelLines[i], 'div', 'pixel', n);
+function generateBoard(num) {
+  const pixelBoard = q('#pixel-board');
+  appendStuf(pixelBoard, 'div', 'pixelLine', num);
+
+  const pixelLines = qAll('.pixelLine');
+  for (let i = 0; i < pixelLines.length; i += 1) {
+    appendStuf(pixelLines[i], 'div', 'pixel', num);
+  }
+
+  const boardWidth = 40 * num + (num) * 2;
+  pixelBoard.style.width = `${boardWidth}px`;
 }
 
-// task 5 functions
-const pixelBoard = q('#pixel-board');
-const boardWidth = 40 * n + (n) * 2;
-pixelBoard.style.width = `${boardWidth}px`;
+generateBoard(n);
 
 // task 6 functions
 addClass(colors[0], 'selected');
@@ -85,5 +88,23 @@ selectPixel(pixel);
 q('#clear-board').addEventListener('click', () => {
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'white';
+  }
+});
+
+// task 10
+function deleteElements(element) {
+  const node = q(element);
+  node.innerHTML = '';
+}
+
+q('#generate-board').addEventListener('click', () => {
+  n = q('#board-size').value;
+  if (n === '') {
+    alert('Board inválido!');
+  }
+  if (n !== '') {
+    deleteElements('#pixel-board');
+    n = q('#board-size').value;
+    generateBoard(n);
   }
 });
