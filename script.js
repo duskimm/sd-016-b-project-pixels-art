@@ -43,3 +43,9 @@ window.onload = function selectColor () {
       event.target.classList.add('selected');
     }
   }, false);
+
+  document.addEventListener('click', (event) => {
+    const element = document.querySelector('.selected');
+    const color = element.getAttribute('id');
+    event.target.setAttribute('id', color);
+  })
