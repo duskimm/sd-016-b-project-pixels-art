@@ -3,11 +3,16 @@ window.onload = function complet() {
   const board = document.getElementById("pixel-board");
   const buttonToClean = document.getElementById("clear-board");
   const generateNewSizeBoard = document.getElementById("generate-board");
+  const randomColor1 = Math.floor(Math.random()*16777215).toString(16);
+  const randomColor2 = Math.floor(Math.random()*16777215).toString(16);
+  const randomColor3 = Math.floor(Math.random()*16777215).toString(16);
+  // Busquei no seguinte site a informação para conseguir uma cor aleatoria.
+  // link: https://css-tricks.com/snippets/javascript/random-hex-color/
   // Colors
   document.getElementById("color1").style.backgroundColor = "black";
-  document.getElementById("color2").style.backgroundColor = "red";
-  document.getElementById("color3").style.backgroundColor = "green";
-  document.getElementById("color4").style.backgroundColor = "yellow";
+  document.getElementById("color2").style.backgroundColor = "#" + randomColor1;
+  document.getElementById("color3").style.backgroundColor = "#" + randomColor2;
+  document.getElementById("color4").style.backgroundColor = "#" + randomColor3;
   // event that swith the class selected
   colorSelected.addEventListener("click", function(event) {
       document.querySelector(".selected").classList.remove("selected");
@@ -38,8 +43,8 @@ window.onload = function complet() {
     if (size >50) {
       size = 50;
     }
-    if (size === null) {
-      window.alert("Board inválido")
+    if (size === "") {
+      window.alert("Board inválido");
     }
     board.style.height = size * 42 + "px";
     board.style.width = size * 42 + "px";

@@ -20,4 +20,34 @@ link: https://stackoverflow.com/questions/5184512/cant-get-rid-of-spaces-between
   background-color: white;
   height: 210px;
   width: 210px;
+  margin-left: 580px;
+}
+
+#title {
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+#color-palette {
+  text-align: center;
+}
+
+.side-a-side {
+  display: inline-block;
+  color: white;
+}
+
+#controlador {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  background-image: url("pixel-art.jpeg");
+}
+
+.color {
+  border-radius: 30%;
 }
