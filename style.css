@@ -1,8 +1,14 @@
+body {
+  background-color: azure;
+}
+
 .color {
   border: 1px solid black;
   width: 50px;
   height: 50px;
   display: inline-block;
+  border-radius: 25%;
+  margin: 5px;
 }
 
 .linha {
@@ -17,12 +23,43 @@
   width: 40px;
 }
 
-#board-size , #generate-board {
-  margin-right: 5px;
-  margin-bottom: 5px;
+#board-size , #generate-board, #clear-board {
+  margin: 0 5px 5px 5px;
+  border-radius: 15px;
+}
+
+#board-size {
+  width: 110px;
+}
+
+#board-size:focus {
+  outline: 0;
+  border-color: aqua;
+}
+
+#generate-board {
+  background-color: rgb(34, 255, 107);
+  color: white;
+  border-color: rgb(34, 255, 107);
 }
 
 #clear-board {
+  background-color: rgb(241, 16, 16);
+  color: white;
+  border-color: rgb(241, 16, 16);
+}
+
+/* #clear-board {
   margin-bottom: 5px;
+  margin-right: 5px;
   display: block;
+} */
+
+#title {
+  text-align: center;
+}
+
+#conteudoPrincipal {
+  margin: auto;
+  text-align: center;
 }

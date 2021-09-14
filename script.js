@@ -162,6 +162,7 @@ const inputPixels = document.createElement('input');
 inputPixels.type = 'number';
 inputPixels.min = '1';
 inputPixels.id = 'board-size';
+inputPixels.placeholder = 'Qtd. de pixels';
 // Inserindo o elemento input antes da div de quadro.
 quadroPixels.insertBefore(inputPixels, pixelBoard);
 
