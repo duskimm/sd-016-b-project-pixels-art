@@ -1,46 +1,43 @@
-let colors = {
+const colors = {
   active: 'black',
   previous: ['black', 'red', 'green', 'blue']
-}
-let board = {
+};
+
+const board = {
   size: 5,
   content: []
-}
-
-const message = document.createElement('p');
+};
 
 /* Paleta de coress */
 function generatePalette() {
   const element = document.querySelector('#color-palette');
   /* Ultimas cores selecionadas */
-  for (let item of colors.previous) {
+  for (const item of colors.previous) {
     const div = document.createElement('div');
     div.classList.add('color');
     div.style.background = item;
-    if (item === 'black')
+    if (item === 'black') {
       div.classList.add('selected');
+    }
     element.appendChild(div);
   }
 }
 
 function generatePixelGrid() {
-  let columns = [], rows = [];
-
+  let columns = []
+  let rows = [];
   const element = document.querySelector('#pixel-board');
   const div = document.createElement('div');
   div.style.background = 'white';
   div.classList.add('pixel');
-
-  for (let i = 0; i < board.size; i++) {
+  for (let i = 0; i < board.size; i += 1) {
     let per = '1fr';
     columns.push(per);
   }
-
   element.style.gridTemplateColumns = columns.join(' ');
   element.style.gridTemplateRows = columns.join(' ');
-
-  for (let k = 0; k < board.size; k++) {
-    for (let v = 0; v < board.size; v++) {
+  for (let k = 0; k < board.size; k += 1) {
+    for (let v = 0; v < board.size; v += 1) {
       div.style.background = 'white';
       div.classList.add('pixel');
       element.appendChild(div);
@@ -51,7 +48,7 @@ function generatePixelGrid() {
 * Atualiza as cores dos elementos;
 */
 function updateElements(elements) {
-  for (let i = 0; i < elements.length; i++) {
+  for (let i = 0; i < elements.length; i += 1) {
     elements[i].style.background = colors.previous[i];
   }
 }
