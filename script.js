@@ -14,7 +14,7 @@ function generatePalette() {
   /* Ultimas cores selecionadas */
   colors.previous.forEach((item) => {
     const div = document.createElement('div');
-    div.style.border = "solid black 1px";
+    div.style.border = 'solid black 1px';
     div.classList.add('color');
     div.style.background = item;
     if (item === 'black') {
