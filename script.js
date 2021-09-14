@@ -27,7 +27,7 @@ generatePixelBoard(5);
 
 window.onload = function selectColor () {
     let firstload = true;
-    if(firstload){
+    if(firstload) {
       let colorSelect = document.querySelector('.color');
       colorSelect.classList.add('selected');
     }else {
@@ -47,5 +47,14 @@ window.onload = function selectColor () {
   document.addEventListener('click', (event) => {
     const element = document.querySelector('.selected');
     const color = element.getAttribute('id');
+    if (event.target.classList.contains('pixel')) {
     event.target.setAttribute('id', color);
+    }
   })
+    let clear = document.querySelector('#clear-board');
+    clear.addEventListener('click', (event) => {
+      let pixels = document.querySelectorAll('.pixel');
+      for (pixel of pixels) {
+        pixel.removeAttribute('id')
+      }
+    })
