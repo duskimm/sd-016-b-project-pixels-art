@@ -1,4 +1,9 @@
 window.onload = function () {
+  divLines();
+  divPixels();
+  initialColor();
+};
+
   function newDiv(name) {
     const newDivElement = document.createElement('div');
     newDivElement.className = name;
@@ -24,7 +29,12 @@ window.onload = function () {
     black.classList.add('selected');
     return black;
   }
-  divLines();
-  divPixels();
-  initialColor();
-};
+  
+  // fonte de pesquisa : https://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing para criação da função.
+  document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('color')) {
+      const selectedColor = document.querySelector('.selected');
+      selectedColor.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+  }, false);
