@@ -52,3 +52,14 @@ margin-top: 30px;
  margin-bottom:-5px;
  margin-right: -2px;
 }
+
+#clear-board {
+width: 200px;
+height: 20px;
+margin-top: 35px;
+
+}
+
+main {
+  text-align: center;
+}

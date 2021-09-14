@@ -7,6 +7,7 @@ createRows();
 createColumns();
 blackColorSelected();
 clickColor();
+paintPixel();
 
 function createColorPalette() {
   const colors = ['black', 'yellow', 'red', 'blue'];
@@ -50,7 +51,7 @@ function createColumns() {
  }
 
  function changeColorSelected () {
-  alert("Está clicando!"); // Essa função meio que repete a próxima por conta de eu não tá conseguindo criar a função após o 'click'
+ // Essa função meio que repete a próxima por conta de eu não tá conseguindo criar a função após o 'click'
   let colorSelected = document.getElementsByClassName('color');
     
   for(let index = 0; index < colorSelected.length; index += 1) {
@@ -70,8 +71,39 @@ function clickColor() { // Requisito 7
 }
 
 function paintPixel() {
-  
+  let recoveryDivPixelPaint = document.getElementsByClassName('pixel');
+  for(let index3 = 0; index3 < recoveryDivPixelPaint.length; index3 += 1) {
+    let pixeis = recoveryDivPixelPaint[index3];
+    pixeis.addEventListener('click',menssagem);
+  }
 }
 
+function menssagem(event) {
+  // alert ('Está sendo clicado');
+  let recoveryClassSelected = document.querySelector('.selected');
+  if(recoveryClassSelected.style.backgroundColor === 'black' ){
+    event.target.style.backgroundColor = 'black';
+  }
+  else if(recoveryClassSelected.style.backgroundColor === 'yellow' ){
+    event.target.style.backgroundColor = 'yellow';
+  }
+  else if(recoveryClassSelected.style.backgroundColor === 'red' ){
+    event.target.style.backgroundColor = 'red';
+
+} else if(recoveryClassSelected.style.backgroundColor === 'blue' ){
+  event.target.style.backgroundColor = 'blue';
+} 
 }
 
+let recoveryButton = document.getElementById('clear-board');
+function buttonWhite() {
+   let pixelWhite = document.getElementsByClassName('pixel');
+   for(let cont = 0; cont < pixelWhite.length; cont += 1){
+     let elemento = pixelWhite[cont];
+    elemento.style.backgroundColor = 'white';
+   }
+}
+recoveryButton.addEventListener('click', buttonWhite)
+
+
+ }
