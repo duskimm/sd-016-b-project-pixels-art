@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="script.js" type="text/javascript"></script>
+    <!-- Scripts -->
+    
     <title>Pixel Art Project</title>
 </head>
 <body> 
@@ -12,35 +17,19 @@
     </header>
     <main>
         <section id="palette">
-            <div id="color-palette">
-                
+            <div id="color-palette" class="center" style="width: max-content;">
                 <!-- Cores - Recentes -->
-                <div>
-                    <div class="color red"></div>
-                    <div class="color green"></div>
-                    <div class="color blue"></div>
-                    <div class="color yellow"></div>
-                    <div class="color cian"></div>
-                    <div class="color pink"></div>
-                    <div class="color empty"></div>
-                </div>
             </div>
+            
             <!-- Cor - Seleção -->
             <div>
                 <!-- Pop-up Cores -->
                 <span class="pop-color-grade"></span>
             </div>
         </section>
-        <section id="grid">
-            <div id="pixel-board">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-            </div>
+        <section id="board">
+            <div id="pixel-board" class="pixel-board"></div>
         </section>
     </main>
-    
 </body>
 </html>
