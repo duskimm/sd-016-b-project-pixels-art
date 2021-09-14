@@ -1,4 +1,4 @@
-//board
+// board
 const numberPixels = 5;
 const linePixel = document.querySelectorAll('.line-pixel');
 const boardElements = document.getElementById('pixel-board');
@@ -9,12 +9,6 @@ function createPixel(classe) {
   return createDiv;
 }
 
-function creatBoard(linePixel) {
-  for (let index = 0; index < linePixel.length; index += 1) {
-    createLine(linePixel[index]);
-  }
-}
-
 function createLine(line) {
   for (let index = 1; index <= numberPixels; index += 1) {
     const pixel = createPixel('pixel');
@@ -22,9 +16,16 @@ function createLine(line) {
   }
 }
 
-creatBoard(linePixel);
+function creatBoard() {
+  for (let index = 0; index < linePixel.length; index += 1) {
+    createLine(linePixel[index]);
+  }
+  return linePixel;
+}
 
-//button clear board
+creatBoard();
+
+// button clear board
 const clearboard = document.getElementById('clear-board');
 const divPixel = document.getElementsByClassName('pixel');
 
@@ -36,28 +37,36 @@ function resetBoard() {
 
 clearboard.addEventListener('click', resetBoard);
 
-//colors
+// colors
 function random() {
-  const randomPalette = Math.floor(Math.random()*16777215).toString(16);
-  const randomColor = `#${randomPalette}`
-  return randomColor
+  const randomPalette = Math.floor(Math.random() * 16777215).toString(16);// https://css-tricks.com/snippets/javascript/random-hex-color/
+  const randomColor = `#${randomPalette}`;
+  return randomColor;
 }
 
 const colorPalette = document.getElementById('color-palette');
 const colorType = document.getElementsByClassName('color');
-colorType[0].classList = 'color selected';
+colorType[0].classList = 'color';
 colorType[0].style.backgroundColor = 'black';
 colorType[2].style.backgroundColor = random();
 colorType[3].style.backgroundColor = random();
 colorType[1].style.backgroundColor = random();
 
-//pincel select and remove
+// Pintar e Apagar
 let divTarget = '';
 let pincelColor = '';
 
+function removeSelectedClass() {
+  if (divTarget !== '' && divTarget.classList.contains('selected')) {
+    divTarget.classList.remove('selected');
+  }
+}
+
 function selectColor(event) {
+  removeSelectedClass();
   divTarget = event.target;
   pincelColor = divTarget.style.backgroundColor;
+  divTarget.classList.add('selected');
 }
 
 function pincel(event) {
@@ -71,7 +80,7 @@ function eraser(event) {
   const erase = event.target;
   erase.style.backgroundColor = 'white';
 }
-//preset pincel onload (black)
+// preset pincel onload (black)
 function presetColor(event) {
   if (divTarget === '') {
     const onloadPaint = event.target;
@@ -81,7 +90,7 @@ function presetColor(event) {
 
 boardElements.addEventListener('click', presetColor);
 
-//eventos
+// eventos
 colorPalette.addEventListener('click', selectColor);
 boardElements.addEventListener('click', pincel);
 boardElements.addEventListener('dblclick', eraser);
