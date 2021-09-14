@@ -20,8 +20,12 @@ function appendStuf(father, child, className, number) {
 }
 
 // Task 2 functions
+// Referência para função matemática que gera cores aleatórias: https://codepen.io/chriscoyier/pen/Xojwzw/
+const ramdomColor1 = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+const ramdomColor2 = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+const ramdomColor3 = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
-const usedColors = ['black', 'rgb(235,242,250)', 'rgb(103,148,54)', 'rgb(165,190,0)'];
+const usedColors = ['black', ramdomColor1, ramdomColor2, ramdomColor3];
 const colors = qAll('.color');
 
 for (let i = 0; i < colors.length; i += 1) {
@@ -91,7 +95,7 @@ q('#clear-board').addEventListener('click', () => {
   }
 });
 
-// task 10
+// task 10 and 11 functions
 function deleteElements(element) {
   // Referência para limpar um nodo usando o DOM: https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
   const node = q(element);
