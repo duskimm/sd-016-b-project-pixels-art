@@ -11,21 +11,29 @@ function criandoPixels(){
 }
 criandoPixels();
 document.getElementById('square1').onclick=function(){
-this.classList.add("selected");
 quadradoSelecao = 0;
 }
 document.getElementById('square2').onclick=function(){
-this.classList.add("selected");
 quadradoSelecao = 1;
     }
 document.getElementById('square3').onclick=function(){
-this.classList.add("selected");
 quadradoSelecao = 2;
     }    
 document.getElementById('square4').onclick=function(){
-this.classList.add("selected");
 quadradoSelecao = 3;
     }
+function paletaListenner(){
+    let listaPaleta = document.getElementsByClassName("color");
+    for (let i=0 ; i<listaPaleta.length; i+=1){
+        listaPaleta[i].addEventListener("click",adicionarClasse)
+    }
+}
+function adicionarClasse(event){
+    let selecionado =document.querySelector(".selected");
+    selecionado.classList.remove("selected");
+    event.target.classList.add("selected");
+}
+paletaListenner();
 function colorir(a){
     switch (quadradoSelecao) {
         case 0:
@@ -40,5 +48,15 @@ function colorir(a){
         case 3:
             document.getElementById(a.id).style.background ="rgb(67, 0, 245)";
             break;
+    }
+}
+function removerSelected(){
+    for(let index=0 ; index<=document.getElementsByClassName("color").length ; index+=1){
+        document.getElementsByClassName("color")[index].classList.remove("selected")
+    }
+}
+document.getElementById("clear-board").onclick = function(){
+    for(let index = 0 ;index< document.getElementsByClassName("pixel").length; index+=1 ){
+        document.getElementsByClassName("pixel")[index].style = "background:rgb(255, 255, 255)";
     }
 }
