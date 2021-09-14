@@ -18,3 +18,20 @@ creatLine(segundaLinha);
 creatLine(terceiraLinha);
 creatLine(quartaLinha);
 creatLine(quintaLinha);
+
+/* Criando a classe selected */
+const paletaBlack = document.querySelector('black');
+const paletaRed = document.querySelector('red');
+const paletaBlue = document.querySelector('blue');
+const paletaGreen = document.querySelector('green');
+
+paletaBlack.className = 'selected';
+
+function classSelected(paleta) {
+  paleta.className = 'selected';    
+}
+
+classSelected(paletaBlack);
+classSelected(paletaRed);
+classSelected(paletaBlue);
+classSelected(paletaGreen);
