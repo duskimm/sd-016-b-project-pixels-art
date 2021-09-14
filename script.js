@@ -9,9 +9,9 @@ function createColorsPallete(color) {
   palleteColor.appendChild(element);
 }
 createColorsPallete('black');
-createColorsPallete('red');
-createColorsPallete('orange');
-createColorsPallete('yellow');
+createColorsPallete(geraCor());
+createColorsPallete(geraCor());
+createColorsPallete(geraCor());
 
 // selecionando a cor preta do span com a classe selected
 function colorBlack() {
@@ -167,3 +167,13 @@ function valueInput() {
   });
 }
 valueInput();
+
+// gerar cor aleatória pesquisa internet
+function geraCor(){
+  const r = parseInt(Math.random() * 255);
+  const g = parseInt(Math.random() * 255);
+  const b = parseInt(Math.random() * 255);
+  const novaCor = 'rgba(' + r + ',' + g + ','  + b + ')';
+  return novaCor;
+}
+geraCor();
