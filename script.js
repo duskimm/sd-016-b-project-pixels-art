@@ -1,6 +1,6 @@
 let colors = {
     active: null,
-    previous: ['black', 'red', 'green', 'blue', 'yellow', 'cyan', 'pink', 'none']
+    previous: ['black', 'red', 'green', 'blue']
 }
 let board = {
     size: 5,
@@ -85,7 +85,7 @@ function updatePalette() {
     // let input = document.querySelector('.colorpick');
     let elements = document.querySelectorAll('.color:not(.colorpick)');
     let prev = elements[elements.length - 1].style.background,
-        active;
+        active, lastElement;
     // input.addEventListener('change', event => {
     //     active = input.value;
     //     // Atualiza as cores do objeto colors;
@@ -103,6 +103,10 @@ function updatePalette() {
             //updateColorPrevious(active);
             // Atualiza as cores da paleta
             updateElements(elements);
+            for (let value of elements){
+                value.classList.remove('selected');
+            }
+            element.classList.add('selected');
             // Seleciona a cor
             colors.active = active;
         });

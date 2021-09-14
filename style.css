@@ -72,3 +72,5 @@ header h1 {
 }
 
 .pixel-board .pixel { border: black solid 1px; }
+
+.selected { border: white solid 2px; }
