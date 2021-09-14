@@ -15,8 +15,6 @@ function checkColor(color) {
 }
 
 const pixels = document.querySelectorAll('.pixel')
-// let cor = document.querySelector('.selected');
-// const bgColor = window.getComputedStyle(cor, null).getPropertyValue("background-color");
 
 for (let i = 0; i < pixels.length; i++) {
   pixels[i].addEventListener('click', toColor);
@@ -29,4 +27,14 @@ function toColor(elem) {
   }
     elem.target.style.backgroundColor = bgColor
 }
-  
+
+const btnClear = document.querySelector('#clear-board');
+btnClear.addEventListener('click', resetPixels );
+
+let resetPixel = document.querySelectorAll('.pixel')
+
+function resetPixels() {
+  for (let i = 0; i < resetPixel.length; i++) {
+    resetPixel[i].style.backgroundColor = 'white'
+  }
+}
