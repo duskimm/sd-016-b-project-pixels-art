@@ -23,8 +23,8 @@ body {
   width: 40px;
 }
 
-#board-size , #generate-board, #clear-board {
-  margin: 0 5px 5px 5px;
+#board-size , #generate-board , #clear-board {
+  margin: 0 5px 5px;
   border-radius: 15px;
 }
 
