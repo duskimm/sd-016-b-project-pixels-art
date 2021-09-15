@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* Criando quadro de pixels */
 const primeiraLinha = document.getElementById('first-line');
 const segundaLinha = document.getElementById('second-line');
@@ -38,7 +39,6 @@ paletaBlue.addEventListener('click', classSelected);
 paletaGreen.addEventListener('click', classSelected);
 
 /* Pitando o quadro de pixels */
-
 function creatColor(event) {
   const pixelC = document.querySelector('.selected');
   event.target.style.backgroundColor = window.getComputedStyle(pixelC).backgroundColor;
@@ -57,7 +57,7 @@ creatEscuta();
 /* Limpando o quadro de pixels */
 function limpandoQuadro() {
   const arrayPixel = document.getElementsByClassName('pixel');
-  for (let index = 0; index < arrayPixel.length; index++) {
+  for (let index = 0; index < arrayPixel.length; index += 1) {
     const element = arrayPixel[index];
     element.style.backgroundColor = 'white';
   }

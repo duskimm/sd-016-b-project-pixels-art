@@ -10,7 +10,7 @@ header {
   padding: 5px;
 }
 
-/* Paleta de Core */
+/* Paleta de Cores */
 #color-palette {
   margin-bottom: 25px;
 }
@@ -71,4 +71,13 @@ main {
 
 #fifth-line {
   margin-top: 3px;
+}
+
+/* Botão */
+#clear-board {
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  font-weight: 900;
+  font-size: 0.9em;
+  background-color: rgb(198, 161, 233);
 }
