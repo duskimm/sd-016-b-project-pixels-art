@@ -12,7 +12,7 @@ function createColorPalete () {
   }
 }
 
-createColorPalete()
+createColorPalete();
 
 function createPixelBoard() {
   let getPixelBoard = document.querySelector('#pixel-board');
@@ -31,5 +31,11 @@ function createPixelBoard() {
   
 }
 
+createPixelBoard();
 
-createPixelBoard()
+function selectFirstColor() {
+  let getBlack = document.getElementsByClassName('color')[0]
+  getBlack.classList.add('color','selected')
+}
+
+selectFirstColor()
