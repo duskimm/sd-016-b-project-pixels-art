@@ -9,18 +9,18 @@
   height: 100%;
 }
 
-.color-palette {
-  height: 20px;
-  width: 20px;
-  background-color: violet;
-  display: block;
+#color-palette {
+  height: 22px;
+    width: 100%;
+    float: left;
+    margin-left: 15px;
 }
 
 .color {
   float: left;
   width: 20px;
   height: 20px;
-  border: solid 1px #000;
+  border: solid 1px rgb(0, 0, 0);
 }
 
 .limpar {
@@ -32,7 +32,7 @@
 }
 
 .borda-size {
-  display: inline-block;
+  display: block;
   width: 150px;
   height: 25px;
   background-color: rgb(190, 187, 187);
