@@ -30,5 +30,13 @@ window.onload = function beginning() {
 			pixelsList[i].style.backgroundColor = 'white';
 		}
 	}
- 
+
+	let size = document.querySelector('#board-size');
+	document.querySelector('#vqv').addEventListener('click',defineTheSize);
+  
+	function defineTheSize(event) {
+		if (size === null ){
+			alert("Board inválido!");
+		}
+	}
 }
