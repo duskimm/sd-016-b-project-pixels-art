@@ -1,46 +1,18 @@
 window.onload = function startBlack() {
-  const createClass = document.createElement('class');
-  createClass.className = 'selected';
   const colorBlack = document.querySelector('.color');
   colorBlack.classList.add('selected');
 };
 
-const colorBlack = document.querySelector('#colorBlack');
-const colorBlue = document.querySelector('#colorBlue');
-const colorRed = document.querySelector('#colorRed');
-const colorGreen = document.querySelector('#colorGreen');
-
-colorBlack.addEventListener('click', clickBlack);
-function clickBlack() {
-  colorBlack.classList.add('selected');
-  colorBlue.classList.remove('selected');
-  colorRed.classList.remove('selected');
-  colorGreen.classList.remove('selected');
+function changeSelected() {
+  const paletteColor = document.querySelector('#color-palette');
+  paletteColor.addEventListener('click', (event) => {
+    const selectedColor = document.querySelector('.selected');
+    selectedColor.classList.remove('selected');
+    event.target.classList.add('selected');
+  });
 }
 
-colorBlue.addEventListener('click', clickBlue);
-function clickBlue() {
-  colorBlack.classList.remove('selected');
-  colorBlue.classList.add('selected');
-  colorRed.classList.remove('selected');
-  colorGreen.classList.remove('selected');
-}
-
-colorRed.addEventListener('click', clickRed);
-function clickRed() {
-  colorBlack.classList.remove('selected');
-  colorBlue.classList.remove('selected');
-  colorRed.classList.add('selected');
-  colorGreen.classList.remove('selected');
-}
-
-colorGreen.addEventListener('click', clickGreen);
-function clickGreen() {
-  colorBlack.classList.remove('selected');
-  colorBlue.classList.remove('selected');
-  colorRed.classList.remove('selected');
-  colorGreen.classList.add('selected');
-}
+changeSelected();
 
 /* Nesse exercicio tive a ajuda do Hugo Daniel para resolver. */
 const pixelBoard = document.querySelector('#pixel-board');
@@ -60,7 +32,6 @@ function creationButton() {
   button.id = 'clear-board';
   button.innerText = 'Limpar';
   buttonCreate.append(button);
-
   button.addEventListener('click', () => {
     const pixel = document.getElementsByClassName('pixel');
     for (let index = 0; index < pixel.length; index += 1) {

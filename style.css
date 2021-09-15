@@ -7,6 +7,12 @@ body {
   text-align: center;
 }
 
+section {
+  width: 210px;
+  margin: auto;
+  padding: 10px;
+}
+
 #title {
   background-color: turquoise;
   padding: 10px;
