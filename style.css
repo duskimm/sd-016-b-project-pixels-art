@@ -1,4 +1,5 @@
 .color {
+  border-radius: 100%;
   height: 100px;
   width: 100px;
   background-color: purple;
@@ -28,4 +29,9 @@
   border: 1px solid black;
   display: inline-block;
   background-color: white;
+}
+
+body {
+  line-height: 0;
+  text-align: center;
 }

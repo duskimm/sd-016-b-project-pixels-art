@@ -29,13 +29,13 @@ function UserBoard() {
   azul = entrada;
   if(azul == ""){
     alert("Board inválido!");
-    azul = 5;
   }else if(azul < 5) {
-    azul = 5;
+    bordCreator (5);
   }else if(azul > 50){
-    azul = 50
+    bordCreator (50);
+  }else {
+    bordCreator (azul);
   }
-  bordCreator (azul);
 }
 
 //cria a pixel-board de acordo com o tamanho indicado
