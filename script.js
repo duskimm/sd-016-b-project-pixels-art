@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* Criando quadro de pixels */
 const primeiraLinha = document.getElementById('first-line');
 const segundaLinha = document.getElementById('second-line');
@@ -19,19 +20,39 @@ creatLine(terceiraLinha);
 creatLine(quartaLinha);
 creatLine(quintaLinha);
 
-/* Criando a classe selected */
-const paletaBlack = document.querySelector('black');
-const paletaRed = document.querySelector('red');
-const paletaBlue = document.querySelector('blue');
-const paletaGreen = document.querySelector('green');
+/* Inserindo e removendo a classe selected */
+const paletaBlack = document.querySelector('.black');
+const paletaRed = document.querySelector('.red');
+const paletaBlue = document.querySelector('.blue');
+const paletaGreen = document.querySelector('.green');
 
-paletaBlack.className = 'selected';
-
-function classSelected(paleta) {
-  paleta.className = 'selected';    
+function classSelected(event) {
+  const elementContainSelected = document.querySelector('.selected');
+  elementContainSelected.classList.remove('selected');
+  event.target.classList.add('selected');
+  console.log(elementContainSelected);
 }
 
-classSelected(paletaBlack);
-classSelected(paletaRed);
-classSelected(paletaBlue);
-classSelected(paletaGreen);
+paletaBlack.addEventListener('click', classSelected);
+paletaRed.addEventListener('click', classSelected);
+paletaBlue.addEventListener('click', classSelected);
+paletaGreen.addEventListener('click', classSelected);
+
+/* Pitando o quadro de pixels */
+
+function creatColor(event) {
+  const pixelC = document.querySelector('.selected');
+  event.target.style.backgroundColor = window.getComputedStyle(pixelC).backgroundColor;
+}
+
+function creatEscuta() {
+  const arrayPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < arrayPixel.length; index += 1) {
+    const element = arrayPixel[index];
+    element.addEventListener('click', creatColor);
+  }
+}
+
+creatEscuta();
+
+/* Limpando */
