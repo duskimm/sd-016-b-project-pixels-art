@@ -15,51 +15,141 @@
     </header>
     <main>
         <div id="color-palette">
-            <div class="color selected"></div>
-            <div class="color paleta-2-Bg"></div>
-            <div class="color paleta-3-Bg"></div>
-            <div class="color paleta-4-Bg"></div>
         </div>
-        <button type="submit" id="clear-board">Limpar</button>
+        <section id="button-input">
+        </section>
         <div id="pixel-board">
-            <div class="line-pixel">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-            </div>
-            <div class="line-pixel">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-            </div>
-            <div class="line-pixel">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-            </div>
-            <div class="line-pixel">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-            </div>
-            <div class="line-pixel">
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-                <div class="pixel"></div>
-            </div>
         </div>
     </main>
-    <script src="script.js"></script>
+    <script>
+        let startSquarePixel = 5;
+        const parentElementButInp = document.getElementById('button-input');
+        let button = document.createElement('button');
+        let selectColorTem = '';
+
+        function createPalette() {
+            let palette = document.getElementById('color-palette');
+            for (let i = 0; i < 4; i++) {
+                let colorPalette = document.createElement('div');
+                colorPalette.classList.add('color');
+                switch (i) {
+                    case 0:
+                        selectColorPalette = colorPalette.classList.add('selected');
+                        selectColorTem = '#000000';
+                        break
+                    case 1:
+                        colorPalette.style.backgroundColor = '#51f504';
+                        break;
+                    case 2:
+                        colorPalette.style.backgroundColor = '#0af3e0';
+                        break;
+                    default:
+                        colorPalette.style.backgroundColor = '#6e51a5';
+                }
+                palette.appendChild(colorPalette);
+            }
+        }
+        createPalette();
+
+        function createFirstPixelSquare() {
+            let pixelFirstBoard = document.getElementById('pixel-board');
+            for (let ini = 0; ini < 5; ini += 1) {
+                let pixelFirstSquare = document.createElement('div');
+                pixelFirstBoard.appendChild(pixelFirstSquare)
+                for (let indi = 0; indi < 5; indi += 1) {
+                    let pixelFirst = document.createElement('div');
+                    pixelFirstSquare.appendChild(pixelFirst);
+                    pixelFirst.classList.add('pixel');
+                }
+            }
+        }
+        createFirstPixelSquare();
+// parei aqui -- tentando modificar o valor do selectColorTem para que ele sai de dentro do 'event'
+        function eventSelectColor(selectTempColor) {
+            let selectColorPalette = document.getElementsByClassName('color');
+            for (let ind of selectColorPalette) {
+                selectTempColor = ind.addEventListener('click', function () {
+                    let removeClass = document.querySelector('.selected');
+                    removeClass.classList.remove('selected');
+                    selectTempColor = window.getComputedStyle(this).backgroundColor;
+                    ind.classList.add('selected');
+                    return selectTempColor;
+                });
+                console.log(selectTempColor + 'teste');
+            }
+            function paintPixelFrame(selColor) {
+                let eventPaint = document.getElementsByClassName('pixel');
+                for (let elementEvent of eventPaint) {
+                    elementEvent.addEventListener('click', function () {
+                        this.style.backgroundColor = selColor;
+                    });
+                }
+            }
+            paintPixelFrame(selectTempColor);
+        }
+        eventSelectColor(selectColorTem);
+
+        function createButton(valueParent, valueButton) {
+            valueButton = document.createElement('button');
+            valueButton.type = 'submit';
+            valueButton.id = 'clear-board';
+            valueButton.innerText = 'Limpar';
+            valueButton.className = 'limpar';
+            valueParent.appendChild(valueButton);
+        }
+        createButton(parentElementButInp, button);
+
+        function createInput(parentElement) {
+            let input = document.createElement('input');
+            input.type = 'number';
+            input.id = 'board-size';
+            input.placeholder = 'Tamanho do tabuleiro';
+            input.min = '5';
+            input.max = '50';
+            input.className = 'borda-size';
+            parentElement.appendChild(input);
+        }
+        createInput(parentElementButInp);
+
+        function createButtonInput(parent, butValue) {
+            butValue.type = 'submit';
+            butValue.id = 'generate-board';
+            butValue.innerText = 'VQV';
+            butValue.className = 'button-input';
+            parent.appendChild(butValue);
+        }
+        createButtonInput(parentElementButInp, button);
+
+
+        function captureInput() {
+            let inputV = document.getElementById('board-size');
+            startSquarePixel = inputV.value;
+            startSquarePixel = startSquarePixel < 5 ? 5 : startSquarePixel;
+            startSquarePixel = startSquarePixel > 50 ? 50 : startSquarePixel;
+            changePixelFrame(startSquarePixel);
+        }
+
+        const buttonVqv = document.getElementById('generate-board');
+        buttonVqv.addEventListener('click', captureInput);
+
+        function changePixelFrame(sizeSquare) {
+            let pixelSquare = document.getElementById('pixel-board');
+            pixelSquare.innerHTML = '';
+            pixelSquare.style.width = `${sizeSquare * 42}px`;
+            pixelSquare.style.height = `${sizeSquare * 42}px`;
+            for (let i = 0; i < sizeSquare; i += 1) {
+                let pixelLine = document.createElement('div');
+                pixelSquare.appendChild(pixelLine);
+                for (let index = 0; index < sizeSquare; index += 1) {
+                    let pixel = document.createElement('div');
+                    pixelLine.appendChild(pixel);
+                    pixel.classList.add('pixel');
+                }
+            }
+        }
+
+
+    </script>
 </body>
 
 </html>

@@ -1,55 +1,69 @@
-*{
-    margin:0;
-    padding:0;
-    border:0;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-.main{
-    width:100%;
-    height:80%;
+.main {
+  width: 100%;
+  height: 100%;
 }
 
 .color-palette {
-    height: 20px;
-    width: 20px;
-    background-color: violet;
-    display: block;
+  height: 20px;
+  width: 20px;
+  background-color: violet;
+  display: block;
 }
 
-.color{
-    float: left;
-    width: 20px;
-    height: 20px;
-    border: solid 1px #000;
+.color {
+  float: left;
+  width: 20px;
+  height: 20px;
+  border: solid 1px #000;
 }
 
-.paleta-2-Bg{
-    background-color: #51f504;
+.limpar {
+  margin-right: 30px;
+  margin-left: 30px;
+  width: 70px;
+  height: 25px;
+  background-color: rgb(99, 96, 96);
 }
 
-.paleta-3-Bg{
-    background-color: #0af3e0;
+.borda-size {
+  display: inline-block;
+  width: 150px;
+  height: 25px;
+  background-color: rgb(190, 187, 187);
 }
 
-.paleta-4-Bg{
-    background-color: #6e51a5;
+.button-input {
+  margin-left: 10px;
+  width: 70px;
+  height: 25px;
+  background-color: rgb(99, 96, 96);
 }
 
-#pixel-board{
-    width: 210px;
-    height: 210px;
-    background-color: rgb(240, 240, 235);
-    margin: 30px;
+#pixel-board {
+  background-color: rgb(240, 240, 235);
+  width: 210px;
+  height: 210px;
+  margin: 30px;
 }
 
-.pixel{
-    float: left;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border: solid 1px #000;
+.pixel {
+  float: left;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: solid 1px #000;
 }
 
-.selected{
-    background-color: black;
+.selected {
+  background-color: black;
+  float: left;
+  width: 20px;
+  height: 20px;
+  border: solid 1px #000;
 }
