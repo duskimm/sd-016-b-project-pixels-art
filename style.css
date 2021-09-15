@@ -55,7 +55,6 @@ html {
 }
 
 body {
-
   padding: 30px;
 }
 
@@ -88,7 +87,6 @@ footer {
 }
 
 /* ID */
-#project-title {}
 
 #logo {
   align-items: center;
@@ -147,10 +145,6 @@ footer {
   margin: 5px;
 }
 
-#size-line {}
-
-#size-colum {}
-
 #color-palette {
   display: flex;
   flex-wrap: wrap;
@@ -207,14 +201,10 @@ footer {
   justify-content: center;
 }
 
-#credits-links {}
-
 #links-list {
   display: flex;
   list-style: none;
 }
-
-#copyright {}
 
 #text-copyright {
   text-align: center;
@@ -258,9 +248,9 @@ footer {
 .color {
   border: 1px black solid;
   border-radius: 5px;
-  height: 38px;
+  height: 40px;
   margin: 1px;
-  width: 38px;
+  width: 40px;
 }
 
 .pixel {
@@ -269,8 +259,8 @@ footer {
   background-color: white;
   border: 1px solid var(--gray);
   border-radius: 2px;
-  height: 39px;
-  width: 39px;
+  height: 40px;
+  width: 40px;
 }
 
 .pixel:hover {

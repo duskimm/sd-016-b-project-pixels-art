@@ -1,17 +1,17 @@
 // Função gerando cores hexadecimais
 function gerarCorHexadecimal() {
-  return `#${parseInt((Math.random() * 0xFFF))
+  return `#${parseInt((Math.random() * 0xffffff))
     .toString(16)
-    .padStart(3, '0')}`;
+    .padStart(6, '0')}`;
 }
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Montando Paleta de cores
 function criarPaleta() {
-  const cores = ['#000'];
+  const cores = ['#000000'];
   for (let ind = 0; ind < cores.length; ind += 1) {
     while (cores.length < 4) {
       const newColor = gerarCorHexadecimal();
-      if (newColor !== 0xFFF && newColor !== cores[ind]) {
+      if (newColor !== 0xffffff && newColor !== cores[ind]) {
         cores.push(newColor);
       }
     }
@@ -63,7 +63,7 @@ criarPixelBoard(5, 5);
 document.getElementById('clear-board').addEventListener('click', function () {
   const clearPixels = document.querySelectorAll('.pixel');
   for (let ind = 0; ind < clearPixels.length; ind += 1) {
-    clearPixels[ind].style.backgroundColor = '#fff';
+    clearPixels[ind].style.backgroundColor = '0xffffff';
   }
 });
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -110,5 +110,12 @@ function trocarCor() {
   })
 }
 trocarCor()
-// Função troca de cor
+// Validando o limite o tamanho mínimo e máximo do board
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+const validBoarderSize = document.getElementById('board-size');
+const validBoarderGenerate = document.getElementById('generate-board')
+validBoarderGenerate.addEventListener('click', function () {
+  let height = validBoarderSize.value;
+  if (height === '') {
+    alert('Board inválido!');
+}});
