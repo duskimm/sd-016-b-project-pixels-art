@@ -1,7 +1,9 @@
 const colors = document.getElementById('color-palette');
 const boardPixels = document.getElementById('pixel-board');
+const selectedBoardSize = document.getElementById('board-size');
+const generate = document.getElementById('generate-board');
 
-// FUNÇÃO QUE CRIA PALETA DE CORES
+// ***FUNÇÃO QUE CRIA PALETA DE CORES***
 function colorPalette() {
   const quantityColor = 4;
   for (let paletteIdx = 0; paletteIdx < quantityColor; paletteIdx += 1) {
@@ -11,12 +13,28 @@ function colorPalette() {
   }
 }
 
-// FUNÇÃO PARA GERAR CORES ALEATÓRIAS
-// Ref.: Encontrei à solução, que retorna as cores aleatórias para as demais paletas no site https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+// ***FUNÇÃO PARA VALIDAR O VALOR NO INPUT***
+function resetBoard() {
+  const boardSection = document.getElementById('pixel-board');
+  boardSection.innerHTML = '';
+}
+
+function valueUser() {
+  if (selectedBoardSize.value === '') {
+    alert('Board inválido!');
+  } else if (selectedBoardSize.value < 5) {
+    selectedBoardSize.value = 5;
+  } else if (selectedBoardSize.value > 50) {
+    selectedBoardSize.value = 50;
+  }
+}
+
+// ***FUNÇÃO PARA GERAR CORES ALEATÓRIAS***
+// https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
 function randomColor() {
   const quantityColor = 4;
   for (let idx = 1; idx < quantityColor; idx += 1) {
-    colors.childNodes[idx].style.background = `#${parseInt((Math.random() * 0xFFFFFF))
+    colors.childNodes[idx].style.background = `#${Math.floor((Math.random() * 0xFFFFFF))
       .toString(16)
       .padStart(6, '0')}`;
   }
@@ -24,14 +42,14 @@ function randomColor() {
   colors.firstElementChild.style.backgroundColor = 'black';
 }
 
-// FUNÇÃO QUE SELECIONA AS CORES NA PALETA
+// ***FUNÇÃO QUE SELECIONA AS CORES NA PALETA***
 function selectColor(event) {
   const color = document.querySelector('.selected');
   const getColor = event.target;
   getColor.style.backgroundColor = color.style.backgroundColor;
 }
 
-// FUNÇÃO QUE PREENCHE FUNDO DO BOARD DE BRANCO
+// ***FUNÇÃO QUE LIMPA O BOARD***
 function clearPixelBoard() {
   const cleanPxl = document.getElementsByClassName('pixel');
   for (let idx = 0; idx < cleanPxl.length; idx += 1) {
@@ -44,9 +62,9 @@ function clearPixel() {
   cleaning.addEventListener('click', clearPixelBoard);
 }
 
-// FUNÇÃO QUE CRIA QUADRO
-function boardPalette() {
-  const lines = 5;
+// ***FUNÇÃO QUE CRIA QUADRO***
+function boardPalette(param) {
+  const lines = param;
   for (let lineIdx = 0; lineIdx < lines; lineIdx += 1) {
     const boardColor = document.createElement('div');
     for (let columnsIdx = 1; columnsIdx <= lines; columnsIdx += 1) {
@@ -58,8 +76,9 @@ function boardPalette() {
     boardPixels.appendChild(boardColor);
   }
 }
+boardPalette(5);
 
-// FUNÇÃO PARA SELECIONAR COR
+// ***FUNÇÃO PARA SELECIONAR COR***
 function toggleSelector(event) {
   const selectedClass = document.getElementsByClassName('color selected')[0];
   selectedClass.classList.remove('selected');
@@ -67,7 +86,14 @@ function toggleSelector(event) {
 }
 colors.addEventListener('click', toggleSelector);
 
+function vsvvsv() {
+  resetBoard();
+  valueUser();
+  boardPalette(selectedBoardSize.value);
+}
+generate.addEventListener('click', vsvvsv);
+
 colorPalette();
 randomColor();
 clearPixel();
-boardPalette();
+boardPalette(selectedBoardSize.value);
