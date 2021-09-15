@@ -20,8 +20,15 @@ window.onload = function beginning() {
 	function changeColor(event) {
 		let currentSelected = document.querySelector('.selected');
 		let color = window.getComputedStyle(currentSelected, null).getPropertyValue("background-color");
-		event.target.style.backgroundColor = color ;
+		event.target.style.backgroundColor = color ; 
 	}
 
+	document.querySelector('#clear-board').addEventListener('click',cleanAll);
+
+	function cleanAll(event) {
+		for(let i = 0; i < pixelsList.length; i++) {
+			pixelsList[i].style.backgroundColor = 'white';
+		}
+	}
  
 }
