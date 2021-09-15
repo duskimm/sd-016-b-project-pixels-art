@@ -63,8 +63,8 @@ function clearPixel() {
 }
 
 // ***FUNÇÃO QUE CRIA QUADRO***
-function boardPalette(param) {
-  const lines = param;
+function boardPalette(board) {
+  const lines = board;
   for (let lineIdx = 0; lineIdx < lines; lineIdx += 1) {
     const boardColor = document.createElement('div');
     for (let columnsIdx = 1; columnsIdx <= lines; columnsIdx += 1) {
@@ -86,14 +86,16 @@ function toggleSelector(event) {
 }
 colors.addEventListener('click', toggleSelector);
 
-function vsvvsv() {
+function generateNewBoard() {
   resetBoard();
   valueUser();
   boardPalette(selectedBoardSize.value);
 }
-generate.addEventListener('click', vsvvsv);
+generate.addEventListener('click', generateNewBoard);
 
-colorPalette();
-randomColor();
-clearPixel();
-boardPalette(selectedBoardSize.value);
+window.onload = () => {
+  colorPalette();
+  randomColor();
+  clearPixel();
+  boardPalette(selectedBoardSize.value);
+};
