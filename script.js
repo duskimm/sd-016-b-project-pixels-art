@@ -74,3 +74,18 @@ boardGen.addEventListener('click', () => {
   }
   addPixel(inputN);
 });
+
+function aleatoryColors() {
+  const r = parseInt(Math.random() * 255, 10);
+  const g = parseInt(Math.random() * 255, 10);
+  const b = parseInt(Math.random() * 255, 10);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+function newColors() {
+  const colors = document.querySelectorAll('.color');
+  for (let i = 1; i < colors.length; i += 1) {
+    colors[i].style.backgroundColor = aleatoryColors();
+  }
+}
+newColors();
