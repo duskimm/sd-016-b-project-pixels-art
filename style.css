@@ -32,10 +32,11 @@
     background-color: red;
 }
 
-#pixel-board {
-    margin: auto;
-    width: 200px;    
-    height: 200px;
+#pixel-board, .pixel-board {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
 }
 
 .pixel {
@@ -43,16 +44,21 @@
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  display: inline-block;  
-  margin: -3px;
+  display: inline-flex;  
+  margin-bottom: -6px;
 }   
 
 #div {
+    align-items: center;
     display: flex;
     justify-content: center;
-    padding: 20px  ;
+    padding: 20px;
 }
 
 .button {
     margin: 0 10px 0 10px;
+}
+
+.linha {
+    margin: 0 auto;
 }
