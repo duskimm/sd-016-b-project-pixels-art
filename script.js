@@ -35,7 +35,7 @@ window.onload = function beginning() {
 	document.querySelector('#vqv').addEventListener('click',defineTheSize);
   
 	function defineTheSize(event) {
-		if (size === null ){
+		if (size != Number ){
 			alert("Board inválido!");
 		}
 	}
