@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 /* Criando quadro de pixels */
 const primeiraLinha = document.getElementById('first-line');
 const segundaLinha = document.getElementById('second-line');
@@ -55,4 +54,14 @@ function creatEscuta() {
 
 creatEscuta();
 
-/* Limpando */
+/* Limpando o quadro de pixels */
+function limpandoQuadro() {
+  const arrayPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < arrayPixel.length; index++) {
+    const element = arrayPixel[index];
+    element.style.backgroundColor = 'white';
+  }
+}
+
+const botao = document.getElementById('clear-board');
+botao.addEventListener('click', limpandoQuadro);
