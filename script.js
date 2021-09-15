@@ -76,9 +76,9 @@ boardGen.addEventListener('click', () => {
 });
 
 function aleatoryColors() {
-  const r = parseInt(Math.random() * 255, 10);
-  const g = parseInt(Math.random() * 255, 10);
-  const b = parseInt(Math.random() * 255, 10);
+  const r = parseInt(Math.random() * 256, 10);
+  const g = parseInt(Math.random() * 256, 10);
+  const b = parseInt(Math.random() * 256, 10);
   return `rgb(${r}, ${g}, ${b})`;
 }
 
