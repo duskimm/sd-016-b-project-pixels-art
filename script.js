@@ -50,7 +50,6 @@ const newBoardSize = document.createElement('input');
 newBoardSize.id = 'board-size';
 newBoardSize.type = 'number';
 newBoardSize.min = 1;
-newBoardSize.max = 50;
 newBoardSize.placeholder = 'defina o tamanho do quadro';
 newSection.appendChild(newBoardSize);
 
@@ -59,24 +58,46 @@ buttonNewBoard.id = 'generate-board';
 buttonNewBoard.innerHTML = 'VQV';
 newSection.appendChild(buttonNewBoard);
 
-buttonNewBoard.addEventListener('click', makeboard);
+buttonNewBoard.addEventListener('click', makeBoard);
 
-function makeboard() {
+function makeBoard() {
   if (newBoardSize.value === '') {
     window.alert('Board inválido!');
+  } else if (newBoardSize.value < 5) {
+    newBoardSize.value = 5;
+    subMakeBoard();
+  } else if (newBoardSize.value > 50) {
+    newBoardSize.value = 50;
+    subMakeBoard();
   } else {
-    while (pixelBoard.firstElementChild) {
-      pixelBoard.removeChild(pixelBoard.firstElementChild);
-    }
+    subMakeBoard();
+  }
+}
+
+function subMakeBoard() {
+  while (pixelBoard.firstElementChild) {
+    pixelBoard.removeChild(pixelBoard.firstElementChild);
+  }
+  for (let i = 0; i < newBoardSize.value; i += 1) {
+    const newLine = document.createElement('div');
+    newLine.className = 'line';
+    pixelBoard.appendChild(newLine);
     for (let i = 0; i < newBoardSize.value; i += 1) {
-      const newLine = document.createElement('div');
-      newLine.className = 'line';
-      pixelBoard.appendChild(newLine);
-      for (let i = 0; i < newBoardSize.value; i += 1) {
-        const newPixel = document.createElement('div');
-        newPixel.className = 'pixel';
-        newLine.appendChild(newPixel);
-      }
+      const newPixel = document.createElement('div');
+      newPixel.className = 'pixel';
+      newLine.appendChild(newPixel);
     }
   }
 }
+
+function randomColors() {
+  const randomColor = `#${Math.floor(Math.random() * 16777216).toString(16)}`;
+  return randomColor;
+}
+
+const paletteColors = document.getElementsByClassName('color');
+for (let i = 1; i < paletteColors.length; i += 1) {
+  paletteColors[i].style.backgroundColor = randomColors();
+}
+
+// https://dev.to/akhil_001/generating-random-color-with-single-line-of-js-code-fhj
