@@ -37,8 +37,4 @@ function resetPixels() {
   for (let i = 0; i < resetPixel.length; i++) {
     resetPixel[i].style.backgroundColor = 'white';
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 4a31db94f0ace0bab31f790a076443044bd9d9cc
