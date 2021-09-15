@@ -50,10 +50,6 @@ h1 {
   background-color: white;
 }
 
-.selected {
-  border-color: khaki;
-}
-
 #clear-board {
   display: block;
   margin-left: auto;
