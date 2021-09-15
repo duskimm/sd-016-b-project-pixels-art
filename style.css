@@ -11,9 +11,11 @@
     display: inline-block;
 }
 
-#pixel-board {
+
+
+.pixelContainer {
     display: inline-block;
-    margin-right: 385px;
+    
     margin-left: 5px;
     display: flex;
     flex-wrap: wrap
@@ -21,8 +23,8 @@
 
 .pixel {
     padding:initial;
-    width: 75px;
-    height: 75px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     background-color: white;
     

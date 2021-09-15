@@ -17,13 +17,18 @@ createColorPalete()
 function createPixelBoard() {
   let getPixelBoard = document.querySelector('#pixel-board');
   for (let i = 0; i < 5; i ++) {
+    let SetPixelLineContainer = document.createElement('div');
+    SetPixelLineContainer.classList.add('pixelContainer');
+    getPixelBoard.appendChild(SetPixelLineContainer);
+
     for (let i = 0; i < 5; i ++) {
       let setPixelLine = document.createElement('div');
       setPixelLine.classList.add('pixel');
       setPixelLine.style.border = 'thin solid black';
-      getPixelBoard.appendChild(setPixelLine);
+      SetPixelLineContainer.appendChild(setPixelLine);
     }
   }
+  
 }
 
 
