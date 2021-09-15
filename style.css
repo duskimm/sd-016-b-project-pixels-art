@@ -22,30 +22,6 @@ h1 {
   background-color: rgb(41, 37, 37);
 }
 
-/* .red {
-background-color: red;
-}
-
-.red:hover {
-background-color: rgb(199, 33, 33);
-}
-
-.blue {
-background-color: blue;
-}
-
-.blue:hover {
-background-color: rgb(17, 17, 195);
-}
-
-.green {
-background-color: green;
-}
-
-.green:hover {
-background-color: rgb(17, 172, 17);
-} */
-
 #clear-board {
   background-color: grey;
   border: 1px solid black;

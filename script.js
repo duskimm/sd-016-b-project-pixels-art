@@ -230,11 +230,32 @@ for (let index = 0; index < pixelBox.length; index += 1) {
 
 // Limpa toda a tabela pintando de branco
 
-const clear = document.getElementById('clear-board');
+const clearScreen = document.getElementById('clear-board');
 
-clear.addEventListener('click', () => {
+clearScreen.addEventListener('click', () => {
   for (let index = 0; index < pixelBox.length; index += 1) {
-    console.log('limpa tabela');
     pixelBox[index].style.backgroundColor = 'white';
   }
 });
+
+// ideia da borracha
+
+const eraserPixel = document.getele
+
+function insertEventEraser() {
+  for (let index = 0; index < pixelBox.length; index += 1) {
+    pixelBox[index].addEventListener('click', () => {
+      pixelBox[index].style.backgroundColor = 'white';
+    });
+  }
+}
+
+// botão borracha
+
+function eraserBtn() {
+  const generateBoard = document.createElement('div');
+  generateBoard.id = 'generate-board';
+  btnAndInput.appendChild(generateBoard).innerText = 'VQV';
+}
+
+eraserBtn();
