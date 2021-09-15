@@ -5,19 +5,19 @@
     height: 60px;
 }
 
-.color1 {
+.color0 {
     background-color: black;
 }
 
-.color2 {
+.color1 {
     background-color: #eb5e28;
 }
 
-.color3 {
+.color2 {
     background-color: #403d39;
 }
 
-.color4 {
+.color3 {
     background-color: #ccc5b9;
 }
 
@@ -33,4 +33,3 @@
     width: 250px;
     height: 150px;
 }
-
