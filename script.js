@@ -2,70 +2,38 @@ window.onload = function inicialColor() {
   const blackColor = document.querySelector('.color');
   blackColor.classList.add('selected');
 };
-//----
-// este era meu codigo orignal, mas com ajuda do Hugo Daniel, cheguei ao debaixo.
 
-/*  const mouseOverPalette = document.getElementById('color-palette');
-mouseOverPalette.addEventListener('mouseover', clickAlert);
+const palette = document.querySelector('#color-palette');
+const pixelBoardArray = document.getElementsByClassName('pixel');
+const pixelBoard = document.getElementById('pixel-board');
+const classLine = document.getElementsByClassName('line');
 
-function clickAlert() {
-  */
-/* const colorArray = document.querySelectorAll('.color');
-
-  for (const index in colorArray) {
-    colorArray[index].addEventListener('click', (event) => {
-      for (const index in colorArray) {
-        colorArray[index].className = 'color';
-      }
-      event.target.classList.add('selected');
-    });
-  }
-//} */
-//---
-
-const colorArray = document.querySelector('#color-palette');
-
-colorArray.addEventListener('click', (event) => {
-  for (let index = 0; index < colorArray.children.length; index += 1) {
-    colorArray.children[index].classList.remove('selected');
+palette.addEventListener('click', (event) => {
+  for (let index = 0; index < palette.children.length; index += 1) {
+    palette.children[index].classList.remove('selected');
   }
   event.target.classList.add('selected');
 });
-//-----
+// ajudado por Hugo Daniel.
 
-const pixelBoardArray = document.getElementsByClassName('pixel');
 for (let index = 0; index < pixelBoardArray.length; index += 1) {
   pixelBoardArray[index].onclick = function (event) {
-    const actualColor = document.querySelector('.selected');
-    const BGColorSelected = window.getComputedStyle(actualColor, null).getPropertyValue('background-color');
+    const selectedColor = document.querySelector('.selected');
+    const BGColorSelected = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
     event.target.style.backgroundColor = BGColorSelected;
   };
 }
-/* ou
-const pixelBoardArray = document.getElementsByClassName('pixel');
-for (let index = 0; index < pixelBoardArray.length; index += 1) {
-  pixelBoardArray[index].addEventListener ('click', btg);
-
-    function btg (event) {
-      const actualColor = document.querySelector('.selected');
-      const BGColorSelected = window.getComputedStyle(actualColor, null).getPropertyValue('background-color');
-      event.target.style.backgroundColor = BGColorSelected;
-    };
-}; */
-//---
 
 const bigSection = document.createElement('section');
 bigSection.className = 'big session';
 document.body.appendChild(bigSection);
-
-bigSection.appendChild((document.getElementById('color-palette')));
+bigSection.appendChild(palette);
 
 const newSection = document.createElement('section');
 newSection.id = 'new-section';
 bigSection.appendChild(newSection);
 
-bigSection.appendChild((document.getElementById('pixel-board')));
-//----
+bigSection.appendChild(pixelBoard);
 
 const botaoLimpar = document.createElement('button');
 botaoLimpar.id = 'clear-board';
@@ -78,14 +46,37 @@ botaoLimpar.onclick = function clean() {
   }
 };
 
-/* ou
-botaoLimpar.addEventListener ('click', clean);
+const newBoardSize = document.createElement('input');
+newBoardSize.id = 'board-size';
+newBoardSize.type = 'number';
+newBoardSize.min = 1;
+newBoardSize.max = 50;
+newBoardSize.placeholder = 'defina o tamanho do quadro';
+newSection.appendChild(newBoardSize);
 
-function clean () {
-  for (let index = 0; index < pixelBoardArray.length; index += 1) {
-    pixelBoardArray[index].style.backgroundColor = 'white';
+buttonNewBoard = document.createElement('button');
+buttonNewBoard.id = 'generate-board';
+buttonNewBoard.innerHTML = 'VQV';
+newSection.appendChild(buttonNewBoard);
+
+buttonNewBoard.addEventListener('click', makeboard);
+
+function makeboard() {
+  if (newBoardSize.value === '') {
+    window.alert('Board inválido!');
+  } else {
+    while (pixelBoard.firstElementChild) {
+      pixelBoard.removeChild(pixelBoard.firstElementChild);
+    }
+    for (let i = 0; i < newBoardSize.value; i += 1) {
+      const newLine = document.createElement('div');
+      newLine.className = 'line';
+      pixelBoard.appendChild(newLine);
+      for (let i = 0; i < newBoardSize.value; i += 1) {
+        const newPixel = document.createElement('div');
+        newPixel.className = 'pixel';
+        newLine.appendChild(newPixel);
+      }
+    }
   }
-};
- */
-//---
-
+}
