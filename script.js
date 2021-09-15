@@ -6,7 +6,6 @@ window.onload = function inicialColor() {
 const palette = document.querySelector('#color-palette');
 const pixelBoardArray = document.getElementsByClassName('pixel');
 const pixelBoard = document.getElementById('pixel-board');
-const classLine = document.getElementsByClassName('line');
 
 palette.addEventListener('click', (event) => {
   for (let index = 0; index < palette.children.length; index += 1) {
@@ -17,10 +16,10 @@ palette.addEventListener('click', (event) => {
 // ajudado por Hugo Daniel.
 
 for (let index = 0; index < pixelBoardArray.length; index += 1) {
-  pixelBoardArray[index].onclick = function (event) {
+  pixelBoardArray[index].onclick = function (e) {
     const selectedColor = document.querySelector('.selected');
     const BGColorSelected = window.getComputedStyle(selectedColor, null).getPropertyValue('background-color');
-    event.target.style.backgroundColor = BGColorSelected;
+    e.target.style.backgroundColor = BGColorSelected;
   };
 }
 
@@ -53,26 +52,10 @@ newBoardSize.min = 1;
 newBoardSize.placeholder = 'defina o tamanho do quadro';
 newSection.appendChild(newBoardSize);
 
-buttonNewBoard = document.createElement('button');
+const buttonNewBoard = document.createElement('button');
 buttonNewBoard.id = 'generate-board';
 buttonNewBoard.innerHTML = 'VQV';
 newSection.appendChild(buttonNewBoard);
-
-buttonNewBoard.addEventListener('click', makeBoard);
-
-function makeBoard() {
-  if (newBoardSize.value === '') {
-    window.alert('Board inválido!');
-  } else if (newBoardSize.value < 5) {
-    newBoardSize.value = 5;
-    subMakeBoard();
-  } else if (newBoardSize.value > 50) {
-    newBoardSize.value = 50;
-    subMakeBoard();
-  } else {
-    subMakeBoard();
-  }
-}
 
 function subMakeBoard() {
   while (pixelBoard.firstElementChild) {
@@ -89,6 +72,22 @@ function subMakeBoard() {
     }
   }
 }
+
+function makeBoard() {
+  if (newBoardSize.value === '') {
+    window.alert('Board inválido!');
+  } else if (newBoardSize.value < 5) {
+    newBoardSize.value = 5;
+    subMakeBoard();
+  } else if (newBoardSize.value > 50) {
+    newBoardSize.value = 50;
+    subMakeBoard();
+  } else {
+    subMakeBoard();
+  }
+}
+
+buttonNewBoard.addEventListener('click', makeBoard);
 
 function randomColors() {
   const randomColor = `#${Math.floor(Math.random() * 16777216).toString(16)}`;
