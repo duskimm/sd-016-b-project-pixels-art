@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
-
 * {
-  font-family: 'MedievalSharp', cursive;
+  font-family: ubuntu;
   margin: 0;
   padding: 0;
 }
@@ -9,8 +7,9 @@
 body {
   background-color: rgb(165, 182, 199);
 }
+
 h1 {
- margin-top: 10px;
+  margin-top: 10px;
 }
 
 main {
