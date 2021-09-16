@@ -1,5 +1,6 @@
 window.onload = function beginning() {
   document.getElementsByClassName('color')[0].classList.add('selected');
+
   
 	//criando quadro de pixels 5x5
   let linesBoard = document.getElementsByClassName('pixel-row');
@@ -100,5 +101,21 @@ window.onload = function beginning() {
 		}
 	}
 	document.addEventListener('click', changeColor, false);
+  
+	// variando as cores
 
+	const colorsForChange = document.getElementsByClassName('color');
+	
+	for (let i = 1; i < colorsForChange.length; i ++) {
+		rcolorsForChange[i].style.backgroundColor = randomColor();
+	}
+
+	function randomColor () {
+		let rgb1 = Math.round(Math.random() * 255);
+		let rgb2 = Math.round(Math.random() * 255);
+		let rgb3 = Math.round(Math.random() * 255);
+	
+		return 'rgb(${rgb1}, ${rgb2}, ${rgb3})';
+	}
+	
 }
