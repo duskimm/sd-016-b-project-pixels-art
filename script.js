@@ -1,4 +1,6 @@
-const numberGridColumnsAndLines = 5;
+const numberInput = document.getElementById('board-size');
+
+const numberGridColumnsAndLines = numberInput.value;
 
 let lines = document.querySelectorAll('.gridColumns');
 
@@ -56,8 +58,18 @@ function listenerPixels(event) {
   const classSelectedColor = document.querySelector('.selected').classList[0];
   divPixelSelected.setAttribute('class', 'pixel');
   divPixelSelected.classList.add(classSelectedColor);
-  console.log(classSelectedColor);
 }
+
+// Criando o botão limpar tudo
+const btnReset = document.getElementById('clear-board');
+function reset() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].className = ('pixel backGroundSet');
+  }
+}
+
+// Apaga as divs dos pixels criados por default
 
 window.onload = function () {
   colorPalettesFormation(arrayColorsPalette);
@@ -73,4 +85,6 @@ window.onload = function () {
   const clickPixels = document.getElementById('pixel-board');
 
   clickPixels.addEventListener('click', listenerPixels);
+
+  btnReset.addEventListener('click', reset);
 };
