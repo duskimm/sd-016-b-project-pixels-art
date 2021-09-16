@@ -107,7 +107,7 @@ window.onload = function beginning() {
 	const colorsForChange = document.getElementsByClassName('color');
 	
 	for (let i = 1; i < colorsForChange.length; i ++) {
-		rcolorsForChange[i].style.backgroundColor = randomColor();
+		colorsForChange[i].style.backgroundColor = randomColor();
 	}
 
 	function randomColor () {
@@ -115,7 +115,7 @@ window.onload = function beginning() {
 		let rgb2 = Math.round(Math.random() * 255);
 		let rgb3 = Math.round(Math.random() * 255);
 	
-		return 'rgb(${rgb1}, ${rgb2}, ${rgb3})';
+		return "rgb("+rgb1+","+rgb2 +","+ rgb3+")";
 	}
 	
 }
