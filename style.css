@@ -65,11 +65,10 @@ header h1 {
 }
 
 .pixel-board {
-  background: yellowgreen;
   margin: 0 auto;
+  display: grid;
   width: 400px;
   height: 400px;
-  display: grid;
   justify-content: center;
 }
 

@@ -28,7 +28,7 @@ function generatePixelGrid() {
   const columns = [];
   const element = document.querySelector('#pixel-board');
   for (let i = 0; i < board.size; i += 1) {
-    const per = '1fr';
+    const per = '40px';
     columns.push(per);
   }
   element.style.gridTemplateColumns = columns.join(' ');
