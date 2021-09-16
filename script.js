@@ -32,7 +32,6 @@ for (let i = 0; i < pixelBoard.children.length; i += 1) {
 function changeToWhite() {
   for (let i = 0; i < pixelBoard.children.length; i += 1) {
     pixelBoard.children[i].style.backgroundColor = 'white';
-    console.log('lalala');
   }
 }
 
