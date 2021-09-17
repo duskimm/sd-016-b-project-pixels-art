@@ -6,11 +6,11 @@ window.onload = function() {
       let pixelCor2 = document.getElementById('cor2')
       let pixelCor3 = document.getElementById('cor3')
       let pixelCor4 = document.getElementById('cor4')
-      let selectedColor = document.getElementsByClassName('selectedColor')
+      let selectedColor = document.getElementsByClassName('selected')
 
       pixelCor1.addEventListener('click', function() {
           if(selectedColor.length === 0) {
-            pixelCor1.className = 'color selectedColor'  
+            pixelCor1.className = 'color selected'  
           }else{
             pixelCor1.className = 'color'
           }
@@ -18,7 +18,7 @@ window.onload = function() {
            
       pixelCor2.addEventListener('click', function() {
           if(selectedColor.length === 0) {
-            pixelCor2.className = 'color selectedColor'  
+            pixelCor2.className = 'color selected'  
           }else{
             pixelCor2.className = 'color'
           }
@@ -26,7 +26,7 @@ window.onload = function() {
 
       pixelCor3.addEventListener('click', function() {
           if(selectedColor.length === 0) {
-            pixelCor3.className = 'color selectedColor'  
+            pixelCor3.className = 'color selected'  
           }else{
             pixelCor3.className = 'color'
           }
@@ -34,7 +34,7 @@ window.onload = function() {
 
       pixelCor4.addEventListener('click', function() {
           if(selectedColor.length === 0) {
-            pixelCor4.className = 'color selectedColor'  
+            pixelCor4.className = 'color selected'  
           }else{
             pixelCor4.className = 'color'
           }
