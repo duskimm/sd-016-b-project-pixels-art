@@ -11,13 +11,16 @@ function linha(){
    }   
 }
 function coluna (linha){
-    for (let index = 0; index <= idx; index+=1) {
+    for (let index = 0; index < idx; index+=1) {
         let pixelColuna = document.createElement("div");
         pixelColuna.className = "pixel"
         linha.appendChild(pixelColuna);
     }
 }
 
+function selected (event) {
+    
+}
 
 
 linha()
