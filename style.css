@@ -1,1 +1,56 @@
+#title {
+    size: 15px;
+    top: 0;
+}
 
+#color-palette {
+    
+}
+
+#black {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+}
+#blue {
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+}
+#yellow {
+    background-color: yellow;
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+}
+#green {
+    background-color: green;
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+}
+#red {
+    background-color: red;
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+}
+
+.color {
+    display: inline-block;
+  }
+  
+  .pixel {
+    display: inline-block;
+    border: solid 1px black;
+    width: 40px;
+    height: 40px;
+    margin-block: -3px;
+    background-color: white;
+  }
+  
+  #pixel-board {
+    margin-top: 15px;
+  }
