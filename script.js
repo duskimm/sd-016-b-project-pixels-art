@@ -33,7 +33,7 @@ function aplication(event){
   element.style.backgroundColor = localStorage.getItem("color")
 }
 
-let clear = document.getElementById('clear');
+let clear = document.getElementById('clear-board');
 
 clear.addEventListener('click', clearBigBox);
 function clearBigBox(){
