@@ -87,6 +87,22 @@ function setGenerateBtnEvent() {
         }        
     })
 }
+//Requisito 12
+function randomColorGenerate() {
+    let arredonda = Math.round
+    let gera = Math.random
+    let max = 255
+    return 'rgb(' + arredonda(gera()*max) + ', ' + arredonda(gera()*max) + ', ' + arredonda(gera()*max) +')'
+}
+function geraPaleta() {
+    let paleta = document.querySelectorAll('.color')
+    console.log(paleta);
+    paleta.forEach(cor => {
+        if (cor.id !== 'cor1') {
+            cor.style.backgroundColor = randomColorGenerate()
+        }
+    })
+}
 
 
 
@@ -98,4 +114,5 @@ window.onload = function() {
     setColorPaintEvent()
     setClearButtonEvent()
     setGenerateBtnEvent()
+    geraPaleta()
 }
