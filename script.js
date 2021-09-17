@@ -73,9 +73,14 @@ function setGenerateBtnEvent() {
     let btn = document.getElementById('generate-board')
     btn.addEventListener('click', function(event) {
         let input = document.getElementById('board-size').value
-        if(input < 5 || input > 50 || input === null){
+        if(input < 5 || input === null){
             alert('Board Inválido!')
-        }else{
+        }else if(input > 50){
+            resetBoard()
+            povoaBoard(50)
+            setColorPaintEvent()
+        }
+        else{
             resetBoard()
             povoaBoard(input)
             setColorPaintEvent()
