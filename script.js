@@ -37,11 +37,11 @@ window.onload = function beginning() {
 
     if (size === '') {
       alert('Board inválido!');
-    } else if (parseInt(size, 10) < 5) {
+    } else if (size < 5) {
       pb.innerHTML = '';
       createPixelRow(5);
       createPixelCol();
-    } else if (parseInt(size, 10) > 50) {
+    } else if (size > 50) {
       pb.innerHTML = '';
       createPixelRow(50);
       createPixelCol();
@@ -114,4 +114,4 @@ window.onload = function beginning() {
 
     return `rgb(${rgb1},${rgb2},${rgb3})`;
   }
-};
+}
