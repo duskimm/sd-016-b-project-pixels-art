@@ -23,3 +23,15 @@ body{
 #cor4{
     background-color: yellow;
 }
+#pixel-board{
+    width: 200px;
+    height: 200px;
+    font-size: 0;
+}
+.pixel{
+    width: 38px;
+    height: 38px;
+    border: 1px solid black;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+}
