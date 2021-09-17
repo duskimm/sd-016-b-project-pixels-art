@@ -30,6 +30,15 @@ for (let index = 0; index < bigBox.length; index+=1) {
 
 function aplication(event){
     const element = event.target
-    console.log('adasdasd');
   element.style.backgroundColor = localStorage.getItem("color")
+}
+
+let clear = document.getElementById('clear');
+
+clear.addEventListener('click', clearBigBox);
+function clearBigBox(){
+    for (let i = 0; i < bigBox.length; i+=1) {
+        bigBox[i].style.backgroundColor = 'white';
+      
+    }
 }
