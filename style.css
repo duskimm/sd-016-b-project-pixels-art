@@ -42,7 +42,7 @@
     display: inline-block;
   }
   
-  .pixel {
+.pixel {
     display: inline-block;
     border: solid 1px black;
     width: 40px;
@@ -51,9 +51,13 @@
     background-color: white;
   }
   
-  #pixel-board {
+#pixel-board {
     margin-top: 15px;
   }
-  #linhas {
+#linhas {
       
   }
+
+#colunas {
+    
+}
