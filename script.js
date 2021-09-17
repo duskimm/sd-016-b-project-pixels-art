@@ -4,9 +4,9 @@ const div = document.querySelectorAll('div');
 const clearButton = document.getElementById('clear-board');
 const colors = document.querySelectorAll('.color');
 
-// colors.addEventListener('click', pickColor); 
+// colors[1].addEventListener('click', pickColor); 
 function pickColor (event) {
-  colors.addEventListener('click', pickColor); 
+  // colors.addEventListener('click', pickColor); 
   const selectedColor = document.querySelector('.selected');
     if(selectedColor != null) {
       selectedColor.classList.remove('selected');
@@ -14,12 +14,14 @@ function pickColor (event) {
     }
     event.target.classList.add('selected')
   } 
-// function addColorsToPixel (colors){
-//   for (let index = 1; index < colors.length; index += 1){
-//   colors[index].addEventListener('click', pickColor); 
-//  }
-// }
-// pixelItself.addEventListener('click', pickColor);
+function addColorsToPixel (){
+  for (let index = 0; index < colors.length; index += 1){
+  colors[index].addEventListener('click', pickColor); 
+ }
+}
+
+addColorsToPixel(colors)
+
 
 function clearBoard () {
   const pixelToClear = document.querySelectorAll('.pixel') 
