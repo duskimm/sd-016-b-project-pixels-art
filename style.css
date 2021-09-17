@@ -24,10 +24,22 @@ body{
     background-color: yellow;
 }
 #buttons-container{
+    width: 100%;
+}
+#clear-btn-container{
+    display: inline-block;
 
 }
 #clear-board{
     margin: 20px 0;
+    padding: 5px;
+}
+#input-container{
+    display: inline-block;
+    
+}
+#generate-board{
+    padding: 5px;
 }
 #pixel-board{
     width: 200px;

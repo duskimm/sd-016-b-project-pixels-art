@@ -1,10 +1,17 @@
-function povoaBoard() {
+function povoaBoard(n) {
+    let nPixels = n * n
     let board = document.getElementById('pixel-board')
-    for(let i = 1; i <= 25; i++){
+    alteraQuadro(n, board)
+    for(let i = 1; i <= nPixels; i++){
         let pixel = document.createElement('div')
         pixel.className = 'pixel'
         board.appendChild(pixel)        
     }
+}
+function alteraQuadro(n, quadro) {
+    let largura = n * 40
+    let altura = n * 40
+    quadro.setAttribute("style","width:" + largura + 'px;height:' + altura +'px')
 }
 //Requisito 07
 function setColorSelectEvent() {
@@ -34,7 +41,6 @@ function saveSelectedColorInSession(cor) {
 function setColorPaintEvent() {
    document.querySelectorAll('.pixel').forEach(pixel => {
        pixel.addEventListener('click', event => {
-           console.log(pixel);
            let pixelCor = window.getComputedStyle(event.target, null).getPropertyValue('background-color')
            let corSelecionada = JSON.parse(sessionStorage.getItem('colorSelected'))
            if(pixelCor !== corSelecionada){
@@ -44,7 +50,6 @@ function setColorPaintEvent() {
    })
 }
 //Requisito 09
-
 function setClearButtonEvent() {
     let btn = document.getElementById('clear-board')
     btn.addEventListener('click', function(event) {
@@ -54,13 +59,38 @@ function setClearButtonEvent() {
         }
     })
 }
+//Requisitos Bônus
+//Requisito 10
+function resetBoard() {
+    let board = document.getElementById('pixel-board')
+    let pixelList = document.querySelectorAll('.pixel')
+    for (let i = 0; i < pixelList.length; i++) {
+        board.removeChild(pixelList[i])
+        
+    }
+}
+function setGenerateBtnEvent() {
+    let btn = document.getElementById('generate-board')
+    btn.addEventListener('click', function(event) {
+        let input = document.getElementById('board-size').value
+        if(input < 5 || input > 50 || input === null){
+            alert('Board Inválido!')
+        }else{
+            resetBoard()
+            povoaBoard(input)
+            setColorPaintEvent()
+        }        
+    })
+}
 
 
 
 window.onload = function() {
-    povoaBoard()
+    let boardPadrao = 5
+    povoaBoard(boardPadrao)
     saveSelectedColorInSession('rgb(0,0,0)')
     setColorSelectEvent()
     setColorPaintEvent()
     setClearButtonEvent()
+    setGenerateBtnEvent()
 }
