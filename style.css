@@ -23,6 +23,12 @@ body{
 #cor4{
     background-color: yellow;
 }
+#buttons-container{
+
+}
+#clear-board{
+    margin: 20px 0;
+}
 #pixel-board{
     width: 200px;
     height: 200px;

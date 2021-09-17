@@ -3,11 +3,7 @@ function povoaBoard() {
     for(let i = 1; i <= 25; i++){
         let pixel = document.createElement('div')
         pixel.className = 'pixel'
-        board.appendChild(pixel)
-        pixel.addEventListener('click', function(event) {
-            
-            
-        })
+        board.appendChild(pixel)        
     }
 }
 //Requisito 07
@@ -41,13 +37,22 @@ function setColorPaintEvent() {
            console.log(pixel);
            let pixelCor = window.getComputedStyle(event.target, null).getPropertyValue('background-color')
            let corSelecionada = JSON.parse(sessionStorage.getItem('colorSelected'))
-           console.log(pixelCor);
-           console.log(corSelecionada);
            if(pixelCor !== corSelecionada){
                event.target.style.backgroundColor = corSelecionada
            }           
        })
    })
+}
+//Requisito 09
+
+function setClearButtonEvent() {
+    let btn = document.getElementById('clear-board')
+    btn.addEventListener('click', function(event) {
+        let pixelLista = document.getElementsByClassName('pixel')
+        for (let i = 0; i < pixelLista.length; i++) {
+            pixelLista[i].style.backgroundColor = 'rgb(255, 255, 255'            
+        }
+    })
 }
 
 
@@ -57,4 +62,5 @@ window.onload = function() {
     saveSelectedColorInSession('rgb(0,0,0)')
     setColorSelectEvent()
     setColorPaintEvent()
+    setClearButtonEvent()
 }
