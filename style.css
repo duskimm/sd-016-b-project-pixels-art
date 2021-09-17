@@ -1,28 +1,35 @@
-#color-palette {
-
-}
-
 .color {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 15px;
     height: 50px;
     width: 50px;
     text-align: center;
-    border: black solid 1px;
+    border:black solid 1px;
 }
 
-#blue {
-    background-color: blue;
+#black {
+    background-color:black;
+    color: white;
 }
 
 #red {
-    background-color: red;
+    background-color:red;
 }
 
-#yellow{
-    background-color: yellow;
+#yellow {
+    background-color:yellow;
 }
 
 #purple {
-    background-color: purple;
+    background-color:purple;
+}
+
+.pixel {
+    display: inline-block;
+    margin-right: 5px;
+    height: 40px;
+    width: 40px;
+    border:black solid 1px;
+    background-color: white;
+    color: white;
 }
