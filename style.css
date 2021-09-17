@@ -126,15 +126,18 @@ header {
 
 #ft {
   background-color: rgb(240, 6, 104);
-  color: rgb(252, 247, 241);
+  
   font-family:Tahoma;
   text-align: center;
-  bottom: 0;
   height: 80px;
-  font-size: 30px;
   position:unset;
   bottom: 0;
   right: 0;
-  left: 0;
-  
+  left: 0; 
+}
+
+#creditos {
+  padding-top: 25px;
+  font-size: 20px;
+  color: rgb(252, 247, 241);
 }
