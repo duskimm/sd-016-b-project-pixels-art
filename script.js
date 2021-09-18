@@ -1,28 +1,42 @@
 // Requisito 7
-const pixels = document.querySelectorAll('.pixel');
-const div = document.querySelectorAll('div');
+
 const clearButton = document.getElementById('clear-board');
 const colors = document.querySelectorAll('.color');
-
-// colors[1].addEventListener('click', pickColor); 
-function pickColor (event) {
-  // colors.addEventListener('click', pickColor); 
-  const selectedColor = document.querySelector('.selected');
-    if(selectedColor != null) {
-      selectedColor.classList.remove('selected');
+ 
+function changeSelectedColor (event) {
+  const selected = document.querySelector('.selected');
+    if (selected != null) {
+      selected.classList.remove('selected');
       event.target.classList.add('selected');
     }
-    event.target.classList.add('selected')
+    event.target.classList.add('selected');
   } 
-function addColorsToPixel (){
+function selectColor () {
   for (let index = 0; index < colors.length; index += 1){
-  colors[index].addEventListener('click', pickColor); 
+  colors[index].addEventListener('click', changeSelectedColor); 
  }
 }
 
-addColorsToPixel(colors)
+// Requisito 8 
+const pixels = document.querySelectorAll('.pixel');
 
+function paintPixel (event) {
+  const selectedColor = document.querySelector('.selected');
+  const colorToApply = window.getComputedStyle(selectedColor).getPropertyValue('background-color')
+  event.target.style.backgroundColor = colorToApply
+}
 
+// pixels.addEventListener('click', paintPixel); 
+
+function pixelsToPaint () {
+  for (let index = 0; index < pixels.length; index += 1){
+  pixels[index].addEventListener('click', paintPixel); 
+ }
+}
+
+pixelsToPaint(colors)
+
+// Requisito 9
 function clearBoard () {
   const pixelToClear = document.querySelectorAll('.pixel') 
   for (let index = 0; index < pixelToClear.length; index += 1) {
@@ -31,23 +45,4 @@ function clearBoard () {
 }
 
 clearButton.addEventListener('click', clearBoard);
-
-// function selectColor (event){
-//   if (selectedColor === null) {
-//     event.target.classList.add('selected');
-//   } else {
-//     selectedColor.classList.remove('selected');
-//     event.target.classList.add('selected');
-//   }
-// }
-
-// colors.addEventListener('click', selectColor);
-
-// function cascaca (event) {
-//   let clickedItem = event.target
-//   if(clickedItem.className === 'selected') {
-//     for (let index = 0; index < colors; index += 1) {
-//       colors[index].style.backgroundColor = '';
-//     }
-//   } clickedItem.style.backgroundColor = 'red'
-// 
+selectColor(colors);
