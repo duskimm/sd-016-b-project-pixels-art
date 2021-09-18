@@ -1,19 +1,22 @@
 .color {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  border: 1px solid black;
 }
 
 #cor1 {
-    background-color: black;
+  background-color: black;
 }
+
 #cor2 {
-    background-color: #EFCDE4;
+  background-color: #efcde4;
 }
+
 #cor3 {
-    background-color: #CBE6B3;
+  background-color: #cbe6b3;
 }
+
 #cor4 {
-    background-color: #90D0E6;
+  background-color: #90d0e6;
 }
